@@ -12,6 +12,14 @@ repositories {
 sourceCompatibility = '11'
 targetCompatibility = '11'
 
+sourceSets {
+    main {
+        java {
+            srcDirs += ["src/gen/java"]
+        }
+    }
+}
+
 jar { 
     manifest { 
         attributes 'Class-Path': configurations.compile.collect { it.getName() }.join(' ')
@@ -21,6 +29,9 @@ jar {
 java {
     modularity.inferModulePath = true
 }
+
+def releaseDir = "release/${projectName}/${projectName}"
+def releaseFileName = "${projectName}-${version}.zip"
 
 task packageDistribution(type: Zip) {
     archiveFileName = "$releaseFileName"
@@ -32,7 +43,13 @@ packageDistribution.doLast {
     delete "$projectDir/release/$projectName"
 }
 
-task createRelease(type: Copy) {
+task copyLibs(type: Copy) {
+    from "bld/liblibrealsense2-jni.so"
+    from jar.archiveFile
+    into "${releaseDir}/libs"
+}
+
+task createRelease(type: Copy, dependsOn: copyLibs) {
     from "README.md"
     into releaseDir
 }
@@ -44,19 +61,3 @@ task cleanRelease(type: Delete) {
 packageDistribution.dependsOn createRelease
 assemble.dependsOn packageDistribution
 clean.dependsOn cleanRelease
-
-def genSrc = "${project.buildDir}/gen/src"
-def genJavaSrc = "$genSrc/java/id/${libName}"
-def genCppSrc = "$genSrc/cpp"
-
-task generateCode(type: Exec) {
-    standardInput = System.in
-    commandLine "swig", "-java", "-package", "id.${libName}", "-outdir", "$genJavaSrc", "-I${librealsense2_headers}", "-I${librealsense2_headers}/h", "-o", "$genCppSrc/${libName}-jni.c", "src/main/swig/${libName}.i"
-}
-
-generateCode.doFirst {
-    mkdir file(genJavaSrc)
-    mkdir file(genCppSrc)
-}
-
-compileJava.dependsOn generateCode
