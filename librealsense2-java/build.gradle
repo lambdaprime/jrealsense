@@ -1,0 +1,62 @@
+// Requires gradle 6.5
+// gradle clean build
+
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = '11'
+targetCompatibility = '11'
+
+jar { 
+    manifest { 
+        attributes 'Class-Path': configurations.compile.collect { it.getName() }.join(' ')
+    }
+}
+
+java {
+    modularity.inferModulePath = true
+}
+
+task packageDistribution(type: Zip) {
+    archiveFileName = "$releaseFileName"
+    destinationDirectory = file("$projectDir/release")
+    from file("$projectDir/release/$projectName")
+}
+
+packageDistribution.doLast {
+    delete "$projectDir/release/$projectName"
+}
+
+task createRelease(type: Copy) {
+    from "README.md"
+    into releaseDir
+}
+
+task cleanRelease(type: Delete) {
+    delete "$projectDir/release"
+}
+
+packageDistribution.dependsOn createRelease
+assemble.dependsOn packageDistribution
+clean.dependsOn cleanRelease
+
+def genSrc = "${project.buildDir}/gen/src"
+def genJavaSrc = "$genSrc/java/id/${libName}"
+def genCppSrc = "$genSrc/cpp"
+
+task generateCode(type: Exec) {
+    standardInput = System.in
+    commandLine "swig", "-java", "-package", "id.${libName}", "-outdir", "$genJavaSrc", "-I${librealsense2_headers}", "-I${librealsense2_headers}/h", "-o", "$genCppSrc/${libName}-jni.c", "src/main/swig/${libName}.i"
+}
+
+generateCode.doFirst {
+    mkdir file(genJavaSrc)
+    mkdir file(genCppSrc)
+}
+
+compileJava.dependsOn generateCode

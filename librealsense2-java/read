@@ -1,0 +1,49 @@
+rm -rf id *.c; mkdir -p id/librealsense2
+swig -java -package id.librealsense2 -outdir id/librealsense2 -I/home/lynx/opt/librealsense-2.41.0/include/librealsense2/h -module librealsense2 -o librealsense2_wrap.c /home/lynx/opt/librealsense-2.41.0/include/librealsense2/h/rs_pipeline.h
+
+gcc -I/home/lynx/opt/jdk-11.0.9/include -I/home/lynx/opt/jdk-11.0.9/include/linux -I/home/lynx/opt/librealsense-2.41.0/include/librealsense2/h librealsense2_wrap.c
+
+rm -rf src/gen/*
+rm -rf *.c
+rm -rf *.o
+rm -rf *.so
+mkdir -p src/gen/id/librealsense2
+swig -java -package id.librealsense2 -outdir src/gen/id/librealsense2 -I/usr/include/librealsense2 -I/usr/include/librealsense2/h librealsense2.i
+gcc -I/home/lynx/opt/jdk-11.0.9/include -I/home/lynx/opt/jdk-11.0.9/include/linux -I/usr/include/librealsense2 -I/usr/include/librealsense2/h -shared -fPIC -o librealsense2-jni.so librealsense2_wrap.c -lrealsense2
+
+
+struct rs2_device_info {};
+struct rs2_device {};
+struct rs2_log_message {};
+struct rs2_raw_data_buffer {};
+struct rs2_frame {};
+struct rs2_frame_queue {};
+struct rs2_pipeline {};
+struct rs2_pipeline_profile {};
+struct rs2_config {};
+struct rs2_device_list {};
+struct rs2_stream_profile_list {};
+struct rs2_processing_block_list {};
+struct rs2_stream_profile {};
+struct rs2_frame_callback {};
+struct rs2_log_callback {};
+struct rs2_syncer {};
+struct rs2_device_serializer {};
+struct rs2_source {};
+struct rs2_processing_block {};
+struct rs2_frame_processor_callback {};
+struct rs2_playback_status_changed_callback {};
+struct rs2_update_progress_callback {};
+struct rs2_context {};
+struct rs2_device_hub {};
+struct rs2_sensor_list {};
+struct rs2_sensor {};
+struct rs2_options {};
+struct rs2_options_list {};
+struct rs2_devices_changed_callback {};
+struct rs2_notification {};
+struct rs2_notifications_callback {};
+struct rs2_firmware_log_message {};
+struct rs2_firmware_log_parsed_message {};
+struct rs2_firmware_log_parser {};
+struct rs2_terminal_parser {};
