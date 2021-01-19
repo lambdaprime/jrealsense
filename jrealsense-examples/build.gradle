@@ -1,0 +1,26 @@
+/**
+ * gradle clean build
+ */
+plugins {
+    id 'java'
+}
+
+apply plugin : 'eclipse'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    compile project(':jrealsense')
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+}
+
+sourceCompatibility = '11'
+targetCompatibility = '11'
+
+java {
+    modularity.inferModulePath = true
+}
+

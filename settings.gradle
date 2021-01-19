@@ -1,0 +1,2 @@
+include 'jrealsense'
+include 'jrealsense-examples'

@@ -1,0 +1,7 @@
+First you need to build JNI library and generate Java wrapping classes for it:
+
+mkdir jrealsense/bld
+cd jrealsense/bld/
+cmake ..
+make
+
