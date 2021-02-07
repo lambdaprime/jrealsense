@@ -1,6 +1,6 @@
 package id.jrealsense.frames;
 
-import id.jrealsense.rs2_frame;
+import id.jrealsense.jni.rs2_frame;
 
 public class DepthFrame extends AbstractFrame<DepthFrame> {
 

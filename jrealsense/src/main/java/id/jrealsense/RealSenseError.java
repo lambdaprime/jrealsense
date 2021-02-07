@@ -1,8 +1,11 @@
 package id.jrealsense;
 
-import static id.jrealsense.librealsense2.copy_rs2_error_ptr;
-import static id.jrealsense.librealsense2.rs2_get_error_message;
-import static id.jrealsense.librealsense2.rs2_get_failed_function;
+import static id.jrealsense.jni.librealsense2.copy_rs2_error_ptr;
+import static id.jrealsense.jni.librealsense2.rs2_get_error_message;
+import static id.jrealsense.jni.librealsense2.rs2_get_failed_function;
+
+import id.jrealsense.jni.SWIGTYPE_p_p_rs2_error;
+import id.jrealsense.jni.rs2_error;
 
 public class RealSenseError {
     

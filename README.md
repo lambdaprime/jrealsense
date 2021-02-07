@@ -1,4 +1,4 @@
-Java sample applications which demonstrate how to work with Intel RealSense cameras using jrealsense module.
+**jrealsense** - Java module which allows to interact with Intel RealSense cameras.
 
 # Download
 

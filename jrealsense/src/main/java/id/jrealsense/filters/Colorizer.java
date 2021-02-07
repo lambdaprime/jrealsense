@@ -1,6 +1,6 @@
 package id.jrealsense.filters;
 
-import static id.jrealsense.librealsense2.*;
+import static id.jrealsense.jni.librealsense2.*;
 
 import id.jrealsense.FrameQueue;
 import id.jrealsense.ProcessingBlock;

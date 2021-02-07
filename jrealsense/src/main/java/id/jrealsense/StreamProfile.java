@@ -1,6 +1,8 @@
 package id.jrealsense;
 
-import static id.jrealsense.librealsense2.rs2_get_stream_profile_data;
+import static id.jrealsense.jni.librealsense2.rs2_get_stream_profile_data;
+
+import id.jrealsense.jni.rs2_stream_profile;
 
 public class StreamProfile extends rs2_stream_profile {
 

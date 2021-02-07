@@ -30,6 +30,14 @@ java {
     modularity.inferModulePath = true
 }
 
+javadoc {
+    options.noTimestamp = true;
+    options.noQualifiers = ["all"];
+    options.noTree = true;
+    options.noIndex = true;
+    options.noNavBar = true;
+}
+
 def packageDir = "$buildDir/package/${projectName}"
 def releaseFileName = "${projectName}-${version}.zip"
 
@@ -59,6 +67,6 @@ task cleanRelease(type: Delete) {
     delete "$projectDir/release"
 }
 
-createRelease.dependsOn createPackage
+createRelease.dependsOn createPackage, javadoc
 assemble.dependsOn createRelease
 clean.dependsOn cleanRelease

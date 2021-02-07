@@ -2,6 +2,8 @@ package id.jrealsense;
 
 import java.util.Map;
 
+import id.jrealsense.jni.rs2_stream;
+
 public class StreamType {
 
     private rs2_stream stream;

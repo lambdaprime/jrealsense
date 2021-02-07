@@ -1,7 +1,9 @@
 package id.jrealsense;
 
-import static id.jrealsense.librealsense2.*;
-import static id.jrealsense.librealsense2Constants.RS2_API_VERSION;
+import static id.jrealsense.jni.librealsense2.*;
+import static id.jrealsense.jni.librealsense2Constants.RS2_API_VERSION;
+
+import id.jrealsense.jni.rs2_context;
 
 public class Context implements AutoCloseable {
 

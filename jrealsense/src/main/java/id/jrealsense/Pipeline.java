@@ -1,10 +1,10 @@
 package id.jrealsense;
 
-import static id.jrealsense.librealsense2.*;
-import static id.jrealsense.librealsense2Constants.RS2_DEFAULT_TIMEOUT;
+import static id.jrealsense.jni.librealsense2.*;
+import static id.jrealsense.jni.librealsense2Constants.RS2_DEFAULT_TIMEOUT;
 
 import id.jrealsense.frames.CompositeFrame;
-import id.jrealsense.rs2_pipeline;
+import id.jrealsense.jni.rs2_pipeline;
 
 public class Pipeline implements AutoCloseable {
 

@@ -1,6 +1,6 @@
 package id.jrealsense.frames;
 
-import static id.jrealsense.librealsense2.*;
+import static id.jrealsense.jni.librealsense2.*;
 
 import java.nio.ByteBuffer;
 
@@ -8,7 +8,7 @@ import id.jrealsense.Filter;
 import id.jrealsense.Frame;
 import id.jrealsense.RealSenseError;
 import id.jrealsense.StreamProfile;
-import id.jrealsense.rs2_frame;
+import id.jrealsense.jni.rs2_frame;
 
 abstract class AbstractFrame<F extends Frame<F>> implements Frame<F> {
 

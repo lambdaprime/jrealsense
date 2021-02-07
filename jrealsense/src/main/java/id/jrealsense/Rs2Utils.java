@@ -1,9 +1,9 @@
 package id.jrealsense;
 
-import static id.jrealsense.rs2_camera_info.*;
-import static id.jrealsense.librealsense2.*;
+import static id.jrealsense.jni.librealsense2.*;
+import static id.jrealsense.jni.rs2_camera_info.*;
 
-import id.jrealsense.rs2_device;
+import id.jrealsense.jni.rs2_device;
 
 /**
  * Set of helper functions to work with librealsense2

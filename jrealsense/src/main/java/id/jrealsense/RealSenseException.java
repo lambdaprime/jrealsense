@@ -1,5 +1,8 @@
 package id.jrealsense;
 
+/**
+ * Generic runtime exception for all <b>jrealsense</b> operations.
+ */
 public class RealSenseException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;

@@ -1,6 +1,9 @@
 package id.jrealsense;
 
-import static id.jrealsense.librealsense2.*;
+import static id.jrealsense.jni.librealsense2.*;
+
+import id.jrealsense.jni.rs2_frame;
+import id.jrealsense.jni.rs2_frame_queue;
 
 public class FrameQueue implements AutoCloseable {
 

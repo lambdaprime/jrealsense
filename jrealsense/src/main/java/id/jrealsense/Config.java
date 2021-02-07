@@ -1,6 +1,8 @@
 package id.jrealsense;
 
-import static id.jrealsense.librealsense2.*;
+import static id.jrealsense.jni.librealsense2.*;
+
+import id.jrealsense.jni.rs2_config;
 
 public class Config implements AutoCloseable {
     private rs2_config config;

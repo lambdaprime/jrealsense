@@ -2,6 +2,8 @@ package id.jrealsense;
 
 import java.nio.ByteBuffer;
 
+import id.jrealsense.jni.rs2_frame;
+
 public interface Frame<T extends Frame<T>> extends AutoCloseable {
 
     /**

@@ -1,8 +1,8 @@
 package id.jrealsense;
 
-import static id.jrealsense.librealsense2.*;
+import static id.jrealsense.jni.librealsense2.*;
 
-import id.jrealsense.rs2_processing_block;
+import id.jrealsense.jni.rs2_processing_block;
 
 public class ProcessingBlock implements AutoCloseable {
 

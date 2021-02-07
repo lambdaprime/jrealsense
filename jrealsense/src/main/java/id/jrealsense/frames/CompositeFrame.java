@@ -1,7 +1,7 @@
 package id.jrealsense.frames;
 
 import id.jrealsense.Frame;
-import id.jrealsense.rs2_frame;
+import id.jrealsense.jni.rs2_frame;
 
 public class CompositeFrame extends AbstractFrame implements Frame {
 

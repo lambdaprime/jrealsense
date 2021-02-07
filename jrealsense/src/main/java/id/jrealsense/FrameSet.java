@@ -1,8 +1,8 @@
 package id.jrealsense;
 
 import static id.jrealsense.FormatType.*;
-import static id.jrealsense.librealsense2.rs2_extract_frame;
-import static id.jrealsense.librealsense2.rs2_release_frame;
+import static id.jrealsense.jni.librealsense2.rs2_extract_frame;
+import static id.jrealsense.jni.librealsense2.rs2_release_frame;
 
 import java.util.Optional;
 import java.util.stream.IntStream;
