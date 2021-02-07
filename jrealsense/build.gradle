@@ -30,34 +30,35 @@ java {
     modularity.inferModulePath = true
 }
 
-def releaseDir = "release/${projectName}/${projectName}"
+def packageDir = "$buildDir/package/${projectName}"
 def releaseFileName = "${projectName}-${version}.zip"
 
-task packageDistribution(type: Zip) {
+ext.artifacts = fileTree(include: ['*'], dir: "$packageDir/libs")
+
+task createRelease(type: Zip) {
     archiveFileName = "$releaseFileName"
     destinationDirectory = file("$projectDir/release")
-    from file("$projectDir/release/$projectName")
-}
-
-packageDistribution.doLast {
-    delete "$projectDir/release/$projectName"
+    from file("$packageDir")
 }
 
 task copyLibs(type: Copy) {
-    from "bld/liblibrealsense2-jni.so"
+    if (!new File("$projectDir/bld/librealsense2-jni.so").exists())
+        throw new RuntimeException("No librealsense2-jni.so library found. Please build it first. See build.txt for more information.");
+    from "bld/librealsense2-jni.so"
     from jar.archiveFile
-    into "${releaseDir}/libs"
+    into "${packageDir}/libs"
 }
 
-task createRelease(type: Copy, dependsOn: copyLibs) {
+task createPackage(type: Copy, dependsOn: copyLibs) {
     from "README.md"
-    into releaseDir
+    into packageDir
 }
 
 task cleanRelease(type: Delete) {
+    delete "$packageDir"
     delete "$projectDir/release"
 }
 
-packageDistribution.dependsOn createRelease
-assemble.dependsOn packageDistribution
+createRelease.dependsOn createPackage
+assemble.dependsOn createRelease
 clean.dependsOn cleanRelease

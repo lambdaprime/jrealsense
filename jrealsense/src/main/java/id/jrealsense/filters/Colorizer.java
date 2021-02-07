@@ -1,6 +1,5 @@
 package id.jrealsense.filters;
 
-
 import static id.jrealsense.librealsense2.*;
 
 import id.jrealsense.FrameQueue;

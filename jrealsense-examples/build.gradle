@@ -24,3 +24,36 @@ java {
     modularity.inferModulePath = true
 }
 
+def packageDir = "$buildDir/package"
+def releaseFileName = "${projectName}-${version}.zip"
+
+task createRelease(type: Zip) {
+    archiveFileName = "$releaseFileName"
+    destinationDirectory = file("$projectDir/release")
+    from file("$packageDir")
+}
+
+task copyLibs(type: Copy) {
+    from "$projectDir/libs"
+    from jar.archiveFile
+    from project(':jrealsense').ext.artifacts
+    into "${packageDir}/${projectName}/libs"
+}
+
+task copyLaunchers(type: Copy) {
+    from "$projectDir/src/launchers"
+    into "${packageDir}/${projectName}"
+}
+
+task createPackage(type: Copy, dependsOn: [copyLibs, copyLaunchers]) {
+    from "${projectDir}/README.md"
+    into "$packageDir/${projectName}"
+}
+
+task cleanRelease(type: Delete) {
+    delete "$projectDir/release"
+}
+
+createRelease.dependsOn createPackage
+assemble.dependsOn createRelease
+clean.dependsOn cleanRelease
