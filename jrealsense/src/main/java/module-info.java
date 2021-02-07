@@ -10,4 +10,5 @@ module jrealsense {
     exports id.jrealsense.jni;
     exports id.jrealsense.filters;
     exports id.jrealsense.frames;
+    exports id.jrealsense.devices;
 }

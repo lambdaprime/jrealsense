@@ -55,7 +55,6 @@ public class RsImshowApp {
         {
             config.enableStream(StreamType.RS2_STREAM_COLOR, 0,
                     WIDTH, HEIGHT, FormatType.RS2_FORMAT_BGR8, FPS);
-            //pipeline.stop();
             pipeline.start(config);
             loop(renderer, pipeline, colorMap);
         } finally {
