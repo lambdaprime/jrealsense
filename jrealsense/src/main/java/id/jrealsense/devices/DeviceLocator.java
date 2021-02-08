@@ -3,7 +3,7 @@ package id.jrealsense.devices;
 import static id.jrealsense.jni.librealsense2.*;
 
 import id.jrealsense.Context;
-import id.jrealsense.RealSenseError;
+import id.jrealsense.RealSenseErrorHolder;
 import id.jrealsense.jni.rs2_device_list;
 
 public class DeviceLocator implements AutoCloseable {
@@ -14,8 +14,8 @@ public class DeviceLocator implements AutoCloseable {
      * Factory method, creates new DeviceLocator
      */
     public static DeviceLocator create(Context ctx) {
-        RealSenseError e = RealSenseError.create();
-        var config = rs2_query_devices(ctx.get_rs2_context(), e.get_p_p_rs2_error());
+        var e = RealSenseErrorHolder.create();
+        var config = rs2_query_devices(ctx.get_rs2_context(), e);
         e.verify();
         return new DeviceLocator(config);
     }
@@ -35,8 +35,8 @@ public class DeviceLocator implements AutoCloseable {
      * Return number of available devices
      */
     public int getNumOfDevices() {
-        RealSenseError e = RealSenseError.create();
-        int count = rs2_get_device_count(deviceList, e.get_p_p_rs2_error());
+        var e = RealSenseErrorHolder.create();
+        int count = rs2_get_device_count(deviceList, e);
         e.verify();
         return count;
     }
@@ -45,8 +45,8 @@ public class DeviceLocator implements AutoCloseable {
      * Return device by its zero based consecutive number
      */
     public Device getDevice(int id) {
-        RealSenseError e = RealSenseError.create();
-        var dev = rs2_create_device(deviceList, id, e.get_p_p_rs2_error());
+        var e = RealSenseErrorHolder.create();
+        var dev = rs2_create_device(deviceList, id, e);
         e.verify();
         return new Device(dev);
     }

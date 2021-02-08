@@ -14,8 +14,8 @@ public class FrameQueue implements AutoCloseable {
     }
 
     public static FrameQueue create(int capacity) {
-        RealSenseError e = RealSenseError.create();
-        var q = rs2_create_frame_queue(capacity, e.get_p_p_rs2_error());
+        var e = RealSenseErrorHolder.create();
+        var q = rs2_create_frame_queue(capacity, e);
         e.verify();
         return new FrameQueue(q);
     }
@@ -26,9 +26,9 @@ public class FrameQueue implements AutoCloseable {
     }
     
     public <T extends Frame<T>> T poll(Class<T> frameClass) {
-        RealSenseError e = RealSenseError.create();
+        var e = RealSenseErrorHolder.create();
         var framePtr = new_rs2_frame_ptr();
-        var numOfFrames = rs2_poll_for_frame(queue, framePtr, e.get_p_p_rs2_error());
+        var numOfFrames = rs2_poll_for_frame(queue, framePtr, e);
         e.verify();;
         if (numOfFrames != 1)
             //todo asserts

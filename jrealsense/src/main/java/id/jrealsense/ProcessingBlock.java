@@ -17,8 +17,8 @@ public class ProcessingBlock implements AutoCloseable {
     }
     
     public void process(Frame frame) {
-        RealSenseError e = RealSenseError.create();
-        rs2_process_frame(block, frame.get_rs2_frame(), e.get_p_p_rs2_error());
+        var e = RealSenseErrorHolder.create();
+        rs2_process_frame(block, frame.get_rs2_frame(), e);
         e.verify();
     }
 

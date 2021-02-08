@@ -6,6 +6,7 @@ import static id.jrealsense.jni.rs2_camera_info.RS2_CAMERA_INFO_NAME;
 import static id.jrealsense.jni.rs2_camera_info.RS2_CAMERA_INFO_SERIAL_NUMBER;
 
 import id.jrealsense.RealSenseError;
+import id.jrealsense.RealSenseErrorHolder;
 import id.jrealsense.jni.rs2_device;
 
 /**
@@ -20,22 +21,22 @@ public class Device implements AutoCloseable {
     }
 
     public String getInfo() {
-        RealSenseError e = RealSenseError.create();
-        var info = rs2_get_device_info(device, RS2_CAMERA_INFO_NAME, e.get_p_p_rs2_error());
+        var e = RealSenseErrorHolder.create();
+        var info = rs2_get_device_info(device, RS2_CAMERA_INFO_NAME, e);
         e.verify();
         return info;
     }
     
     public String getSerialNumber() {
-        RealSenseError e = RealSenseError.create();
-        var serial = rs2_get_device_info(device, RS2_CAMERA_INFO_SERIAL_NUMBER, e.get_p_p_rs2_error());
+        var e = RealSenseErrorHolder.create();
+        var serial = rs2_get_device_info(device, RS2_CAMERA_INFO_SERIAL_NUMBER, e);
         e.verify();
         return serial;
     }
     
     public String getFirmwareVersion() {
-        RealSenseError e = RealSenseError.create();
-        var version = rs2_get_device_info(device, RS2_CAMERA_INFO_FIRMWARE_VERSION, e.get_p_p_rs2_error());
+        var e = RealSenseErrorHolder.create();
+        var version = rs2_get_device_info(device, RS2_CAMERA_INFO_FIRMWARE_VERSION, e);
         e.verify();
         return version;
     }

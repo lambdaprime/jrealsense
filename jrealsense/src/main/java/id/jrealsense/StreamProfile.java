@@ -59,8 +59,8 @@ public class StreamProfile extends rs2_stream_profile {
         var index = new int[1];
         var uniqueId = new int[1];
         var framerate = new int[1];
-        RealSenseError e = RealSenseError.create();
-        rs2_get_stream_profile_data(profile, s, f, index, uniqueId, framerate, e.get_p_p_rs2_error());
+        var e = RealSenseErrorHolder.create();
+        rs2_get_stream_profile_data(profile, s, f, index, uniqueId, framerate, e);
         e.verify();
         
         return new StreamProfile(profile,

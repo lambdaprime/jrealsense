@@ -4,7 +4,7 @@ import static id.jrealsense.jni.librealsense2.*;
 
 import id.jrealsense.FrameQueue;
 import id.jrealsense.ProcessingBlock;
-import id.jrealsense.RealSenseError;
+import id.jrealsense.RealSenseErrorHolder;
 import id.jrealsense.frames.ColorFrame;
 import id.jrealsense.frames.DepthFrame;
 
@@ -21,8 +21,8 @@ public class Colorizer extends AbstractFilter<DepthFrame, ColorFrame> {
     }
 
     public static Colorizer create() {
-        var e = RealSenseError.create();
-        var block = rs2_create_colorizer(e.get_p_p_rs2_error());
+        var e = RealSenseErrorHolder.create();
+        var block = rs2_create_colorizer(e);
         e.verify();
         var queue = FrameQueue.create(1);
         var ret = new Colorizer(new ProcessingBlock(block), queue);

@@ -9,11 +9,11 @@ import java.util.ListIterator;
 /**
  * This is an implementation for list of devices List&lt;Device&gt;.
  * 
- * It owns all Device objects which added into it and closes
+ * It owns all {@link Device} objects which added into it and closes
  * them once list itself is closed in order to release the resources
- * acquired by each Device object.
+ * acquired by each {@link Device} object.
  * 
- * To get control over Device object lifetime it needs to be removed
+ * To get control over {@link Device} object lifetime it needs to be removed
  * from the list.
  */
 public class DeviceList implements List<Device>, AutoCloseable {

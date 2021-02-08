@@ -59,10 +59,10 @@ public class FrameSet implements AutoCloseable {
     }
     
     public Stream<CompositeFrame> asStream(StreamType s) {
-        RealSenseError e = RealSenseError.create();
+        var e = RealSenseErrorHolder.create();
         return IntStream.range(0, size())
             .mapToObj(i -> {
-                var fref = rs2_extract_frame(frame.get_rs2_frame(), i, e.get_p_p_rs2_error());
+                var fref = rs2_extract_frame(frame.get_rs2_frame(), i, e);
                 e.verify();
                 return new CompositeFrame(fref);
             });

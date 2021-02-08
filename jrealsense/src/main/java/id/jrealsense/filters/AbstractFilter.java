@@ -6,7 +6,7 @@ import id.jrealsense.Filter;
 import id.jrealsense.Frame;
 import id.jrealsense.FrameQueue;
 import id.jrealsense.ProcessingBlock;
-import id.jrealsense.RealSenseError;
+import id.jrealsense.RealSenseErrorHolder;
 
 abstract class AbstractFilter<IN extends Frame<IN>, OUT extends Frame<OUT>>
     implements Filter<IN, OUT>
@@ -21,16 +21,16 @@ abstract class AbstractFilter<IN extends Frame<IN>, OUT extends Frame<OUT>>
     }
     
     public void startQueue() {
-        RealSenseError e = RealSenseError.create();
+        var e = RealSenseErrorHolder.create();
         rs2_start_processing_queue(block.get_rs2_processing_block(),
-                queue.get_rs2_frame_queue(), e.get_p_p_rs2_error());
+                queue.get_rs2_frame_queue(), e);
         e.verify();
     }
     
     public void stopQueue() {
-        RealSenseError e = RealSenseError.create();
+        var e = RealSenseErrorHolder.create();
         rs2_start_processing_queue(block.get_rs2_processing_block(),
-                queue.get_rs2_frame_queue(), e.get_p_p_rs2_error());
+                queue.get_rs2_frame_queue(), e);
         e.verify();
     }
     

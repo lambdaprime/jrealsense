@@ -96,18 +96,10 @@ struct rs2_terminal_parser {};
 %apply int* OUTPUT {int* unique_id};
 %apply int* OUTPUT {int* framerate};
 
-
 %{
 #include "rs_types.h"
 %}
 %include "rs_types.h"
-
- /*
-%{
-rs2_error** as_ptr(rs2_error* e) { return &e; }
-%}
-rs2_error** as_ptr(rs2_error* e) { return &e; }
- */
 
 %{
 #include "rs.h"
@@ -153,15 +145,6 @@ rs2_error** as_ptr(rs2_error* e) { return &e; }
 %pointer_functions(rs2_frame*, rs2_frame_ptr)
 %pointer_functions(rs2_error*, rs2_error_ptr)
 
- /*
-%{
-1rs2_stream* rs2_stream_ptr(rs2_stream e) { return &e; }
-rs2_format* rs2_format_ptr(rs2_format e) { return &e; }
-%}
-rs2_stream* rs2_stream_ptr(rs2_stream e) { return &e; }
-rs2_format* rs2_format_ptr(rs2_format e) { return &e; }
- */
-
 %{
 #include "rs_processing.h"
 %}
@@ -174,7 +157,7 @@ rs2_format* rs2_format_ptr(rs2_format e) { return &e; }
  */
 %native (create_ByteBuffer) jobject create_ByteBuffer(void* data, int capacity);
 %{
-JNIEXPORT jobject JNICALL Java_id_jrealsense_librealsense2JNI_create_1ByteBuffer(
+JNIEXPORT jobject JNICALL Java_id_jrealsense_jni_librealsense2JNI_create_1ByteBuffer(
     JNIEnv *jenv, jclass clazz, jlong dataPtr, jint capacity)
 {
   return (*jenv)->NewDirectByteBuffer(jenv, (void*)(dataPtr), (jlong)capacity);  

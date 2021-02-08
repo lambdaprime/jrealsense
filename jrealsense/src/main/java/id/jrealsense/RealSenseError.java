@@ -1,10 +1,8 @@
 package id.jrealsense;
 
-import static id.jrealsense.jni.librealsense2.copy_rs2_error_ptr;
 import static id.jrealsense.jni.librealsense2.rs2_get_error_message;
 import static id.jrealsense.jni.librealsense2.rs2_get_failed_function;
 
-import id.jrealsense.jni.SWIGTYPE_p_p_rs2_error;
 import id.jrealsense.jni.rs2_error;
 
 public class RealSenseError {
@@ -22,10 +20,6 @@ public class RealSenseError {
 
     public rs2_error get_rs2_error() {
         return error;
-    }
-    
-    public SWIGTYPE_p_p_rs2_error get_p_p_rs2_error() {
-        return copy_rs2_error_ptr(error);
     }
 
     public String getFailedFunction() {
@@ -54,6 +48,5 @@ public class RealSenseError {
                 getFailedFunction(), getMessage());
         throw new RealSenseException(buf);
     }
-
     
 }

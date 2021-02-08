@@ -12,7 +12,7 @@ public class Config implements AutoCloseable {
     }
 
     public void enableStream(StreamType stream, int index, int width, int height, FormatType format, int framerate) {
-        RealSenseError e = RealSenseError.create();
+        var e = RealSenseErrorHolder.create();
         rs2_config_enable_stream(config,
                 stream.get_rs2_stream(),
                 index,
@@ -20,13 +20,13 @@ public class Config implements AutoCloseable {
                 height,
                 format.get_rs2_format(),
                 framerate,
-                e.get_p_p_rs2_error());
+                e);
         e.verify();
     }
     
     public static Config create(Context ctx) {
-        RealSenseError e = RealSenseError.create();
-        rs2_config config = rs2_create_config(e.get_p_p_rs2_error());
+        var e = RealSenseErrorHolder.create();
+        rs2_config config = rs2_create_config(e);
         e.verify();
         return new Config(config);
     }

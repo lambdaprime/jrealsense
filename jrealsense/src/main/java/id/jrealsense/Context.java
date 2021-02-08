@@ -14,8 +14,8 @@ public class Context implements AutoCloseable {
     }
 
     public static Context create() {
-        RealSenseError e = RealSenseError.create();
-        var ctx = rs2_create_context(RS2_API_VERSION, e.get_p_p_rs2_error());
+        var e = RealSenseErrorHolder.create();
+        var ctx = rs2_create_context(RS2_API_VERSION, e);
         e.verify();
         return new Context(ctx);
     }
