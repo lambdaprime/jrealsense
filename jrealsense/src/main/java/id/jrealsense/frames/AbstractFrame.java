@@ -14,7 +14,7 @@ abstract class AbstractFrame<F extends Frame<F>> implements Frame<F> {
 
     private rs2_frame frame;
     
-    public AbstractFrame(rs2_frame frame) {
+    protected AbstractFrame(rs2_frame frame) {
         this.frame = frame;
     }
 

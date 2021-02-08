@@ -1,7 +1,5 @@
 package id.jrealsense;
 
-import static id.jrealsense.jni.librealsense2.rs2_get_stream_profile_data;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,7 +9,7 @@ public class FormatType {
 
     private rs2_format format;
 
-    private FormatType(rs2_format format) {
+    protected FormatType(rs2_format format) {
         this.format = format;
     }
 

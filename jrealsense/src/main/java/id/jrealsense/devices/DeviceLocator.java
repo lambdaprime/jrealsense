@@ -11,7 +11,7 @@ public class DeviceLocator implements AutoCloseable {
     private rs2_device_list deviceList;
     
     /**
-     * Factory method, creates new DeviceLocator
+     * Factory method, creates new {@link DeviceLocator}
      */
     public static DeviceLocator create(Context ctx) {
         var e = RealSenseErrorHolder.create();
@@ -20,7 +20,7 @@ public class DeviceLocator implements AutoCloseable {
         return new DeviceLocator(config);
     }
     
-    public DeviceLocator(rs2_device_list deviceList) {
+    protected DeviceLocator(rs2_device_list deviceList) {
         this.deviceList = deviceList;
     }
 

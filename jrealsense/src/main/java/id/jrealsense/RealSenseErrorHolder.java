@@ -13,10 +13,13 @@ import id.jrealsense.jni.SWIGTYPE_p_p_rs2_error;
  */
 public class RealSenseErrorHolder extends SWIGTYPE_p_p_rs2_error {
     
-    public RealSenseErrorHolder(long ptr) {
+    protected RealSenseErrorHolder(long ptr) {
         super(ptr, false);
     }
 
+    /**
+     * Factory method, creates new {@link RealSenseErrorHolder}
+     */
     public static RealSenseErrorHolder create() {
         var e = new_rs2_error_ptr();
         return new RealSenseErrorHolder(getCPtr(e));

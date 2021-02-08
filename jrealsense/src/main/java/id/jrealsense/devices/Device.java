@@ -16,7 +16,7 @@ public class Device implements AutoCloseable {
 
     private rs2_device device;
     
-    public Device(rs2_device dev) {
+    protected Device(rs2_device dev) {
         this.device = dev;
     }
 

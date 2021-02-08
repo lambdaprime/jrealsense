@@ -10,7 +10,7 @@ public class Pipeline implements AutoCloseable {
 
     private rs2_pipeline pipeline;
 
-    private Pipeline(rs2_pipeline pline) {
+    protected Pipeline(rs2_pipeline pline) {
         this.pipeline = pline;
     }
 
@@ -32,6 +32,9 @@ public class Pipeline implements AutoCloseable {
         e.verify();
     }
     
+    /**
+     * Factory method, creates new {@link Pipeline}
+     */
     public static Pipeline create(Context ctx) {
         var e = RealSenseErrorHolder.create();
         rs2_pipeline pline = rs2_create_pipeline(ctx.get_rs2_context(), e);

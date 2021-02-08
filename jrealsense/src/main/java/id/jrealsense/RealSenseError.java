@@ -9,10 +9,13 @@ public class RealSenseError {
     
     private rs2_error error;
 
-    public RealSenseError(rs2_error e) {
+    protected RealSenseError(rs2_error e) {
         this.error = e;
     }
 
+    /**
+     * Factory method, creates new {@link RealSenseError}
+     */
     public static RealSenseError create() {
         var e = new rs2_error(0, true);
         return new RealSenseError(e);

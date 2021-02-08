@@ -13,7 +13,7 @@ public class StreamProfile extends rs2_stream_profile {
     private int uniqueId;
     private int framerate;
 
-    private StreamProfile(
+    protected StreamProfile(
             rs2_stream_profile streamProfile,
             StreamType rs2_stream,
             FormatType rs2_format,
@@ -53,6 +53,9 @@ public class StreamProfile extends rs2_stream_profile {
         return framerate;
     }
 
+    /**
+     * Factory method, creates new {@link StreamProfile}
+     */
     public static StreamProfile create(rs2_stream_profile profile) {
         var s = new int[1];
         var f = new int[1];

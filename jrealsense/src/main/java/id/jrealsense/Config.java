@@ -7,7 +7,7 @@ import id.jrealsense.jni.rs2_config;
 public class Config implements AutoCloseable {
     private rs2_config config;
 
-    private Config(rs2_config config) {
+    protected Config(rs2_config config) {
         this.config = config;
     }
 
@@ -24,6 +24,9 @@ public class Config implements AutoCloseable {
         e.verify();
     }
     
+    /**
+     * Factory method, creates new {@link Config}
+     */
     public static Config create(Context ctx) {
         var e = RealSenseErrorHolder.create();
         rs2_config config = rs2_create_config(e);

@@ -1,6 +1,10 @@
 package id.jrealsense;
 
-import static id.jrealsense.jni.librealsense2.*;
+import static id.jrealsense.jni.librealsense2.new_rs2_frame_ptr;
+import static id.jrealsense.jni.librealsense2.rs2_create_frame_queue;
+import static id.jrealsense.jni.librealsense2.rs2_delete_frame_queue;
+import static id.jrealsense.jni.librealsense2.rs2_frame_ptr_value;
+import static id.jrealsense.jni.librealsense2.rs2_poll_for_frame;
 
 import id.jrealsense.jni.rs2_frame;
 import id.jrealsense.jni.rs2_frame_queue;
@@ -9,10 +13,13 @@ public class FrameQueue implements AutoCloseable {
 
     private rs2_frame_queue queue;
 
-    private FrameQueue(rs2_frame_queue queue) {
+    protected FrameQueue(rs2_frame_queue queue) {
         this.queue = queue;
     }
 
+    /**
+     * Factory method, creates new {@link FrameQueue}
+     */
     public static FrameQueue create(int capacity) {
         var e = RealSenseErrorHolder.create();
         var q = rs2_create_frame_queue(capacity, e);

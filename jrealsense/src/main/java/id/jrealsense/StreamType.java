@@ -8,7 +8,7 @@ public class StreamType {
 
     private rs2_stream stream;
 
-    private StreamType(rs2_stream stream) {
+    protected StreamType(rs2_stream stream) {
         this.stream = stream;
     }
 
