@@ -14,12 +14,15 @@ public class Pipeline implements AutoCloseable {
         this.pipeline = pline;
     }
 
+    /**
+     * Starts pipeline with default configuration
+     */
     public void start() {
         var e = RealSenseErrorHolder.create();
         rs2_pipeline_start(pipeline, e);
         e.verify();
     }
-    
+
     public void start(Config config) {
         var e = RealSenseErrorHolder.create();
         rs2_pipeline_start_with_config(pipeline, config.get_rs_config(), e);

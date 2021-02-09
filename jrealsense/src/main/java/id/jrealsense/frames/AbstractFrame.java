@@ -3,6 +3,7 @@ package id.jrealsense.frames;
 import static id.jrealsense.jni.librealsense2.*;
 
 import java.nio.ByteBuffer;
+import java.util.Optional;
 
 import id.jrealsense.Filter;
 import id.jrealsense.Frame;
@@ -13,6 +14,8 @@ import id.jrealsense.jni.rs2_frame;
 abstract class AbstractFrame<F extends Frame<F>> implements Frame<F> {
 
     private rs2_frame frame;
+    private Optional<Integer> width = Optional.empty();
+    private Optional<Integer> height = Optional.empty();
     
     protected AbstractFrame(rs2_frame frame) {
         this.frame = frame;
@@ -31,16 +34,24 @@ abstract class AbstractFrame<F extends Frame<F>> implements Frame<F> {
     }
     
     public int getWidth() {
+        if (width.isPresent()) {
+            return width.get();
+        }
         var e = RealSenseErrorHolder.create();
         var r = rs2_get_frame_width(frame, e);
         e.verify();
+        width = Optional.of(r);
         return r;
     }
 
     public int getHeight() {
+        if (height.isPresent()) {
+            return height.get();
+        }
         var e = RealSenseErrorHolder.create();
         var r = rs2_get_frame_height(frame, e);
         e.verify();
+        height = Optional.of(r);
         return r;
     }
 
