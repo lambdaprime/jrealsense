@@ -5,7 +5,6 @@ import static id.jrealsense.jni.rs2_camera_info.RS2_CAMERA_INFO_FIRMWARE_VERSION
 import static id.jrealsense.jni.rs2_camera_info.RS2_CAMERA_INFO_NAME;
 import static id.jrealsense.jni.rs2_camera_info.RS2_CAMERA_INFO_SERIAL_NUMBER;
 
-import id.jrealsense.RealSenseError;
 import id.jrealsense.RealSenseErrorHolder;
 import id.jrealsense.jni.rs2_device;
 
@@ -48,6 +47,16 @@ public class Device implements AutoCloseable {
         b.append(String.format("Serial number: %s\n", getSerialNumber()));
         b.append(String.format("Firmware version: %s\n", getFirmwareVersion()));
         return b.toString();
+    }
+    
+    /**
+     * Send request to perform hardware reset. It is asyn operation therefore it is
+     * better to sleep after this call to make sure that device is ready.
+     */
+    public void reset() {
+        var e = RealSenseErrorHolder.create();
+        rs2_hardware_reset(device, e);
+        e.verify();
     }
     
     /**
