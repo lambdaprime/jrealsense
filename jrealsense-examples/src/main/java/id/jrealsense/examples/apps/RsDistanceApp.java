@@ -8,7 +8,6 @@ import id.jrealsense.Pipeline;
 import id.jrealsense.StreamType;
 import id.jrealsense.devices.Device;
 import id.jrealsense.devices.DeviceLocator;
-import id.jrealsense.filters.Colorizer;
 import id.xfunction.CommandLineInterface;
 
 /**
@@ -50,21 +49,20 @@ public class RsDistanceApp {
                 var locator = DeviceLocator.create(ctx);
                 Device dev = locator.getDevice(0);
                 var pipeline = Pipeline.create(ctx);
-                var config = Config.create(ctx);
-                var colorMap = Colorizer.create())
+                var config = Config.create(ctx);)
         {
             cli.print(dev);
             config.enableStream(StreamType.RS2_STREAM_DEPTH, 0,
                     WIDTH, HEIGHT, FormatType.RS2_FORMAT_Z16, FPS);
             pipeline.start(config);
-            loop(pipeline, colorMap);
+            loop(pipeline);
         }
     }
 
     /**
      * Loop over the frames in the pipeline and render them on the screen
      */
-    private void loop(Pipeline pipeline, Colorizer colorMap) {
+    private void loop(Pipeline pipeline) {
         while (!cli.wasKeyPressed())
         {
             FrameSet data = pipeline.waitForFrames();
