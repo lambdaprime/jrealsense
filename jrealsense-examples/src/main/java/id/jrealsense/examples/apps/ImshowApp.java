@@ -15,7 +15,7 @@ import id.xfunction.CommandLineInterface;
 /**
  * App example which demonstrates how to stream color frames.
  */
-public class RsImshowApp {
+public class ImshowApp {
 
     /**
      * Frame width
@@ -88,6 +88,6 @@ public class RsImshowApp {
     }
 
     public static void main(String[] args) {
-        new RsImshowApp().run();
+        new ImshowApp().run();
     }
 }

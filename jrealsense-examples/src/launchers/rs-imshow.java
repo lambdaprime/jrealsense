@@ -1,5 +1,5 @@
 /**
- * Launcher script which starts RsImshowApp
+ * Launcher script which starts ImshowApp
  */
 
 import java.nio.file.*;
@@ -25,7 +25,7 @@ public class Launcher {
             "-cp",
             location + "/libs/*",
             "-Djava.library.path=" + location + "/libs",
-            "id.jrealsense.examples.apps.RsImshowApp"};
+            "id.jrealsense.examples.apps.ImshowApp"};
         System.out.println(Arrays.stream(launchCmd).collect(joining(" ")));
         new ProcessBuilder(launchCmd)
             .inheritIO()
