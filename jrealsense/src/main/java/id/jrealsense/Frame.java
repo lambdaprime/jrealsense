@@ -7,6 +7,11 @@ import id.jrealsense.jni.rs2_frame;
 public interface Frame<T extends Frame<T>> extends AutoCloseable {
 
     /**
+     * Stream profile to which this frame belongs
+     */
+    StreamProfile getProfile();
+    
+    /**
      * @return frame width in pixels
      */
     int getWidth();
@@ -41,5 +46,9 @@ public interface Frame<T extends Frame<T>> extends AutoCloseable {
      */
     void close();
     
+    /**
+     * This methods wraps frame raw data as it returned by librealsense
+     * library into ByteBuffer and returns it.
+     */
     ByteBuffer getData();
 }

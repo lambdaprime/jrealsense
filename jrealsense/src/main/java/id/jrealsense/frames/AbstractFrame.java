@@ -31,6 +31,7 @@ abstract class AbstractFrame<F extends Frame<F>> implements Frame<F> {
     }
 
     public <OUT extends Frame<?>> OUT apply(Filter<F, OUT> filter) {
+        @SuppressWarnings("unchecked")
         var ret = filter.process((F) this);
         return ret;
     }
@@ -87,6 +88,7 @@ abstract class AbstractFrame<F extends Frame<F>> implements Frame<F> {
     public void close() {
         LOG.entering("close");
         rs2_release_frame(frame);
+        frame.delete();
         LOG.exiting("close");
     }
 }
