@@ -3,7 +3,6 @@ package id.jrealsense.frames;
 import static id.jrealsense.jni.librealsense2.*;
 
 import java.nio.ByteBuffer;
-import java.util.Optional;
 import java.util.function.Supplier;
 
 import id.jrealsense.Filter;
@@ -17,8 +16,22 @@ abstract class AbstractFrame<F extends Frame<F>> implements Frame<F> {
 
     private static final XLogger LOG = XLogger.getLogger(AbstractFrame.class);
     private rs2_frame frame;
-    private Optional<Integer> width = Optional.empty();
-    private Optional<Integer> height = Optional.empty();
+    
+    private Supplier<Integer> width = () -> {
+        var e = RealSenseErrorHolder.create();
+        var r = rs2_get_frame_width(frame, e);
+        e.verify();
+        width = () -> r;
+        return r;
+    };
+    
+    private Supplier<Integer> height = () -> {
+        var e = RealSenseErrorHolder.create();
+        var r = rs2_get_frame_height(frame, e);
+        e.verify();
+        height = () -> r;
+        return r;
+    };
     
     private Supplier<Long> frameNumber = () -> {
         var e = RealSenseErrorHolder.create();
@@ -37,16 +50,38 @@ abstract class AbstractFrame<F extends Frame<F>> implements Frame<F> {
         return c;
     };
     
+    private Supplier<StreamProfile> profile = () -> {
+        var e = RealSenseErrorHolder.create();
+        var s = rs2_get_frame_stream_profile(frame, e);
+        e.verify();
+        var r = StreamProfile.create(s);
+        profile  = () -> r;
+        return r;
+    };
+    
+    private Supplier<Integer> count = () -> {
+        var e = RealSenseErrorHolder.create();
+        var c = rs2_embedded_frames_count(frame, e);
+        e.verify();
+        height = () -> c;
+        return c;
+    };
+    
+    private Supplier<Integer> stride = () -> {
+        var e = RealSenseErrorHolder.create();
+        var r = rs2_get_frame_stride_in_bytes(frame, e);
+        e.verify();
+        height = () -> r;
+        return r;
+    };
+    
     protected AbstractFrame(rs2_frame frame) {
         this.frame = frame;
     }
 
     @Override
     public StreamProfile getProfile() {
-        var e = RealSenseErrorHolder.create();
-        var s = rs2_get_frame_stream_profile(frame, e);
-        e.verify();
-        return StreamProfile.create(s);
+        return profile.get();
     }
 
     @Override
@@ -58,42 +93,22 @@ abstract class AbstractFrame<F extends Frame<F>> implements Frame<F> {
     
     @Override
     public int getWidth() {
-        if (width.isPresent()) {
-            return width.get();
-        }
-        var e = RealSenseErrorHolder.create();
-        var r = rs2_get_frame_width(frame, e);
-        e.verify();
-        width = Optional.of(r);
-        return r;
+        return width.get();
     }
 
     @Override
     public int getHeight() {
-        if (height.isPresent()) {
-            return height.get();
-        }
-        var e = RealSenseErrorHolder.create();
-        var r = rs2_get_frame_height(frame, e);
-        e.verify();
-        height = Optional.of(r);
-        return r;
+        return height.get();
     }
 
     @Override
     public int getStride() {
-        var e = RealSenseErrorHolder.create();
-        var r = rs2_get_frame_stride_in_bytes(frame, e);
-        e.verify();
-        return r;
+        return stride.get();
     }
 
     @Override
     public int embeddedFramesCount() {
-        var e = RealSenseErrorHolder.create();
-        var c = rs2_embedded_frames_count(frame, e);
-        e.verify();
-        return c;
+        return count.get();
     }
     
     @Override
