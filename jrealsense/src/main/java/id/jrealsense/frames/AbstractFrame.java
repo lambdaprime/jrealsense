@@ -10,9 +10,11 @@ import id.jrealsense.Frame;
 import id.jrealsense.RealSenseErrorHolder;
 import id.jrealsense.StreamProfile;
 import id.jrealsense.jni.rs2_frame;
+import id.xfunction.logging.XLogger;
 
 abstract class AbstractFrame<F extends Frame<F>> implements Frame<F> {
 
+    private static final XLogger LOG = XLogger.getLogger(AbstractFrame.class);
     private rs2_frame frame;
     private Optional<Integer> width = Optional.empty();
     private Optional<Integer> height = Optional.empty();
@@ -83,6 +85,8 @@ abstract class AbstractFrame<F extends Frame<F>> implements Frame<F> {
     
     @Override
     public void close() {
+        LOG.entering("close");
         rs2_release_frame(frame);
+        LOG.exiting("close");
     }
 }

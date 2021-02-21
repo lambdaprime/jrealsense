@@ -10,12 +10,14 @@ import java.util.stream.Stream;
 
 import id.jrealsense.frames.CompositeFrame;
 import id.jrealsense.frames.DepthFrame;
+import id.xfunction.logging.XLogger;
 
 /**
  * Set of helper functions to work with librealsense2
  */
 public class FrameSet implements AutoCloseable {
 
+    private static final XLogger LOG = XLogger.getLogger(FrameSet.class);
     private CompositeFrame frame;
     private Integer count;
     
@@ -70,7 +72,9 @@ public class FrameSet implements AutoCloseable {
 
     @Override
     public void close() {
+        LOG.entering("close");
         rs2_release_frame(frame.get_rs2_frame());
         frame = null;
+        LOG.exiting("close");
     }
 }

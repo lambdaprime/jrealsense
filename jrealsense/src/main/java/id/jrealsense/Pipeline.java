@@ -5,9 +5,11 @@ import static id.jrealsense.jni.librealsense2Constants.RS2_DEFAULT_TIMEOUT;
 
 import id.jrealsense.frames.CompositeFrame;
 import id.jrealsense.jni.rs2_pipeline;
+import id.xfunction.logging.XLogger;
 
 public class Pipeline implements AutoCloseable {
 
+    private static final XLogger LOG = XLogger.getLogger(FrameSet.class);
     private rs2_pipeline pipeline;
 
     protected Pipeline(rs2_pipeline pline) {
@@ -18,21 +20,27 @@ public class Pipeline implements AutoCloseable {
      * Starts pipeline with default configuration
      */
     public void start() {
+        LOG.entering("start");
         var e = RealSenseErrorHolder.create();
         rs2_pipeline_start(pipeline, e);
         e.verify();
+        LOG.exiting("start");
     }
 
     public void start(Config config) {
+        LOG.entering("start");
         var e = RealSenseErrorHolder.create();
         rs2_pipeline_start_with_config(pipeline, config.get_rs_config(), e);
         e.verify();
+        LOG.exiting("start");
     }
     
     public void stop() {
+        LOG.entering("stop");
         var e = RealSenseErrorHolder.create();
         rs2_pipeline_stop(pipeline, e);
         e.verify();
+        LOG.exiting("stop");
     }
     
     /**
@@ -49,18 +57,23 @@ public class Pipeline implements AutoCloseable {
      * Wait for next set of frames from the camera
      */
     public FrameSet waitForFrames() {
+        LOG.entering("waitForFrames");
         var e = RealSenseErrorHolder.create();
         var frame = rs2_pipeline_wait_for_frames(pipeline, RS2_DEFAULT_TIMEOUT, e);
         e.verify();
         if (frame == null)
             throw new RuntimeException("Received null frame. Make sure pipeline is started.");
-        return new FrameSet(new CompositeFrame(frame));
+        var res = new FrameSet(new CompositeFrame(frame));
+        LOG.exiting("waitForFrames");
+        return res;
     }
 
     @Override
     public void close() {
+        LOG.entering("close");
         stop();
         rs2_delete_pipeline(pipeline);
+        LOG.exiting("close");
     }
 
 }

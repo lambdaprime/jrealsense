@@ -12,6 +12,10 @@ repositories {
 sourceCompatibility = '11'
 targetCompatibility = '11'
 
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+}
+
 sourceSets {
     main {
         java {
@@ -53,6 +57,7 @@ task copyLibs(type: Copy) {
     if (!new File("$projectDir/bld/librealsense2-jni.so").exists())
         throw new RuntimeException("No librealsense2-jni.so library found. Please build it first. See build.txt for more information.");
     from "bld/librealsense2-jni.so"
+    from "$projectDir/libs"
     from jar.archiveFile
     into "${packageDir}/libs"
 }
