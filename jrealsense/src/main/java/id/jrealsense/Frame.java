@@ -51,4 +51,14 @@ public interface Frame<T extends Frame<T>> extends AutoCloseable {
      * library into ByteBuffer and returns it.
      */
     ByteBuffer getData();
+    
+    /**
+     * Frame number in milliseconds since the device was started 
+     */
+    long getFrameNumber();
+    
+    /**
+     * Frame number in milliseconds since the device was started 
+     */
+    double getTimestamp();
 }

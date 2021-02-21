@@ -84,6 +84,8 @@ public class ImshowApp {
                 System.out.println("Width: " + w);
                 System.out.println("Height: " + h);
 
+                System.out.println("Frame number: " + frame.getFrameNumber());
+                System.out.printf("Timestamp: %f\n", frame.getTimestamp());
                 renderer.render(frame.getData(), BufferedImage.TYPE_3BYTE_BGR);
                 frame.close();
             });
