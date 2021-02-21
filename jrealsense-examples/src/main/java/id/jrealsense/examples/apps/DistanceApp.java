@@ -31,6 +31,7 @@ public class DistanceApp {
     private final static int FPS = 30;
 
     private final static CommandLineInterface cli = new CommandLineInterface();
+    private final static Utils utils = new Utils();
     
     /**
      * It is important to load the native library first
@@ -52,6 +53,7 @@ public class DistanceApp {
                 var config = Config.create(ctx);)
         {
             cli.print(dev);
+            utils.reset(cli, dev);
             config.enableStream(StreamType.RS2_STREAM_DEPTH, 0,
                     WIDTH, HEIGHT, FormatType.RS2_FORMAT_Z16, FPS);
             pipeline.start(config);

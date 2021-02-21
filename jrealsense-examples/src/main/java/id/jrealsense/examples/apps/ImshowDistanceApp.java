@@ -13,7 +13,6 @@ import id.jrealsense.devices.DeviceLocator;
 import id.jrealsense.examples.Renderer;
 import id.jrealsense.filters.Colorizer;
 import id.xfunction.CommandLineInterface;
-import id.xfunction.XUtils;
 
 /**
  * App example which demonstrates how to work with multiple streams.
@@ -38,6 +37,7 @@ public class ImshowDistanceApp {
     private final static int FPS = 30;
 
     private final static CommandLineInterface cli = new CommandLineInterface();
+    private final static Utils utils = new Utils();
     
     /**
      * It is important to load the native library first
@@ -55,13 +55,13 @@ public class ImshowDistanceApp {
         try (
                 var ctx = Context.create();
                 var locator = DeviceLocator.create(ctx);
-                Device dev = locator.getDevice(0);
+                var dev = locator.getDevice(0);
                 var pipeline = Pipeline.create(ctx);
                 var config = Config.create(ctx);
                 var colorMap = Colorizer.create())
         {
             cli.print(dev);
-            reset(dev);
+            utils.reset(cli, dev);
             config.enableStream(StreamType.RS2_STREAM_DEPTH, 0,
                     WIDTH, HEIGHT, FormatType.RS2_FORMAT_Z16, FPS);
             config.enableStream(StreamType.RS2_STREAM_COLOR, 0,
@@ -73,18 +73,11 @@ public class ImshowDistanceApp {
         }
     }
 
-    private void reset(Device dev) {
-        cli.print("Hardware reset...");
-        dev.reset();
-        XUtils.sleep(5000);
-        cli.print("Ready");
-    }
-
     /**
      * Loop over the frames in the pipeline and render them on the screen
      */
     private void loop(Renderer renderer, Pipeline pipeline, Colorizer colorMap) {
-        while (renderer.isClosed() || !cli.wasKeyPressed())
+        while (!renderer.isClosed() && !cli.wasKeyPressed())
         {
             FrameSet data = pipeline.waitForFrames();
             cli.print("Number of frames received " + data.size());

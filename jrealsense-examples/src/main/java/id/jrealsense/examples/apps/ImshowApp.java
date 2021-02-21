@@ -8,8 +8,8 @@ import id.jrealsense.FormatType;
 import id.jrealsense.FrameSet;
 import id.jrealsense.Pipeline;
 import id.jrealsense.StreamType;
+import id.jrealsense.devices.DeviceLocator;
 import id.jrealsense.examples.Renderer;
-import id.jrealsense.filters.Colorizer;
 import id.xfunction.CommandLineInterface;
 
 /**
@@ -33,6 +33,7 @@ public class ImshowApp {
     private final static int FPS = 30;
 
     private final static CommandLineInterface cli = new CommandLineInterface();
+    private final static Utils utils = new Utils();
     
     /**
      * It is important to load the native library first
@@ -48,15 +49,18 @@ public class ImshowApp {
         var renderer = new Renderer(WIDTH, HEIGHT);
         // using try-with-resources to properly release all librealsense resources
         try (
-                Context ctx = Context.create();
-                Pipeline pipeline = Pipeline.create(ctx);
-                var config = Config.create(ctx);
-                var colorMap = Colorizer.create())
+                var ctx = Context.create();
+                var pipeline = Pipeline.create(ctx);
+                var locator = DeviceLocator.create(ctx);
+                var dev = locator.getDevice(0);
+                var config = Config.create(ctx);)
         {
+            cli.print(dev);
+            utils.reset(cli, dev);
             config.enableStream(StreamType.RS2_STREAM_COLOR, 0,
                     WIDTH, HEIGHT, FormatType.RS2_FORMAT_BGR8, FPS);
             pipeline.start(config);
-            loop(renderer, pipeline, colorMap);
+            loop(renderer, pipeline);
         } finally {
             renderer.close();
         }
@@ -66,22 +70,22 @@ public class ImshowApp {
     /**
      * Loop over the frames in the pipeline and render them on the screen
      */
-    private void loop(Renderer renderer, Pipeline pipeline, Colorizer colorMap) {
-        while (renderer.isClosed() || !cli.wasKeyPressed())
+    private void loop(Renderer renderer, Pipeline pipeline) {
+        while (!renderer.isClosed() && !cli.wasKeyPressed())
         {
             FrameSet data = pipeline.waitForFrames();
             System.out.println("Number of frames received " + data.size());
-            data.getColorFrame(FormatType.RS2_FORMAT_BGR8).ifPresent(colorFrame -> {
+            data.getColorFrame(FormatType.RS2_FORMAT_BGR8).ifPresent(frame -> {
                 System.out.println("Received color frame");
 
-                int w = colorFrame.getWidth();
-                int h = colorFrame.getHeight();
+                int w = frame.getWidth();
+                int h = frame.getHeight();
 
                 System.out.println("Width: " + w);
                 System.out.println("Height: " + h);
 
-                renderer.render(colorFrame.getData(), BufferedImage.TYPE_3BYTE_BGR);
-                colorFrame.close();
+                renderer.render(frame.getData(), BufferedImage.TYPE_3BYTE_BGR);
+                frame.close();
             });
             data.close();
         }
