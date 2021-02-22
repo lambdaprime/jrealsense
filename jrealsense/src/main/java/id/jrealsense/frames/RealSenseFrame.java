@@ -40,6 +40,7 @@ public class RealSenseFrame implements AutoCloseable {
     private static final XLogger LOG = XLogger.getLogger(RealSenseFrame.class);
     
     private rs2_frame frame;
+    private boolean ignoreOnClose;
     
     private Supplier<Integer> width = () -> {
         var e = RealSenseErrorHolder.create();
@@ -138,7 +139,11 @@ public class RealSenseFrame implements AutoCloseable {
     @Override
     public void close() {
         LOG.entering("close");
-        rs2_release_frame(frame);
+        if (ignoreOnClose) {
+            LOG.finer("Frame marked for NOT to be released");
+        } else {
+            rs2_release_frame(frame);
+        }
         frame.delete();
         frame = null;
         LOG.exiting("close");
@@ -150,5 +155,14 @@ public class RealSenseFrame implements AutoCloseable {
     
     public double getTimestamp() {
         return timestamp.get();
+    }
+    
+    /**
+     * Prevent internal frame from being released when this frame is closed.
+     * It may be needed when lifetime of the internal frame is managed by some
+     * other process.
+     */
+    public void setIgnoreOnRelease(boolean ignore) {
+        ignoreOnClose = ignore;
     }
 }
