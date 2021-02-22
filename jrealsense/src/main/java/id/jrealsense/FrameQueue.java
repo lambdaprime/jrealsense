@@ -1,10 +1,6 @@
 package id.jrealsense;
 
-import static id.jrealsense.jni.librealsense2.new_rs2_frame_ptr;
-import static id.jrealsense.jni.librealsense2.rs2_create_frame_queue;
-import static id.jrealsense.jni.librealsense2.rs2_delete_frame_queue;
-import static id.jrealsense.jni.librealsense2.rs2_frame_ptr_value;
-import static id.jrealsense.jni.librealsense2.rs2_poll_for_frame;
+import static id.jrealsense.jni.librealsense2.*;
 
 import id.jrealsense.jni.rs2_frame;
 import id.jrealsense.jni.rs2_frame_queue;
@@ -42,6 +38,7 @@ public class FrameQueue implements AutoCloseable {
             throw new RealSenseException("Polling from queue failed returning %d frames",
                 numOfFrames);
         rs2_frame frame = rs2_frame_ptr_value(framePtr);
+        delete_rs2_frame_ptr(framePtr);
         try {
             var ctor = frameClass.getConstructor(rs2_frame.class);
             return ctor.newInstance(frame);
