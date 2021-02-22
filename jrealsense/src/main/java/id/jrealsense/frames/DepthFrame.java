@@ -1,6 +1,8 @@
 package id.jrealsense.frames;
 
 import id.jrealsense.jni.rs2_frame;
+import id.xfunction.logging.XLogger;
+
 import static id.jrealsense.jni.librealsense2.*;
 
 import id.jrealsense.RealSenseErrorHolder;
@@ -10,6 +12,8 @@ import id.jrealsense.RealSenseErrorHolder;
  */
 public class DepthFrame extends AbstractFrame<DepthFrame> {
 
+    private static final XLogger LOG = XLogger.getLogger(DepthFrame.class);
+    
     public DepthFrame(rs2_frame frame) {
         super(frame);
     }
@@ -38,4 +42,8 @@ public class DepthFrame extends AbstractFrame<DepthFrame> {
         return r;
     }
     
+    @Override
+    protected XLogger log() {
+        return LOG;
+    }
 }

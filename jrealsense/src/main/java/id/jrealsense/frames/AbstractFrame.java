@@ -14,7 +14,6 @@ import id.xfunction.logging.XLogger;
 
 abstract class AbstractFrame<F extends Frame<F>> implements Frame<F> {
 
-    private static final XLogger LOG = XLogger.getLogger(AbstractFrame.class);
     private rs2_frame frame;
     
     private Supplier<Integer> width = () -> {
@@ -63,7 +62,7 @@ abstract class AbstractFrame<F extends Frame<F>> implements Frame<F> {
         var e = RealSenseErrorHolder.create();
         var c = rs2_embedded_frames_count(frame, e);
         e.verify();
-        height = () -> c;
+        count = () -> c;
         return c;
     };
     
@@ -71,7 +70,7 @@ abstract class AbstractFrame<F extends Frame<F>> implements Frame<F> {
         var e = RealSenseErrorHolder.create();
         var r = rs2_get_frame_stride_in_bytes(frame, e);
         e.verify();
-        height = () -> r;
+        stride = () -> r;
         return r;
     };
     
@@ -79,6 +78,8 @@ abstract class AbstractFrame<F extends Frame<F>> implements Frame<F> {
         this.frame = frame;
     }
 
+    protected abstract XLogger log();
+    
     @Override
     public StreamProfile getProfile() {
         return profile.get();
@@ -127,10 +128,11 @@ abstract class AbstractFrame<F extends Frame<F>> implements Frame<F> {
         
     @Override
     public void close() {
-        LOG.entering("close");
+        log().entering("close");
         rs2_release_frame(frame);
         frame.delete();
-        LOG.exiting("close");
+        frame = null;
+        log().exiting("close");
     }
     
     @Override
@@ -141,5 +143,10 @@ abstract class AbstractFrame<F extends Frame<F>> implements Frame<F> {
     @Override
     public double getTimestamp() {
         return timestamp.get();
+    }
+    
+    @Override
+    public String toString() {
+        return "" + rs2_frame.getCPtr(frame);
     }
 }
