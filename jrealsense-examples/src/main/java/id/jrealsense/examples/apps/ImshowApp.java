@@ -73,9 +73,9 @@ public class ImshowApp {
     private void loop(Renderer renderer, Pipeline pipeline) {
         while (!renderer.isClosed() && !cli.wasKeyPressed())
         {
-            FrameSet data = pipeline.waitForFrames();
-            System.out.println("Number of frames received " + data.size());
-            data.getColorFrame(FormatType.RS2_FORMAT_BGR8).ifPresent(frame -> {
+            FrameSet frameSet = pipeline.waitForFrames();
+            System.out.println("Number of frames received " + frameSet.size());
+            frameSet.getColorFrame(FormatType.RS2_FORMAT_BGR8).ifPresent(frame -> {
                 System.out.println("Received color frame");
 
                 int w = frame.getWidth();
@@ -87,9 +87,8 @@ public class ImshowApp {
                 System.out.println("Frame number: " + frame.getFrameNumber());
                 System.out.printf("Timestamp: %f\n", frame.getTimestamp());
                 renderer.render(frame.getData(), BufferedImage.TYPE_3BYTE_BGR);
-                frame.close();
             });
-            data.close();
+            frameSet.close();
         }
     }
 
