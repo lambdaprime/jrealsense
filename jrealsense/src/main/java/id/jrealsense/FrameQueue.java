@@ -2,6 +2,7 @@ package id.jrealsense;
 
 import static id.jrealsense.jni.librealsense2.*;
 
+import id.jrealsense.frames.RealSenseFrame;
 import id.jrealsense.jni.rs2_frame;
 import id.jrealsense.jni.rs2_frame_queue;
 
@@ -40,8 +41,8 @@ public class FrameQueue implements AutoCloseable {
         rs2_frame frame = rs2_frame_ptr_value(framePtr);
         delete_rs2_frame_ptr(framePtr);
         try {
-            var ctor = frameClass.getConstructor(rs2_frame.class);
-            return ctor.newInstance(frame);
+            var ctor = frameClass.getConstructor(RealSenseFrame.class);
+            return ctor.newInstance(new RealSenseFrame(frame));
         } catch (Exception ex) {
             throw new RealSenseException(ex);
         }

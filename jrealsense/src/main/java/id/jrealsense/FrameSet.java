@@ -13,6 +13,7 @@ import java.util.stream.Stream;
 import id.jrealsense.frames.ColorFrame;
 import id.jrealsense.frames.CompositeFrame;
 import id.jrealsense.frames.DepthFrame;
+import id.jrealsense.frames.RealSenseFrame;
 import id.xfunction.logging.XLogger;
 
 /**
@@ -22,7 +23,7 @@ import id.xfunction.logging.XLogger;
 public class FrameSet implements AutoCloseable {
 
     private static final XLogger LOG = XLogger.getLogger(FrameSet.class);
-    private CompositeFrame frame;
+    private RealSenseFrame frame;
     
     private Supplier<Integer> count = () -> {
         var c = frame.embeddedFramesCount();
@@ -36,13 +37,13 @@ public class FrameSet implements AutoCloseable {
             .mapToObj(i -> {
                 var fref = rs2_extract_frame(frame.get_rs2_frame(), i, e);
                 e.verify();
-                return new CompositeFrame(fref);
+                return new CompositeFrame(new RealSenseFrame(fref));
             }).collect(Collectors.toList());
         frames = () -> l;
         return l;
     };
     
-    public FrameSet(CompositeFrame frame) {
+    public FrameSet(RealSenseFrame frame) {
         this.frame = frame;
     }
     
@@ -61,13 +62,13 @@ public class FrameSet implements AutoCloseable {
     
     public Optional<DepthFrame> getDepthFrame() {
         return firsOrDefault(StreamType.RS2_STREAM_DEPTH, FormatType.RS2_FORMAT_Z16)
-                .map(Frame::get_rs2_frame)
+                .map(Frame::getRealSenseFrame)
                 .map(frame -> new DepthFrame(frame));
     }
     
     public Optional<ColorFrame> getColorFrame(FormatType type) {
         return firsOrDefault(StreamType.RS2_STREAM_COLOR, type)
-                .map(Frame::get_rs2_frame)
+                .map(Frame::getRealSenseFrame)
                 .map(frame -> new ColorFrame(frame));
     }
     

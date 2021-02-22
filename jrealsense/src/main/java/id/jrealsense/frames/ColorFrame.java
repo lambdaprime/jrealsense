@@ -1,13 +1,12 @@
 package id.jrealsense.frames;
 
-import id.jrealsense.jni.rs2_frame;
 import id.xfunction.logging.XLogger;
 
 public class ColorFrame extends AbstractFrame<ColorFrame> {
 
     private static final XLogger LOG = XLogger.getLogger(ColorFrame.class);
     
-    public ColorFrame(rs2_frame frame) {
+    public ColorFrame(RealSenseFrame frame) {
         super(frame);
     }
 

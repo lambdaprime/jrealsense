@@ -2,7 +2,7 @@ package id.jrealsense;
 
 import java.nio.ByteBuffer;
 
-import id.jrealsense.jni.rs2_frame;
+import id.jrealsense.frames.RealSenseFrame;
 
 public interface Frame<T extends Frame<T>> extends AutoCloseable {
 
@@ -28,7 +28,7 @@ public interface Frame<T extends Frame<T>> extends AutoCloseable {
     
     /**
      * Some frames may contain multiple embedded frames.
-     * The are called composite @see
+     * They are called composite frames (see {@link id.jrealsense.frames.CompositeFrame})
      * This method returns number of embedded frames in a composite or 0
      * For non composite frames it is 0
      */
@@ -39,7 +39,7 @@ public interface Frame<T extends Frame<T>> extends AutoCloseable {
      */
     <OUT extends Frame<?>> OUT apply(Filter<T, OUT> filter);
     
-    rs2_frame get_rs2_frame();
+    RealSenseFrame getRealSenseFrame();
 
     /**
      * Once frame is not needed anymore it must be released

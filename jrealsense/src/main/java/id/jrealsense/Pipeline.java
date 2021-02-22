@@ -3,7 +3,7 @@ package id.jrealsense;
 import static id.jrealsense.jni.librealsense2.*;
 import static id.jrealsense.jni.librealsense2Constants.RS2_DEFAULT_TIMEOUT;
 
-import id.jrealsense.frames.CompositeFrame;
+import id.jrealsense.frames.RealSenseFrame;
 import id.jrealsense.jni.rs2_pipeline;
 import id.xfunction.logging.XLogger;
 
@@ -63,7 +63,7 @@ public class Pipeline implements AutoCloseable {
         e.verify();
         if (frame == null)
             throw new RuntimeException("Received null frame. Make sure pipeline is started.");
-        var res = new FrameSet(new CompositeFrame(frame));
+        var res = new FrameSet(new RealSenseFrame(frame));
         LOG.exiting("waitForFrames");
         return res;
     }

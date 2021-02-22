@@ -1,6 +1,5 @@
 package id.jrealsense.frames;
 
-import id.jrealsense.jni.rs2_frame;
 import id.xfunction.logging.XLogger;
 
 import static id.jrealsense.jni.librealsense2.*;
@@ -14,7 +13,7 @@ public class DepthFrame extends AbstractFrame<DepthFrame> {
 
     private static final XLogger LOG = XLogger.getLogger(DepthFrame.class);
     
-    public DepthFrame(rs2_frame frame) {
+    public DepthFrame(RealSenseFrame frame) {
         super(frame);
     }
 
@@ -37,7 +36,7 @@ public class DepthFrame extends AbstractFrame<DepthFrame> {
      */
     public float getDistance(int x, int y) {
         var e = RealSenseErrorHolder.create();
-        float r = rs2_depth_frame_get_distance(get_rs2_frame(), x, y, e);
+        float r = rs2_depth_frame_get_distance(getRealSenseFrame().get_rs2_frame(), x, y, e);
         e.verify();
         return r;
     }
