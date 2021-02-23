@@ -20,6 +20,9 @@ public class Colorizer extends AbstractFilter<DepthFrame, ColorFrame> {
         return getQueue().poll(ColorFrame.class);
     }
 
+    /**
+     * Factory method, creates new {@link Colorizer}
+     */
     public static Colorizer create() {
         var e = RealSenseErrorHolder.create();
         var block = rs2_create_colorizer(e);

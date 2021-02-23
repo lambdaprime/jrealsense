@@ -151,11 +151,27 @@ struct rs2_terminal_parser {};
 %include "rs_processing.h"
 
 /*
+ * Here for internal usage in debug builds
+ */
+%{
+void debug(const char* format, ...) {
+  char msg[1024];
+  va_list args;
+  va_start(args, format);
+  vsnprintf(msg, 1023, format, args);
+  va_end (args);
+  FILE *fp = fopen("/tmp/jrealsense.log", "w");
+  fprintf(fp, msg);
+  fclose(fp);
+}
+%}
+
+/*
  * This function allows to access data in native memory from Java.
  * To do that it relies on direct buffers and wraps native memory to ByteBuffer
  * object which later can be used in Java.
  */
-%native (create_ByteBuffer) jobject create_ByteBuffer(void* data, int capacity);
+%native (create_ByteBuffer) jobject create_ByteBuffer(void* dataPtr, int capacity);
 %{
 JNIEXPORT jobject JNICALL Java_id_jrealsense_jni_librealsense2JNI_create_1ByteBuffer(
     JNIEnv *jenv, jclass clazz, jlong dataPtr, jint capacity)
@@ -164,3 +180,20 @@ JNIEXPORT jobject JNICALL Java_id_jrealsense_jni_librealsense2JNI_create_1ByteBu
 }
 %}
 
+/*
+ * Function to retrieve vertices from the frame in one call to improve performance
+ */
+%native (create_vertexByteBuffer) jobject create_vertexByteBuffer(rs2_frame* frame, rs2_error** error);
+%{
+JNIEXPORT jobject JNICALL Java_id_jrealsense_jni_librealsense2JNI_create_1vertexByteBuffer(
+    JNIEnv *jenv, jclass clazz, jlong framePtr, jlong errorPtr)
+{
+  rs2_error* e = *(rs2_error**)errorPtr;
+  e = NULL;
+  rs2_vertex* vertices = rs2_get_frame_vertices((rs2_frame*)framePtr, &e);
+  if (e) return 0;
+  int count = rs2_get_frame_points_count((rs2_frame*)framePtr, &e);
+  if (e) return 0;
+  return (*jenv)->NewDirectByteBuffer(jenv, (void*)(vertices), (jlong)(count * sizeof(rs2_vertex)));
+}
+%}

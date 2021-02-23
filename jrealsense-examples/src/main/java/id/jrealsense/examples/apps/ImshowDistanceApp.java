@@ -8,7 +8,6 @@ import id.jrealsense.FormatType;
 import id.jrealsense.FrameSet;
 import id.jrealsense.Pipeline;
 import id.jrealsense.StreamType;
-import id.jrealsense.devices.Device;
 import id.jrealsense.devices.DeviceLocator;
 import id.jrealsense.examples.Renderer;
 import id.jrealsense.filters.Colorizer;
@@ -21,6 +20,20 @@ import id.xfunction.CommandLineInterface;
  */
 public class ImshowDistanceApp {
 
+    /*
+     * Here is configuration of the stream we are going to work with.
+     * Some cameras may not support this configuration so then it
+     * should be changed accordingly. So see all available configurations
+     * which are supported by the camera use librealsense command:
+     * 
+     * $ rs-enumerate-devices 
+     * 
+     */
+    
+    /*
+     * CONFIGURATION START
+     */
+    
     /**
      * Frame width
      */
@@ -35,6 +48,10 @@ public class ImshowDistanceApp {
      * Frames per second
      */
     private final static int FPS = 30;
+    
+    /*
+     * CONFIGURATION END
+     */
 
     private final static CommandLineInterface cli = new CommandLineInterface();
     private final static Utils utils = new Utils();

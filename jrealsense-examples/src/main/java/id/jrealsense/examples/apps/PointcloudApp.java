@@ -1,21 +1,28 @@
 package id.jrealsense.examples.apps;
 
-import java.awt.image.BufferedImage;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import id.jrealsense.Config;
 import id.jrealsense.Context;
 import id.jrealsense.FormatType;
 import id.jrealsense.FrameSet;
 import id.jrealsense.Pipeline;
+import id.jrealsense.PointCloudUtils;
 import id.jrealsense.StreamType;
 import id.jrealsense.devices.DeviceLocator;
-import id.jrealsense.examples.Renderer;
+import id.jrealsense.filters.PointCloudFilter;
 import id.xfunction.CommandLineInterface;
 
 /**
- * App example which demonstrates how to stream color frames.
+ * App example which demonstrates how to work with point clouds.
+ * It constructs point cloud using depth frame and exports it to
+ * obj file which later can be viewed in different 3D modeling
+ * systems.
+ * 
+ * To stop the app press Enter.
  */
-public class ImshowApp {
+public class PointcloudApp {
 
     /*
      * Here is configuration of the stream we are going to work with.
@@ -34,25 +41,31 @@ public class ImshowApp {
     /**
      * Frame width
      */
-    private final static int WIDTH = 640;
+    private final static int WIDTH = 424;
 
     /**
      * Frame height
      */
-    private final static int HEIGHT = 480;
+    private final static int HEIGHT = 240;
     
     /**
-     * Frames per second
+     * Frames per second (Hz)
      */
-    private final static int FPS = 30;
+    private final static int FPS = 6;
+    
+    /**
+     * Output file
+     */
+    private static final Path OUT = Paths.get("/tmp/jrealsense.obj");
     
     /*
      * CONFIGURATION END
      */
 
     private final static CommandLineInterface cli = new CommandLineInterface();
+    private final static PointCloudUtils pointCloudUtils = new PointCloudUtils();
     private final static Utils utils = new Utils();
-    
+
     /**
      * It is important to load the native library first
      */
@@ -64,53 +77,54 @@ public class ImshowApp {
      * Setup resources and run the looper
      */
     private void run() {
-        var renderer = new Renderer(WIDTH, HEIGHT);
         // using try-with-resources to properly release all librealsense resources
         try (
                 var ctx = Context.create();
-                var pipeline = Pipeline.create(ctx);
                 var locator = DeviceLocator.create(ctx);
                 var dev = locator.getDevice(0);
-                var config = Config.create(ctx);)
+                var pipeline = Pipeline.create(ctx);
+                var config = Config.create(ctx);
+                var pointCloud = PointCloudFilter.create())
         {
             cli.print(dev);
             utils.reset(cli, dev);
-            config.enableStream(StreamType.RS2_STREAM_COLOR, 0,
-                    WIDTH, HEIGHT, FormatType.RS2_FORMAT_BGR8, FPS);
+            config.enableStream(StreamType.RS2_STREAM_DEPTH, 0,
+                    WIDTH, HEIGHT, FormatType.RS2_FORMAT_Z16, FPS);
             pipeline.start(config);
-            loop(renderer, pipeline);
-        } finally {
-            renderer.close();
+            loop(pipeline, pointCloud);
         }
-
     }
 
     /**
      * Loop over the frames in the pipeline and render them on the screen
      */
-    private void loop(Renderer renderer, Pipeline pipeline) {
-        while (!renderer.isClosed() && !cli.wasKeyPressed())
+    private void loop(Pipeline pipeline, PointCloudFilter pointCloud) {
+        while (!cli.wasKeyPressed())
         {
             FrameSet frameSet = pipeline.waitForFrames();
-            System.out.println("Number of frames received " + frameSet.size());
-            frameSet.getColorFrame(FormatType.RS2_FORMAT_BGR8).ifPresent(frame -> {
-                System.out.println("Received color frame");
+            cli.print("Number of frames received " + frameSet.size());
+            frameSet.getDepthFrame().ifPresent(frame -> {
+                System.out.println("Received depth frame");
 
                 int w = frame.getWidth();
                 int h = frame.getHeight();
 
                 System.out.println("Width: " + w);
                 System.out.println("Height: " + h);
-
                 System.out.println("Frame number: " + frame.getFrameNumber());
                 System.out.printf("Timestamp: %f\n", frame.getTimestamp());
-                renderer.render(frame.getData(), BufferedImage.TYPE_3BYTE_BGR);
+                
+                System.out.println(frame);
+                var cloud = pointCloud.process(frame);
+                System.out.println("Number of points: " + cloud.getPointsCount());
+                pointCloudUtils.exportToObj(OUT, cloud);
+                cloud.close();
             });
             frameSet.close();
         }
     }
 
     public static void main(String[] args) {
-        new ImshowApp().run();
+        new PointcloudApp().run();
     }
 }
