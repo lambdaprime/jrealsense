@@ -3,7 +3,7 @@ package id.jrealsense.frames;
 import java.nio.ByteBuffer;
 import java.util.Iterator;
 
-import id.jrealsense.Vertex;
+import id.jrealsense.primitives.Vertex;
 
 /**
  * Provides access to vertices in point cloud.

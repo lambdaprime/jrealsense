@@ -1,4 +1,4 @@
-package id.jrealsense;
+package id.jrealsense.primitives;
 
 public class Vertex {
 

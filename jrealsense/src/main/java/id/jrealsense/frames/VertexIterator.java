@@ -5,7 +5,7 @@ import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.util.Iterator;
 
-import id.jrealsense.Vertex;
+import id.jrealsense.primitives.Vertex;
 
 /**
  * Iterator over vertices in ByteBuffer
