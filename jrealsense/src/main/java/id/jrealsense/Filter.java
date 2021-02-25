@@ -1,5 +1,7 @@
 package id.jrealsense;
 
+import id.jrealsense.frames.Frame;
+
 /**
  * It is implementation details of the filter how to do the processing.
  * 

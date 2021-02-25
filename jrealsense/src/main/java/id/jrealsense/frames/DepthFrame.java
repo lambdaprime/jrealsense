@@ -9,7 +9,7 @@ import id.jrealsense.RealSenseErrorHolder;
 /**
  * Frame with depth information
  */
-public class DepthFrame extends AbstractFrame<DepthFrame> {
+public class DepthFrame extends AbstractVideoFrame<DepthFrame> {
 
     private static final XLogger LOG = XLogger.getLogger(DepthFrame.class);
     

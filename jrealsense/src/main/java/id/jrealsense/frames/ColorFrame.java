@@ -2,7 +2,7 @@ package id.jrealsense.frames;
 
 import id.xfunction.logging.XLogger;
 
-public class ColorFrame extends AbstractFrame<ColorFrame> {
+public class ColorFrame extends AbstractVideoFrame<ColorFrame> {
 
     private static final XLogger LOG = XLogger.getLogger(ColorFrame.class);
     

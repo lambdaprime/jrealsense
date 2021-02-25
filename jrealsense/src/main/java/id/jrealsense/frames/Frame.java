@@ -1,8 +1,9 @@
-package id.jrealsense;
+package id.jrealsense.frames;
 
 import java.nio.ByteBuffer;
 
-import id.jrealsense.frames.RealSenseFrame;
+import id.jrealsense.Filter;
+import id.jrealsense.StreamProfile;
 
 public interface Frame<T extends Frame<T>> extends AutoCloseable {
 
@@ -10,21 +11,6 @@ public interface Frame<T extends Frame<T>> extends AutoCloseable {
      * Stream profile to which this frame belongs
      */
     StreamProfile getProfile();
-    
-    /**
-     * @return frame width in pixels
-     */
-    int getWidth();
-    
-    /**
-     * @return frame height in pixels
-     */
-    int getHeight();
-    
-    /**
-     * @return number of bytes per each line with current frame width
-     */
-    int getStride();
     
     /**
      * Some frames may contain multiple embedded frames.

@@ -13,6 +13,7 @@ import java.util.stream.Stream;
 import id.jrealsense.frames.ColorFrame;
 import id.jrealsense.frames.CompositeFrame;
 import id.jrealsense.frames.DepthFrame;
+import id.jrealsense.frames.Frame;
 import id.jrealsense.frames.RealSenseFrame;
 import id.xfunction.logging.XLogger;
 

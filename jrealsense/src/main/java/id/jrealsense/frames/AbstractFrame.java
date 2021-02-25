@@ -3,7 +3,6 @@ package id.jrealsense.frames;
 import java.nio.ByteBuffer;
 
 import id.jrealsense.Filter;
-import id.jrealsense.Frame;
 import id.jrealsense.StreamProfile;
 import id.xfunction.logging.XLogger;
 
@@ -29,21 +28,6 @@ abstract class AbstractFrame<F extends Frame<F>> implements Frame<F> {
         return ret;
     }
     
-    @Override
-    public int getWidth() {
-        return frame.getWidth();
-    }
-
-    @Override
-    public int getHeight() {
-        return frame.getHeight();
-    }
-
-    @Override
-    public int getStride() {
-        return frame.getStride();
-    }
-
     @Override
     public int embeddedFramesCount() {
         return frame.embeddedFramesCount();

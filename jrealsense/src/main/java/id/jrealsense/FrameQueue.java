@@ -2,6 +2,7 @@ package id.jrealsense;
 
 import static id.jrealsense.jni.librealsense2.*;
 
+import id.jrealsense.frames.Frame;
 import id.jrealsense.frames.RealSenseFrame;
 import id.jrealsense.jni.rs2_frame;
 import id.jrealsense.jni.rs2_frame_queue;

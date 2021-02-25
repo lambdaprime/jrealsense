@@ -2,6 +2,7 @@ package id.jrealsense;
 
 import static id.jrealsense.jni.librealsense2.*;
 
+import id.jrealsense.frames.Frame;
 import id.jrealsense.jni.rs2_processing_block;
 import id.xfunction.logging.XLogger;
 

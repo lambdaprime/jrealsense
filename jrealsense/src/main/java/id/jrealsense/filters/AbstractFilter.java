@@ -3,10 +3,10 @@ package id.jrealsense.filters;
 import static id.jrealsense.jni.librealsense2.*;
 
 import id.jrealsense.Filter;
-import id.jrealsense.Frame;
 import id.jrealsense.FrameQueue;
 import id.jrealsense.ProcessingBlock;
 import id.jrealsense.RealSenseErrorHolder;
+import id.jrealsense.frames.Frame;
 
 abstract class AbstractFilter<IN extends Frame<IN>, OUT extends Frame<OUT>>
     implements Filter<IN, OUT>

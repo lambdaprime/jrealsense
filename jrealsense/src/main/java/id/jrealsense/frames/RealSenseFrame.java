@@ -21,14 +21,14 @@ import id.xfunction.logging.XLogger;
 
 /**
  * <p>This class acts as a single holder of low level {@link id.jrealsense.jni.rs2_frame} object.
- * It manages its lifetime and all {@link id.jrealsense.Frame} classes depend on it.</p>
+ * It manages its lifetime and all {@link id.jrealsense.frames.Frame} classes depend on it.</p>
  * 
  * <p>It is possible to have multiple frames referring to same object of
  * this class. Because it caches most of the values from {@link id.jrealsense.jni.rs2_frame}
  * calling any function for {@link id.jrealsense.jni.rs2_frame} on two separate frames will
  * result only on one JNI call. For example given two frames {@link ColorFrame} and
- * {@link id.jrealsense.frames.CompositeFrame} which use same object of this class. Calling method
- * {@link id.jrealsense.frames.CompositeFrame#getWidth} and {@link id.jrealsense.frames.ColorFrame#getWidth}
+ * {@link DepthFrame} which use same object of this class. Calling method
+ * {@link DepthFrame#getWidth} and {@link ColorFrame#getWidth}
  * will result in only one JNI call.</p>
  * 
  * <p>Keep in mind that once this frame is closed all further operations on frames which

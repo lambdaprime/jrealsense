@@ -1,6 +1,5 @@
 package id.jrealsense.frames;
 
-import id.jrealsense.Frame;
 import id.xfunction.logging.XLogger;
 
 public class CompositeFrame extends AbstractFrame<CompositeFrame> implements Frame<CompositeFrame> {
