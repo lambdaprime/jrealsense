@@ -108,12 +108,10 @@ public class ImshowDistanceApp {
                 System.out.println("Height: " + h);
 
                 renderer.render(colorFrame.getData(), BufferedImage.TYPE_3BYTE_BGR);
-                colorFrame.close();
             });
             data.getDepthFrame().ifPresent(frame -> {
                 cli.print("Received depth frame");
                 cli.print(frame.getDistance());
-                frame.close();
             });
             data.close();
         }

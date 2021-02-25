@@ -92,7 +92,6 @@ public class DistanceApp {
             data.getDepthFrame().ifPresent(frame -> {
                 cli.print("Received depth frame");
                 cli.print(frame.getDistance());
-                frame.close();
             });
             data.close();
         }
