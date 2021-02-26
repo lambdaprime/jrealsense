@@ -13,6 +13,7 @@ import id.jrealsense.primitives.Vertex;
 public class VertexIterator implements Iterator<Vertex> {
 
     private FloatBuffer buf;
+    private float[] b = new float[3];
 
     public VertexIterator(ByteBuffer buf) {
         this.buf = buf.order(ByteOrder.nativeOrder()).asFloatBuffer();
@@ -25,7 +26,6 @@ public class VertexIterator implements Iterator<Vertex> {
 
     @Override
     public Vertex next() {
-        var b = new float[3];
         buf.get(b);
         return new Vertex(b[0], b[1], b[2]);
     }
