@@ -56,7 +56,8 @@ public class PointcloudApp {
     /**
      * Output file
      */
-    private static final Path OUT = Paths.get("/tmp/jrealsense.obj");
+    private static final Path OUT_OBJ = Paths.get("/tmp/jrealsense.obj");
+    private static final Path OUT_PLY = Paths.get("/tmp/jrealsense.ply");
     
     /*
      * CONFIGURATION END
@@ -90,6 +91,8 @@ public class PointcloudApp {
             utils.reset(cli, dev);
             config.enableStream(StreamType.RS2_STREAM_DEPTH, 0,
                     WIDTH, HEIGHT, FormatType.RS2_FORMAT_Z16, FPS);
+            config.enableStream(StreamType.RS2_STREAM_COLOR, 0,
+                    WIDTH, HEIGHT, FormatType.RS2_FORMAT_BGR8, FPS);
             pipeline.start(config);
             loop(pipeline, pointCloud);
         }
@@ -117,7 +120,9 @@ public class PointcloudApp {
                 System.out.println(frame);
                 var cloud = pointCloud.process(frame);
                 System.out.println("Number of points: " + cloud.getPointsCount());
-                pointCloudUtils.exportToObj(OUT, cloud);
+                pointCloudUtils.exportToObj(OUT_OBJ, cloud);
+                pointCloudUtils.exportToPly(OUT_PLY, cloud,
+                        frameSet.getColorFrame(FormatType.RS2_FORMAT_BGR8).get());
                 cloud.close();
             });
             frameSet.close();
