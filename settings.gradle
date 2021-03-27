@@ -1,2 +1,2 @@
 include 'jrealsense'
-include 'jrealsense-examples'
+include 'jrealsense.examples'
