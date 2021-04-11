@@ -9,12 +9,12 @@ repositories {
     mavenCentral()
 }
 
-sourceCompatibility = '11'
-targetCompatibility = '11'
-
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
 }
+
+sourceCompatibility = '11'
+targetCompatibility = '11'
 
 sourceSets {
     main {
@@ -26,7 +26,8 @@ sourceSets {
 
 jar { 
     manifest { 
-        attributes 'Class-Path': configurations.compile.collect { it.getName() }.join(' ')
+        attributes 'Implementation-Version': "${rootProject.version}",
+                   'Class-Path': configurations.compile.collect { it.getName() }.join(' ')
     }
 }
 
@@ -43,14 +44,13 @@ javadoc {
 }
 
 def packageDir = "$buildDir/package/${projectName}"
-def releaseFileName = "${projectName}-${version}.zip"
 
 ext.artifacts = fileTree(include: ['*'], dir: "$packageDir/libs")
 
 task createRelease(type: Zip) {
     archiveFileName = "$releaseFileName"
     destinationDirectory = file("$projectDir/release")
-    from file("$packageDir")
+    from file("$packageDir/..")
 }
 
 task copyLibs(type: Copy) {
@@ -62,8 +62,14 @@ task copyLibs(type: Copy) {
     into "${packageDir}/libs"
 }
 
+task copyReadme(type: Copy) {
+    from("${project.rootDir}/README.md")
+    into("$projectDir/src/main/resources")
+}
+
 task createPackage(type: Copy, dependsOn: copyLibs) {
-    from "README.md"
+    from "${project.rootDir}/README.md"
+    from "${project.rootDir}/LICENSE-2.0.txt"
     into packageDir
 }
 
@@ -72,6 +78,7 @@ task cleanRelease(type: Delete) {
     delete "$projectDir/release"
 }
 
+compileJava.dependsOn copyReadme
 createRelease.dependsOn createPackage, javadoc
 assemble.dependsOn createRelease
 clean.dependsOn cleanRelease

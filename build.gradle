@@ -3,3 +3,7 @@ allprojects {
         jcenter() 
     }
 }
+
+ext {
+    releaseFileName = "${projectName}-v${version}.zip"
+}
