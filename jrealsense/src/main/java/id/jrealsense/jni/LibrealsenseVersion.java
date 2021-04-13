@@ -10,6 +10,7 @@ package id.jrealsense.jni;
  */
 public enum LibrealsenseVersion {
 
+    v2_41("realsense2-jni-2.41"),
     v2_42("realsense2-jni-2.42");
 
     private String jniLibraryName;
