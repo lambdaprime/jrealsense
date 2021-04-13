@@ -22,14 +22,14 @@ link_directories(
 
 set(CMAKE_SWIG_FLAGS -package "id.jrealsense.jni")
 
-swig_add_library(realsense2-jni
+swig_add_library(realsense2-jni-2.42
   LANGUAGE java
   OUTPUT_DIR "${SWIG_JAVA_OUTPUT}"
   OUTFILE_DIR "${SWIG_NATIVE_OUTPUT}"
   SOURCES "src/main/swig/librealsense2.i"
 )
 
-swig_link_libraries(realsense2-jni
+swig_link_libraries(realsense2-jni-2.42
   realsense2)
 
 set_property(DIRECTORY PROPERTY ADDITIONAL_MAKE_CLEAN_FILES

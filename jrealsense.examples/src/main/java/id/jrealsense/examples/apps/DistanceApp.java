@@ -29,6 +29,7 @@ import id.jrealsense.Pipeline;
 import id.jrealsense.StreamType;
 import id.jrealsense.devices.Device;
 import id.jrealsense.devices.DeviceLocator;
+import id.jrealsense.jni.LibrealsenseVersion;
 import id.xfunction.CommandLineInterface;
 
 /**
@@ -52,6 +53,11 @@ public class DistanceApp {
      * CONFIGURATION START
      */
     
+    /**
+     * librealsense version
+     */
+    private final static String LIBREALSENSE_VERSION = LibrealsenseVersion.v2_42.getJniLibraryName();
+
     /**
      * Frame width
      */
@@ -78,7 +84,7 @@ public class DistanceApp {
      * It is important to load the native library first
      */
     static {
-        System.loadLibrary("realsense2-jni"); 
+        System.loadLibrary(LIBREALSENSE_VERSION); 
     }
 
     /**

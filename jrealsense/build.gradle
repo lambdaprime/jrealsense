@@ -53,10 +53,18 @@ task createRelease(type: Zip) {
     from file("$packageDir/..")
 }
 
-task copyLibs(type: Copy) {
-    if (!new File("$projectDir/bld/librealsense2-jni.so").exists())
-        throw new RuntimeException("No librealsense2-jni.so library found. Please build it first. See build.txt for more information.");
-    from "bld/librealsense2-jni.so"
+import java.nio.file.Files;
+import java.nio.file.Paths;
+task copyNativeLibs(type: Copy) {
+    def iter = Files.newDirectoryStream(Paths.get("$projectDir/bld"), "librealsense2-jni-*")
+        .iterator();
+    if (!iter.hasNext())
+        throw new RuntimeException("No librealsense2-jni library found. Please build it first. See build.txt for more information.");
+    from iter.next()
+    into "${projectDir}/libs"
+}
+
+task copyLibs(type: Copy, dependsOn: copyNativeLibs) {
     from "$projectDir/libs"
     from jar.archiveFile
     into "${packageDir}/libs"

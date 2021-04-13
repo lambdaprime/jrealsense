@@ -4,6 +4,11 @@
 
 You can download **jrealsense** module with examples from <https://github.com/lambdaprime/jrealsense/releases>
 
+# Requirements
+
+- Java 11
+- librealsense2 2.42.0
+
 # Documentation
 
 Documentation is available here <http://portal2.atwebpages.com/jrealsense>
