@@ -19,8 +19,9 @@
  * Authors:
  * - lambdaprime <intid@protonmail.com>
  */
-module librealsense2.examples {
+module jrealsense.examples {
     requires jrealsense;
     requires java.desktop;
+    requires jrosclient;
     requires id.xfunction;
 }

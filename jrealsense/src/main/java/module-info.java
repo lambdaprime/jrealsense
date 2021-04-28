@@ -35,4 +35,5 @@ module jrealsense {
     exports id.jrealsense.filters;
     exports id.jrealsense.frames;
     exports id.jrealsense.devices;
+    exports id.jrealsense.primitives;
 }
