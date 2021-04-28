@@ -32,6 +32,7 @@ import id.jrealsense.StreamType;
 import id.jrealsense.devices.DeviceLocator;
 import id.jrealsense.examples.Renderer;
 import id.jrealsense.filters.Colorizer;
+import id.jrealsense.jni.LibrealsenseVersion;
 import id.xfunction.CommandLineInterface;
 
 /**
@@ -55,6 +56,11 @@ public class ImshowDistanceApp {
      * CONFIGURATION START
      */
     
+    /**
+     * librealsense version
+     */
+    private final static String LIBREALSENSE_VERSION = LibrealsenseVersion.v2_42.getJniLibraryName();
+
     /**
      * Frame width
      */
@@ -81,7 +87,7 @@ public class ImshowDistanceApp {
      * It is important to load the native library first
      */
     static {
-        System.loadLibrary("realsense2-jni"); 
+        System.loadLibrary(LIBREALSENSE_VERSION); 
     }
 
     /**
