@@ -2,16 +2,17 @@
 
 # Download
 
-You can download **jrealsense** module with examples from <https://github.com/lambdaprime/jrealsense/releases>
+[Release versions](https://github.com/lambdaprime/jrealsense/releases)
 
 # Requirements
 
-- Java 11
+- Java 11+
 - librealsense2 2.42.0
 
-# Documentation
+# Links
 
-Documentation is available here <http://portal2.atwebpages.com/jrealsense>
+[Documentation](http://portal2.atwebpages.com/jrealsense)
+[Development](DEVELOPMENT.md)
 
 # Contributors
 

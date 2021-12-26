@@ -7,7 +7,6 @@ include(UseSWIG)
 
 SET(LIBREALSENSE2_HEADERS "/usr/include/librealsense2" "/usr/include/librealsense2/h")
 SET(LIBREALSENSE2_LIBS "/usr/lib/x86_64-linux-gnu")
-SET(JAVA_HEADERS "/home/lynx/opt/jdk-11.0.9/include" "/home/lynx/opt/jdk-11.0.9/include/linux")
 SET(SWIG_JAVA_OUTPUT "${CMAKE_CURRENT_SOURCE_DIR}/src/gen/java/id/jrealsense/jni")
 SET(SWIG_NATIVE_OUTPUT "${CMAKE_CURRENT_SOURCE_DIR}/src/gen/native")
 
