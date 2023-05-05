@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.19.3)
 project(librealsense2-jni)
 
+if(NOT DEFINED JAVA_HOME)
+  message(FATAL_ERROR "JAVA_HOME variable is missing")
+endif(NOT DEFINED JAVA_HOME)
+
 find_package(SWIG REQUIRED)
 
 include(UseSWIG)
