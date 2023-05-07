@@ -21,18 +21,18 @@
  */
 package id.jrealsense;
 
-import static id.jrealsense.jni.librealsense2.*;
-
 import id.jrealsense.frames.Frame;
 import id.jrealsense.frames.RealSenseFrame;
-import id.jrealsense.jni.rs2_frame;
-import id.jrealsense.jni.rs2_frame_queue;
+import id.jrealsense.jextract.librealsense;
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentScope;
+import java.lang.foreign.ValueLayout;
 
 public class FrameQueue implements AutoCloseable {
 
-    private rs2_frame_queue queue;
+    private MemorySegment queue;
 
-    protected FrameQueue(rs2_frame_queue queue) {
+    protected FrameQueue(MemorySegment queue) {
         this.queue = queue;
     }
 
@@ -40,37 +40,35 @@ public class FrameQueue implements AutoCloseable {
      * Factory method, creates new {@link FrameQueue}
      */
     public static FrameQueue create(int capacity) {
-        var e = RealSenseErrorHolder.create();
-        var q = rs2_create_frame_queue(capacity, e);
+        var e = new RealSenseError();
+        var q = librealsense.rs2_create_frame_queue(capacity, e.get_rs2_error());
         e.verify();
         return new FrameQueue(q);
     }
     
     @Override
     public void close() {
-        rs2_delete_frame_queue(queue);
+        librealsense.rs2_delete_frame_queue(queue);
     }
     
     public <T extends Frame<T>> T poll(Class<T> frameClass) {
-        var e = RealSenseErrorHolder.create();
-        var framePtr = new_rs2_frame_ptr();
-        var numOfFrames = rs2_poll_for_frame(queue, framePtr, e);
-        e.verify();;
+        var e = new RealSenseError();
+        var framePtr = MemorySegment.allocateNative(ValueLayout.ADDRESS.byteSize(), SegmentScope.auto());
+        var numOfFrames = librealsense.rs2_poll_for_frame(queue, framePtr, e.get_rs2_error());
+        e.verify();
         if (numOfFrames != 1)
             //todo asserts
             throw new RealSenseException("Polling from queue failed returning %d frames",
                 numOfFrames);
-        rs2_frame frame = rs2_frame_ptr_value(framePtr);
-        delete_rs2_frame_ptr(framePtr);
         try {
             var ctor = frameClass.getConstructor(RealSenseFrame.class);
-            return ctor.newInstance(new RealSenseFrame(frame));
+            return ctor.newInstance(new RealSenseFrame(framePtr.get(ValueLayout.ADDRESS, 0)));
         } catch (Exception ex) {
             throw new RealSenseException(ex);
         }
     }
     
-    public rs2_frame_queue get_rs2_frame_queue() {
+    public MemorySegment get_rs2_frame_queue() {
         return queue;
     }
 }

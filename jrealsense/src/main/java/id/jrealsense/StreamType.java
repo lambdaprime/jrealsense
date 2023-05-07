@@ -21,43 +21,47 @@
  */
 package id.jrealsense;
 
+import id.jrealsense.jextract.librealsense;
 import java.util.Map;
 
-import id.jrealsense.jni.rs2_stream;
+/**
+ * <p>librealsense wrapper for rs2_stream.
+ * 
+ * @author lambdaprime intid@protonmail.com
+ */
+public enum StreamType {
 
-public class StreamType {
+    RS2_STREAM_ANY(librealsense.RS2_STREAM_ANY()),
+    RS2_STREAM_DEPTH(librealsense.RS2_STREAM_DEPTH()),
+    RS2_STREAM_COLOR(librealsense.RS2_STREAM_COLOR()),
+    RS2_STREAM_INFRARED(librealsense.RS2_STREAM_INFRARED()),
+    RS2_STREAM_FISHEYE(librealsense.RS2_STREAM_FISHEYE()),
+    RS2_STREAM_GYRO(librealsense.RS2_STREAM_GYRO()),
+    RS2_STREAM_ACCEL(librealsense.RS2_STREAM_ACCEL()),
+    RS2_STREAM_GPIO(librealsense.RS2_STREAM_GPIO()),
+    RS2_STREAM_POSE(librealsense.RS2_STREAM_POSE()),
+    RS2_STREAM_CONFIDENCE(librealsense.RS2_STREAM_CONFIDENCE()),
+    RS2_STREAM_COUNT(librealsense.RS2_STREAM_COUNT());
 
-    private rs2_stream stream;
+    private int value;
 
-    protected StreamType(rs2_stream stream) {
-        this.stream = stream;
+    StreamType(int value) {
+        this.value = value;
     }
-
-    public rs2_stream get_rs2_stream() {
-        return stream;
+    
+    public int getValue() {
+        return value;
     }
-
-    public static StreamType RS2_STREAM_ANY = new StreamType(rs2_stream.RS2_STREAM_ANY);
-    public static StreamType RS2_STREAM_DEPTH = new StreamType(rs2_stream.RS2_STREAM_DEPTH);
-    public static StreamType RS2_STREAM_COLOR = new StreamType(rs2_stream.RS2_STREAM_COLOR);
-    public static StreamType RS2_STREAM_INFRARED = new StreamType(rs2_stream.RS2_STREAM_INFRARED);
-    public static StreamType RS2_STREAM_FISHEYE = new StreamType(rs2_stream.RS2_STREAM_FISHEYE);
-    public static StreamType RS2_STREAM_GYRO = new StreamType(rs2_stream.RS2_STREAM_GYRO);
-    public static StreamType RS2_STREAM_ACCEL = new StreamType(rs2_stream.RS2_STREAM_ACCEL);
-    public static StreamType RS2_STREAM_GPIO = new StreamType(rs2_stream.RS2_STREAM_GPIO);
-    public static StreamType RS2_STREAM_POSE = new StreamType(rs2_stream.RS2_STREAM_POSE);
-    public static StreamType RS2_STREAM_CONFIDENCE = new StreamType(rs2_stream.RS2_STREAM_CONFIDENCE);
-    public static StreamType RS2_STREAM_COUNT = new StreamType(rs2_stream.RS2_STREAM_COUNT);
     
     public static Map<Integer, StreamType> SWIG_VALUES = Map.of(
-            rs2_stream.RS2_STREAM_ANY.swigValue(), RS2_STREAM_ANY,
-            rs2_stream.RS2_STREAM_DEPTH.swigValue(), RS2_STREAM_DEPTH,
-            rs2_stream.RS2_STREAM_COLOR.swigValue(), RS2_STREAM_COLOR,
-            rs2_stream.RS2_STREAM_INFRARED.swigValue(), RS2_STREAM_INFRARED,
-            rs2_stream.RS2_STREAM_FISHEYE.swigValue(), RS2_STREAM_FISHEYE,
-            rs2_stream.RS2_STREAM_GYRO.swigValue(), RS2_STREAM_GYRO,
-            rs2_stream.RS2_STREAM_ACCEL.swigValue(), RS2_STREAM_ACCEL,
-            rs2_stream.RS2_STREAM_GPIO.swigValue(), RS2_STREAM_GPIO);
+            librealsense.RS2_STREAM_ANY(), RS2_STREAM_ANY,
+            librealsense.RS2_STREAM_DEPTH(), RS2_STREAM_DEPTH,
+            librealsense.RS2_STREAM_COLOR(), RS2_STREAM_COLOR,
+            librealsense.RS2_STREAM_INFRARED(), RS2_STREAM_INFRARED,
+            librealsense.RS2_STREAM_FISHEYE(), RS2_STREAM_FISHEYE,
+            librealsense.RS2_STREAM_GYRO(), RS2_STREAM_GYRO,
+            librealsense.RS2_STREAM_ACCEL(), RS2_STREAM_ACCEL,
+            librealsense.RS2_STREAM_GPIO(), RS2_STREAM_GPIO);
 
     public static StreamType valueOf(int streamType) {
         var r = SWIG_VALUES.get(streamType);

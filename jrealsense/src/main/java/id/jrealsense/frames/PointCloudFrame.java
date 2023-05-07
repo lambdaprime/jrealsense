@@ -21,15 +21,12 @@
  */
 package id.jrealsense.frames;
 
+import id.jrealsense.RealSenseError;
+import id.jrealsense.jextract.librealsense;
+import id.jrealsense.jextract.rs2_vertex;
 import id.xfunction.logging.XLogger;
-
-import static id.jrealsense.jni.librealsense2.*;
-
 import java.nio.ByteBuffer;
 import java.util.function.Supplier;
-
-import id.jrealsense.RealSenseErrorHolder;
-import id.jrealsense.RealSenseException;
 
 /**
  * Frame with point cloud data available
@@ -39,19 +36,18 @@ public class PointCloudFrame extends AbstractFrame<PointCloudFrame> {
     private static final XLogger LOG = XLogger.getLogger(PointCloudFrame.class);
     
     private Supplier<Integer> pointsCount = () -> {
-        var e = RealSenseErrorHolder.create();
-        int r = rs2_get_frame_points_count(getRealSenseFrame().get_rs2_frame(), e);
+        var e = new RealSenseError();
+        int r = librealsense.rs2_get_frame_points_count(getRealSenseFrame().get_rs2_frame(), e.get_rs2_error());
         e.verify();
         pointsCount = () -> r;
         return r;
     };
     
     private Supplier<ByteBuffer> vertexBuffer = () -> {
-        var e = RealSenseErrorHolder.create();
-        ByteBuffer buf = (ByteBuffer) create_vertexByteBuffer(getRealSenseFrame().get_rs2_frame(), e);
+        var e = new RealSenseError();
+        var vertices = librealsense.rs2_get_frame_vertices(getRealSenseFrame().get_rs2_frame(), e.get_rs2_error());
         e.verify();
-        if (buf == null)
-            throw new RealSenseException("Failed to get vertices from point cloud");
+        var buf = vertices.asSlice(0, pointsCount.get() * rs2_vertex.sizeof()).asByteBuffer();
         vertexBuffer = () -> buf;
         return buf;
     };

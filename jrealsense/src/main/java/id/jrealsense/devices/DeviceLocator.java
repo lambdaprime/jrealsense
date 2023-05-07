@@ -21,34 +21,33 @@
  */
 package id.jrealsense.devices;
 
-import static id.jrealsense.jni.librealsense2.*;
-
 import id.jrealsense.Context;
-import id.jrealsense.RealSenseErrorHolder;
-import id.jrealsense.jni.rs2_device_list;
+import id.jrealsense.RealSenseError;
+import id.jrealsense.jextract.librealsense;
+import java.lang.foreign.MemorySegment;
 
 public class DeviceLocator implements AutoCloseable {
 
-    private rs2_device_list deviceList;
+    private MemorySegment deviceList;
     
     /**
      * Factory method, creates new {@link DeviceLocator}
      */
     public static DeviceLocator create(Context ctx) {
-        var e = RealSenseErrorHolder.create();
-        var config = rs2_query_devices(ctx.get_rs2_context(), e);
+        var e = new RealSenseError();
+        var deviceList = librealsense.rs2_query_devices(ctx.get_rs2_context(), e.get_rs2_error());
         e.verify();
-        return new DeviceLocator(config);
+        return new DeviceLocator(deviceList);
     }
     
-    protected DeviceLocator(rs2_device_list deviceList) {
+    protected DeviceLocator(MemorySegment deviceList) {
         this.deviceList = deviceList;
     }
 
     /**
      * Get librealsense low level object
      */
-    public rs2_device_list getDeviceList() {
+    public MemorySegment getDeviceList() {
         return deviceList;
     }
     
@@ -56,8 +55,8 @@ public class DeviceLocator implements AutoCloseable {
      * Return number of available devices
      */
     public int getNumOfDevices() {
-        var e = RealSenseErrorHolder.create();
-        int count = rs2_get_device_count(deviceList, e);
+        var e = new RealSenseError();
+        int count = librealsense.rs2_get_device_count(deviceList, e.get_rs2_error());
         e.verify();
         return count;
     }
@@ -66,8 +65,8 @@ public class DeviceLocator implements AutoCloseable {
      * Return device by its zero based consecutive number
      */
     public Device getDevice(int id) {
-        var e = RealSenseErrorHolder.create();
-        var dev = rs2_create_device(deviceList, id, e);
+        var e = new RealSenseError();
+        var dev = librealsense.rs2_create_device(deviceList, id, e.get_rs2_error());
         e.verify();
         return new Device(dev);
     }
@@ -89,7 +88,7 @@ public class DeviceLocator implements AutoCloseable {
      */
     @Override
     public void close() {
-        rs2_delete_device_list(deviceList);
+        librealsense.rs2_delete_device_list(deviceList);
         deviceList = null;
     }
 }

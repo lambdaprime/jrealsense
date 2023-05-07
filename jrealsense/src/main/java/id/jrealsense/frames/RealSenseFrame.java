@@ -21,24 +21,13 @@
  */
 package id.jrealsense.frames;
 
-import static id.jrealsense.jni.librealsense2.create_ByteBuffer;
-import static id.jrealsense.jni.librealsense2.rs2_embedded_frames_count;
-import static id.jrealsense.jni.librealsense2.rs2_get_frame_data;
-import static id.jrealsense.jni.librealsense2.rs2_get_frame_height;
-import static id.jrealsense.jni.librealsense2.rs2_get_frame_number;
-import static id.jrealsense.jni.librealsense2.rs2_get_frame_stream_profile;
-import static id.jrealsense.jni.librealsense2.rs2_get_frame_stride_in_bytes;
-import static id.jrealsense.jni.librealsense2.rs2_get_frame_timestamp;
-import static id.jrealsense.jni.librealsense2.rs2_get_frame_width;
-import static id.jrealsense.jni.librealsense2.rs2_release_frame;
-
+import id.jrealsense.RealSenseError;
+import id.jrealsense.StreamProfile;
+import id.jrealsense.jextract.librealsense;
+import id.xfunction.logging.XLogger;
+import java.lang.foreign.MemorySegment;
 import java.nio.ByteBuffer;
 import java.util.function.Supplier;
-
-import id.jrealsense.RealSenseErrorHolder;
-import id.jrealsense.StreamProfile;
-import id.jrealsense.jni.rs2_frame;
-import id.xfunction.logging.XLogger;
 
 /**
  * <p>This class acts as a single holder of low level {@link id.jrealsense.jni.rs2_frame} object.
@@ -60,45 +49,44 @@ public class RealSenseFrame implements AutoCloseable {
 
     private static final XLogger LOG = XLogger.getLogger(RealSenseFrame.class);
     
-    private rs2_frame frame;
+    private MemorySegment frame;
     private boolean ignoreOnClose;
     
     private Supplier<Integer> width = () -> {
-        var e = RealSenseErrorHolder.create();
-        var r = rs2_get_frame_width(get_rs2_frame(), e);
+        var e = new RealSenseError();
+        var r = librealsense.rs2_get_frame_width(get_rs2_frame(), e.get_rs2_error());
         e.verify();
         width = () -> r;
         return r;
     };
     
     private Supplier<Integer> height = () -> {
-        var e = RealSenseErrorHolder.create();
-        var r = rs2_get_frame_height(get_rs2_frame(), e);
+        var e = new RealSenseError();
+        var r = librealsense.rs2_get_frame_height(get_rs2_frame(), e.get_rs2_error());
         e.verify();
         height = () -> r;
         return r;
     };
     
     private Supplier<Long> frameNumber = () -> {
-        var e = RealSenseErrorHolder.create();
-        var c = rs2_get_frame_number(get_rs2_frame(), e);
+        var e = new RealSenseError();
+        var r = librealsense.rs2_get_frame_number(get_rs2_frame(), e.get_rs2_error());
         e.verify();
-        var r = c.longValue();
         frameNumber = () -> r;
         return r;
     };
     
     private Supplier<Double> timestamp = () -> {
-        var e = RealSenseErrorHolder.create();
-        var c = rs2_get_frame_timestamp(get_rs2_frame(), e);
+        var e = new RealSenseError();
+        var c = librealsense.rs2_get_frame_timestamp(get_rs2_frame(), e.get_rs2_error());
         e.verify();
         timestamp = () -> c;
         return c;
     };
     
     private Supplier<StreamProfile> profile = () -> {
-        var e = RealSenseErrorHolder.create();
-        var s = rs2_get_frame_stream_profile(get_rs2_frame(), e);
+        var e = new RealSenseError();
+        var s = librealsense.rs2_get_frame_stream_profile(get_rs2_frame(), e.get_rs2_error());
         e.verify();
         var r = StreamProfile.create(s);
         profile  = () -> r;
@@ -106,22 +94,22 @@ public class RealSenseFrame implements AutoCloseable {
     };
     
     private Supplier<Integer> count = () -> {
-        var e = RealSenseErrorHolder.create();
-        var c = rs2_embedded_frames_count(get_rs2_frame(), e);
+        var e = new RealSenseError();
+        var c = librealsense.rs2_embedded_frames_count(get_rs2_frame(), e.get_rs2_error());
         e.verify();
         count = () -> c;
         return c;
     };
     
     private Supplier<Integer> stride = () -> {
-        var e = RealSenseErrorHolder.create();
-        var r = rs2_get_frame_stride_in_bytes(get_rs2_frame(), e);
+        var e = new RealSenseError();
+        var r = librealsense.rs2_get_frame_stride_in_bytes(get_rs2_frame(), e.get_rs2_error());
         e.verify();
         stride = () -> r;
         return r;
     };
 
-    public RealSenseFrame(rs2_frame frame) {
+    public RealSenseFrame(MemorySegment frame) {
         this.frame = frame;
     }
 
@@ -145,16 +133,16 @@ public class RealSenseFrame implements AutoCloseable {
         return count.get();
     }
     
-    public rs2_frame get_rs2_frame() {
+    public MemorySegment get_rs2_frame() {
         return frame;
     }
     
     public ByteBuffer getData() {
         var capacity = getHeight() * getStride();
-        var e = RealSenseErrorHolder.create();
-        var dataPtr = rs2_get_frame_data(get_rs2_frame(), e);
+        var e = new RealSenseError();
+        var data = librealsense.rs2_get_frame_data(get_rs2_frame(), e.get_rs2_error());
         e.verify();
-        return (ByteBuffer) create_ByteBuffer(dataPtr, capacity);
+        return data.asSlice(0, capacity).asByteBuffer();
     }
         
     @Override
@@ -163,9 +151,9 @@ public class RealSenseFrame implements AutoCloseable {
         if (ignoreOnClose) {
             LOG.finer("Frame marked for NOT to be released");
         } else {
-            rs2_release_frame(frame);
+            librealsense.rs2_release_frame(frame);
         }
-        frame.delete();
+        //frame.delete();
         frame = null;
         LOG.exiting("close");
     }

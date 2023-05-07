@@ -21,27 +21,26 @@
  */
 package id.jrealsense;
 
-import static id.jrealsense.jni.librealsense2.*;
-
-import id.jrealsense.jni.rs2_config;
+import id.jrealsense.jextract.librealsense;
+import java.lang.foreign.MemorySegment;
 
 public class Config implements AutoCloseable {
-    private rs2_config config;
+    private MemorySegment config;
 
-    protected Config(rs2_config config) {
+    protected Config(MemorySegment config) {
         this.config = config;
     }
 
     public void enableStream(StreamType stream, int index, int width, int height, FormatType format, int framerate) {
-        var e = RealSenseErrorHolder.create();
-        rs2_config_enable_stream(config,
-                stream.get_rs2_stream(),
+        var e = new RealSenseError();
+        librealsense.rs2_config_enable_stream(config,
+                stream.getValue(),
                 index,
                 width,
                 height,
-                format.get_rs2_format(),
+                format.getValue(),
                 framerate,
-                e);
+                e.get_rs2_error());
         e.verify();
     }
     
@@ -49,18 +48,18 @@ public class Config implements AutoCloseable {
      * Factory method, creates new {@link Config}
      */
     public static Config create(Context ctx) {
-        var e = RealSenseErrorHolder.create();
-        rs2_config config = rs2_create_config(e);
+        var e = new RealSenseError();
+        var config = librealsense.rs2_create_config(e.get_rs2_error());
         e.verify();
         return new Config(config);
     }
 
-    public rs2_config get_rs_config() {
+    public MemorySegment get_rs_config() {
         return config;
     }
 
     @Override
     public void close() {
-        rs2_delete_config(config);
+        librealsense.rs2_delete_config(config);
     }
 }

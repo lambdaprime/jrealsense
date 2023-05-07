@@ -6,8 +6,8 @@
 
 # Requirements
 
-- Java 11+
-- librealsense2 2.42.0
+- Java 17+
+- librealsense2 2.53.1
 
 # Links
 

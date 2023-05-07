@@ -21,44 +21,32 @@
  */
 package id.jrealsense;
 
-import static id.jrealsense.jni.librealsense2.rs2_get_error_message;
-import static id.jrealsense.jni.librealsense2.rs2_get_failed_function;
-
-import id.jrealsense.jni.rs2_error;
+import id.jrealsense.jextract.librealsense;
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentScope;
+import java.lang.foreign.ValueLayout;
 
 public class RealSenseError {
     
-    private rs2_error error;
+    private MemorySegment errorPtr = MemorySegment.allocateNative(ValueLayout.ADDRESS.byteSize(), SegmentScope.auto());
 
-    protected RealSenseError(rs2_error e) {
-        this.error = e;
+    public MemorySegment get_rs2_error() {
+        return errorPtr;
     }
-
-    /**
-     * Factory method, creates new {@link RealSenseError}
-     */
-    public static RealSenseError create() {
-        var e = new rs2_error(0, true);
-        return new RealSenseError(e);
-    }
-
-    public rs2_error get_rs2_error() {
-        return error;
-    }
-
+    
     public String getFailedFunction() {
-        return rs2_get_failed_function(error);
+        return getFailedFunction(errorPtr.get(ValueLayout.ADDRESS, 0));
     }
     
     public String getMessage() {
-        return rs2_get_error_message(error);
+        return getMessage(errorPtr.get(ValueLayout.ADDRESS, 0));
     }
     
     /**
      * Check if error present or not
      */
     public boolean hasError() {
-        return rs2_error.getCPtr(error) != 0;
+        return hasError(errorPtr.get(ValueLayout.ADDRESS, 0));
     }
     
     /**
@@ -67,10 +55,23 @@ public class RealSenseError {
      */
     public void verify()
     {
-        if (!hasError()) return;
+        var error = errorPtr.get(ValueLayout.ADDRESS, 0);
+        if (!hasError(error)) return;
         var buf = String.format("%s: %s",
-                getFailedFunction(), getMessage());
+                getFailedFunction(error), getMessage(error));
         throw new RealSenseException(buf);
     }
+
+    private String getFailedFunction(MemorySegment error) {
+        return librealsense.rs2_get_failed_function(error).getUtf8String(0);
+    }
     
+    private String getMessage(MemorySegment error) {
+        return librealsense.rs2_get_error_message(error).getUtf8String(0);
+    }
+    
+    private boolean hasError(MemorySegment error) {
+        return error.address() != MemorySegment.NULL.address();
+    }
+
 }

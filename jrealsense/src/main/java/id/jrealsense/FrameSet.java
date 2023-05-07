@@ -21,22 +21,21 @@
  */
 package id.jrealsense;
 
-import static id.jrealsense.FormatType.*;
-import static id.jrealsense.jni.librealsense2.rs2_extract_frame;
-
-import java.util.List;
-import java.util.Optional;
-import java.util.function.Supplier;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
+import static id.jrealsense.FormatType.RS2_FORMAT_ANY;
 
 import id.jrealsense.frames.ColorFrame;
 import id.jrealsense.frames.CompositeFrame;
 import id.jrealsense.frames.DepthFrame;
 import id.jrealsense.frames.Frame;
 import id.jrealsense.frames.RealSenseFrame;
+import id.jrealsense.jextract.librealsense;
 import id.xfunction.logging.XLogger;
+import java.util.List;
+import java.util.Optional;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /**
  * The lifetime of all frames in the frame set is bound to the lifetime of the
@@ -54,10 +53,10 @@ public class FrameSet implements AutoCloseable {
     };
     
     private Supplier<List<? extends Frame<?>>> frames = () -> {
-        var e = RealSenseErrorHolder.create();
+        var e = new RealSenseError();
         var l = IntStream.range(0, size())
             .mapToObj(i -> {
-                var fref = rs2_extract_frame(frame.get_rs2_frame(), i, e);
+                var fref = librealsense.rs2_extract_frame(frame.get_rs2_frame(), i, e.get_rs2_error());
                 e.verify();
                 return new CompositeFrame(new RealSenseFrame(fref));
             }).collect(Collectors.toList());

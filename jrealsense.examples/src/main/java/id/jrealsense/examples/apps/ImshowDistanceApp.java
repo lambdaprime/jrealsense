@@ -21,8 +21,6 @@
  */
 package id.jrealsense.examples.apps;
 
-import java.awt.image.BufferedImage;
-
 import id.jrealsense.Config;
 import id.jrealsense.Context;
 import id.jrealsense.FormatType;
@@ -32,8 +30,8 @@ import id.jrealsense.StreamType;
 import id.jrealsense.devices.DeviceLocator;
 import id.jrealsense.examples.Renderer;
 import id.jrealsense.filters.Colorizer;
-import id.jrealsense.jni.LibrealsenseVersion;
-import id.xfunction.CommandLineInterface;
+import id.xfunction.cli.CommandLineInterface;
+import java.awt.image.BufferedImage;
 
 /**
  * App example which demonstrates how to work with multiple streams.
@@ -57,11 +55,6 @@ public class ImshowDistanceApp {
      */
     
     /**
-     * librealsense version
-     */
-    private final static String LIBREALSENSE_VERSION = LibrealsenseVersion.v2_42.getJniLibraryName();
-
-    /**
      * Frame width
      */
     private final static int WIDTH = 640;
@@ -83,13 +76,6 @@ public class ImshowDistanceApp {
     private final static CommandLineInterface cli = new CommandLineInterface();
     private final static Utils utils = new Utils();
     
-    /**
-     * It is important to load the native library first
-     */
-    static {
-        System.loadLibrary(LIBREALSENSE_VERSION); 
-    }
-
     /**
      * Setup resources and run the looper
      */
@@ -121,7 +107,7 @@ public class ImshowDistanceApp {
      * Loop over the frames in the pipeline and render them on the screen
      */
     private void loop(Renderer renderer, Pipeline pipeline, Colorizer colorMap) {
-        while (!renderer.isClosed() && !cli.wasKeyPressed())
+        while (!renderer.isClosed() && !cli.wasEnterKeyPressed())
         {
             FrameSet data = pipeline.waitForFrames();
             cli.print("Number of frames received " + data.size());

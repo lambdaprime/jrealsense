@@ -21,13 +21,12 @@
  */
 package id.jrealsense.filters;
 
-import static id.jrealsense.jni.librealsense2.*;
-
 import id.jrealsense.Filter;
 import id.jrealsense.FrameQueue;
 import id.jrealsense.ProcessingBlock;
-import id.jrealsense.RealSenseErrorHolder;
+import id.jrealsense.RealSenseError;
 import id.jrealsense.frames.Frame;
+import id.jrealsense.jextract.librealsense;
 
 abstract class AbstractFilter<IN extends Frame<IN>, OUT extends Frame<OUT>>
     implements Filter<IN, OUT>
@@ -42,16 +41,9 @@ abstract class AbstractFilter<IN extends Frame<IN>, OUT extends Frame<OUT>>
     }
     
     public void startQueue() {
-        var e = RealSenseErrorHolder.create();
-        rs2_start_processing_queue(block.get_rs2_processing_block(),
-                queue.get_rs2_frame_queue(), e);
-        e.verify();
-    }
-    
-    public void stopQueue() {
-        var e = RealSenseErrorHolder.create();
-        rs2_start_processing_queue(block.get_rs2_processing_block(),
-                queue.get_rs2_frame_queue(), e);
+        var e = new RealSenseError();
+        librealsense.rs2_start_processing_queue(block.get_rs2_processing_block(),
+                queue.get_rs2_frame_queue(), e.get_rs2_error());
         e.verify();
     }
     

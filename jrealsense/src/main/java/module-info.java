@@ -31,7 +31,6 @@ module jrealsense {
     requires id.xfunction;
     requires java.logging;
     exports id.jrealsense;
-    exports id.jrealsense.jni;
     exports id.jrealsense.filters;
     exports id.jrealsense.frames;
     exports id.jrealsense.devices;

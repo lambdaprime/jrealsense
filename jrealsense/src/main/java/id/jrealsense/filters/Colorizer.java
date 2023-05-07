@@ -21,13 +21,12 @@
  */
 package id.jrealsense.filters;
 
-import static id.jrealsense.jni.librealsense2.*;
-
 import id.jrealsense.FrameQueue;
 import id.jrealsense.ProcessingBlock;
-import id.jrealsense.RealSenseErrorHolder;
+import id.jrealsense.RealSenseError;
 import id.jrealsense.frames.ColorFrame;
 import id.jrealsense.frames.DepthFrame;
+import id.jrealsense.jextract.librealsense;
 
 public class Colorizer extends AbstractFilter<DepthFrame, ColorFrame> {
 
@@ -45,8 +44,8 @@ public class Colorizer extends AbstractFilter<DepthFrame, ColorFrame> {
      * Factory method, creates new {@link Colorizer}
      */
     public static Colorizer create() {
-        var e = RealSenseErrorHolder.create();
-        var block = rs2_create_colorizer(e);
+        var e = new RealSenseError();
+        var block = librealsense.rs2_create_colorizer(e.get_rs2_error());
         e.verify();
         var queue = FrameQueue.create(1);
         var ret = new Colorizer(new ProcessingBlock(block), queue);

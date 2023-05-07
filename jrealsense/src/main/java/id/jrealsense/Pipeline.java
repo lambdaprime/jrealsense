@@ -21,19 +21,17 @@
  */
 package id.jrealsense;
 
-import static id.jrealsense.jni.librealsense2.*;
-import static id.jrealsense.jni.librealsense2Constants.RS2_DEFAULT_TIMEOUT;
-
 import id.jrealsense.frames.RealSenseFrame;
-import id.jrealsense.jni.rs2_pipeline;
+import id.jrealsense.jextract.librealsense;
 import id.xfunction.logging.XLogger;
+import java.lang.foreign.MemorySegment;
 
 public class Pipeline implements AutoCloseable {
 
     private static final XLogger LOG = XLogger.getLogger(FrameSet.class);
-    private rs2_pipeline pipeline;
+    private MemorySegment pipeline;
 
-    protected Pipeline(rs2_pipeline pline) {
+    protected Pipeline(MemorySegment pline) {
         this.pipeline = pline;
     }
 
@@ -42,24 +40,24 @@ public class Pipeline implements AutoCloseable {
      */
     public void start() {
         LOG.entering("start");
-        var e = RealSenseErrorHolder.create();
-        rs2_pipeline_start(pipeline, e);
+        var e = new RealSenseError();
+        librealsense.rs2_pipeline_start(pipeline, e.get_rs2_error());
         e.verify();
         LOG.exiting("start");
     }
 
     public void start(Config config) {
         LOG.entering("start");
-        var e = RealSenseErrorHolder.create();
-        rs2_pipeline_start_with_config(pipeline, config.get_rs_config(), e);
+        var e = new RealSenseError();
+        librealsense.rs2_pipeline_start_with_config(pipeline, config.get_rs_config(), e.get_rs2_error());
         e.verify();
         LOG.exiting("start");
     }
     
     public void stop() {
         LOG.entering("stop");
-        var e = RealSenseErrorHolder.create();
-        rs2_pipeline_stop(pipeline, e);
+        var e = new RealSenseError();
+        librealsense.rs2_pipeline_stop(pipeline, e.get_rs2_error());
         e.verify();
         LOG.exiting("stop");
     }
@@ -68,8 +66,8 @@ public class Pipeline implements AutoCloseable {
      * Factory method, creates new {@link Pipeline}
      */
     public static Pipeline create(Context ctx) {
-        var e = RealSenseErrorHolder.create();
-        rs2_pipeline pline = rs2_create_pipeline(ctx.get_rs2_context(), e);
+        var e = new RealSenseError();
+        var pline = librealsense.rs2_create_pipeline(ctx.get_rs2_context(), e.get_rs2_error());
         e.verify();
         return new Pipeline(pline);
     }
@@ -79,8 +77,8 @@ public class Pipeline implements AutoCloseable {
      */
     public FrameSet waitForFrames() {
         LOG.entering("waitForFrames");
-        var e = RealSenseErrorHolder.create();
-        var frame = rs2_pipeline_wait_for_frames(pipeline, RS2_DEFAULT_TIMEOUT, e);
+        var e = new RealSenseError();
+        var frame = librealsense.rs2_pipeline_wait_for_frames(pipeline, librealsense.RS2_DEFAULT_TIMEOUT(), e.get_rs2_error());
         e.verify();
         if (frame == null)
             throw new RuntimeException("Received null frame. Make sure pipeline is started.");
@@ -93,7 +91,7 @@ public class Pipeline implements AutoCloseable {
     public void close() {
         LOG.entering("close");
         stop();
-        rs2_delete_pipeline(pipeline);
+        librealsense.rs2_delete_pipeline(pipeline);
         LOG.exiting("close");
     }
 

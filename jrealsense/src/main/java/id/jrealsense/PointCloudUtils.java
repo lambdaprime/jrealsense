@@ -21,16 +21,14 @@
  */
 package id.jrealsense;
 
+import id.jrealsense.frames.PointCloudFrame;
+import id.jrealsense.frames.VideoFrame;
+import id.jrealsense.jextract.librealsense;
+import id.xfunction.logging.XLogger;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
-
-import id.jrealsense.frames.PointCloudFrame;
-import id.jrealsense.frames.VideoFrame;
-import id.xfunction.logging.XLogger;
-
-import static id.jrealsense.jni.librealsense2.*;
 
 /**
  * Set of utils to work with point clouds
@@ -60,12 +58,13 @@ public class PointCloudUtils {
      */
     public void exportToPly(Path file, PointCloudFrame frame, VideoFrame<?> texture) {
         LOG.entering("exportToPly");
-        var e = RealSenseErrorHolder.create();
-        rs2_export_to_ply(frame.getRealSenseFrame().get_rs2_frame(),
-                file.toAbsolutePath().toString(),
+        var e = new RealSenseError();
+        librealsense.rs2_export_to_ply(frame.getRealSenseFrame().get_rs2_frame(),
+                XMemorySegment.toNativeString(file.toAbsolutePath().toString()),
                 texture.getRealSenseFrame().get_rs2_frame(),
-                e);
+                e.get_rs2_error());
         e.verify();
         LOG.exiting("exportToPly");
     }
+    
 }

@@ -1,9 +1,5 @@
 package id.jrealsense.examples.ros.apps;
 
-import java.io.ByteArrayOutputStream;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-
 import id.jrealsense.Config;
 import id.jrealsense.Context;
 import id.jrealsense.FormatType;
@@ -14,7 +10,6 @@ import id.jrealsense.devices.DeviceLocator;
 import id.jrealsense.examples.apps.Utils;
 import id.jrealsense.filters.PointCloudFilter;
 import id.jrealsense.frames.PointCloudFrame;
-import id.jrealsense.jni.LibrealsenseVersion;
 import id.jrosclient.JRosClient;
 import id.jrosclient.JRosClientConfiguration;
 import id.jrosclient.TopicSubmissionPublisher;
@@ -23,9 +18,12 @@ import id.jrosmessages.sensor_msgs.PointCloud2Message;
 import id.jrosmessages.sensor_msgs.PointFieldMessage;
 import id.jrosmessages.sensor_msgs.PointFieldMessage.DataType;
 import id.jrosmessages.std_msgs.HeaderMessage;
-import id.xfunction.CommandLineInterface;
+import id.xfunction.cli.CommandLineInterface;
 import id.xfunction.function.Unchecked;
 import id.xfunction.lang.XThread;
+import java.io.ByteArrayOutputStream;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
 /**
  * App example which demonstrates how to work with point clouds.
@@ -52,11 +50,6 @@ public class PointcloudApp {
      */
 
     /**
-     * librealsense version
-     */
-    private final static String LIBREALSENSE_VERSION = LibrealsenseVersion.v2_42.getJniLibraryName();
-    
-    /**
      * Frame width
      */
     private final static int WIDTH = 424;
@@ -82,13 +75,6 @@ public class PointcloudApp {
 
     private final static CommandLineInterface cli = new CommandLineInterface();
     private final static Utils utils = new Utils();
-
-    /**
-     * It is important to load the native library first
-     */
-    static {
-        System.loadLibrary(LIBREALSENSE_VERSION); 
-    }
 
     /**
      * Setup resources and run the looper
@@ -145,7 +131,7 @@ public class PointcloudApp {
                     .withOffset(8)
                     .withCount(1)
                     .withDataType(DataType.FLOAT64));
-        while (!cli.wasKeyPressed())
+        while (!cli.wasEnterKeyPressed())
         {
             FrameSet frameSet = pipeline.waitForFrames();
             cli.print("Number of frames received " + frameSet.size());

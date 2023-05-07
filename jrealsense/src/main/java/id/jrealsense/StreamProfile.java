@@ -21,13 +21,14 @@
  */
 package id.jrealsense;
 
-import static id.jrealsense.jni.librealsense2.rs2_get_stream_profile_data;
+import id.jrealsense.jextract.librealsense;
+import java.lang.foreign.MemorySegment;
+import java.nio.ByteBuffer;
+import java.nio.IntBuffer;
 
-import id.jrealsense.jni.rs2_stream_profile;
+public class StreamProfile {
 
-public class StreamProfile extends rs2_stream_profile {
-
-    private rs2_stream_profile streamProfile;
+    private MemorySegment streamProfile;
     private StreamType stream;
     private FormatType format;
     private int index;
@@ -35,7 +36,7 @@ public class StreamProfile extends rs2_stream_profile {
     private int framerate;
 
     protected StreamProfile(
-            rs2_stream_profile streamProfile,
+            MemorySegment streamProfile,
             StreamType rs2_stream,
             FormatType rs2_format,
             int index,
@@ -50,7 +51,7 @@ public class StreamProfile extends rs2_stream_profile {
     }
 
     
-    public rs2_stream_profile getStreamProfile() {
+    public MemorySegment getStreamProfile() {
         return streamProfile;
     }
 
@@ -77,22 +78,36 @@ public class StreamProfile extends rs2_stream_profile {
     /**
      * Factory method, creates new {@link StreamProfile}
      */
-    public static StreamProfile create(rs2_stream_profile profile) {
-        var s = new int[1];
-        var f = new int[1];
-        var index = new int[1];
-        var uniqueId = new int[1];
-        var framerate = new int[1];
-        var e = RealSenseErrorHolder.create();
-        rs2_get_stream_profile_data(profile, s, f, index, uniqueId, framerate, e);
+    public static StreamProfile create(MemorySegment profile) {
+        var s = new StreamTypeHolder(StreamType.RS2_STREAM_ANY);
+        var f = new FormatTypeHolder(FormatType.RS2_FORMAT_ANY);
+        var buf = ByteBuffer.allocateDirect(Integer.BYTES * 3).asIntBuffer();
+        var index =  buf.slice(0, 1);
+        var uniqueId = buf.slice(1, 1);
+        var framerate = buf.slice(2, 1);
+        var e = new RealSenseError();
+        librealsense.rs2_get_stream_profile_data(profile,
+                s.get_rs2_stream(),
+                f.get_rs2_format(),
+                MemorySegment.ofBuffer(index),
+                MemorySegment.ofBuffer(uniqueId),
+                MemorySegment.ofBuffer(framerate),
+                e.get_rs2_error());
         e.verify();
         
         return new StreamProfile(profile,
-                StreamType.valueOf(s[0]),
-                FormatType.valueOf(f[0]),
-                index[0],
-                uniqueId[0],
-                framerate[0]);
+                s.getStreamType(),
+                f.getFormatType(),
+                index.get(),
+                uniqueId.get(),
+                framerate.get());
+    }
+
+
+    @Override
+    public String toString() {
+        return "StreamProfile [stream=" + stream + ", format=" + format + ", index=" + index + ", uniqueId=" + uniqueId
+                + ", framerate=" + framerate + "]";
     }
 
 }

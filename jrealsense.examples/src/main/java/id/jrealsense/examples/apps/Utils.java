@@ -22,15 +22,15 @@
 package id.jrealsense.examples.apps;
 
 import id.jrealsense.devices.Device;
-import id.xfunction.CommandLineInterface;
-import id.xfunction.XUtils;
+import id.xfunction.cli.CommandLineInterface;
+import id.xfunction.lang.XThread;
 
 public class Utils {
 
     public void reset(CommandLineInterface cli, Device dev) {
         cli.print("Hardware reset...");
         dev.reset();
-        XUtils.sleep(5000);
+        XThread.sleep(5000);
         cli.print("Ready");
     }
 }

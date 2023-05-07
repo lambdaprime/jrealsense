@@ -21,44 +21,40 @@
  */
 package id.jrealsense.devices;
 
-import static id.jrealsense.jni.librealsense2.*;
-import static id.jrealsense.jni.rs2_camera_info.RS2_CAMERA_INFO_FIRMWARE_VERSION;
-import static id.jrealsense.jni.rs2_camera_info.RS2_CAMERA_INFO_NAME;
-import static id.jrealsense.jni.rs2_camera_info.RS2_CAMERA_INFO_SERIAL_NUMBER;
-
-import id.jrealsense.RealSenseErrorHolder;
-import id.jrealsense.jni.rs2_device;
+import id.jrealsense.RealSenseError;
+import id.jrealsense.jextract.librealsense;
+import java.lang.foreign.MemorySegment;
 
 /**
  * Represents camera device
  */
 public class Device implements AutoCloseable {
 
-    private rs2_device device;
+    private MemorySegment device;
     
-    protected Device(rs2_device dev) {
+    protected Device(MemorySegment dev) {
         this.device = dev;
     }
 
     public String getInfo() {
-        var e = RealSenseErrorHolder.create();
-        var info = rs2_get_device_info(device, RS2_CAMERA_INFO_NAME, e);
+        var e = new RealSenseError();
+        var info = librealsense.rs2_get_device_info(device, librealsense.RS2_CAMERA_INFO_NAME(), e.get_rs2_error());
         e.verify();
-        return info;
+        return info.getUtf8String(0);
     }
     
     public String getSerialNumber() {
-        var e = RealSenseErrorHolder.create();
-        var serial = rs2_get_device_info(device, RS2_CAMERA_INFO_SERIAL_NUMBER, e);
+        var e = new RealSenseError();
+        var serial = librealsense.rs2_get_device_info(device, librealsense.RS2_CAMERA_INFO_SERIAL_NUMBER(), e.get_rs2_error());
         e.verify();
-        return serial;
+        return serial.getUtf8String(0);
     }
     
     public String getFirmwareVersion() {
-        var e = RealSenseErrorHolder.create();
-        var version = rs2_get_device_info(device, RS2_CAMERA_INFO_FIRMWARE_VERSION, e);
+        var e = new RealSenseError();
+        var version = librealsense.rs2_get_device_info(device, librealsense.RS2_CAMERA_INFO_FIRMWARE_VERSION(), e.get_rs2_error());
         e.verify();
-        return version;
+        return version.getUtf8String(0);
     }
     
     @Override
@@ -75,8 +71,8 @@ public class Device implements AutoCloseable {
      * better to sleep after this call to make sure that device is ready.
      */
     public void reset() {
-        var e = RealSenseErrorHolder.create();
-        rs2_hardware_reset(device, e);
+        var e = new RealSenseError();
+        librealsense.rs2_hardware_reset(device, e.get_rs2_error());
         e.verify();
     }
     
@@ -86,7 +82,7 @@ public class Device implements AutoCloseable {
      */
     @Override
     public void close() {
-        rs2_delete_device(device);
+        librealsense.rs2_delete_device(device);
         device = null;
     }
 

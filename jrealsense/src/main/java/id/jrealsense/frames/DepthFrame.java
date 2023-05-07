@@ -21,11 +21,9 @@
  */
 package id.jrealsense.frames;
 
+import id.jrealsense.RealSenseError;
+import id.jrealsense.jextract.librealsense;
 import id.xfunction.logging.XLogger;
-
-import static id.jrealsense.jni.librealsense2.*;
-
-import id.jrealsense.RealSenseErrorHolder;
 
 /**
  * Frame with depth information
@@ -56,8 +54,8 @@ public class DepthFrame extends AbstractVideoFrame<DepthFrame> {
      * Distance from the camera to the point with given coordinates
      */
     public float getDistance(int x, int y) {
-        var e = RealSenseErrorHolder.create();
-        float r = rs2_depth_frame_get_distance(getRealSenseFrame().get_rs2_frame(), x, y, e);
+        var e = new RealSenseError();
+        float r = librealsense.rs2_depth_frame_get_distance(getRealSenseFrame().get_rs2_frame(), x, y, e.get_rs2_error());
         e.verify();
         return r;
     }

@@ -29,8 +29,7 @@ import id.jrealsense.Pipeline;
 import id.jrealsense.StreamType;
 import id.jrealsense.devices.Device;
 import id.jrealsense.devices.DeviceLocator;
-import id.jrealsense.jni.LibrealsenseVersion;
-import id.xfunction.CommandLineInterface;
+import id.xfunction.cli.CommandLineInterface;
 
 /**
  * App example which demonstrates how to calculate distance.
@@ -54,11 +53,6 @@ public class DistanceApp {
      */
     
     /**
-     * librealsense version
-     */
-    private final static String LIBREALSENSE_VERSION = LibrealsenseVersion.v2_42.getJniLibraryName();
-
-    /**
      * Frame width
      */
     private final static int WIDTH = 640;
@@ -80,13 +74,6 @@ public class DistanceApp {
     private final static CommandLineInterface cli = new CommandLineInterface();
     private final static Utils utils = new Utils();
     
-    /**
-     * It is important to load the native library first
-     */
-    static {
-        System.loadLibrary(LIBREALSENSE_VERSION); 
-    }
-
     /**
      * Setup resources and run the looper
      */
@@ -112,7 +99,7 @@ public class DistanceApp {
      * Loop over the frames in the pipeline and render them on the screen
      */
     private void loop(Pipeline pipeline) {
-        while (!cli.wasKeyPressed())
+        while (!cli.wasEnterKeyPressed())
         {
             FrameSet data = pipeline.waitForFrames();
             cli.print("Number of frames received " + data.size());

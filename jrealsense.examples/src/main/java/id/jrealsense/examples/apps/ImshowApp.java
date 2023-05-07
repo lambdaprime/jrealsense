@@ -21,8 +21,6 @@
  */
 package id.jrealsense.examples.apps;
 
-import java.awt.image.BufferedImage;
-
 import id.jrealsense.Config;
 import id.jrealsense.Context;
 import id.jrealsense.FormatType;
@@ -31,8 +29,8 @@ import id.jrealsense.Pipeline;
 import id.jrealsense.StreamType;
 import id.jrealsense.devices.DeviceLocator;
 import id.jrealsense.examples.Renderer;
-import id.jrealsense.jni.LibrealsenseVersion;
-import id.xfunction.CommandLineInterface;
+import id.xfunction.cli.CommandLineInterface;
+import java.awt.image.BufferedImage;
 
 /**
  * App example which demonstrates how to stream color frames.
@@ -52,11 +50,6 @@ public class ImshowApp {
     /*
      * CONFIGURATION START
      */
-
-    /**
-     * librealsense version
-     */
-    private final static String LIBREALSENSE_VERSION = LibrealsenseVersion.v2_42.getJniLibraryName();
 
     /**
      * Frame width
@@ -81,13 +74,6 @@ public class ImshowApp {
     private final static Utils utils = new Utils();
     
     /**
-     * It is important to load the native library first
-     */
-    static {
-        System.loadLibrary(LIBREALSENSE_VERSION); 
-    }
-
-    /**
      * Setup resources and run the looper
      */
     private void run() {
@@ -96,10 +82,14 @@ public class ImshowApp {
         try (
                 var ctx = Context.create();
                 var pipeline = Pipeline.create(ctx);
-                var locator = DeviceLocator.create(ctx);
-                var dev = locator.getDevice(0);
-                var config = Config.create(ctx);)
+                var config = Config.create(ctx);
+                var locator = DeviceLocator.create(ctx))
         {
+            if (locator.getAllDevices().isEmpty()) {
+                System.out.println("No devices found");
+                return;
+            }
+            var dev = locator.getDevice(0);
             cli.print(dev);
             utils.reset(cli, dev);
             config.enableStream(StreamType.RS2_STREAM_COLOR, 0,
@@ -116,7 +106,7 @@ public class ImshowApp {
      * Loop over the frames in the pipeline and render them on the screen
      */
     private void loop(Renderer renderer, Pipeline pipeline) {
-        while (!renderer.isClosed() && !cli.wasKeyPressed())
+        while (!renderer.isClosed() && !cli.wasEnterKeyPressed())
         {
             FrameSet frameSet = pipeline.waitForFrames();
             System.out.println("Number of frames received " + frameSet.size());

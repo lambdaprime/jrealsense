@@ -21,9 +21,6 @@
  */
 package id.jrealsense.examples.apps;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 import id.jrealsense.Config;
 import id.jrealsense.Context;
 import id.jrealsense.FormatType;
@@ -33,7 +30,9 @@ import id.jrealsense.PointCloudUtils;
 import id.jrealsense.StreamType;
 import id.jrealsense.devices.DeviceLocator;
 import id.jrealsense.filters.PointCloudFilter;
-import id.xfunction.CommandLineInterface;
+import id.xfunction.cli.CommandLineInterface;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /**
  * App example which demonstrates how to work with point clouds.
@@ -89,13 +88,6 @@ public class PointcloudApp {
     private final static Utils utils = new Utils();
 
     /**
-     * It is important to load the native library first
-     */
-    static {
-        System.loadLibrary("realsense2-jni"); 
-    }
-
-    /**
      * Setup resources and run the looper
      */
     private void run() {
@@ -123,7 +115,7 @@ public class PointcloudApp {
      * Loop over the frames in the pipeline and render them on the screen
      */
     private void loop(Pipeline pipeline, PointCloudFilter pointCloud) {
-        while (!cli.wasKeyPressed())
+        while (!cli.wasEnterKeyPressed())
         {
             FrameSet frameSet = pipeline.waitForFrames();
             cli.print("Number of frames received " + frameSet.size());
