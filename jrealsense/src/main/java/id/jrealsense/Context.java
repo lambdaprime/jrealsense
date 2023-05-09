@@ -15,15 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense;
 
 import id.jrealsense.jextract.librealsense;
 import java.lang.foreign.MemorySegment;
 
+/**
+ * @author lambdaprime intid@protonmail.com
+ */
 public class Context implements AutoCloseable {
 
     private MemorySegment ctx;
@@ -32,12 +31,11 @@ public class Context implements AutoCloseable {
         this.ctx = ctx;
     }
 
-    /**
-     * Factory method, creates new {@link Context}
-     */
+    /** Factory method, creates new {@link Context} */
     public static Context create() {
         var e = new RealSenseError();
-        var ctx = librealsense.rs2_create_context(librealsense.RS2_API_VERSION(), e.get_rs2_error());
+        var ctx =
+                librealsense.rs2_create_context(librealsense.RS2_API_VERSION(), e.get_rs2_error());
         e.verify();
         return new Context(ctx);
     }
@@ -50,5 +48,4 @@ public class Context implements AutoCloseable {
     public void close() {
         librealsense.rs2_delete_context(ctx);
     }
-
 }

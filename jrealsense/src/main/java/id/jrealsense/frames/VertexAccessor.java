@@ -15,21 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense.frames;
 
+import id.jrealsense.primitives.Vertex;
 import java.nio.ByteBuffer;
 import java.util.Iterator;
 
-import id.jrealsense.primitives.Vertex;
-
 /**
- * Provides access to vertices in point cloud.
- * They are usually mapped into ByteBuffer which in turn
+ * Provides access to vertices in point cloud. They are usually mapped into ByteBuffer which in turn
  * mapped over data what librealsense returns to the user.
+ *
+ * @author lambdaprime intid@protonmail.com
  */
 public class VertexAccessor implements Iterable<Vertex> {
 
@@ -43,5 +39,4 @@ public class VertexAccessor implements Iterable<Vertex> {
     public Iterator<Vertex> iterator() {
         return new VertexIterator(buf);
     }
-
 }

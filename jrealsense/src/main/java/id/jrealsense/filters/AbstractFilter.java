@@ -15,10 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense.filters;
 
 import id.jrealsense.Filter;
@@ -28,25 +24,27 @@ import id.jrealsense.RealSenseError;
 import id.jrealsense.frames.Frame;
 import id.jrealsense.jextract.librealsense;
 
+/**
+ * @author lambdaprime intid@protonmail.com
+ */
 abstract class AbstractFilter<IN extends Frame<IN>, OUT extends Frame<OUT>>
-    implements Filter<IN, OUT>
-{
+        implements Filter<IN, OUT> {
 
     private ProcessingBlock block;
     private FrameQueue queue;
-    
+
     protected AbstractFilter(ProcessingBlock block, FrameQueue queue) {
         this.block = block;
         this.queue = queue;
     }
-    
+
     public void startQueue() {
         var e = new RealSenseError();
-        librealsense.rs2_start_processing_queue(block.get_rs2_processing_block(),
-                queue.get_rs2_frame_queue(), e.get_rs2_error());
+        librealsense.rs2_start_processing_queue(
+                block.get_rs2_processing_block(), queue.get_rs2_frame_queue(), e.get_rs2_error());
         e.verify();
     }
-    
+
     protected ProcessingBlock getBlock() {
         return block;
     }
@@ -54,7 +52,7 @@ abstract class AbstractFilter<IN extends Frame<IN>, OUT extends Frame<OUT>>
     protected FrameQueue getQueue() {
         return queue;
     }
-    
+
     @Override
     public void close() {
         block.close();

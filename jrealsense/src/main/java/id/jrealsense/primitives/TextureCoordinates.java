@@ -15,12 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense.primitives;
 
+/**
+ * @author lambdaprime intid@protonmail.com
+ */
 public class TextureCoordinates {
 
     public float u, v;
@@ -29,7 +28,7 @@ public class TextureCoordinates {
         this.u = u;
         this.v = v;
     }
-    
+
     @Override
     public String toString() {
         return String.format("<%f; %f; %f>", u, v);

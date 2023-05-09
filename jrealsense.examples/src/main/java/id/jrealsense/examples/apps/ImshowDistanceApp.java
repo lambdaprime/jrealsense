@@ -15,10 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense.examples.apps;
 
 import id.jrealsense.Config;
@@ -34,9 +30,10 @@ import id.xfunction.cli.CommandLineInterface;
 import java.awt.image.BufferedImage;
 
 /**
- * App example which demonstrates how to work with multiple streams.
- * It shows color image from the camera + distance to the object in
- * the middle of it.
+ * App example which demonstrates how to work with multiple streams. It shows color image from the
+ * camera + distance to the object in the middle of it.
+ *
+ * @author lambdaprime intid@protonmail.com
  */
 public class ImshowDistanceApp {
 
@@ -45,57 +42,47 @@ public class ImshowDistanceApp {
      * Some cameras may not support this configuration so then it
      * should be changed accordingly. So see all available configurations
      * which are supported by the camera use librealsense command:
-     * 
-     * $ rs-enumerate-devices 
-     * 
+     *
+     * $ rs-enumerate-devices
+     *
      */
-    
+
     /*
      * CONFIGURATION START
      */
-    
-    /**
-     * Frame width
-     */
-    private final static int WIDTH = 640;
 
-    /**
-     * Frame height
-     */
-    private final static int HEIGHT = 480;
-    
-    /**
-     * Frames per second
-     */
-    private final static int FPS = 30;
-    
+    /** Frame width */
+    private static final int WIDTH = 640;
+
+    /** Frame height */
+    private static final int HEIGHT = 480;
+
+    /** Frames per second */
+    private static final int FPS = 30;
+
     /*
      * CONFIGURATION END
      */
 
-    private final static CommandLineInterface cli = new CommandLineInterface();
-    private final static Utils utils = new Utils();
-    
-    /**
-     * Setup resources and run the looper
-     */
+    private static final CommandLineInterface cli = new CommandLineInterface();
+    private static final Utils utils = new Utils();
+
+    /** Setup resources and run the looper */
     private void run() {
         var renderer = new Renderer(WIDTH, HEIGHT);
         // using try-with-resources to properly release all librealsense resources
-        try (
-                var ctx = Context.create();
+        try (var ctx = Context.create();
                 var locator = DeviceLocator.create(ctx);
                 var dev = locator.getDevice(0);
                 var pipeline = Pipeline.create(ctx);
                 var config = Config.create(ctx);
-                var colorMap = Colorizer.create())
-        {
+                var colorMap = Colorizer.create()) {
             cli.print(dev);
             utils.reset(cli, dev);
-            config.enableStream(StreamType.RS2_STREAM_DEPTH, 0,
-                    WIDTH, HEIGHT, FormatType.RS2_FORMAT_Z16, FPS);
-            config.enableStream(StreamType.RS2_STREAM_COLOR, 0,
-                    WIDTH, HEIGHT, FormatType.RS2_FORMAT_BGR8, FPS);
+            config.enableStream(
+                    StreamType.RS2_STREAM_DEPTH, 0, WIDTH, HEIGHT, FormatType.RS2_FORMAT_Z16, FPS);
+            config.enableStream(
+                    StreamType.RS2_STREAM_COLOR, 0, WIDTH, HEIGHT, FormatType.RS2_FORMAT_BGR8, FPS);
             pipeline.start(config);
             loop(renderer, pipeline, colorMap);
         } finally {
@@ -103,29 +90,30 @@ public class ImshowDistanceApp {
         }
     }
 
-    /**
-     * Loop over the frames in the pipeline and render them on the screen
-     */
+    /** Loop over the frames in the pipeline and render them on the screen */
     private void loop(Renderer renderer, Pipeline pipeline, Colorizer colorMap) {
-        while (!renderer.isClosed() && !cli.wasEnterKeyPressed())
-        {
+        while (!renderer.isClosed() && !cli.wasEnterKeyPressed()) {
             FrameSet data = pipeline.waitForFrames();
             cli.print("Number of frames received " + data.size());
-            data.getColorFrame(FormatType.RS2_FORMAT_BGR8).ifPresent(colorFrame -> {
-                System.out.println("Received color frame");
+            data.getColorFrame(FormatType.RS2_FORMAT_BGR8)
+                    .ifPresent(
+                            colorFrame -> {
+                                System.out.println("Received color frame");
 
-                int w = colorFrame.getWidth();
-                int h = colorFrame.getHeight();
+                                int w = colorFrame.getWidth();
+                                int h = colorFrame.getHeight();
 
-                System.out.println("Width: " + w);
-                System.out.println("Height: " + h);
+                                System.out.println("Width: " + w);
+                                System.out.println("Height: " + h);
 
-                renderer.render(colorFrame.getData(), BufferedImage.TYPE_3BYTE_BGR);
-            });
-            data.getDepthFrame().ifPresent(frame -> {
-                cli.print("Received depth frame");
-                cli.print(frame.getDistance());
-            });
+                                renderer.render(colorFrame.getData(), BufferedImage.TYPE_3BYTE_BGR);
+                            });
+            data.getDepthFrame()
+                    .ifPresent(
+                            frame -> {
+                                cli.print("Received depth frame");
+                                cli.print(frame.getDistance());
+                            });
             data.close();
         }
     }

@@ -15,10 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense.examples.apps;
 
 import id.jrealsense.Config;
@@ -33,8 +29,10 @@ import id.xfunction.cli.CommandLineInterface;
 
 /**
  * App example which demonstrates how to calculate distance.
- * 
- * To stop the app press Enter.
+ *
+ * <p>To stop the app press Enter.
+ *
+ * @author lambdaprime intid@protonmail.com
  */
 public class DistanceApp {
 
@@ -43,70 +41,59 @@ public class DistanceApp {
      * Some cameras may not support this configuration so then it
      * should be changed accordingly. So see all available configurations
      * which are supported by the camera use librealsense command:
-     * 
-     * $ rs-enumerate-devices 
-     * 
+     *
+     * $ rs-enumerate-devices
+     *
      */
-    
+
     /*
      * CONFIGURATION START
      */
-    
-    /**
-     * Frame width
-     */
-    private final static int WIDTH = 640;
 
-    /**
-     * Frame height
-     */
-    private final static int HEIGHT = 480;
-    
-    /**
-     * Frames per second
-     */
-    private final static int FPS = 30;
-    
+    /** Frame width */
+    private static final int WIDTH = 640;
+
+    /** Frame height */
+    private static final int HEIGHT = 480;
+
+    /** Frames per second */
+    private static final int FPS = 30;
+
     /*
      * CONFIGURATION END
      */
 
-    private final static CommandLineInterface cli = new CommandLineInterface();
-    private final static Utils utils = new Utils();
-    
-    /**
-     * Setup resources and run the looper
-     */
+    private static final CommandLineInterface cli = new CommandLineInterface();
+    private static final Utils utils = new Utils();
+
+    /** Setup resources and run the looper */
     private void run() {
         // using try-with-resources to properly release all librealsense resources
-        try (
-                var ctx = Context.create();
+        try (var ctx = Context.create();
                 var locator = DeviceLocator.create(ctx);
                 Device dev = locator.getDevice(0);
                 var pipeline = Pipeline.create(ctx);
-                var config = Config.create(ctx);)
-        {
+                var config = Config.create(ctx); ) {
             cli.print(dev);
             utils.reset(cli, dev);
-            config.enableStream(StreamType.RS2_STREAM_DEPTH, 0,
-                    WIDTH, HEIGHT, FormatType.RS2_FORMAT_Z16, FPS);
+            config.enableStream(
+                    StreamType.RS2_STREAM_DEPTH, 0, WIDTH, HEIGHT, FormatType.RS2_FORMAT_Z16, FPS);
             pipeline.start(config);
             loop(pipeline);
         }
     }
 
-    /**
-     * Loop over the frames in the pipeline and render them on the screen
-     */
+    /** Loop over the frames in the pipeline and render them on the screen */
     private void loop(Pipeline pipeline) {
-        while (!cli.wasEnterKeyPressed())
-        {
+        while (!cli.wasEnterKeyPressed()) {
             FrameSet data = pipeline.waitForFrames();
             cli.print("Number of frames received " + data.size());
-            data.getDepthFrame().ifPresent(frame -> {
-                cli.print("Received depth frame");
-                cli.print(frame.getDistance());
-            });
+            data.getDepthFrame()
+                    .ifPresent(
+                            frame -> {
+                                cli.print("Received depth frame");
+                                cli.print(frame.getDistance());
+                            });
             data.close();
         }
     }

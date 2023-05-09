@@ -15,28 +15,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense.frames;
-
-import java.nio.ByteBuffer;
 
 import id.jrealsense.Filter;
 import id.jrealsense.StreamProfile;
 import id.xfunction.logging.XLogger;
+import java.nio.ByteBuffer;
 
+/**
+ * @author lambdaprime intid@protonmail.com
+ */
 abstract class AbstractFrame<F extends Frame<F>> implements Frame<F> {
 
     private RealSenseFrame frame;
-    
+
     protected AbstractFrame(RealSenseFrame frame) {
         this.frame = frame;
     }
 
     protected abstract XLogger log();
-    
+
     @Override
     public StreamProfile getProfile() {
         return frame.getProfile();
@@ -48,37 +46,36 @@ abstract class AbstractFrame<F extends Frame<F>> implements Frame<F> {
         var ret = filter.process((F) this);
         return ret;
     }
-    
+
     @Override
     public int embeddedFramesCount() {
         return frame.embeddedFramesCount();
     }
-    
+
     @Override
     public RealSenseFrame getRealSenseFrame() {
         return frame;
     }
-    
+
     @Override
     public ByteBuffer getData() {
         return frame.getData();
     }
-        
+
     @Override
     public void close() {
         log().entering("close");
         frame.close();
         log().exiting("close");
     }
-    
+
     @Override
     public long getFrameNumber() {
         return frame.getFrameNumber();
     }
-    
+
     @Override
     public double getTimestamp() {
         return frame.getTimestamp();
     }
-    
 }

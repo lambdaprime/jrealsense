@@ -15,15 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense;
 
 import id.jrealsense.jextract.librealsense;
 import java.lang.foreign.MemorySegment;
 
+/**
+ * @author lambdaprime intid@protonmail.com
+ */
 public class Config implements AutoCloseable {
     private MemorySegment config;
 
@@ -31,9 +30,11 @@ public class Config implements AutoCloseable {
         this.config = config;
     }
 
-    public void enableStream(StreamType stream, int index, int width, int height, FormatType format, int framerate) {
+    public void enableStream(
+            StreamType stream, int index, int width, int height, FormatType format, int framerate) {
         var e = new RealSenseError();
-        librealsense.rs2_config_enable_stream(config,
+        librealsense.rs2_config_enable_stream(
+                config,
                 stream.getValue(),
                 index,
                 width,
@@ -43,10 +44,8 @@ public class Config implements AutoCloseable {
                 e.get_rs2_error());
         e.verify();
     }
-    
-    /**
-     * Factory method, creates new {@link Config}
-     */
+
+    /** Factory method, creates new {@link Config} */
     public static Config create(Context ctx) {
         var e = new RealSenseError();
         var config = librealsense.rs2_create_config(e.get_rs2_error());

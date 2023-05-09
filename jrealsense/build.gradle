@@ -1,92 +1,178 @@
-// Requires gradle 6.5
-// gradle clean build
-
-plugins {
-    id 'java'
+// include xfunction for updateVersion
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath "io.github.lambdaprime:id.xfunction:14.0"
+  }
 }
 
-repositories {
-    mavenCentral()
+plugins {
+  id 'com.diffplug.spotless'
+  id 'java-library'
+}
+
+apply plugin : 'eclipse'
+
+eclipse.classpath.file {
+  // instruct eclipse plugin to put everything to module path
+  whenMerged {
+    entries.findAll { it.kind == 'lib' }.each { it.entryAttributes['module'] = 'true' }
+  }
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+  api "io.github.lambdaprime:id.xfunction:22.0"
 }
-
-sourceCompatibility = '11'
-targetCompatibility = '11'
 
 sourceSets {
-    main {
-        java {
-            srcDirs += ["src/gen/java"]
-        }
+  main {
+    java {
+      srcDirs += ["src/gen/java"]
     }
+  }
 }
 
-jar { 
-    manifest { 
-        attributes 'Implementation-Version': "${rootProject.version}",
-                   'Class-Path': configurations.compile.collect { it.getName() }.join(' ')
-    }
-}
-
-java {
-    modularity.inferModulePath = true
+configurations {
+  customConfig.extendsFrom implementation
 }
 
 javadoc {
-    options.noTimestamp = true;
-    options.noQualifiers = ["all"];
-    options.noTree = true;
-    options.noIndex = true;
-    options.noNavBar = true;
+  options.noTimestamp = true
+  options.noQualifiers = ["all"]
+  options.noTree = true
+  options.noIndex = true
+  options.noNavBar = true
+  // ignore missing @return, @param etc
+  options.addBooleanOption('Xdoclint:all,-missing', true)
+}
+
+compileJava.dependsOn 'spotlessApply'
+spotless {
+  java {
+    target fileTree('src/') {
+      include '**/*.java'
+      exclude("gen/**")
+    }
+  }
 }
 
 def packageDir = "$buildDir/package/${projectName}"
 
-ext.artifacts = fileTree(include: ['*'], dir: "$packageDir/libs")
-
 task createRelease(type: Zip) {
-    archiveFileName = "$releaseFileName"
-    destinationDirectory = file("$projectDir/release")
-    from file("$packageDir/..")
+  archiveFileName = "$releaseFileName"
+  destinationDirectory = file("$projectDir/release")
+  from file("$packageDir/..")
 }
 
-import java.nio.file.Files;
-import java.nio.file.Paths;
-task copyNativeLibs(type: Copy) {
-    def iter = Files.newDirectoryStream(Paths.get("$projectDir/bld"), "librealsense2-jni-*")
-        .iterator();
-    if (!iter.hasNext())
-        throw new RuntimeException("No librealsense2-jni library found. Please build it first. See build.txt for more information.");
-    from iter.next()
-    into "${projectDir}/libs"
-}
-
-task copyLibs(type: Copy, dependsOn: copyNativeLibs) {
-    from "$projectDir/libs"
-    from jar.archiveFile
-    into "${packageDir}/libs"
-}
-
-task copyReadme(type: Copy) {
-    from("${project.rootDir}/README.md")
-    into("$projectDir/src/main/resources")
+task copyLibs(type: Copy) {
+  from configurations.runtimeClasspath
+  from jar.archiveFile
+  into "${packageDir}/libs"
 }
 
 task createPackage(type: Copy, dependsOn: copyLibs) {
-    from "${project.rootDir}/README.md"
-    from "${project.rootDir}/LICENSE-2.0.txt"
-    into packageDir
+  from "${project.rootDir}/README.md"
+  from "${project.rootDir}/LICENSE-2.0.txt"
+  into packageDir
 }
 
 task cleanRelease(type: Delete) {
-    delete "$packageDir"
-    delete "$projectDir/release"
+  delete "$packageDir"
+  delete "$projectDir/release/*-SNAPSHOT.zip"
 }
 
-compileJava.dependsOn copyReadme
-createRelease.dependsOn createPackage, javadoc
+createRelease.dependsOn createPackage
 assemble.dependsOn createRelease
 clean.dependsOn cleanRelease
+
+// run spotless and format code before the build
+classes.dependsOn spotlessApply
+
+task updateVersion() {
+  // update version only when it is specified and non SNAPSHOT version is built
+  // 'unspecified' is the default value for the version in Gradle if it is not set
+  if (!version || version == "unspecified" || version.contains("SNAPSHOT")) return;
+  println "Updating version to " + version
+  new id.xfunction.text.Substitutor()
+    .withRegexpSupport()
+    .substitute(java.nio.file.Paths.get("${project.rootDir}/README.md"), Map.of(
+      "io.github.lambdaprime:jrealsense:[0-9.]+", "io.github.lambdaprime:jrealsense:" + version
+    ));
+}
+createRelease.dependsOn updateVersion
+
+if (project.hasProperty('publish')) {
+
+  // Initially it was taken from https://central.sonatype.org/publish/publish-gradle/
+  // but since Gradle removed this plugin https://docs.gradle.org/7.0/userguide/upgrading_version_6.html#removal_of_the_legacy_maven_plugin
+  // it was rewritten for new one
+
+  task javadocJar(type: Jar) {
+    archiveClassifier = 'javadoc'
+    from "README-javadoc.txt"
+  }
+
+  task sourcesJar(type: Jar) {
+    archiveClassifier = 'sources'
+    from "README-sources.txt"
+  }
+
+  java {
+    withJavadocJar()
+    withSourcesJar()
+  }
+
+  apply plugin: 'maven-publish'
+
+  publishing {
+    publications {
+      mavenJava(MavenPublication) {
+        artifactId = 'jrealsense'
+        groupId = 'io.github.lambdaprime'
+        from components.java
+        pom {
+          name = 'jrealsense'
+          description = 'Java module which allows to interact with Intel RealSense cameras'
+          url = 'https://github.com/lambdaprime/jrealsense'
+
+          licenses {
+            license {
+              name = 'The Apache License, Version 2.0'
+              url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+            }
+          }
+
+          developers {
+            developer {
+              id = 'lambdaprime'
+              email = 'intid@protonmail.com'
+            }
+          }
+
+          scm {
+            url = 'https://github.com/lambdaprime/jrealsense'
+          }
+        }
+      }
+    }
+    repositories {
+      maven {
+        credentials {
+          username ossrhUsername
+          password ossrhPassword
+        }
+        url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+      }
+    }    
+  }
+
+  if (project.hasProperty('signing.secretKeyRingFile')) {
+    apply plugin: 'signing'
+
+    signing {
+      sign publishing.publications.mavenJava
+    }
+  }
+}

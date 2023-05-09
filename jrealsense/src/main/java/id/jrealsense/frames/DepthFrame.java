@@ -15,10 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense.frames;
 
 import id.jrealsense.RealSenseError;
@@ -27,11 +23,13 @@ import id.xfunction.logging.XLogger;
 
 /**
  * Frame with depth information
+ *
+ * @author lambdaprime intid@protonmail.com
  */
 public class DepthFrame extends AbstractVideoFrame<DepthFrame> {
 
     private static final XLogger LOG = XLogger.getLogger(DepthFrame.class);
-    
+
     public DepthFrame(RealSenseFrame frame) {
         super(frame);
     }
@@ -41,25 +39,23 @@ public class DepthFrame extends AbstractVideoFrame<DepthFrame> {
         return 0;
     }
 
-    /**
-     * Distance from the camera to the object in the center of the frame
-     */
+    /** Distance from the camera to the object in the center of the frame */
     public float getDistance() {
         int w = getWidth();
         int h = getHeight();
         return getDistance(w / 2, h / 2);
     }
-    
-    /**
-     * Distance from the camera to the point with given coordinates
-     */
+
+    /** Distance from the camera to the point with given coordinates */
     public float getDistance(int x, int y) {
         var e = new RealSenseError();
-        float r = librealsense.rs2_depth_frame_get_distance(getRealSenseFrame().get_rs2_frame(), x, y, e.get_rs2_error());
+        float r =
+                librealsense.rs2_depth_frame_get_distance(
+                        getRealSenseFrame().get_rs2_frame(), x, y, e.get_rs2_error());
         e.verify();
         return r;
     }
-    
+
     @Override
     protected XLogger log() {
         return LOG;

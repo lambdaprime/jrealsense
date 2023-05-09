@@ -15,10 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense;
 
 import id.jrealsense.frames.Frame;
@@ -28,6 +24,9 @@ import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentScope;
 import java.lang.foreign.ValueLayout;
 
+/**
+ * @author lambdaprime intid@protonmail.com
+ */
 public class FrameQueue implements AutoCloseable {
 
     private MemorySegment queue;
@@ -36,30 +35,29 @@ public class FrameQueue implements AutoCloseable {
         this.queue = queue;
     }
 
-    /**
-     * Factory method, creates new {@link FrameQueue}
-     */
+    /** Factory method, creates new {@link FrameQueue} */
     public static FrameQueue create(int capacity) {
         var e = new RealSenseError();
         var q = librealsense.rs2_create_frame_queue(capacity, e.get_rs2_error());
         e.verify();
         return new FrameQueue(q);
     }
-    
+
     @Override
     public void close() {
         librealsense.rs2_delete_frame_queue(queue);
     }
-    
+
     public <T extends Frame<T>> T poll(Class<T> frameClass) {
         var e = new RealSenseError();
-        var framePtr = MemorySegment.allocateNative(ValueLayout.ADDRESS.byteSize(), SegmentScope.auto());
+        var framePtr =
+                MemorySegment.allocateNative(ValueLayout.ADDRESS.byteSize(), SegmentScope.auto());
         var numOfFrames = librealsense.rs2_poll_for_frame(queue, framePtr, e.get_rs2_error());
         e.verify();
         if (numOfFrames != 1)
-            //todo asserts
-            throw new RealSenseException("Polling from queue failed returning %d frames",
-                numOfFrames);
+            // todo asserts
+            throw new RealSenseException(
+                    "Polling from queue failed returning %d frames", numOfFrames);
         try {
             var ctor = frameClass.getConstructor(RealSenseFrame.class);
             return ctor.newInstance(new RealSenseFrame(framePtr.get(ValueLayout.ADDRESS, 0)));
@@ -67,7 +65,7 @@ public class FrameQueue implements AutoCloseable {
             throw new RealSenseException(ex);
         }
     }
-    
+
     public MemorySegment get_rs2_frame_queue() {
         return queue;
     }

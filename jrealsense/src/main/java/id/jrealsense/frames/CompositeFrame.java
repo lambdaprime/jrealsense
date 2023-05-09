@@ -15,18 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense.frames;
 
 import id.xfunction.logging.XLogger;
 
+/**
+ * @author lambdaprime intid@protonmail.com
+ */
 public class CompositeFrame extends AbstractFrame<CompositeFrame> implements Frame<CompositeFrame> {
 
     private static final XLogger LOG = XLogger.getLogger(CompositeFrame.class);
-    
+
     public CompositeFrame(RealSenseFrame frame) {
         super(frame);
     }
@@ -35,5 +34,4 @@ public class CompositeFrame extends AbstractFrame<CompositeFrame> implements Fra
     protected XLogger log() {
         return LOG;
     }
-
 }

@@ -15,10 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense;
 
 import id.jrealsense.frames.RealSenseFrame;
@@ -26,6 +22,9 @@ import id.jrealsense.jextract.librealsense;
 import id.xfunction.logging.XLogger;
 import java.lang.foreign.MemorySegment;
 
+/**
+ * @author lambdaprime intid@protonmail.com
+ */
 public class Pipeline implements AutoCloseable {
 
     private static final XLogger LOG = XLogger.getLogger(FrameSet.class);
@@ -35,9 +34,7 @@ public class Pipeline implements AutoCloseable {
         this.pipeline = pline;
     }
 
-    /**
-     * Starts pipeline with default configuration
-     */
+    /** Starts pipeline with default configuration */
     public void start() {
         LOG.entering("start");
         var e = new RealSenseError();
@@ -49,11 +46,12 @@ public class Pipeline implements AutoCloseable {
     public void start(Config config) {
         LOG.entering("start");
         var e = new RealSenseError();
-        librealsense.rs2_pipeline_start_with_config(pipeline, config.get_rs_config(), e.get_rs2_error());
+        librealsense.rs2_pipeline_start_with_config(
+                pipeline, config.get_rs_config(), e.get_rs2_error());
         e.verify();
         LOG.exiting("start");
     }
-    
+
     public void stop() {
         LOG.entering("stop");
         var e = new RealSenseError();
@@ -61,10 +59,8 @@ public class Pipeline implements AutoCloseable {
         e.verify();
         LOG.exiting("stop");
     }
-    
-    /**
-     * Factory method, creates new {@link Pipeline}
-     */
+
+    /** Factory method, creates new {@link Pipeline} */
     public static Pipeline create(Context ctx) {
         var e = new RealSenseError();
         var pline = librealsense.rs2_create_pipeline(ctx.get_rs2_context(), e.get_rs2_error());
@@ -72,13 +68,13 @@ public class Pipeline implements AutoCloseable {
         return new Pipeline(pline);
     }
 
-    /**
-     * Wait for next set of frames from the camera
-     */
+    /** Wait for next set of frames from the camera */
     public FrameSet waitForFrames() {
         LOG.entering("waitForFrames");
         var e = new RealSenseError();
-        var frame = librealsense.rs2_pipeline_wait_for_frames(pipeline, librealsense.RS2_DEFAULT_TIMEOUT(), e.get_rs2_error());
+        var frame =
+                librealsense.rs2_pipeline_wait_for_frames(
+                        pipeline, librealsense.RS2_DEFAULT_TIMEOUT(), e.get_rs2_error());
         e.verify();
         if (frame == null)
             throw new RuntimeException("Received null frame. Make sure pipeline is started.");
@@ -94,5 +90,4 @@ public class Pipeline implements AutoCloseable {
         librealsense.rs2_delete_pipeline(pipeline);
         LOG.exiting("close");
     }
-
 }

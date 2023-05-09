@@ -1,17 +1,18 @@
 **jrealsense** - Java module which allows to interact with Intel RealSense cameras.
 
-# Download
-
-[Release versions](https://github.com/lambdaprime/jrealsense/releases)
-
 # Requirements
 
-- Java 17+
+- Java 20
 - librealsense2 2.53.1
 
-# Links
+# Download
+
+[Release versions](jrealsense/release/CHANGELOG.md)
+
+# Documentation
 
 [Documentation](http://portal2.atwebpages.com/jrealsense)
+
 [Development](DEVELOPMENT.md)
 
 # Contributors

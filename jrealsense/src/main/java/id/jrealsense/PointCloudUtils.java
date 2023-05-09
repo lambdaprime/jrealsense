@@ -15,10 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense;
 
 import id.jrealsense.frames.PointCloudFrame;
@@ -32,19 +28,20 @@ import java.nio.file.StandardOpenOption;
 
 /**
  * Set of utils to work with point clouds
+ *
+ * @author lambdaprime intid@protonmail.com
  */
 public class PointCloudUtils {
-    
+
     private static final XLogger LOG = XLogger.getLogger(PointCloudUtils.class);
 
-    /**
-     * Export point cloud to Wavefront (.obj) format
-     */
+    /** Export point cloud to Wavefront (.obj) format */
     public void exportToObj(Path file, PointCloudFrame frame) {
         LOG.entering("exportToObj");
-        try (var writer = Files.newBufferedWriter(file,
-                StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.CREATE);) {
-            for (var v: frame.createVertexAccessor()) {
+        try (var writer =
+                Files.newBufferedWriter(
+                        file, StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.CREATE); ) {
+            for (var v : frame.createVertexAccessor()) {
                 writer.append(String.format("v %f %f %f\n", v.x, v.y, v.z));
             }
         } catch (IOException e) {
@@ -52,19 +49,17 @@ public class PointCloudUtils {
         }
         LOG.exiting("exportToObj");
     }
-    
-    /**
-     * Export point cloud to Stanford (.ply) format
-     */
+
+    /** Export point cloud to Stanford (.ply) format */
     public void exportToPly(Path file, PointCloudFrame frame, VideoFrame<?> texture) {
         LOG.entering("exportToPly");
         var e = new RealSenseError();
-        librealsense.rs2_export_to_ply(frame.getRealSenseFrame().get_rs2_frame(),
+        librealsense.rs2_export_to_ply(
+                frame.getRealSenseFrame().get_rs2_frame(),
                 XMemorySegment.toNativeString(file.toAbsolutePath().toString()),
                 texture.getRealSenseFrame().get_rs2_frame(),
                 e.get_rs2_error());
         e.verify();
         LOG.exiting("exportToPly");
     }
-    
 }

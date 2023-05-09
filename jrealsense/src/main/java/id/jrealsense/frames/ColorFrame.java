@@ -15,18 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense.frames;
 
 import id.xfunction.logging.XLogger;
 
+/**
+ * @author lambdaprime intid@protonmail.com
+ */
 public class ColorFrame extends AbstractVideoFrame<ColorFrame> {
 
     private static final XLogger LOG = XLogger.getLogger(ColorFrame.class);
-    
+
     public ColorFrame(RealSenseFrame frame) {
         super(frame);
     }
@@ -40,5 +39,4 @@ public class ColorFrame extends AbstractVideoFrame<ColorFrame> {
     protected XLogger log() {
         return LOG;
     }
-    
 }

@@ -1,31 +1,30 @@
-Intended for **jrealsense** developers and not users.
-
-# Prereq
-
-[RealSense](https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md)
-
-Install following packages:
-
-```bash
-apt -y install cmake swig
-```
-
 # Build
 
-First you need to build JNI library and generate Java wrapper classes for it:
+Building  module locally and making changes to it (this is optional and not intended for users).
 
-```bash
-export JAVA_HOME=<PATH_TO_JAVA>
-mkdir jrealsense/bld
-cd jrealsense/bld/
-cmake -DJAVA_HEADERS=$JAVA_HOME/include\;$JAVA_HOME/include/linux ..
-make
-```
+## With Gradle
 
-Now build **jrealsense**:
-
-
-```bash
-cd ../..
+``` bash
 gradle clean build
 ```
+
+## With Eclipse
+
+- Build eclipse projects:
+
+``` bash
+gradle eclipse
+```
+
+- Import them into Eclipse
+
+# Release steps
+
+- Close version in gradle.properties
+- Run `gradle clean build javadoc`
+- Publish
+- Open next SNAPSHOT version
+- Update CHANGELOG.md with new release (for changelog generation use `git log --format=%s`)
+- Commit changes
+- Push
+- Upload documentation to website

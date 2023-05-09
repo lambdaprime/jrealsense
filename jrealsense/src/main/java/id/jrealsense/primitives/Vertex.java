@@ -15,12 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense.primitives;
 
+/**
+ * @author lambdaprime intid@protonmail.com
+ */
 public class Vertex {
 
     public float x, y, z;
@@ -30,7 +29,7 @@ public class Vertex {
         this.y = y;
         this.z = z;
     }
-    
+
     @Override
     public String toString() {
         return String.format("<%f; %f; %f>", x, y, z);

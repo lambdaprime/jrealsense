@@ -15,10 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense;
 
 import id.jrealsense.jextract.librealsense;
@@ -26,12 +22,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * <p>librealsense wrapper for rs2_format.
- * 
+ * librealsense wrapper for rs2_format.
+ *
  * @author lambdaprime intid@protonmail.com
  */
 public enum FormatType {
-
     RS2_FORMAT_ANY(librealsense.RS2_FORMAT_ANY()),
     RS2_FORMAT_Z16(librealsense.RS2_FORMAT_Z16()),
     RS2_FORMAT_DISPARITY16(librealsense.RS2_FORMAT_DISPARITY16()),
@@ -73,13 +68,12 @@ public enum FormatType {
     public int getValue() {
         return value;
     }
-    
+
     public static Map<Integer, FormatType> SWIG_VALUES = createSwigValuesMap();
-    
+
     public static FormatType valueOf(int formatType) {
         var r = SWIG_VALUES.get(formatType);
-        if (r == null)
-            throw new RealSenseException("Format type with id %d not found", formatType);
+        if (r == null) throw new RealSenseException("Format type with id %d not found", formatType);
         return r;
     }
 

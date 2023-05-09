@@ -15,14 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense;
 
 /**
  * Generic runtime exception for all <b>jrealsense</b> operations.
+ *
+ * @author lambdaprime intid@protonmail.com
  */
 public class RealSenseException extends RuntimeException {
 
@@ -31,15 +29,15 @@ public class RealSenseException extends RuntimeException {
     public RealSenseException() {
         super();
     }
-    
+
     public RealSenseException(String message) {
         super(message);
     }
 
-    public RealSenseException(String fmt, Object...objs) {
+    public RealSenseException(String fmt, Object... objs) {
         super(String.format(fmt, objs));
     }
-    
+
     public RealSenseException(Exception e) {
         super(e);
     }

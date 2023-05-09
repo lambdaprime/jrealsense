@@ -15,10 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense;
 
 import id.jrealsense.frames.Frame;
@@ -26,11 +22,14 @@ import id.jrealsense.jextract.librealsense;
 import id.xfunction.logging.XLogger;
 import java.lang.foreign.MemorySegment;
 
+/**
+ * @author lambdaprime intid@protonmail.com
+ */
 public class ProcessingBlock implements AutoCloseable {
 
     private static final XLogger LOG = XLogger.getLogger(ProcessingBlock.class);
     private MemorySegment block;
-    
+
     public ProcessingBlock(MemorySegment block) {
         this.block = block;
     }
@@ -38,7 +37,7 @@ public class ProcessingBlock implements AutoCloseable {
     public MemorySegment get_rs2_processing_block() {
         return block;
     }
-    
+
     public void process(Frame<?> frame) {
         LOG.entering("process");
         var e = new RealSenseError();

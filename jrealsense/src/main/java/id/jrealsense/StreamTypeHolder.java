@@ -36,7 +36,7 @@ public class StreamTypeHolder {
     public MemorySegment get_rs2_stream() {
         return value;
     }
-    
+
     public StreamType getStreamType() {
         return StreamType.valueOf(value.get(ValueLayout.JAVA_INT, 0));
     }

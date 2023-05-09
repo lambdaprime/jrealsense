@@ -15,10 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense.devices;
 
 import java.util.ArrayList;
@@ -29,13 +25,13 @@ import java.util.ListIterator;
 
 /**
  * This is an implementation for list of devices List&lt;Device&gt;.
- * 
- * It owns all {@link Device} objects which added into it and closes
- * them once list itself is closed in order to release the resources
- * acquired by each {@link Device} object.
- * 
- * To get control over {@link Device} object lifetime it needs to be removed
- * from the list.
+ *
+ * <p>It owns all {@link Device} objects which added into it and closes them once list itself is
+ * closed in order to release the resources acquired by each {@link Device} object.
+ *
+ * <p>To get control over {@link Device} object lifetime it needs to be removed from the list.
+ *
+ * @author lambdaprime intid@protonmail.com
  */
 public class DeviceList implements List<Device>, AutoCloseable {
 
@@ -156,15 +152,11 @@ public class DeviceList implements List<Device>, AutoCloseable {
         return devices.subList(fromIndex, toIndex);
     }
 
-    /**
-     * Release the resources.
-     * Once closed all further operations are invalid.
-     */
+    /** Release the resources. Once closed all further operations are invalid. */
     @Override
     public void close() {
         devices.forEach(Device::close);
         devices.clear();
         devices = null;
     }
-
 }

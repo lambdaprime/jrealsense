@@ -15,10 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense.filters;
 
 import id.jrealsense.FrameQueue;
@@ -30,6 +26,8 @@ import id.jrealsense.jextract.librealsense;
 
 /**
  * Filter which generates point cloud from depth frame.
+ *
+ * @author lambdaprime intid@protonmail.com
  */
 public class PointCloudFilter extends AbstractFilter<DepthFrame, PointCloudFrame> {
 
@@ -42,10 +40,8 @@ public class PointCloudFilter extends AbstractFilter<DepthFrame, PointCloudFrame
         getBlock().process(frame);
         return getQueue().poll(PointCloudFrame.class);
     }
-    
-    /**
-     * Factory method, creates new {@link PointCloudFilter}
-     */
+
+    /** Factory method, creates new {@link PointCloudFilter} */
     public static PointCloudFilter create() {
         var e = new RealSenseError();
         var block = librealsense.rs2_create_pointcloud(e.get_rs2_error());
@@ -55,5 +51,4 @@ public class PointCloudFilter extends AbstractFilter<DepthFrame, PointCloudFrame
         ret.startQueue();
         return ret;
     }
-
 }

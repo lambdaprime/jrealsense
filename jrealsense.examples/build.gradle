@@ -1,57 +1,75 @@
-/**
- * gradle clean build
- */
+// include xfunction for updateVersion
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath "io.github.lambdaprime:id.xfunction:14.0"
+  }
+}
+
 plugins {
-    id 'java'
+  id 'com.diffplug.spotless'
 }
 
 apply plugin : 'eclipse'
 
-repositories {
-    mavenCentral()
-    mavenLocal()
-}
+def releaseFileName = "${projectName}-examples-v${version}.zip"
 
 dependencies {
-    compile project(':jrealsense')
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+  implementation project(':jrealsense')
+  implementation "io.github.lambdaprime:jros1client:6.0"
 }
 
-sourceCompatibility = '11'
-targetCompatibility = '11'
-
-java {
-    modularity.inferModulePath = true
+configurations {
+  customConfig.extendsFrom implementation
 }
 
-def packageDir = "$buildDir/package"
-def releaseFileName = "${projectName}-${version}.zip"
+def packageDir = "$buildDir/package/${projectName}"
+
+ext.artifacts = fileTree(include: ['*'], dir: "$packageDir/libs")
 
 task createRelease(type: Zip) {
-    archiveFileName = "$releaseFileName"
-    destinationDirectory = file("$projectDir/release")
-    from file("$packageDir")
+  archiveFileName = "$releaseFileName"
+  destinationDirectory = file("$projectDir/release")
+  from file("$packageDir/..")
 }
 
 task copyLibs(type: Copy) {
-    from "$projectDir/libs"
-    from jar.archiveFile
-    from project(':jrealsense').ext.artifacts
-    into "${packageDir}/${projectName}/libs"
+  from configurations.customConfig
+  from jar.archiveFile
+  into "${packageDir}/libs"
 }
 
 task copyLaunchers(type: Copy) {
-    from "$projectDir/src/launchers"
-    into "${packageDir}/${projectName}"
+  from "$projectDir/src/launchers"
+  into "${packageDir}"
 }
 
+task copyReadme(type: Copy) {
+  from("../README.md")
+  into("$buildDir/resources/main")
+  rename ("README.md", "README-${projectName}.md")
+}
+
+// overwrite template README which comes from resources folder
+jar.dependsOn copyReadme
+
+// run spotless and format code before the build
+classes.dependsOn spotlessApply
+
+javadoc.enabled = false
+
 task createPackage(type: Copy, dependsOn: [copyLibs, copyLaunchers]) {
-    from "${projectDir}/README.md"
-    into "$packageDir/${projectName}"
+  from "${project.rootDir}/README.md"
+  from "${project.rootDir}/LICENSE-2.0.txt"
+  from file("$projectDir/src/dope4j-app")
+  into packageDir
 }
 
 task cleanRelease(type: Delete) {
-    delete "$projectDir/release"
+  delete "$packageDir"
+  delete "$projectDir/release/*-SNAPSHOT.zip"
 }
 
 createRelease.dependsOn createPackage

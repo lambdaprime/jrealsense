@@ -15,10 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense.examples;
 
 import java.awt.FlowLayout;
@@ -27,15 +23,11 @@ import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
 import java.nio.ByteBuffer;
-
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-/**
- * Displays a Swing frame with a canvas inside.
- * All render operations update the canvas.
- */
+/** Displays a Swing frame with a canvas inside. All render operations update the canvas. */
 public class Renderer {
 
     private JLabel label;
@@ -60,27 +52,24 @@ public class Renderer {
         frame.setVisible(true);
     }
 
-    /**
-     * Exit app when user closes the window
-     */
+    /** Exit app when user closes the window */
     public Renderer withExitOnClose() {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         return this;
     }
-    
-    /**
-     * Set runnable to execute when window is closed
-     */
+
+    /** Set runnable to execute when window is closed */
     public Renderer withOnClose(Runnable r) {
-        frame.addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosed(WindowEvent e) {
-                r.run();
-            }
-        });
+        frame.addWindowListener(
+                new WindowAdapter() {
+                    @Override
+                    public void windowClosed(WindowEvent e) {
+                        r.run();
+                    }
+                });
         return this;
     }
-    
+
     public boolean isClosed() {
         return !frame.isVisible();
     }
@@ -91,7 +80,7 @@ public class Renderer {
     public void render(byte[] data, int type) {
         BufferedImage image = new BufferedImage(width, height, type);
         final byte[] targetPixels = ((DataBufferByte) image.getRaster().getDataBuffer()).getData();
-        System.arraycopy(data, 0, targetPixels, 0, data.length);  
+        System.arraycopy(data, 0, targetPixels, 0, data.length);
         update(image);
     }
 
@@ -118,5 +107,4 @@ public class Renderer {
     public void close() {
         frame.dispose();
     }
-
 }

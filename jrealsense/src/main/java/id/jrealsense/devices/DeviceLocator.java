@@ -15,10 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense.devices;
 
 import id.jrealsense.Context;
@@ -26,34 +22,31 @@ import id.jrealsense.RealSenseError;
 import id.jrealsense.jextract.librealsense;
 import java.lang.foreign.MemorySegment;
 
+/**
+ * @author lambdaprime intid@protonmail.com
+ */
 public class DeviceLocator implements AutoCloseable {
 
     private MemorySegment deviceList;
-    
-    /**
-     * Factory method, creates new {@link DeviceLocator}
-     */
+
+    /** Factory method, creates new {@link DeviceLocator} */
     public static DeviceLocator create(Context ctx) {
         var e = new RealSenseError();
         var deviceList = librealsense.rs2_query_devices(ctx.get_rs2_context(), e.get_rs2_error());
         e.verify();
         return new DeviceLocator(deviceList);
     }
-    
+
     protected DeviceLocator(MemorySegment deviceList) {
         this.deviceList = deviceList;
     }
 
-    /**
-     * Get librealsense low level object
-     */
+    /** Get librealsense low level object */
     public MemorySegment getDeviceList() {
         return deviceList;
     }
-    
-    /**
-     * Return number of available devices
-     */
+
+    /** Return number of available devices */
     public int getNumOfDevices() {
         var e = new RealSenseError();
         int count = librealsense.rs2_get_device_count(deviceList, e.get_rs2_error());
@@ -61,19 +54,15 @@ public class DeviceLocator implements AutoCloseable {
         return count;
     }
 
-    /**
-     * Return device by its zero based consecutive number
-     */
+    /** Return device by its zero based consecutive number */
     public Device getDevice(int id) {
         var e = new RealSenseError();
         var dev = librealsense.rs2_create_device(deviceList, id, e.get_rs2_error());
         e.verify();
         return new Device(dev);
     }
-    
-    /**
-     * Get all available devices
-     */
+
+    /** Get all available devices */
     public DeviceList getAllDevices() {
         var list = new DeviceList();
         for (int i = 0; i < getNumOfDevices(); i++) {
@@ -81,11 +70,8 @@ public class DeviceLocator implements AutoCloseable {
         }
         return list;
     }
-    
-    /**
-     * Release the resources.
-     * Once closed all further operations are invalid.
-     */
+
+    /** Release the resources. Once closed all further operations are invalid. */
     @Override
     public void close() {
         librealsense.rs2_delete_device_list(deviceList);

@@ -15,10 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense;
 
 import static id.jrealsense.FormatType.RS2_FORMAT_ANY;
@@ -38,68 +34,81 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
- * The lifetime of all frames in the frame set is bound to the lifetime of the
- * frame set itself. Closing them explicitly has no effect.
+ * The lifetime of all frames in the frame set is bound to the lifetime of the frame set itself.
+ * Closing them explicitly has no effect.
+ *
+ * @author lambdaprime intid@protonmail.com
  */
 public class FrameSet implements AutoCloseable {
 
     private static final XLogger LOG = XLogger.getLogger(FrameSet.class);
     private RealSenseFrame frame;
-    
-    private Supplier<Integer> count = () -> {
-        var c = frame.embeddedFramesCount();
-        count = () -> c;
-        return c;
-    };
-    
-    private Supplier<List<? extends Frame<?>>> frames = () -> {
-        var e = new RealSenseError();
-        var l = IntStream.range(0, size())
-            .mapToObj(i -> {
-                var fref = librealsense.rs2_extract_frame(frame.get_rs2_frame(), i, e.get_rs2_error());
-                e.verify();
-                return new CompositeFrame(new RealSenseFrame(fref));
-            }).collect(Collectors.toList());
-        frames = () -> l;
-        return l;
-    };
-    
+
+    private Supplier<Integer> count =
+            () -> {
+                var c = frame.embeddedFramesCount();
+                count = () -> c;
+                return c;
+            };
+
+    private Supplier<List<? extends Frame<?>>> frames =
+            () -> {
+                var e = new RealSenseError();
+                var l =
+                        IntStream.range(0, size())
+                                .mapToObj(
+                                        i -> {
+                                            var fref =
+                                                    librealsense.rs2_extract_frame(
+                                                            frame.get_rs2_frame(),
+                                                            i,
+                                                            e.get_rs2_error());
+                                            e.verify();
+                                            return new CompositeFrame(new RealSenseFrame(fref));
+                                        })
+                                .collect(Collectors.toList());
+                frames = () -> l;
+                return l;
+            };
+
     public FrameSet(RealSenseFrame frame) {
         this.frame = frame;
     }
-    
+
     public Optional<Frame<?>> firsOrDefault(StreamType s) {
         return firsOrDefault(s, RS2_FORMAT_ANY);
     }
-    
+
     public Optional<Frame<?>> firsOrDefault(StreamType stream, FormatType format) {
-        return asStream().filter(frame -> {
-            if (frame.getProfile().getStream() == stream &&
-                    (format == RS2_FORMAT_ANY || format == frame.getProfile().getFormat()))
-                return true;
-            return false;
-        }).findFirst();
+        return asStream()
+                .filter(
+                        frame -> {
+                            if (frame.getProfile().getStream() == stream
+                                    && (format == RS2_FORMAT_ANY
+                                            || format == frame.getProfile().getFormat()))
+                                return true;
+                            return false;
+                        })
+                .findFirst();
     }
-    
+
     public Optional<DepthFrame> getDepthFrame() {
         return firsOrDefault(StreamType.RS2_STREAM_DEPTH, FormatType.RS2_FORMAT_Z16)
                 .map(Frame::getRealSenseFrame)
                 .map(frame -> new DepthFrame(frame));
     }
-    
+
     public Optional<ColorFrame> getColorFrame(FormatType type) {
         return firsOrDefault(StreamType.RS2_STREAM_COLOR, type)
                 .map(Frame::getRealSenseFrame)
                 .map(frame -> new ColorFrame(frame));
     }
-    
-    /**
-     * Number of embedded frames
-     */
+
+    /** Number of embedded frames */
     public int size() {
         return count.get();
     }
-    
+
     @SuppressWarnings("unchecked")
     public Stream<Frame<?>> asStream() {
         return (Stream<Frame<?>>) frames.get().stream();

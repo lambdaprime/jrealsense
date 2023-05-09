@@ -15,10 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense.filters;
 
 import id.jrealsense.FrameQueue;
@@ -28,6 +24,9 @@ import id.jrealsense.frames.ColorFrame;
 import id.jrealsense.frames.DepthFrame;
 import id.jrealsense.jextract.librealsense;
 
+/**
+ * @author lambdaprime intid@protonmail.com
+ */
 public class Colorizer extends AbstractFilter<DepthFrame, ColorFrame> {
 
     public Colorizer(ProcessingBlock block, FrameQueue queue) {
@@ -40,9 +39,7 @@ public class Colorizer extends AbstractFilter<DepthFrame, ColorFrame> {
         return getQueue().poll(ColorFrame.class);
     }
 
-    /**
-     * Factory method, creates new {@link Colorizer}
-     */
+    /** Factory method, creates new {@link Colorizer} */
     public static Colorizer create() {
         var e = new RealSenseError();
         var block = librealsense.rs2_create_colorizer(e.get_rs2_error());
@@ -52,5 +49,4 @@ public class Colorizer extends AbstractFilter<DepthFrame, ColorFrame> {
         ret.startQueue();
         return ret;
     }
-
 }

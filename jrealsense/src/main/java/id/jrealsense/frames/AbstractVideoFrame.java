@@ -15,16 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense.frames;
 
+/**
+ * @author lambdaprime intid@protonmail.com
+ */
 abstract class AbstractVideoFrame<F extends VideoFrame<F>> extends AbstractFrame<F>
-    implements VideoFrame<F>
-{
-    
+        implements VideoFrame<F> {
+
     protected AbstractVideoFrame(RealSenseFrame frame) {
         super(frame);
     }
@@ -43,5 +41,4 @@ abstract class AbstractVideoFrame<F extends VideoFrame<F>> extends AbstractFrame
     public int getStride() {
         return getRealSenseFrame().getStride();
     }
-
 }

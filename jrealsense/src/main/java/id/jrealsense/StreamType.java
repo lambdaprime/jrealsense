@@ -15,22 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense;
 
 import id.jrealsense.jextract.librealsense;
 import java.util.Map;
 
 /**
- * <p>librealsense wrapper for rs2_stream.
- * 
+ * librealsense wrapper for rs2_stream.
+ *
  * @author lambdaprime intid@protonmail.com
  */
 public enum StreamType {
-
     RS2_STREAM_ANY(librealsense.RS2_STREAM_ANY()),
     RS2_STREAM_DEPTH(librealsense.RS2_STREAM_DEPTH()),
     RS2_STREAM_COLOR(librealsense.RS2_STREAM_COLOR()),
@@ -48,25 +43,25 @@ public enum StreamType {
     StreamType(int value) {
         this.value = value;
     }
-    
+
     public int getValue() {
         return value;
     }
-    
-    public static Map<Integer, StreamType> SWIG_VALUES = Map.of(
-            librealsense.RS2_STREAM_ANY(), RS2_STREAM_ANY,
-            librealsense.RS2_STREAM_DEPTH(), RS2_STREAM_DEPTH,
-            librealsense.RS2_STREAM_COLOR(), RS2_STREAM_COLOR,
-            librealsense.RS2_STREAM_INFRARED(), RS2_STREAM_INFRARED,
-            librealsense.RS2_STREAM_FISHEYE(), RS2_STREAM_FISHEYE,
-            librealsense.RS2_STREAM_GYRO(), RS2_STREAM_GYRO,
-            librealsense.RS2_STREAM_ACCEL(), RS2_STREAM_ACCEL,
-            librealsense.RS2_STREAM_GPIO(), RS2_STREAM_GPIO);
+
+    public static Map<Integer, StreamType> SWIG_VALUES =
+            Map.of(
+                    librealsense.RS2_STREAM_ANY(), RS2_STREAM_ANY,
+                    librealsense.RS2_STREAM_DEPTH(), RS2_STREAM_DEPTH,
+                    librealsense.RS2_STREAM_COLOR(), RS2_STREAM_COLOR,
+                    librealsense.RS2_STREAM_INFRARED(), RS2_STREAM_INFRARED,
+                    librealsense.RS2_STREAM_FISHEYE(), RS2_STREAM_FISHEYE,
+                    librealsense.RS2_STREAM_GYRO(), RS2_STREAM_GYRO,
+                    librealsense.RS2_STREAM_ACCEL(), RS2_STREAM_ACCEL,
+                    librealsense.RS2_STREAM_GPIO(), RS2_STREAM_GPIO);
 
     public static StreamType valueOf(int streamType) {
         var r = SWIG_VALUES.get(streamType);
-        if (r == null)
-            throw new RealSenseException("Stream type with id %d not found", streamType);
+        if (r == null) throw new RealSenseException("Stream type with id %d not found", streamType);
         return r;
     }
 }

@@ -15,17 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense;
 
 import id.jrealsense.jextract.librealsense;
 import java.lang.foreign.MemorySegment;
 import java.nio.ByteBuffer;
-import java.nio.IntBuffer;
 
+/**
+ * @author lambdaprime intid@protonmail.com
+ */
 public class StreamProfile {
 
     private MemorySegment streamProfile;
@@ -50,7 +48,6 @@ public class StreamProfile {
         this.framerate = framerate;
     }
 
-    
     public MemorySegment getStreamProfile() {
         return streamProfile;
     }
@@ -75,18 +72,17 @@ public class StreamProfile {
         return framerate;
     }
 
-    /**
-     * Factory method, creates new {@link StreamProfile}
-     */
+    /** Factory method, creates new {@link StreamProfile} */
     public static StreamProfile create(MemorySegment profile) {
         var s = new StreamTypeHolder(StreamType.RS2_STREAM_ANY);
         var f = new FormatTypeHolder(FormatType.RS2_FORMAT_ANY);
         var buf = ByteBuffer.allocateDirect(Integer.BYTES * 3).asIntBuffer();
-        var index =  buf.slice(0, 1);
+        var index = buf.slice(0, 1);
         var uniqueId = buf.slice(1, 1);
         var framerate = buf.slice(2, 1);
         var e = new RealSenseError();
-        librealsense.rs2_get_stream_profile_data(profile,
+        librealsense.rs2_get_stream_profile_data(
+                profile,
                 s.get_rs2_stream(),
                 f.get_rs2_format(),
                 MemorySegment.ofBuffer(index),
@@ -94,8 +90,9 @@ public class StreamProfile {
                 MemorySegment.ofBuffer(framerate),
                 e.get_rs2_error());
         e.verify();
-        
-        return new StreamProfile(profile,
+
+        return new StreamProfile(
+                profile,
                 s.getStreamType(),
                 f.getFormatType(),
                 index.get(),
@@ -103,11 +100,18 @@ public class StreamProfile {
                 framerate.get());
     }
 
-
     @Override
     public String toString() {
-        return "StreamProfile [stream=" + stream + ", format=" + format + ", index=" + index + ", uniqueId=" + uniqueId
-                + ", framerate=" + framerate + "]";
+        return "StreamProfile [stream="
+                + stream
+                + ", format="
+                + format
+                + ", index="
+                + index
+                + ", uniqueId="
+                + uniqueId
+                + ", framerate="
+                + framerate
+                + "]";
     }
-
 }

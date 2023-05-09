@@ -15,10 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense.devices;
 
 import id.jrealsense.RealSenseError;
@@ -27,36 +23,44 @@ import java.lang.foreign.MemorySegment;
 
 /**
  * Represents camera device
+ *
+ * @author lambdaprime intid@protonmail.com
  */
 public class Device implements AutoCloseable {
 
     private MemorySegment device;
-    
+
     protected Device(MemorySegment dev) {
         this.device = dev;
     }
 
     public String getInfo() {
         var e = new RealSenseError();
-        var info = librealsense.rs2_get_device_info(device, librealsense.RS2_CAMERA_INFO_NAME(), e.get_rs2_error());
+        var info =
+                librealsense.rs2_get_device_info(
+                        device, librealsense.RS2_CAMERA_INFO_NAME(), e.get_rs2_error());
         e.verify();
         return info.getUtf8String(0);
     }
-    
+
     public String getSerialNumber() {
         var e = new RealSenseError();
-        var serial = librealsense.rs2_get_device_info(device, librealsense.RS2_CAMERA_INFO_SERIAL_NUMBER(), e.get_rs2_error());
+        var serial =
+                librealsense.rs2_get_device_info(
+                        device, librealsense.RS2_CAMERA_INFO_SERIAL_NUMBER(), e.get_rs2_error());
         e.verify();
         return serial.getUtf8String(0);
     }
-    
+
     public String getFirmwareVersion() {
         var e = new RealSenseError();
-        var version = librealsense.rs2_get_device_info(device, librealsense.RS2_CAMERA_INFO_FIRMWARE_VERSION(), e.get_rs2_error());
+        var version =
+                librealsense.rs2_get_device_info(
+                        device, librealsense.RS2_CAMERA_INFO_FIRMWARE_VERSION(), e.get_rs2_error());
         e.verify();
         return version.getUtf8String(0);
     }
-    
+
     @Override
     public String toString() {
         var b = new StringBuilder();
@@ -65,25 +69,21 @@ public class Device implements AutoCloseable {
         b.append(String.format("Firmware version: %s\n", getFirmwareVersion()));
         return b.toString();
     }
-    
+
     /**
-     * Send request to perform hardware reset. It is asyn operation therefore it is
-     * better to sleep after this call to make sure that device is ready.
+     * Send request to perform hardware reset. It is asyn operation therefore it is better to sleep
+     * after this call to make sure that device is ready.
      */
     public void reset() {
         var e = new RealSenseError();
         librealsense.rs2_hardware_reset(device, e.get_rs2_error());
         e.verify();
     }
-    
-    /**
-     * Release the resources.
-     * Once closed all further operations are invalid.
-     */
+
+    /** Release the resources. Once closed all further operations are invalid. */
     @Override
     public void close() {
         librealsense.rs2_delete_device(device);
         device = null;
     }
-
 }

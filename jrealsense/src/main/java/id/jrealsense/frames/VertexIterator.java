@@ -15,21 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense.frames;
 
+import id.jrealsense.primitives.Vertex;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.util.Iterator;
 
-import id.jrealsense.primitives.Vertex;
-
 /**
  * Iterator over vertices in ByteBuffer
+ *
+ * @author lambdaprime intid@protonmail.com
  */
 public class VertexIterator implements Iterator<Vertex> {
 

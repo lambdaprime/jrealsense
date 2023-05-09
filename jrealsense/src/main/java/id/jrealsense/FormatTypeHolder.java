@@ -15,16 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Authors:
- * - lambdaprime <intid@protonmail.com>
- */
 package id.jrealsense;
 
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentScope;
 import java.lang.foreign.ValueLayout;
 
+/**
+ * @author lambdaprime intid@protonmail.com
+ */
 public class FormatTypeHolder {
 
     private MemorySegment value;
@@ -37,7 +36,7 @@ public class FormatTypeHolder {
     public MemorySegment get_rs2_format() {
         return value;
     }
-    
+
     public FormatType getFormatType() {
         return FormatType.valueOf(value.get(ValueLayout.JAVA_INT, 0));
     }
