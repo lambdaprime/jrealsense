@@ -23,7 +23,6 @@ import id.jrealsense.FormatType;
 import id.jrealsense.FrameSet;
 import id.jrealsense.Pipeline;
 import id.jrealsense.StreamType;
-import id.jrealsense.devices.Device;
 import id.jrealsense.devices.DeviceLocator;
 import id.xfunction.cli.CommandLineInterface;
 
@@ -71,9 +70,13 @@ public class DistanceApp {
         // using try-with-resources to properly release all librealsense resources
         try (var ctx = Context.create();
                 var locator = DeviceLocator.create(ctx);
-                Device dev = locator.getDevice(0);
                 var pipeline = Pipeline.create(ctx);
                 var config = Config.create(ctx); ) {
+            if (locator.getAllDevices().isEmpty()) {
+                System.err.println("No devices found");
+                return;
+            }
+            var dev = locator.getDevice(0);
             cli.print(dev);
             utils.reset(cli, dev);
             config.enableStream(

@@ -82,10 +82,14 @@ public class PointcloudApp {
         // using try-with-resources to properly release all librealsense resources
         try (var ctx = Context.create();
                 var locator = DeviceLocator.create(ctx);
-                var dev = locator.getDevice(0);
                 var pipeline = Pipeline.create(ctx);
                 var config = Config.create(ctx);
                 var pointCloud = PointCloudFilter.create()) {
+            if (locator.getAllDevices().isEmpty()) {
+                System.err.println("No devices found");
+                return;
+            }
+            var dev = locator.getDevice(0);
             cli.print(dev);
             utils.reset(cli, dev);
             config.enableStream(

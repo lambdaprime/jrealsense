@@ -94,10 +94,14 @@ public class PointcloudApp {
         try (var client = new JRos1ClientFactory().createClient(MASTER_URL, clientConfig);
                 var ctx = Context.create();
                 var locator = DeviceLocator.create(ctx);
-                var dev = locator.getDevice(0);
                 var pipeline = Pipeline.create(ctx);
                 var config = Config.create(ctx);
                 var pointCloud = PointCloudFilter.create()) {
+            if (locator.getAllDevices().isEmpty()) {
+                System.err.println("No devices found");
+                return;
+            }
+            var dev = locator.getDevice(0);
             String topic = "/PointCloud";
             var publisher = new TopicSubmissionPublisher<>(PointCloud2Message.class, topic);
             client.publish(publisher);

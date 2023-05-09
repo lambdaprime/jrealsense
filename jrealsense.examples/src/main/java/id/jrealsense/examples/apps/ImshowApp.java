@@ -74,7 +74,7 @@ public class ImshowApp {
                 var config = Config.create(ctx);
                 var locator = DeviceLocator.create(ctx)) {
             if (locator.getAllDevices().isEmpty()) {
-                System.out.println("No devices found");
+                System.err.println("No devices found");
                 return;
             }
             var dev = locator.getDevice(0);

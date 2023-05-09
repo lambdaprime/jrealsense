@@ -29,6 +29,7 @@ public class Pipeline implements AutoCloseable {
 
     private static final XLogger LOG = XLogger.getLogger(FrameSet.class);
     private MemorySegment pipeline;
+    private boolean isStarted;
 
     protected Pipeline(MemorySegment pline) {
         this.pipeline = pline;
@@ -45,6 +46,7 @@ public class Pipeline implements AutoCloseable {
 
     public void start(Config config) {
         LOG.entering("start");
+        isStarted = true;
         var e = new RealSenseError();
         librealsense.rs2_pipeline_start_with_config(
                 pipeline, config.get_rs_config(), e.get_rs2_error());
@@ -54,6 +56,7 @@ public class Pipeline implements AutoCloseable {
 
     public void stop() {
         LOG.entering("stop");
+        if (!isStarted) return;
         var e = new RealSenseError();
         librealsense.rs2_pipeline_stop(pipeline, e.get_rs2_error());
         e.verify();
