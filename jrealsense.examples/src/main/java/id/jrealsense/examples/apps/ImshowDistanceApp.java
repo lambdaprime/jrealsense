@@ -104,11 +104,7 @@ public class ImshowDistanceApp {
                             colorFrame -> {
                                 System.out.println("Received color frame");
 
-                                int w = colorFrame.getWidth();
-                                int h = colorFrame.getHeight();
-
-                                System.out.println("Width: " + w);
-                                System.out.println("Height: " + h);
+                                System.out.println(colorFrame);
 
                                 renderer.render(colorFrame.getData(), BufferedImage.TYPE_3BYTE_BGR);
                             });

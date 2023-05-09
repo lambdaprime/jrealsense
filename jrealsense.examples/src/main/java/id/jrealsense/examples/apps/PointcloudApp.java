@@ -111,14 +111,6 @@ public class PointcloudApp {
                             frame -> {
                                 System.out.println("Received depth frame");
 
-                                int w = frame.getWidth();
-                                int h = frame.getHeight();
-
-                                System.out.println("Width: " + w);
-                                System.out.println("Height: " + h);
-                                System.out.println("Frame number: " + frame.getFrameNumber());
-                                System.out.printf("Timestamp: %f\n", frame.getTimestamp());
-
                                 System.out.println(frame);
                                 var cloud = pointCloud.process(frame);
                                 System.out.println("Number of points: " + cloud.getPointsCount());

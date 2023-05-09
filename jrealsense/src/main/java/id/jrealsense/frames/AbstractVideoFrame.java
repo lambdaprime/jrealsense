@@ -41,4 +41,18 @@ abstract class AbstractVideoFrame<F extends VideoFrame<F>> extends AbstractFrame
     public int getStride() {
         return getRealSenseFrame().getStride();
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName()
+                + "[Width: "
+                + getWidth()
+                + ", Height: "
+                + getHeight()
+                + ", Frame number: "
+                + getFrameNumber()
+                + ", Timestamp: "
+                + getTimestamp()
+                + "]";
+    }
 }
