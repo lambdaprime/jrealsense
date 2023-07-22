@@ -15,8 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package id.jrealsense;
+package id.jrealsense.utils;
 
+import id.jrealsense.RealSenseError;
+import id.jrealsense.XMemorySegment;
 import id.jrealsense.exceptions.JRealSenseException;
 import id.jrealsense.frames.PointCloudFrame;
 import id.jrealsense.frames.VideoFrame;

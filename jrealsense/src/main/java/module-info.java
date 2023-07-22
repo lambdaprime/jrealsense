@@ -31,4 +31,6 @@ module jrealsense {
     exports id.jrealsense.frames;
     exports id.jrealsense.devices;
     exports id.jrealsense.primitives;
+    exports id.jrealsense.exceptions;
+    exports id.jrealsense.utils;
 }
