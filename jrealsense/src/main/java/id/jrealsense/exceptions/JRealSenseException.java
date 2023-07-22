@@ -15,30 +15,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package id.jrealsense;
+package id.jrealsense.exceptions;
 
 /**
  * Generic runtime exception for all <b>jrealsense</b> operations.
  *
  * @author lambdaprime intid@protonmail.com
  */
-public class RealSenseException extends RuntimeException {
+public class JRealSenseException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;
 
-    public RealSenseException() {
+    public JRealSenseException() {
         super();
     }
 
-    public RealSenseException(String message) {
+    public JRealSenseException(String message) {
         super(message);
     }
 
-    public RealSenseException(String fmt, Object... objs) {
+    public JRealSenseException(String fmt, Object... objs) {
         super(String.format(fmt, objs));
     }
 
-    public RealSenseException(Exception e) {
+    public JRealSenseException(Exception e) {
         super(e);
     }
 }

@@ -17,6 +17,7 @@
  */
 package id.jrealsense;
 
+import id.jrealsense.exceptions.JRealSenseException;
 import id.jrealsense.jextract.librealsense;
 import java.util.Map;
 
@@ -61,7 +62,8 @@ public enum StreamType {
 
     public static StreamType valueOf(int streamType) {
         var r = SWIG_VALUES.get(streamType);
-        if (r == null) throw new RealSenseException("Stream type with id %d not found", streamType);
+        if (r == null)
+            throw new JRealSenseException("Stream type with id %d not found", streamType);
         return r;
     }
 }

@@ -17,6 +17,7 @@
  */
 package id.jrealsense;
 
+import id.jrealsense.exceptions.JRealSenseException;
 import id.jrealsense.jextract.librealsense;
 import java.util.HashMap;
 import java.util.Map;
@@ -73,7 +74,8 @@ public enum FormatType {
 
     public static FormatType valueOf(int formatType) {
         var r = SWIG_VALUES.get(formatType);
-        if (r == null) throw new RealSenseException("Format type with id %d not found", formatType);
+        if (r == null)
+            throw new JRealSenseException("Format type with id %d not found", formatType);
         return r;
     }
 

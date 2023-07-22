@@ -17,6 +17,7 @@
  */
 package id.jrealsense;
 
+import id.jrealsense.exceptions.JRealSenseException;
 import id.jrealsense.frames.Frame;
 import id.jrealsense.frames.RealSenseFrame;
 import id.jrealsense.jextract.librealsense;
@@ -56,13 +57,13 @@ public class FrameQueue implements AutoCloseable {
         e.verify();
         if (numOfFrames != 1)
             // todo asserts
-            throw new RealSenseException(
+            throw new JRealSenseException(
                     "Polling from queue failed returning %d frames", numOfFrames);
         try {
             var ctor = frameClass.getConstructor(RealSenseFrame.class);
             return ctor.newInstance(new RealSenseFrame(framePtr.get(ValueLayout.ADDRESS, 0)));
         } catch (Exception ex) {
-            throw new RealSenseException(ex);
+            throw new JRealSenseException(ex);
         }
     }
 

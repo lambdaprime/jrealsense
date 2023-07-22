@@ -17,6 +17,7 @@
  */
 package id.jrealsense;
 
+import id.jrealsense.exceptions.JRealSenseException;
 import id.jrealsense.jextract.librealsense;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentScope;
@@ -52,7 +53,7 @@ public class RealSenseError {
         var error = errorPtr.get(ValueLayout.ADDRESS, 0);
         if (!hasError(error)) return;
         var buf = String.format("%s: %s", getFailedFunction(error), getMessage(error));
-        throw new RealSenseException(buf);
+        throw new JRealSenseException(buf);
     }
 
     private String getFailedFunction(MemorySegment error) {

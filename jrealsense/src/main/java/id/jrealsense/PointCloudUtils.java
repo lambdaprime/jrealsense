@@ -17,6 +17,7 @@
  */
 package id.jrealsense;
 
+import id.jrealsense.exceptions.JRealSenseException;
 import id.jrealsense.frames.PointCloudFrame;
 import id.jrealsense.frames.VideoFrame;
 import id.jrealsense.jextract.librealsense;
@@ -45,7 +46,7 @@ public class PointCloudUtils {
                 writer.append(String.format("v %f %f %f\n", v.x, v.y, v.z));
             }
         } catch (IOException e) {
-            throw new RealSenseException(e);
+            throw new JRealSenseException(e);
         }
         LOG.exiting("exportToObj");
     }
