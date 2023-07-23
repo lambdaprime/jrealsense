@@ -19,6 +19,7 @@ package id.jrealsense.frames;
 
 import id.jrealsense.Filter;
 import id.jrealsense.StreamProfile;
+import id.xfunction.io.ByteBufferUtils;
 import id.xfunction.logging.XLogger;
 import java.nio.ByteBuffer;
 import java.time.Instant;
@@ -28,6 +29,7 @@ import java.time.Instant;
  */
 abstract class AbstractFrame<F extends Frame<F>> implements Frame<F> {
 
+    private static final ByteBufferUtils utils = new ByteBufferUtils();
     private RealSenseFrame frame;
 
     protected AbstractFrame(RealSenseFrame frame) {
@@ -59,7 +61,7 @@ abstract class AbstractFrame<F extends Frame<F>> implements Frame<F> {
     }
 
     @Override
-    public ByteBuffer getData() {
+    public ByteBuffer getCopyOfData() {
         return frame.getData();
     }
 
@@ -83,5 +85,10 @@ abstract class AbstractFrame<F extends Frame<F>> implements Frame<F> {
     @Override
     public Instant getTimestampInstant() {
         return frame.getTimestampInstant();
+    }
+
+    @Override
+    public byte[] getCopyOfDataAsBytes() {
+        return utils.asBytes(getCopyOfData());
     }
 }

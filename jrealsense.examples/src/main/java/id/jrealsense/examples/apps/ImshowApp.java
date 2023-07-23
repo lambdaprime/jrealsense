@@ -107,7 +107,8 @@ public class ImshowApp {
 
                                 System.out.println("Frame number: " + frame.getFrameNumber());
                                 System.out.printf("Timestamp: %f\n", frame.getTimestamp());
-                                renderer.render(frame.getData(), BufferedImage.TYPE_3BYTE_BGR);
+                                renderer.render(
+                                        frame.getCopyOfData(), BufferedImage.TYPE_3BYTE_BGR);
                             });
             frameSet.close();
         }

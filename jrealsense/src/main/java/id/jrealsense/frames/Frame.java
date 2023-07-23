@@ -50,7 +50,9 @@ public interface Frame<T extends Frame<T>> extends AutoCloseable {
      * This methods wraps frame raw data as it returned by librealsense library into ByteBuffer and
      * returns it.
      */
-    ByteBuffer getData();
+    ByteBuffer getCopyOfData();
+
+    byte[] getCopyOfDataAsBytes();
 
     /** Frame number in milliseconds since the device was started */
     long getFrameNumber();

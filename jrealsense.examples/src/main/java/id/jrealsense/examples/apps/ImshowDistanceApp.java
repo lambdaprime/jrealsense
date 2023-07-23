@@ -106,7 +106,8 @@ public class ImshowDistanceApp {
 
                                 System.out.println(colorFrame);
 
-                                renderer.render(colorFrame.getData(), BufferedImage.TYPE_3BYTE_BGR);
+                                renderer.render(
+                                        colorFrame.getCopyOfData(), BufferedImage.TYPE_3BYTE_BGR);
                             });
             data.getDepthFrame()
                     .ifPresent(

@@ -23,7 +23,7 @@ eclipse.classpath.file {
 }
 
 dependencies {
-  api "io.github.lambdaprime:id.xfunction:22.0"
+  api "io.github.lambdaprime:id.xfunction:23.0-SNAPSHOT"
 }
 
 sourceSets {
