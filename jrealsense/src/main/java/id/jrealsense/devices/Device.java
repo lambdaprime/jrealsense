@@ -28,7 +28,7 @@ import java.lang.foreign.MemorySegment;
  */
 public class Device implements AutoCloseable {
 
-    private MemorySegment rs2_device;
+    protected MemorySegment rs2_device;
 
     public Device(MemorySegment rs2_device) {
         this.rs2_device = rs2_device;
@@ -89,5 +89,9 @@ public class Device implements AutoCloseable {
     public void close() {
         librealsense.rs2_delete_device(rs2_device);
         rs2_device = null;
+    }
+
+    public MemorySegment get_rs2_device() {
+        return rs2_device;
     }
 }

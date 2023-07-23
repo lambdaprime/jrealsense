@@ -21,13 +21,16 @@ import id.jrealsense.frames.RealSenseFrame;
 import id.jrealsense.jextract.librealsense;
 import id.xfunction.logging.XLogger;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentScope;
+import java.lang.foreign.ValueLayout;
+import java.util.Optional;
 
 /**
  * @author lambdaprime intid@protonmail.com
  */
 public class Pipeline implements AutoCloseable {
 
-    private static final XLogger LOG = XLogger.getLogger(FrameSet.class);
+    private static final XLogger LOG = XLogger.getLogger(Pipeline.class);
     private MemorySegment pipeline;
     private boolean isStarted;
 
@@ -38,20 +41,23 @@ public class Pipeline implements AutoCloseable {
     /** Starts pipeline with default configuration */
     public void start() {
         LOG.entering("start");
+        isStarted = true;
         var e = new RealSenseError();
         librealsense.rs2_pipeline_start(pipeline, e.get_rs2_error());
         e.verify();
         LOG.exiting("start");
     }
 
-    public void start(Config config) {
+    public PipelineProfile start(Config config) {
         LOG.entering("start");
         isStarted = true;
         var e = new RealSenseError();
-        librealsense.rs2_pipeline_start_with_config(
-                pipeline, config.get_rs_config(), e.get_rs2_error());
+        var profile =
+                librealsense.rs2_pipeline_start_with_config(
+                        pipeline, config.get_rs_config(), e.get_rs2_error());
         e.verify();
         LOG.exiting("start");
+        return new PipelineProfile(profile);
     }
 
     public void stop() {
@@ -83,6 +89,20 @@ public class Pipeline implements AutoCloseable {
             throw new RuntimeException("Received null frame. Make sure pipeline is started.");
         var res = new FrameSet(new RealSenseFrame(frame));
         LOG.exiting("waitForFrames");
+        return res;
+    }
+
+    public Optional<FrameSet> pollForFrames() {
+        LOG.entering("pollForFrames");
+        var e = new RealSenseError();
+        var outputPtr =
+                MemorySegment.allocateNative(ValueLayout.ADDRESS.byteSize(), SegmentScope.auto());
+        var ret = librealsense.rs2_pipeline_poll_for_frames(pipeline, outputPtr, e.get_rs2_error());
+        e.verify();
+        if (ret == 0) return Optional.empty();
+        var output = outputPtr.get(ValueLayout.ADDRESS, 0);
+        var res = Optional.of(new FrameSet(new RealSenseFrame(output)));
+        LOG.exiting("pollForFrames");
         return res;
     }
 
