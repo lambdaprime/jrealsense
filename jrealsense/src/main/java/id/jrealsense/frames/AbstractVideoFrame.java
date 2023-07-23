@@ -52,7 +52,7 @@ abstract class AbstractVideoFrame<F extends VideoFrame<F>> extends AbstractFrame
                 + ", Frame number: "
                 + getFrameNumber()
                 + ", Timestamp: "
-                + getTimestamp()
+                + getTimestampInstant()
                 + "]";
     }
 }

@@ -21,6 +21,7 @@ import id.jrealsense.Filter;
 import id.jrealsense.StreamProfile;
 import id.xfunction.logging.XLogger;
 import java.nio.ByteBuffer;
+import java.time.Instant;
 
 /**
  * @author lambdaprime intid@protonmail.com
@@ -77,5 +78,10 @@ abstract class AbstractFrame<F extends Frame<F>> implements Frame<F> {
     @Override
     public double getTimestamp() {
         return frame.getTimestamp();
+    }
+
+    @Override
+    public Instant getTimestampInstant() {
+        return frame.getTimestampInstant();
     }
 }

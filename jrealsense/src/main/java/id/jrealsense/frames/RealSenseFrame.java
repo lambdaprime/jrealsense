@@ -23,6 +23,7 @@ import id.jrealsense.jextract.librealsense;
 import id.xfunction.logging.XLogger;
 import java.lang.foreign.MemorySegment;
 import java.nio.ByteBuffer;
+import java.time.Instant;
 import java.util.function.Supplier;
 
 /**
@@ -82,6 +83,13 @@ public class RealSenseFrame implements AutoCloseable {
                 e.verify();
                 timestamp = () -> c;
                 return c;
+            };
+
+    private Supplier<Instant> instant =
+            () -> {
+                var v = Instant.ofEpochMilli(timestamp.get().longValue());
+                instant = () -> v;
+                return v;
             };
 
     private Supplier<StreamProfile> profile =
@@ -171,6 +179,10 @@ public class RealSenseFrame implements AutoCloseable {
 
     public double getTimestamp() {
         return timestamp.get();
+    }
+
+    public Instant getTimestampInstant() {
+        return instant.get();
     }
 
     /**

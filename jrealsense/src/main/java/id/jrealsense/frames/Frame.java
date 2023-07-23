@@ -20,6 +20,7 @@ package id.jrealsense.frames;
 import id.jrealsense.Filter;
 import id.jrealsense.StreamProfile;
 import java.nio.ByteBuffer;
+import java.time.Instant;
 
 /**
  * @author lambdaprime intid@protonmail.com
@@ -42,6 +43,7 @@ public interface Frame<T extends Frame<T>> extends AutoCloseable {
     RealSenseFrame getRealSenseFrame();
 
     /** Once frame is not needed anymore it must be released */
+    @Override
     void close();
 
     /**
@@ -53,6 +55,9 @@ public interface Frame<T extends Frame<T>> extends AutoCloseable {
     /** Frame number in milliseconds since the device was started */
     long getFrameNumber();
 
-    /** Frame number in milliseconds since the device was started */
+    /** Frame timestamp in milliseconds since epoc time */
     double getTimestamp();
+
+    /** Frame timestamp */
+    Instant getTimestampInstant();
 }
