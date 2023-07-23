@@ -19,6 +19,7 @@ package id.jrealsense;
 
 import id.jrealsense.jextract.librealsense;
 import java.lang.foreign.MemorySegment;
+import java.nio.file.Path;
 
 /**
  * @author lambdaprime intid@protonmail.com
@@ -41,6 +42,23 @@ public class Config implements AutoCloseable {
                 height,
                 format.getValue(),
                 framerate,
+                e.get_rs2_error());
+        e.verify();
+    }
+
+    public void enableDeviceFromFile(Path filePath) {
+        var e = new RealSenseError();
+        librealsense.rs2_config_enable_device_from_file(
+                config, XMemorySegment.toNativeString(filePath.toString()), e.get_rs2_error());
+        e.verify();
+    }
+
+    public void enableDeviceFromFile(Path filePath, boolean isRepeat) {
+        var e = new RealSenseError();
+        librealsense.rs2_config_enable_device_from_file_repeat_option(
+                config,
+                XMemorySegment.toNativeString(filePath.toString()),
+                isRepeat ? 1 : 0,
                 e.get_rs2_error());
         e.verify();
     }
