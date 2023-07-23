@@ -67,6 +67,18 @@ public class FrameQueue implements AutoCloseable {
         }
     }
 
+    public FrameSet pollFrameSet() {
+        var e = new RealSenseError();
+        var framePtr =
+                MemorySegment.allocateNative(ValueLayout.ADDRESS.byteSize(), SegmentScope.auto());
+        var numOfFrames = librealsense.rs2_poll_for_frame(queue, framePtr, e.get_rs2_error());
+        e.verify();
+        if (numOfFrames != 1)
+            throw new JRealSenseException(
+                    "Polling from queue failed returning %d frames", numOfFrames);
+        return new FrameSet(new RealSenseFrame(framePtr.get(ValueLayout.ADDRESS, 0)));
+    }
+
     public MemorySegment get_rs2_frame_queue() {
         return queue;
     }

@@ -18,36 +18,39 @@
 package id.jrealsense.filters;
 
 import id.jrealsense.FrameQueue;
+import id.jrealsense.FrameSet;
 import id.jrealsense.ProcessingBlock;
 import id.jrealsense.RealSenseError;
-import id.jrealsense.frames.DepthFrame;
-import id.jrealsense.frames.PointCloudFrame;
+import id.jrealsense.StreamType;
 import id.jrealsense.jextract.librealsense;
 
 /**
- * Filter which generates point cloud from depth frame.
+ * Filter which aligns frames from different streams in frameset.
  *
+ * <p>Most common use case is align depth frames to their corresponding color frames.
+ *
+ * @see <a href="https://dev.intelrealsense.com/docs/rs-align-advanced">rs-align-advanced</a>
  * @author lambdaprime intid@protonmail.com
  */
-public class PointCloudFilter extends AbstractFilter<DepthFrame, PointCloudFrame> {
+public class AlignFilter extends AbstractFilter<FrameSet, FrameSet> {
 
-    public PointCloudFilter(ProcessingBlock block, FrameQueue queue) {
+    public AlignFilter(ProcessingBlock block, FrameQueue queue) {
         super(block, queue);
     }
 
     @Override
-    public PointCloudFrame process(DepthFrame frame) {
-        getBlock().process(frame.getRealSenseFrame());
-        return getQueue().poll(PointCloudFrame.class);
+    public FrameSet process(FrameSet frameSet) {
+        getBlock().process(frameSet.getFrame());
+        return getQueue().pollFrameSet();
     }
 
-    /** Factory method, creates new {@link PointCloudFilter} */
-    public static PointCloudFilter create() {
+    /** Factory method, creates new {@link AlignFilter} */
+    public static AlignFilter create(StreamType streamType) {
         var e = new RealSenseError();
-        var block = librealsense.rs2_create_pointcloud(e.get_rs2_error());
+        var block = librealsense.rs2_create_align(streamType.get_rs2_stream(), e.get_rs2_error());
         e.verify();
         var queue = FrameQueue.create(1);
-        var ret = new PointCloudFilter(new ProcessingBlock(block), queue);
+        var ret = new AlignFilter(new ProcessingBlock(block), queue);
         ret.startQueue();
         return ret;
     }

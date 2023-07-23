@@ -189,7 +189,11 @@ public class RealSenseFrame implements AutoCloseable {
      * Prevent internal frame from being released when this frame is closed. It may be needed when
      * lifetime of the internal frame is managed by some other process.
      */
-    public void setIgnoreOnRelease(boolean ignore) {
+    public void setIgnoreOnClose(boolean ignore) {
         ignoreOnClose = ignore;
+    }
+
+    public boolean isIgnoreOnClose() {
+        return ignoreOnClose;
     }
 }

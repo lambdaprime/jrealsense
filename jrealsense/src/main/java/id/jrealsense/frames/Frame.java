@@ -19,13 +19,14 @@ package id.jrealsense.frames;
 
 import id.jrealsense.Filter;
 import id.jrealsense.StreamProfile;
+import id.jrealsense.filters.FilterData;
 import java.nio.ByteBuffer;
 import java.time.Instant;
 
 /**
  * @author lambdaprime intid@protonmail.com
  */
-public interface Frame<T extends Frame<T>> extends AutoCloseable {
+public interface Frame<T extends Frame<T>> extends FilterData, AutoCloseable {
 
     /** Stream profile to which this frame belongs */
     StreamProfile getProfile();

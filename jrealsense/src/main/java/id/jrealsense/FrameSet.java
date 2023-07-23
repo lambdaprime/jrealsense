@@ -19,6 +19,7 @@ package id.jrealsense;
 
 import static id.jrealsense.FormatType.RS2_FORMAT_ANY;
 
+import id.jrealsense.filters.FilterData;
 import id.jrealsense.frames.ColorFrame;
 import id.jrealsense.frames.CompositeFrame;
 import id.jrealsense.frames.DepthFrame;
@@ -39,10 +40,11 @@ import java.util.stream.Stream;
  *
  * @author lambdaprime intid@protonmail.com
  */
-public class FrameSet implements AutoCloseable {
+public class FrameSet implements FilterData, AutoCloseable {
 
     private static final XLogger LOG = XLogger.getLogger(FrameSet.class);
     private RealSenseFrame frame;
+    private boolean isClosed;
 
     private Supplier<Integer> count =
             () -> {
@@ -114,11 +116,25 @@ public class FrameSet implements AutoCloseable {
         return (Stream<Frame<?>>) frames.get().stream();
     }
 
+    public RealSenseFrame getFrame() {
+        return frame;
+    }
+
     @Override
     public void close() {
         LOG.entering("close");
+        if (isClosed) {
+            LOG.fine("already closed");
+            return;
+        }
+        if (frame.isIgnoreOnClose()) {
+            isClosed = true;
+            LOG.fine("Ignoring close operation as ownership has changed");
+            return;
+        }
         asStream().forEach(Frame::close);
         frame.close();
+        isClosed = true;
         LOG.exiting("close");
     }
 }

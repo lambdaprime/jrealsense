@@ -17,7 +17,7 @@
  */
 package id.jrealsense;
 
-import id.jrealsense.frames.Frame;
+import id.jrealsense.frames.RealSenseFrame;
 import id.jrealsense.jextract.librealsense;
 import id.xfunction.logging.XLogger;
 import java.lang.foreign.MemorySegment;
@@ -38,12 +38,12 @@ public class ProcessingBlock implements AutoCloseable {
         return block;
     }
 
-    public void process(Frame<?> frame) {
+    public void process(RealSenseFrame frame) {
         LOG.entering("process");
         var e = new RealSenseError();
-        var realFrame = frame.getRealSenseFrame();
-        realFrame.setIgnoreOnRelease(true);
-        librealsense.rs2_process_frame(block, realFrame.get_rs2_frame(), e.get_rs2_error());
+        // ownership is moved to the block object
+        frame.setIgnoreOnClose(true);
+        librealsense.rs2_process_frame(block, frame.get_rs2_frame(), e.get_rs2_error());
         e.verify();
         LOG.exiting("process");
     }

@@ -35,7 +35,7 @@ public class Colorizer extends AbstractFilter<DepthFrame, ColorFrame> {
 
     @Override
     public ColorFrame process(DepthFrame frame) {
-        getBlock().process(frame);
+        getBlock().process(frame.getRealSenseFrame());
         return getQueue().poll(ColorFrame.class);
     }
 

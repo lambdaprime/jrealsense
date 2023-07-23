@@ -21,13 +21,12 @@ import id.jrealsense.Filter;
 import id.jrealsense.FrameQueue;
 import id.jrealsense.ProcessingBlock;
 import id.jrealsense.RealSenseError;
-import id.jrealsense.frames.Frame;
 import id.jrealsense.jextract.librealsense;
 
 /**
  * @author lambdaprime intid@protonmail.com
  */
-abstract class AbstractFilter<IN extends Frame<IN>, OUT extends Frame<OUT>>
+abstract class AbstractFilter<IN extends FilterData, OUT extends FilterData>
         implements Filter<IN, OUT> {
 
     private ProcessingBlock block;
