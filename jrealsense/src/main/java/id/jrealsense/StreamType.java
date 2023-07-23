@@ -39,14 +39,14 @@ public enum StreamType {
     RS2_STREAM_CONFIDENCE(librealsense.RS2_STREAM_CONFIDENCE()),
     RS2_STREAM_COUNT(librealsense.RS2_STREAM_COUNT());
 
-    private int value;
+    private int rs2_stream;
 
     StreamType(int value) {
-        this.value = value;
+        this.rs2_stream = value;
     }
 
-    public int getValue() {
-        return value;
+    public int get_rs2_stream() {
+        return rs2_stream;
     }
 
     public static Map<Integer, StreamType> SWIG_VALUES =

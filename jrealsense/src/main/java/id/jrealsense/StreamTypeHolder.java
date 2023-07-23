@@ -30,7 +30,7 @@ public class StreamTypeHolder {
 
     StreamTypeHolder(StreamType stream) {
         value = MemorySegment.allocateNative(ValueLayout.JAVA_INT.byteSize(), SegmentScope.auto());
-        value.set(ValueLayout.JAVA_INT, 0, stream.getValue());
+        value.set(ValueLayout.JAVA_INT, 0, stream.get_rs2_stream());
     }
 
     public MemorySegment get_rs2_stream() {

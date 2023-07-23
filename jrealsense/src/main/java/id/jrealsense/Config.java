@@ -35,7 +35,7 @@ public class Config implements AutoCloseable {
         var e = new RealSenseError();
         librealsense.rs2_config_enable_stream(
                 config,
-                stream.getValue(),
+                stream.get_rs2_stream(),
                 index,
                 width,
                 height,

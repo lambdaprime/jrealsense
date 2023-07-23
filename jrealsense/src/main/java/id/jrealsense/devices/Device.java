@@ -28,17 +28,17 @@ import java.lang.foreign.MemorySegment;
  */
 public class Device implements AutoCloseable {
 
-    private MemorySegment device;
+    private MemorySegment rs2_device;
 
-    protected Device(MemorySegment dev) {
-        this.device = dev;
+    public Device(MemorySegment rs2_device) {
+        this.rs2_device = rs2_device;
     }
 
     public String getInfo() {
         var e = new RealSenseError();
         var info =
                 librealsense.rs2_get_device_info(
-                        device, librealsense.RS2_CAMERA_INFO_NAME(), e.get_rs2_error());
+                        rs2_device, librealsense.RS2_CAMERA_INFO_NAME(), e.get_rs2_error());
         e.verify();
         return info.getUtf8String(0);
     }
@@ -47,7 +47,9 @@ public class Device implements AutoCloseable {
         var e = new RealSenseError();
         var serial =
                 librealsense.rs2_get_device_info(
-                        device, librealsense.RS2_CAMERA_INFO_SERIAL_NUMBER(), e.get_rs2_error());
+                        rs2_device,
+                        librealsense.RS2_CAMERA_INFO_SERIAL_NUMBER(),
+                        e.get_rs2_error());
         e.verify();
         return serial.getUtf8String(0);
     }
@@ -56,7 +58,9 @@ public class Device implements AutoCloseable {
         var e = new RealSenseError();
         var version =
                 librealsense.rs2_get_device_info(
-                        device, librealsense.RS2_CAMERA_INFO_FIRMWARE_VERSION(), e.get_rs2_error());
+                        rs2_device,
+                        librealsense.RS2_CAMERA_INFO_FIRMWARE_VERSION(),
+                        e.get_rs2_error());
         e.verify();
         return version.getUtf8String(0);
     }
@@ -76,14 +80,14 @@ public class Device implements AutoCloseable {
      */
     public void reset() {
         var e = new RealSenseError();
-        librealsense.rs2_hardware_reset(device, e.get_rs2_error());
+        librealsense.rs2_hardware_reset(rs2_device, e.get_rs2_error());
         e.verify();
     }
 
     /** Release the resources. Once closed all further operations are invalid. */
     @Override
     public void close() {
-        librealsense.rs2_delete_device(device);
-        device = null;
+        librealsense.rs2_delete_device(rs2_device);
+        rs2_device = null;
     }
 }
