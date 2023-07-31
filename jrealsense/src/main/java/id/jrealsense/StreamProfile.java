@@ -26,7 +26,7 @@ import java.nio.ByteBuffer;
  */
 public class StreamProfile {
 
-    private MemorySegment streamProfile;
+    private MemorySegment rs2_stream_profile;
     private StreamType stream;
     private FormatType format;
     private int index;
@@ -34,13 +34,13 @@ public class StreamProfile {
     private int framerate;
 
     protected StreamProfile(
-            MemorySegment streamProfile,
+            MemorySegment rs2_stream_profile,
             StreamType rs2_stream,
             FormatType rs2_format,
             int index,
             int uniqueId,
             int framerate) {
-        this.streamProfile = streamProfile;
+        this.rs2_stream_profile = rs2_stream_profile;
         this.stream = rs2_stream;
         this.format = rs2_format;
         this.index = index;
@@ -48,8 +48,8 @@ public class StreamProfile {
         this.framerate = framerate;
     }
 
-    public MemorySegment getStreamProfile() {
-        return streamProfile;
+    public MemorySegment get_rs2_stream_profile() {
+        return rs2_stream_profile;
     }
 
     public StreamType getStream() {

@@ -27,7 +27,6 @@ import id.jrealsense.devices.DeviceLocator;
 import id.jrealsense.examples.Renderer;
 import id.jrealsense.filters.Colorizer;
 import id.xfunction.cli.CommandLineInterface;
-import java.awt.image.BufferedImage;
 
 /**
  * App example which demonstrates how to work with multiple streams. It shows color image from the
@@ -106,8 +105,7 @@ public class ImshowDistanceApp {
 
                                 System.out.println(colorFrame);
 
-                                renderer.render(
-                                        colorFrame.getCopyOfData(), BufferedImage.TYPE_3BYTE_BGR);
+                                renderer.render(colorFrame, FormatType.RS2_FORMAT_BGR8);
                             });
             data.getDepthFrame()
                     .ifPresent(

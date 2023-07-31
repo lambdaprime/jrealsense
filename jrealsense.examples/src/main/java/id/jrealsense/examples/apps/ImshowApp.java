@@ -26,7 +26,6 @@ import id.jrealsense.StreamType;
 import id.jrealsense.devices.DeviceLocator;
 import id.jrealsense.examples.Renderer;
 import id.xfunction.cli.CommandLineInterface;
-import java.awt.image.BufferedImage;
 
 /**
  * App example which demonstrates how to stream color frames.
@@ -107,8 +106,7 @@ public class ImshowApp {
 
                                 System.out.println("Frame number: " + frame.getFrameNumber());
                                 System.out.printf("Timestamp: %f\n", frame.getTimestamp());
-                                renderer.render(
-                                        frame.getCopyOfData(), BufferedImage.TYPE_3BYTE_BGR);
+                                renderer.render(frame, FormatType.RS2_FORMAT_BGR8);
                             });
             frameSet.close();
         }

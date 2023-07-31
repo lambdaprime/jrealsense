@@ -48,11 +48,16 @@ public interface Frame<T extends Frame<T>> extends FilterData, AutoCloseable {
     void close();
 
     /**
-     * This methods wraps frame raw data as it returned by librealsense library into ByteBuffer and
-     * returns it.
+     * This methods calls librealsense library to extract data from the frame and then wraps it into
+     * direct ByteBuffer and returns it.
      */
     ByteBuffer getCopyOfData();
 
+    /**
+     * Calls {@link #getCopyOfData()} and then copies data from direct ByteBuffer to Java Heap
+     *
+     * @return
+     */
     byte[] getCopyOfDataAsBytes();
 
     /** Frame number in milliseconds since the device was started */
