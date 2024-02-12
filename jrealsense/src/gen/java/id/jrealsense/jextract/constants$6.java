@@ -11,54 +11,33 @@ final class constants$6 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$6() {}
-    static final FunctionDescriptor lcong48$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$5.const$5.varHandle(MemoryLayout.PathElement.groupElement("tv_sec"));
+    static final VarHandle const$1 = constants$5.const$5.varHandle(MemoryLayout.PathElement.groupElement("tv_nsec"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.sequenceLayout(16, JAVA_LONG).withName("__fds_bits")
+    ).withName("");
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle lcong48$MH = RuntimeHelper.downcallHandle(
-        "lcong48",
-        constants$6.lcong48$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "select",
+        constants$6.const$3
     );
-    static final FunctionDescriptor drand48_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle drand48_r$MH = RuntimeHelper.downcallHandle(
-        "drand48_r",
-        constants$6.drand48_r$FUNC
-    );
-    static final FunctionDescriptor erand48_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle erand48_r$MH = RuntimeHelper.downcallHandle(
-        "erand48_r",
-        constants$6.erand48_r$FUNC
-    );
-    static final FunctionDescriptor lrand48_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lrand48_r$MH = RuntimeHelper.downcallHandle(
-        "lrand48_r",
-        constants$6.lrand48_r$FUNC
-    );
-    static final FunctionDescriptor nrand48_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle nrand48_r$MH = RuntimeHelper.downcallHandle(
-        "nrand48_r",
-        constants$6.nrand48_r$FUNC
-    );
-    static final FunctionDescriptor mrand48_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle mrand48_r$MH = RuntimeHelper.downcallHandle(
-        "mrand48_r",
-        constants$6.mrand48_r$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "pselect",
+        constants$6.const$5
     );
 }
 

@@ -11,61 +11,29 @@ final class constants$80 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$80() {}
-    static final FunctionDescriptor rs2_set_extrinsics$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__nextafterf",
+        constants$63.const$2
     );
-    static final MethodHandle rs2_set_extrinsics$MH = RuntimeHelper.downcallHandle(
-        "rs2_set_extrinsics",
-        constants$80.rs2_set_extrinsics$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "remainderf",
+        constants$63.const$2
     );
-    static final FunctionDescriptor rs2_get_dsm_params$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__remainderf",
+        constants$63.const$2
     );
-    static final MethodHandle rs2_get_dsm_params$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_dsm_params",
-        constants$80.rs2_get_dsm_params$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "scalbnf",
+        constants$67.const$4
     );
-    static final FunctionDescriptor rs2_override_dsm_params$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__scalbnf",
+        constants$67.const$4
     );
-    static final MethodHandle rs2_override_dsm_params$MH = RuntimeHelper.downcallHandle(
-        "rs2_override_dsm_params",
-        constants$80.rs2_override_dsm_params$FUNC
-    );
-    static final FunctionDescriptor rs2_reset_sensor_calibration$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_reset_sensor_calibration$MH = RuntimeHelper.downcallHandle(
-        "rs2_reset_sensor_calibration",
-        constants$80.rs2_reset_sensor_calibration$FUNC
-    );
-    static final FunctionDescriptor rs2_set_motion_device_intrinsics$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_set_motion_device_intrinsics$MH = RuntimeHelper.downcallHandle(
-        "rs2_set_motion_device_intrinsics",
-        constants$80.rs2_set_motion_device_intrinsics$FUNC
-    );
-    static final FunctionDescriptor rs2_get_max_usable_depth_range$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_max_usable_depth_range$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_max_usable_depth_range",
-        constants$80.rs2_get_max_usable_depth_range$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "ilogbf",
+        constants$60.const$5
     );
 }
 

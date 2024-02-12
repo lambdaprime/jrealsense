@@ -11,51 +11,33 @@ final class constants$37 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$37() {}
-    static final FunctionDescriptor round$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__acos",
+        constants$36.const$4
     );
-    static final MethodHandle round$MH = RuntimeHelper.downcallHandle(
-        "round",
-        constants$37.round$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "asin",
+        constants$36.const$4
     );
-    static final FunctionDescriptor __round$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__asin",
+        constants$36.const$4
     );
-    static final MethodHandle __round$MH = RuntimeHelper.downcallHandle(
-        "__round",
-        constants$37.__round$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atan",
+        constants$36.const$4
     );
-    static final FunctionDescriptor trunc$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__atan",
+        constants$36.const$4
     );
-    static final MethodHandle trunc$MH = RuntimeHelper.downcallHandle(
-        "trunc",
-        constants$37.trunc$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
-    static final FunctionDescriptor __trunc$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __trunc$MH = RuntimeHelper.downcallHandle(
-        "__trunc",
-        constants$37.__trunc$FUNC
-    );
-    static final FunctionDescriptor remquo$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle remquo$MH = RuntimeHelper.downcallHandle(
-        "remquo",
-        constants$37.remquo$FUNC
-    );
-    static final FunctionDescriptor __remquo$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle __remquo$MH = RuntimeHelper.downcallHandle(
-        "__remquo",
-        constants$37.__remquo$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "atan2",
+        constants$37.const$5
     );
 }
 

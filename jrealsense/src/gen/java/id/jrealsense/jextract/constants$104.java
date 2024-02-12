@@ -11,53 +11,34 @@ final class constants$104 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$104() {}
-    static final FunctionDescriptor rs2_delete_processing_block$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "rs2_get_stream_profiles",
+        constants$29.const$2
     );
-    static final MethodHandle rs2_delete_processing_block$MH = RuntimeHelper.downcallHandle(
-        "rs2_delete_processing_block",
-        constants$104.rs2_delete_processing_block$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "rs2_get_debug_stream_profiles",
+        constants$29.const$2
     );
-    static final FunctionDescriptor rs2_create_frame_queue$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "rs2_get_active_streams",
+        constants$29.const$2
     );
-    static final MethodHandle rs2_create_frame_queue$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_frame_queue",
-        constants$104.rs2_create_frame_queue$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "rs2_get_stream_profile",
+        constants$99.const$0
     );
-    static final FunctionDescriptor rs2_delete_frame_queue$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle rs2_delete_frame_queue$MH = RuntimeHelper.downcallHandle(
-        "rs2_delete_frame_queue",
-        constants$104.rs2_delete_frame_queue$FUNC
-    );
-    static final FunctionDescriptor rs2_frame_queue_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_frame_queue_size$MH = RuntimeHelper.downcallHandle(
-        "rs2_frame_queue_size",
-        constants$104.rs2_frame_queue_size$FUNC
-    );
-    static final FunctionDescriptor rs2_wait_for_frame$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_wait_for_frame$MH = RuntimeHelper.downcallHandle(
-        "rs2_wait_for_frame",
-        constants$104.rs2_wait_for_frame$FUNC
-    );
-    static final FunctionDescriptor rs2_poll_for_frame$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_poll_for_frame$MH = RuntimeHelper.downcallHandle(
-        "rs2_poll_for_frame",
-        constants$104.rs2_poll_for_frame$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "rs2_get_stream_profile_data",
+        constants$104.const$4
     );
 }
 

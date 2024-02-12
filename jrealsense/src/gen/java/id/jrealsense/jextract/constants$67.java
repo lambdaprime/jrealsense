@@ -11,53 +11,29 @@ final class constants$67 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$67() {}
-    static final FunctionDescriptor rs2_software_device_destruction_callback_ptr$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__expf",
+        constants$62.const$1
     );
-    static final FunctionDescriptor rs2_software_device_destruction_callback_ptr_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_FLOAT,
+        JAVA_FLOAT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle rs2_software_device_destruction_callback_ptr_UP$MH = RuntimeHelper.upcallHandle(rs2_software_device_destruction_callback_ptr.class, "apply", constants$67.rs2_software_device_destruction_callback_ptr_UP$FUNC);
-    static final FunctionDescriptor rs2_software_device_destruction_callback_ptr_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "frexpf",
+        constants$67.const$1
     );
-    static final MethodHandle rs2_software_device_destruction_callback_ptr_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$67.rs2_software_device_destruction_callback_ptr_DOWN$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "__frexpf",
+        constants$67.const$1
     );
-    static final FunctionDescriptor rs2_devices_changed_callback_ptr$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_INT
     );
-    static final FunctionDescriptor rs2_devices_changed_callback_ptr_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_devices_changed_callback_ptr_UP$MH = RuntimeHelper.upcallHandle(rs2_devices_changed_callback_ptr.class, "apply", constants$67.rs2_devices_changed_callback_ptr_UP$FUNC);
-    static final FunctionDescriptor rs2_devices_changed_callback_ptr_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_devices_changed_callback_ptr_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$67.rs2_devices_changed_callback_ptr_DOWN$FUNC
-    );
-    static final FunctionDescriptor rs2_frame_callback_ptr$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor rs2_frame_callback_ptr_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_frame_callback_ptr_UP$MH = RuntimeHelper.upcallHandle(rs2_frame_callback_ptr.class, "apply", constants$67.rs2_frame_callback_ptr_UP$FUNC);
-    static final FunctionDescriptor rs2_frame_callback_ptr_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_frame_callback_ptr_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$67.rs2_frame_callback_ptr_DOWN$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "ldexpf",
+        constants$67.const$4
     );
 }
 

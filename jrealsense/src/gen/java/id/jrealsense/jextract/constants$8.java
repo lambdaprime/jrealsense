@@ -11,53 +11,12 @@ final class constants$8 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$8() {}
-    static final FunctionDescriptor realloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle realloc$MH = RuntimeHelper.downcallHandle(
-        "realloc",
-        constants$8.realloc$FUNC
-    );
-    static final FunctionDescriptor reallocarray$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle reallocarray$MH = RuntimeHelper.downcallHandle(
-        "reallocarray",
-        constants$8.reallocarray$FUNC
-    );
-    static final FunctionDescriptor free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle free$MH = RuntimeHelper.downcallHandle(
-        "free",
-        constants$8.free$FUNC
-    );
-    static final FunctionDescriptor alloca$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle alloca$MH = RuntimeHelper.downcallHandle(
-        "alloca",
-        constants$8.alloca$FUNC
-    );
-    static final FunctionDescriptor valloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle valloc$MH = RuntimeHelper.downcallHandle(
-        "valloc",
-        constants$8.valloc$FUNC
-    );
-    static final FunctionDescriptor posix_memalign$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle posix_memalign$MH = RuntimeHelper.downcallHandle(
-        "posix_memalign",
-        constants$8.posix_memalign$FUNC
-    );
+    static final VarHandle const$0 = constants$7.const$5.varHandle(MemoryLayout.PathElement.groupElement("__lock"));
+    static final VarHandle const$1 = constants$7.const$5.varHandle(MemoryLayout.PathElement.groupElement("__count"));
+    static final VarHandle const$2 = constants$7.const$5.varHandle(MemoryLayout.PathElement.groupElement("__owner"));
+    static final VarHandle const$3 = constants$7.const$5.varHandle(MemoryLayout.PathElement.groupElement("__nusers"));
+    static final VarHandle const$4 = constants$7.const$5.varHandle(MemoryLayout.PathElement.groupElement("__kind"));
+    static final VarHandle const$5 = constants$7.const$5.varHandle(MemoryLayout.PathElement.groupElement("__spins"));
 }
 
 

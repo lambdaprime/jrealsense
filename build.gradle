@@ -10,7 +10,7 @@ gradle publishToMavenLocal \
 
 plugins {
   id 'java'
-  id 'com.diffplug.spotless' version '6.7.2'
+  id 'com.diffplug.spotless' version '6.21.0'
 }
 
 allprojects {
@@ -23,19 +23,22 @@ allprojects {
 subprojects {
   apply plugin: 'java'
   apply plugin: 'eclipse'
-  sourceCompatibility = '20'
-  targetCompatibility = '20'
 
-compileJava {
-  options.compilerArgs += ["-parameters", "--enable-preview"]
-}
+  def javaVersion = 21
+  sourceCompatibility = javaVersion
+  targetCompatibility = javaVersion
+  tasks.withType(JavaCompile) {
+    options.release = javaVersion
+  }
 
-// setup spotless config for all subprojects
+  // setup spotless config for all subprojects
   def spotlessConfig = {
     spotless {
+      lineEndings 'UNIX'
       java {
         importOrder()
         removeUnusedImports()
+
         // Use Android style which has 4 whitespaces instead 2 by default
         googleJavaFormat().aosp().reflowLongStrings()
 
@@ -68,9 +71,13 @@ ext {
   releaseFileName = "${projectName}-v${version}.zip"
 }
 
-// gradlew requires execution of gradle-wrapper.jar which trustworthy needs to
-// be checked everytime when it is updated (otherwise it do not seems secure)
-// To avoid using it we rely on manual version check
-def gradleVersion = "8.1.1"
-if ("$gradle.gradleVersion" != gradleVersion)
-  throw new RuntimeException("Running gradle version $gradle.gradleVersion, required " + gradleVersion);
+/*
+ * gradlew requires execution of gradle-wrapper.jar which trustworthy needs to
+ * be checked everytime when it is updated (otherwise it do not seems secure)
+ * To avoid using it we rely on manual version check
+ */
+def requiredGradleVersion = "8.3"
+if ("$gradle.gradleVersion" != "$requiredGradleVersion")
+  throw new RuntimeException("Running gradle version $gradle.gradleVersion, required $requiredGradleVersion");
+
+println "Version: ${version}"

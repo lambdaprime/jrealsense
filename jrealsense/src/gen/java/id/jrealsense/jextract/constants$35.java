@@ -11,53 +11,28 @@ final class constants$35 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$35() {}
-    static final FunctionDescriptor nextafter$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "getloadavg",
+        constants$28.const$4
     );
-    static final MethodHandle nextafter$MH = RuntimeHelper.downcallHandle(
-        "nextafter",
-        constants$35.nextafter$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_DOUBLE
     );
-    static final FunctionDescriptor __nextafter$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__fpclassify",
+        constants$35.const$1
     );
-    static final MethodHandle __nextafter$MH = RuntimeHelper.downcallHandle(
-        "__nextafter",
-        constants$35.__nextafter$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "__signbit",
+        constants$35.const$1
     );
-    static final FunctionDescriptor remainder$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__isinf",
+        constants$35.const$1
     );
-    static final MethodHandle remainder$MH = RuntimeHelper.downcallHandle(
-        "remainder",
-        constants$35.remainder$FUNC
-    );
-    static final FunctionDescriptor __remainder$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __remainder$MH = RuntimeHelper.downcallHandle(
-        "__remainder",
-        constants$35.__remainder$FUNC
-    );
-    static final FunctionDescriptor scalbn$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle scalbn$MH = RuntimeHelper.downcallHandle(
-        "scalbn",
-        constants$35.scalbn$FUNC
-    );
-    static final FunctionDescriptor __scalbn$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle __scalbn$MH = RuntimeHelper.downcallHandle(
-        "__scalbn",
-        constants$35.__scalbn$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "__finite",
+        constants$35.const$1
     );
 }
 

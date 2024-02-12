@@ -11,54 +11,24 @@ final class constants$94 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$94() {}
-    static final FunctionDescriptor rs2_get_frame_data_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "rs2_matchers_to_string",
+        constants$86.const$5
     );
-    static final MethodHandle rs2_get_frame_data_size$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_frame_data_size",
-        constants$94.rs2_get_frame_data_size$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor rs2_get_frame_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(rs2_log_callback_ptr.class, "apply", constants$94.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        constants$94.const$1
     );
-    static final MethodHandle rs2_get_frame_data$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_frame_data",
-        constants$94.rs2_get_frame_data$FUNC
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor rs2_get_frame_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_frame_width$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_frame_width",
-        constants$94.rs2_get_frame_width$FUNC
-    );
-    static final FunctionDescriptor rs2_get_frame_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_frame_height$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_frame_height",
-        constants$94.rs2_get_frame_height$FUNC
-    );
-    static final FunctionDescriptor rs2_depth_frame_get_units$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_depth_frame_get_units$MH = RuntimeHelper.downcallHandle(
-        "rs2_depth_frame_get_units",
-        constants$94.rs2_depth_frame_get_units$FUNC
-    );
-    static final FunctionDescriptor rs2_get_frame_stride_in_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_frame_stride_in_bytes$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_frame_stride_in_bytes",
-        constants$94.rs2_get_frame_stride_in_bytes$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(rs2_notification_callback_ptr.class, "apply", constants$94.const$4);
 }
 
 

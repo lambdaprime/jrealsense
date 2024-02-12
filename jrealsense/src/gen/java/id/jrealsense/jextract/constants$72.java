@@ -11,66 +11,29 @@ final class constants$72 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$72() {}
-    static final FunctionDescriptor rs2_set_region_of_interest$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__cbrtf",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_set_region_of_interest$MH = RuntimeHelper.downcallHandle(
-        "rs2_set_region_of_interest",
-        constants$72.rs2_set_region_of_interest$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "ceilf",
+        constants$62.const$1
     );
-    static final FunctionDescriptor rs2_get_region_of_interest$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__ceilf",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_get_region_of_interest$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_region_of_interest",
-        constants$72.rs2_get_region_of_interest$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "fabsf",
+        constants$62.const$1
     );
-    static final FunctionDescriptor rs2_open$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__fabsf",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_open$MH = RuntimeHelper.downcallHandle(
-        "rs2_open",
-        constants$72.rs2_open$FUNC
-    );
-    static final FunctionDescriptor rs2_open_multiple$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_open_multiple$MH = RuntimeHelper.downcallHandle(
-        "rs2_open_multiple",
-        constants$72.rs2_open_multiple$FUNC
-    );
-    static final FunctionDescriptor rs2_close$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_close$MH = RuntimeHelper.downcallHandle(
-        "rs2_close",
-        constants$72.rs2_close$FUNC
-    );
-    static final FunctionDescriptor rs2_start$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_start$MH = RuntimeHelper.downcallHandle(
-        "rs2_start",
-        constants$72.rs2_start$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "floorf",
+        constants$62.const$1
     );
 }
 

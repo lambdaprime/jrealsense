@@ -11,60 +11,29 @@ final class constants$115 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$115() {}
-    static final FunctionDescriptor rs2_config_enable_device_from_file_repeat_option$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "rs2_delete_device_hub",
+        constants$20.const$5
     );
-    static final MethodHandle rs2_config_enable_device_from_file_repeat_option$MH = RuntimeHelper.downcallHandle(
-        "rs2_config_enable_device_from_file_repeat_option",
-        constants$115.rs2_config_enable_device_from_file_repeat_option$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "rs2_device_hub_wait_for_device",
+        constants$29.const$2
     );
-    static final FunctionDescriptor rs2_config_enable_record_to_file$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "rs2_device_hub_is_device_connected",
+        constants$21.const$5
     );
-    static final MethodHandle rs2_config_enable_record_to_file$MH = RuntimeHelper.downcallHandle(
-        "rs2_config_enable_record_to_file",
-        constants$115.rs2_config_enable_record_to_file$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "rs2_get_device_count",
+        constants$17.const$2
     );
-    static final FunctionDescriptor rs2_config_disable_stream$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "rs2_delete_device_list",
+        constants$20.const$5
     );
-    static final MethodHandle rs2_config_disable_stream$MH = RuntimeHelper.downcallHandle(
-        "rs2_config_disable_stream",
-        constants$115.rs2_config_disable_stream$FUNC
-    );
-    static final FunctionDescriptor rs2_config_disable_indexed_stream$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_config_disable_indexed_stream$MH = RuntimeHelper.downcallHandle(
-        "rs2_config_disable_indexed_stream",
-        constants$115.rs2_config_disable_indexed_stream$FUNC
-    );
-    static final FunctionDescriptor rs2_config_disable_all_streams$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_config_disable_all_streams$MH = RuntimeHelper.downcallHandle(
-        "rs2_config_disable_all_streams",
-        constants$115.rs2_config_disable_all_streams$FUNC
-    );
-    static final FunctionDescriptor rs2_config_resolve$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_config_resolve$MH = RuntimeHelper.downcallHandle(
-        "rs2_config_resolve",
-        constants$115.rs2_config_resolve$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "rs2_device_list_contains",
+        constants$21.const$5
     );
 }
 

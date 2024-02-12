@@ -11,60 +11,35 @@ final class constants$101 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$101() {}
-    static final FunctionDescriptor rs2_supports_option$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle rs2_supports_option$MH = RuntimeHelper.downcallHandle(
-        "rs2_supports_option",
-        constants$101.rs2_supports_option$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "rs2_get_region_of_interest",
+        constants$101.const$0
     );
-    static final FunctionDescriptor rs2_get_option_range$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "rs2_open",
+        constants$95.const$3
     );
-    static final MethodHandle rs2_get_option_range$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_option_range",
-        constants$101.rs2_get_option_range$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor rs2_get_option_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "rs2_open_multiple",
+        constants$101.const$3
     );
-    static final MethodHandle rs2_get_option_description$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_option_description",
-        constants$101.rs2_get_option_description$FUNC
-    );
-    static final FunctionDescriptor rs2_get_option_value_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_option_value_description$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_option_value_description",
-        constants$101.rs2_get_option_value_description$FUNC
-    );
-    static final FunctionDescriptor rs2_create_colorizer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_create_colorizer$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_colorizer",
-        constants$101.rs2_create_colorizer$FUNC
-    );
-    static final FunctionDescriptor rs2_create_sync_processing_block$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_create_sync_processing_block$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_sync_processing_block",
-        constants$101.rs2_create_sync_processing_block$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "rs2_close",
+        constants$94.const$4
     );
 }
 

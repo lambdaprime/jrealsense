@@ -11,61 +11,29 @@ final class constants$77 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$77() {}
-    static final FunctionDescriptor rs2_delete_stream_profiles_list$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__y1f",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_delete_stream_profiles_list$MH = RuntimeHelper.downcallHandle(
-        "rs2_delete_stream_profiles_list",
-        constants$77.rs2_delete_stream_profiles_list$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "ynf",
+        constants$76.const$0
     );
-    static final FunctionDescriptor rs2_get_extrinsics$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__ynf",
+        constants$76.const$0
     );
-    static final MethodHandle rs2_get_extrinsics$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_extrinsics",
-        constants$77.rs2_get_extrinsics$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "erff",
+        constants$62.const$1
     );
-    static final FunctionDescriptor rs2_register_extrinsics$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        MemoryLayout.structLayout(
-            MemoryLayout.sequenceLayout(9, Constants$root.C_FLOAT$LAYOUT).withName("rotation"),
-            MemoryLayout.sequenceLayout(3, Constants$root.C_FLOAT$LAYOUT).withName("translation")
-        ).withName("rs2_extrinsics"),
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__erff",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_register_extrinsics$MH = RuntimeHelper.downcallHandle(
-        "rs2_register_extrinsics",
-        constants$77.rs2_register_extrinsics$FUNC
-    );
-    static final FunctionDescriptor rs2_override_extrinsics$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_override_extrinsics$MH = RuntimeHelper.downcallHandle(
-        "rs2_override_extrinsics",
-        constants$77.rs2_override_extrinsics$FUNC
-    );
-    static final FunctionDescriptor rs2_get_video_stream_intrinsics$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_video_stream_intrinsics$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_video_stream_intrinsics",
-        constants$77.rs2_get_video_stream_intrinsics$FUNC
-    );
-    static final FunctionDescriptor rs2_get_recommended_processing_blocks$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_recommended_processing_blocks$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_recommended_processing_blocks",
-        constants$77.rs2_get_recommended_processing_blocks$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "erfcf",
+        constants$62.const$1
     );
 }
 

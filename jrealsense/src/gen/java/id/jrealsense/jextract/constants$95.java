@@ -11,53 +11,21 @@ final class constants$95 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$95() {}
-    static final FunctionDescriptor rs2_get_frame_bits_per_pixel$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$94.const$4
     );
-    static final MethodHandle rs2_get_frame_bits_per_pixel$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_frame_bits_per_pixel",
-        constants$95.rs2_get_frame_bits_per_pixel$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(rs2_software_device_destruction_callback_ptr.class, "apply", constants$20.const$5);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$20.const$5
     );
-    static final FunctionDescriptor rs2_frame_add_ref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle rs2_frame_add_ref$MH = RuntimeHelper.downcallHandle(
-        "rs2_frame_add_ref",
-        constants$95.rs2_frame_add_ref$FUNC
-    );
-    static final FunctionDescriptor rs2_release_frame$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_release_frame$MH = RuntimeHelper.downcallHandle(
-        "rs2_release_frame",
-        constants$95.rs2_release_frame$FUNC
-    );
-    static final FunctionDescriptor rs2_keep_frame$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_keep_frame$MH = RuntimeHelper.downcallHandle(
-        "rs2_keep_frame",
-        constants$95.rs2_keep_frame$FUNC
-    );
-    static final FunctionDescriptor rs2_get_frame_vertices$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_frame_vertices$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_frame_vertices",
-        constants$95.rs2_get_frame_vertices$FUNC
-    );
-    static final FunctionDescriptor rs2_export_to_ply$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_export_to_ply$MH = RuntimeHelper.downcallHandle(
-        "rs2_export_to_ply",
-        constants$95.rs2_export_to_ply$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(rs2_devices_changed_callback_ptr.class, "apply", constants$95.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        constants$95.const$3
     );
 }
 

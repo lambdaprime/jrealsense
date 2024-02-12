@@ -11,64 +11,27 @@ final class constants$87 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$87() {}
-    static final FunctionDescriptor rs2_reset_to_factory_calibration$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "rs2_exception_type_to_string",
+        constants$86.const$5
     );
-    static final MethodHandle rs2_reset_to_factory_calibration$MH = RuntimeHelper.downcallHandle(
-        "rs2_reset_to_factory_calibration",
-        constants$87.rs2_reset_to_factory_calibration$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "rs2_distortion_to_string",
+        constants$86.const$5
     );
-    static final FunctionDescriptor rs2_write_calibration$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_write_calibration$MH = RuntimeHelper.downcallHandle(
-        "rs2_write_calibration",
-        constants$87.rs2_write_calibration$FUNC
-    );
-    static final FunctionDescriptor rs2_update_firmware_cpp$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_update_firmware_cpp$MH = RuntimeHelper.downcallHandle(
-        "rs2_update_firmware_cpp",
-        constants$87.rs2_update_firmware_cpp$FUNC
-    );
-    static final FunctionDescriptor rs2_update_firmware$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_update_firmware$MH = RuntimeHelper.downcallHandle(
-        "rs2_update_firmware",
-        constants$87.rs2_update_firmware$FUNC
-    );
-    static final FunctionDescriptor rs2_create_flash_backup_cpp$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_create_flash_backup_cpp$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_flash_backup_cpp",
-        constants$87.rs2_create_flash_backup_cpp$FUNC
-    );
-    static final FunctionDescriptor rs2_create_flash_backup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_create_flash_backup$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_flash_backup",
-        constants$87.rs2_create_flash_backup$FUNC
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_INT.withName("width"),
+        JAVA_INT.withName("height"),
+        JAVA_FLOAT.withName("ppx"),
+        JAVA_FLOAT.withName("ppy"),
+        JAVA_FLOAT.withName("fx"),
+        JAVA_FLOAT.withName("fy"),
+        JAVA_INT.withName("model"),
+        MemoryLayout.sequenceLayout(5, JAVA_FLOAT).withName("coeffs")
+    ).withName("rs2_intrinsics");
+    static final VarHandle const$3 = constants$87.const$2.varHandle(MemoryLayout.PathElement.groupElement("width"));
+    static final VarHandle const$4 = constants$87.const$2.varHandle(MemoryLayout.PathElement.groupElement("height"));
+    static final VarHandle const$5 = constants$87.const$2.varHandle(MemoryLayout.PathElement.groupElement("ppx"));
 }
 
 

@@ -11,48 +11,31 @@ final class constants$118 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$118() {}
-    static final FunctionDescriptor rs2_pipeline_start_with_config_and_callback_cpp$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "rs2_loopback_is_enabled",
+        constants$17.const$2
     );
-    static final MethodHandle rs2_pipeline_start_with_config_and_callback_cpp$MH = RuntimeHelper.downcallHandle(
-        "rs2_pipeline_start_with_config_and_callback_cpp",
-        constants$118.rs2_pipeline_start_with_config_and_callback_cpp$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "rs2_connect_tm2_controller",
+        constants$95.const$3
     );
-    static final FunctionDescriptor rs2_pipeline_get_active_profile$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle rs2_pipeline_get_active_profile$MH = RuntimeHelper.downcallHandle(
-        "rs2_pipeline_get_active_profile",
-        constants$118.rs2_pipeline_get_active_profile$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "rs2_disconnect_tm2_controller",
+        constants$118.const$2
     );
-    static final FunctionDescriptor rs2_pipeline_profile_get_device$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "rs2_reset_to_factory_calibration",
+        constants$94.const$4
     );
-    static final MethodHandle rs2_pipeline_profile_get_device$MH = RuntimeHelper.downcallHandle(
-        "rs2_pipeline_profile_get_device",
-        constants$118.rs2_pipeline_profile_get_device$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "rs2_write_calibration",
+        constants$94.const$4
     );
-    static final FunctionDescriptor rs2_pipeline_profile_get_streams$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_pipeline_profile_get_streams$MH = RuntimeHelper.downcallHandle(
-        "rs2_pipeline_profile_get_streams",
-        constants$118.rs2_pipeline_profile_get_streams$FUNC
-    );
-    static final FunctionDescriptor rs2_delete_pipeline_profile$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_delete_pipeline_profile$MH = RuntimeHelper.downcallHandle(
-        "rs2_delete_pipeline_profile",
-        constants$118.rs2_delete_pipeline_profile$FUNC
-    );
-    static final MemorySegment NULL$ADDR = MemorySegment.ofAddress(0L);
 }
 
 

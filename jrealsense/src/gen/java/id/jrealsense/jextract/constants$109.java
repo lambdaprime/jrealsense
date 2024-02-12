@@ -11,54 +11,44 @@ final class constants$109 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$109() {}
-    static final FunctionDescriptor rs2_create_playback_device$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "rs2_export_localization_map",
+        constants$29.const$2
     );
-    static final MethodHandle rs2_create_playback_device$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_playback_device",
-        constants$109.rs2_create_playback_device$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        MemoryLayout.structLayout(
+            JAVA_FLOAT.withName("x"),
+            JAVA_FLOAT.withName("y"),
+            JAVA_FLOAT.withName("z")
+        ).withName("rs2_vector"),
+        MemoryLayout.structLayout(
+            JAVA_FLOAT.withName("x"),
+            JAVA_FLOAT.withName("y"),
+            JAVA_FLOAT.withName("z"),
+            JAVA_FLOAT.withName("w")
+        ).withName("rs2_quaternion"),
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor rs2_playback_device_get_file_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "rs2_set_static_node",
+        constants$109.const$1
     );
-    static final MethodHandle rs2_playback_device_get_file_path$MH = RuntimeHelper.downcallHandle(
-        "rs2_playback_device_get_file_path",
-        constants$109.rs2_playback_device_get_file_path$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor rs2_playback_get_duration$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "rs2_get_static_node",
+        constants$109.const$3
     );
-    static final MethodHandle rs2_playback_get_duration$MH = RuntimeHelper.downcallHandle(
-        "rs2_playback_get_duration",
-        constants$109.rs2_playback_get_duration$FUNC
-    );
-    static final FunctionDescriptor rs2_playback_seek$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_playback_seek$MH = RuntimeHelper.downcallHandle(
-        "rs2_playback_seek",
-        constants$109.rs2_playback_seek$FUNC
-    );
-    static final FunctionDescriptor rs2_playback_get_position$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_playback_get_position$MH = RuntimeHelper.downcallHandle(
-        "rs2_playback_get_position",
-        constants$109.rs2_playback_get_position$FUNC
-    );
-    static final FunctionDescriptor rs2_playback_device_resume$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_playback_device_resume$MH = RuntimeHelper.downcallHandle(
-        "rs2_playback_device_resume",
-        constants$109.rs2_playback_device_resume$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "rs2_remove_static_node",
+        constants$21.const$5
     );
 }
 

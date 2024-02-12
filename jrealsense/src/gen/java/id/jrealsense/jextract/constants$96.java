@@ -11,64 +11,25 @@ final class constants$96 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$96() {}
-    static final FunctionDescriptor rs2_get_frame_texture_coordinates$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(rs2_frame_callback_ptr.class, "apply", constants$94.const$4);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(rs2_frame_processor_callback_ptr.class, "apply", constants$95.const$3);
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        JAVA_FLOAT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle rs2_get_frame_texture_coordinates$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_frame_texture_coordinates",
-        constants$96.rs2_get_frame_texture_coordinates$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(rs2_update_progress_callback_ptr.class, "apply", constants$96.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$96.const$2
     );
-    static final FunctionDescriptor rs2_get_frame_points_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final MethodHandle rs2_get_frame_points_count$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_frame_points_count",
-        constants$96.rs2_get_frame_points_count$FUNC
-    );
-    static final FunctionDescriptor rs2_get_frame_stream_profile$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_frame_stream_profile$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_frame_stream_profile",
-        constants$96.rs2_get_frame_stream_profile$FUNC
-    );
-    static final FunctionDescriptor rs2_is_frame_extendable_to$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_is_frame_extendable_to$MH = RuntimeHelper.downcallHandle(
-        "rs2_is_frame_extendable_to",
-        constants$96.rs2_is_frame_extendable_to$FUNC
-    );
-    static final FunctionDescriptor rs2_allocate_synthetic_video_frame$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_allocate_synthetic_video_frame$MH = RuntimeHelper.downcallHandle(
-        "rs2_allocate_synthetic_video_frame",
-        constants$96.rs2_allocate_synthetic_video_frame$FUNC
-    );
-    static final FunctionDescriptor rs2_allocate_synthetic_motion_frame$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_allocate_synthetic_motion_frame$MH = RuntimeHelper.downcallHandle(
-        "rs2_allocate_synthetic_motion_frame",
-        constants$96.rs2_allocate_synthetic_motion_frame$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "rs2_create_error",
+        constants$96.const$5
     );
 }
 

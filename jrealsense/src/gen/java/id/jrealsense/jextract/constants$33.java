@@ -11,47 +11,38 @@ final class constants$33 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$33() {}
-    static final FunctionDescriptor erfc$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_DOUBLE,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG
     );
-    static final MethodHandle erfc$MH = RuntimeHelper.downcallHandle(
-        "erfc",
-        constants$33.erfc$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "ecvt_r",
+        constants$33.const$0
     );
-    static final FunctionDescriptor __erfc$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "fcvt_r",
+        constants$33.const$0
     );
-    static final MethodHandle __erfc$MH = RuntimeHelper.downcallHandle(
-        "__erfc",
-        constants$33.__erfc$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG
     );
-    static final FunctionDescriptor lgamma$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "mblen",
+        constants$33.const$3
     );
-    static final MethodHandle lgamma$MH = RuntimeHelper.downcallHandle(
-        "lgamma",
-        constants$33.lgamma$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG
     );
-    static final FunctionDescriptor __lgamma$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __lgamma$MH = RuntimeHelper.downcallHandle(
-        "__lgamma",
-        constants$33.__lgamma$FUNC
-    );
-    static final FunctionDescriptor tgamma$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle tgamma$MH = RuntimeHelper.downcallHandle(
-        "tgamma",
-        constants$33.tgamma$FUNC
-    );
-    static final FunctionDescriptor __tgamma$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __tgamma$MH = RuntimeHelper.downcallHandle(
-        "__tgamma",
-        constants$33.__tgamma$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "mbtowc",
+        constants$33.const$5
     );
 }
 

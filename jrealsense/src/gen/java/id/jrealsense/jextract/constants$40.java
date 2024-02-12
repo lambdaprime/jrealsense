@@ -11,55 +11,29 @@ final class constants$40 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$40() {}
-    static final FunctionDescriptor fmin$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__tanh",
+        constants$36.const$4
     );
-    static final MethodHandle fmin$MH = RuntimeHelper.downcallHandle(
-        "fmin",
-        constants$40.fmin$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "acosh",
+        constants$36.const$4
     );
-    static final FunctionDescriptor __fmin$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__acosh",
+        constants$36.const$4
     );
-    static final MethodHandle __fmin$MH = RuntimeHelper.downcallHandle(
-        "__fmin",
-        constants$40.__fmin$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "asinh",
+        constants$36.const$4
     );
-    static final FunctionDescriptor fma$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__asinh",
+        constants$36.const$4
     );
-    static final MethodHandle fma$MH = RuntimeHelper.downcallHandle(
-        "fma",
-        constants$40.fma$FUNC
-    );
-    static final FunctionDescriptor __fma$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __fma$MH = RuntimeHelper.downcallHandle(
-        "__fma",
-        constants$40.__fma$FUNC
-    );
-    static final FunctionDescriptor scalb$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle scalb$MH = RuntimeHelper.downcallHandle(
-        "scalb",
-        constants$40.scalb$FUNC
-    );
-    static final FunctionDescriptor __scalb$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __scalb$MH = RuntimeHelper.downcallHandle(
-        "__scalb",
-        constants$40.__scalb$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atanh",
+        constants$36.const$4
     );
 }
 

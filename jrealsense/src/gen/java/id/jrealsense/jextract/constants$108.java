@@ -11,54 +11,31 @@ final class constants$108 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$108() {}
-    static final FunctionDescriptor rs2_playback_status_changed_callback_ptr_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "rs2_get_recommended_processing_blocks",
+        constants$29.const$2
     );
-    static final MethodHandle rs2_playback_status_changed_callback_ptr_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$108.rs2_playback_status_changed_callback_ptr_DOWN$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "rs2_get_processing_block",
+        constants$99.const$0
     );
-    static final FunctionDescriptor rs2_create_record_device$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "rs2_get_recommended_processing_blocks_count",
+        constants$17.const$2
     );
-    static final MethodHandle rs2_create_record_device$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_record_device",
-        constants$108.rs2_create_record_device$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "rs2_delete_recommended_processing_blocks",
+        constants$20.const$5
     );
-    static final FunctionDescriptor rs2_create_record_device_ex$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle rs2_create_record_device_ex$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_record_device_ex",
-        constants$108.rs2_create_record_device_ex$FUNC
-    );
-    static final FunctionDescriptor rs2_record_device_pause$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_record_device_pause$MH = RuntimeHelper.downcallHandle(
-        "rs2_record_device_pause",
-        constants$108.rs2_record_device_pause$FUNC
-    );
-    static final FunctionDescriptor rs2_record_device_resume$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_record_device_resume$MH = RuntimeHelper.downcallHandle(
-        "rs2_record_device_resume",
-        constants$108.rs2_record_device_resume$FUNC
-    );
-    static final FunctionDescriptor rs2_record_device_filename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_record_device_filename$MH = RuntimeHelper.downcallHandle(
-        "rs2_record_device_filename",
-        constants$108.rs2_record_device_filename$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "rs2_import_localization_map",
+        constants$108.const$4
     );
 }
 

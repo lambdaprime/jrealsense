@@ -11,56 +11,26 @@ final class constants$86 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$86() {}
-    static final FunctionDescriptor rs2_query_sensors$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__fmaf",
+        constants$85.const$4
     );
-    static final MethodHandle rs2_query_sensors$MH = RuntimeHelper.downcallHandle(
-        "rs2_query_sensors",
-        constants$86.rs2_query_sensors$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "scalbf",
+        constants$63.const$2
     );
-    static final FunctionDescriptor rs2_loopback_enable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__scalbf",
+        constants$63.const$2
     );
-    static final MethodHandle rs2_loopback_enable$MH = RuntimeHelper.downcallHandle(
-        "rs2_loopback_enable",
-        constants$86.rs2_loopback_enable$FUNC
+    static final VarHandle const$3 = JAVA_INT.varHandle();
+    static final MemorySegment const$4 = RuntimeHelper.lookupGlobalVariable("signgam", JAVA_INT);
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final FunctionDescriptor rs2_loopback_disable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_loopback_disable$MH = RuntimeHelper.downcallHandle(
-        "rs2_loopback_disable",
-        constants$86.rs2_loopback_disable$FUNC
-    );
-    static final FunctionDescriptor rs2_loopback_is_enabled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_loopback_is_enabled$MH = RuntimeHelper.downcallHandle(
-        "rs2_loopback_is_enabled",
-        constants$86.rs2_loopback_is_enabled$FUNC
-    );
-    static final FunctionDescriptor rs2_connect_tm2_controller$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_connect_tm2_controller$MH = RuntimeHelper.downcallHandle(
-        "rs2_connect_tm2_controller",
-        constants$86.rs2_connect_tm2_controller$FUNC
-    );
-    static final FunctionDescriptor rs2_disconnect_tm2_controller$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_disconnect_tm2_controller$MH = RuntimeHelper.downcallHandle(
-        "rs2_disconnect_tm2_controller",
-        constants$86.rs2_disconnect_tm2_controller$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "rs2_notification_category_to_string",
+        constants$86.const$5
     );
 }
 

@@ -11,51 +11,29 @@ final class constants$61 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$61() {}
-    static final FunctionDescriptor roundf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__signbitf",
+        constants$60.const$5
     );
-    static final MethodHandle roundf$MH = RuntimeHelper.downcallHandle(
-        "roundf",
-        constants$61.roundf$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "__isinff",
+        constants$60.const$5
     );
-    static final FunctionDescriptor __roundf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__finitef",
+        constants$60.const$5
     );
-    static final MethodHandle __roundf$MH = RuntimeHelper.downcallHandle(
-        "__roundf",
-        constants$61.__roundf$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "__isnanf",
+        constants$60.const$5
     );
-    static final FunctionDescriptor truncf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_FLOAT,
+        JAVA_FLOAT
     );
-    static final MethodHandle truncf$MH = RuntimeHelper.downcallHandle(
-        "truncf",
-        constants$61.truncf$FUNC
-    );
-    static final FunctionDescriptor __truncf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle __truncf$MH = RuntimeHelper.downcallHandle(
-        "__truncf",
-        constants$61.__truncf$FUNC
-    );
-    static final FunctionDescriptor remquof$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle remquof$MH = RuntimeHelper.downcallHandle(
-        "remquof",
-        constants$61.remquof$FUNC
-    );
-    static final FunctionDescriptor __remquof$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle __remquof$MH = RuntimeHelper.downcallHandle(
-        "__remquof",
-        constants$61.__remquof$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "__iseqsigf",
+        constants$61.const$4
     );
 }
 

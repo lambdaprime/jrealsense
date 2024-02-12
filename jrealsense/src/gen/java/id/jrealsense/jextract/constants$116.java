@@ -11,58 +11,40 @@ final class constants$116 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$116() {}
-    static final FunctionDescriptor rs2_config_can_resolve$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "rs2_create_device",
+        constants$99.const$0
     );
-    static final MethodHandle rs2_config_can_resolve$MH = RuntimeHelper.downcallHandle(
-        "rs2_config_can_resolve",
-        constants$116.rs2_config_can_resolve$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "rs2_delete_device",
+        constants$20.const$5
     );
-    static final FunctionDescriptor rs2_create_pipeline$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "rs2_get_device_info",
+        constants$99.const$0
     );
-    static final MethodHandle rs2_create_pipeline$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_pipeline",
-        constants$116.rs2_create_pipeline$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "rs2_supports_device_info",
+        constants$99.const$4
     );
-    static final FunctionDescriptor rs2_pipeline_stop$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "rs2_hardware_reset",
+        constants$94.const$4
     );
-    static final MethodHandle rs2_pipeline_stop$MH = RuntimeHelper.downcallHandle(
-        "rs2_pipeline_stop",
-        constants$116.rs2_pipeline_stop$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor rs2_pipeline_wait_for_frames$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_pipeline_wait_for_frames$MH = RuntimeHelper.downcallHandle(
-        "rs2_pipeline_wait_for_frames",
-        constants$116.rs2_pipeline_wait_for_frames$FUNC
-    );
-    static final FunctionDescriptor rs2_pipeline_poll_for_frames$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_pipeline_poll_for_frames$MH = RuntimeHelper.downcallHandle(
-        "rs2_pipeline_poll_for_frames",
-        constants$116.rs2_pipeline_poll_for_frames$FUNC
-    );
-    static final FunctionDescriptor rs2_pipeline_try_wait_for_frames$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_pipeline_try_wait_for_frames$MH = RuntimeHelper.downcallHandle(
-        "rs2_pipeline_try_wait_for_frames",
-        constants$116.rs2_pipeline_try_wait_for_frames$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "rs2_build_debug_protocol_command",
+        constants$116.const$5
     );
 }
 

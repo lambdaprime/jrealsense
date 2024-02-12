@@ -11,48 +11,29 @@ final class constants$51 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$51() {}
-    static final FunctionDescriptor __hypotf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__y0",
+        constants$36.const$4
     );
-    static final MethodHandle __hypotf$MH = RuntimeHelper.downcallHandle(
-        "__hypotf",
-        constants$51.__hypotf$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "y1",
+        constants$36.const$4
     );
-    static final FunctionDescriptor cbrtf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__y1",
+        constants$36.const$4
     );
-    static final MethodHandle cbrtf$MH = RuntimeHelper.downcallHandle(
-        "cbrtf",
-        constants$51.cbrtf$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "yn",
+        constants$50.const$2
     );
-    static final FunctionDescriptor __cbrtf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__yn",
+        constants$50.const$2
     );
-    static final MethodHandle __cbrtf$MH = RuntimeHelper.downcallHandle(
-        "__cbrtf",
-        constants$51.__cbrtf$FUNC
-    );
-    static final FunctionDescriptor ceilf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle ceilf$MH = RuntimeHelper.downcallHandle(
-        "ceilf",
-        constants$51.ceilf$FUNC
-    );
-    static final FunctionDescriptor __ceilf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle __ceilf$MH = RuntimeHelper.downcallHandle(
-        "__ceilf",
-        constants$51.__ceilf$FUNC
-    );
-    static final FunctionDescriptor fabsf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle fabsf$MH = RuntimeHelper.downcallHandle(
-        "fabsf",
-        constants$51.fabsf$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "erf",
+        constants$36.const$4
     );
 }
 

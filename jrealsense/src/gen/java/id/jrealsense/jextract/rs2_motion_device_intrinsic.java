@@ -18,13 +18,8 @@ import static java.lang.foreign.ValueLayout.*;
  */
 public class rs2_motion_device_intrinsic {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.sequenceLayout(3, MemoryLayout.sequenceLayout(4, Constants$root.C_FLOAT$LAYOUT)).withName("data"),
-        MemoryLayout.sequenceLayout(3, Constants$root.C_FLOAT$LAYOUT).withName("noise_variances"),
-        MemoryLayout.sequenceLayout(3, Constants$root.C_FLOAT$LAYOUT).withName("bias_variances")
-    ).withName("rs2_motion_device_intrinsic");
     public static MemoryLayout $LAYOUT() {
-        return rs2_motion_device_intrinsic.$struct$LAYOUT;
+        return constants$91.const$0;
     }
     public static MemorySegment data$slice(MemorySegment seg) {
         return seg.asSlice(0, 48);
@@ -40,7 +35,7 @@ public class rs2_motion_device_intrinsic {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena arena) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, arena); }
 }
 
 

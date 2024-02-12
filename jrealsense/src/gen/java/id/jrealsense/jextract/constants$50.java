@@ -11,50 +11,29 @@ final class constants$50 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$50() {}
-    static final FunctionDescriptor __log2f$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "j1",
+        constants$36.const$4
     );
-    static final MethodHandle __log2f$MH = RuntimeHelper.downcallHandle(
-        "__log2f",
-        constants$50.__log2f$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "__j1",
+        constants$36.const$4
     );
-    static final FunctionDescriptor powf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_DOUBLE,
+        JAVA_INT,
+        JAVA_DOUBLE
     );
-    static final MethodHandle powf$MH = RuntimeHelper.downcallHandle(
-        "powf",
-        constants$50.powf$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "jn",
+        constants$50.const$2
     );
-    static final FunctionDescriptor __powf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__jn",
+        constants$50.const$2
     );
-    static final MethodHandle __powf$MH = RuntimeHelper.downcallHandle(
-        "__powf",
-        constants$50.__powf$FUNC
-    );
-    static final FunctionDescriptor sqrtf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle sqrtf$MH = RuntimeHelper.downcallHandle(
-        "sqrtf",
-        constants$50.sqrtf$FUNC
-    );
-    static final FunctionDescriptor __sqrtf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle __sqrtf$MH = RuntimeHelper.downcallHandle(
-        "__sqrtf",
-        constants$50.__sqrtf$FUNC
-    );
-    static final FunctionDescriptor hypotf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle hypotf$MH = RuntimeHelper.downcallHandle(
-        "hypotf",
-        constants$50.hypotf$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "y0",
+        constants$36.const$4
     );
 }
 

@@ -11,49 +11,38 @@ final class constants$31 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$31() {}
-    static final FunctionDescriptor j1$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_LONG,
+        JAVA_LONG
     );
-    static final MethodHandle j1$MH = RuntimeHelper.downcallHandle(
-        "j1",
-        constants$31.j1$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "labs",
+        constants$31.const$0
     );
-    static final FunctionDescriptor __j1$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "llabs",
+        constants$31.const$0
     );
-    static final MethodHandle __j1$MH = RuntimeHelper.downcallHandle(
-        "__j1",
-        constants$31.__j1$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(MemoryLayout.structLayout(
+        JAVA_INT.withName("quot"),
+        JAVA_INT.withName("rem")
+    ).withName(""),
+        JAVA_INT,
+        JAVA_INT
     );
-    static final FunctionDescriptor jn$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "div",
+        constants$31.const$3
     );
-    static final MethodHandle jn$MH = RuntimeHelper.downcallHandle(
-        "jn",
-        constants$31.jn$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(MemoryLayout.structLayout(
+        JAVA_LONG.withName("quot"),
+        JAVA_LONG.withName("rem")
+    ).withName(""),
+        JAVA_LONG,
+        JAVA_LONG
     );
-    static final FunctionDescriptor __jn$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __jn$MH = RuntimeHelper.downcallHandle(
-        "__jn",
-        constants$31.__jn$FUNC
-    );
-    static final FunctionDescriptor y0$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle y0$MH = RuntimeHelper.downcallHandle(
-        "y0",
-        constants$31.y0$FUNC
-    );
-    static final FunctionDescriptor __y0$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __y0$MH = RuntimeHelper.downcallHandle(
-        "__y0",
-        constants$31.__y0$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "ldiv",
+        constants$31.const$5
     );
 }
 

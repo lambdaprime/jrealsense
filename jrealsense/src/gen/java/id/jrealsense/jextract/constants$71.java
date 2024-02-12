@@ -11,56 +11,29 @@ final class constants$71 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$71() {}
-    static final FunctionDescriptor rs2_get_sensor_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__powf",
+        constants$63.const$2
     );
-    static final MethodHandle rs2_get_sensor_info$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_sensor_info",
-        constants$71.rs2_get_sensor_info$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "sqrtf",
+        constants$62.const$1
     );
-    static final FunctionDescriptor rs2_supports_sensor_info$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__sqrtf",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_supports_sensor_info$MH = RuntimeHelper.downcallHandle(
-        "rs2_supports_sensor_info",
-        constants$71.rs2_supports_sensor_info$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hypotf",
+        constants$63.const$2
     );
-    static final FunctionDescriptor rs2_is_sensor_extendable_to$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__hypotf",
+        constants$63.const$2
     );
-    static final MethodHandle rs2_is_sensor_extendable_to$MH = RuntimeHelper.downcallHandle(
-        "rs2_is_sensor_extendable_to",
-        constants$71.rs2_is_sensor_extendable_to$FUNC
-    );
-    static final FunctionDescriptor rs2_get_depth_scale$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_depth_scale$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_depth_scale",
-        constants$71.rs2_get_depth_scale$FUNC
-    );
-    static final FunctionDescriptor rs2_depth_stereo_frame_get_baseline$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_depth_stereo_frame_get_baseline$MH = RuntimeHelper.downcallHandle(
-        "rs2_depth_stereo_frame_get_baseline",
-        constants$71.rs2_depth_stereo_frame_get_baseline$FUNC
-    );
-    static final FunctionDescriptor rs2_get_stereo_baseline$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_stereo_baseline$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_stereo_baseline",
-        constants$71.rs2_get_stereo_baseline$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cbrtf",
+        constants$62.const$1
     );
 }
 

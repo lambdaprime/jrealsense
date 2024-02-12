@@ -11,51 +11,29 @@ final class constants$111 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$111() {}
-    static final FunctionDescriptor rs2_playback_device_stop$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "rs2_get_dsm_params",
+        constants$95.const$3
     );
-    static final MethodHandle rs2_playback_device_stop$MH = RuntimeHelper.downcallHandle(
-        "rs2_playback_device_stop",
-        constants$111.rs2_playback_device_stop$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "rs2_override_dsm_params",
+        constants$95.const$3
     );
-    static final FunctionDescriptor rs2_get_raw_data_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "rs2_reset_sensor_calibration",
+        constants$94.const$4
     );
-    static final MethodHandle rs2_get_raw_data_size$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_raw_data_size",
-        constants$111.rs2_get_raw_data_size$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "rs2_set_motion_device_intrinsics",
+        constants$102.const$0
     );
-    static final FunctionDescriptor rs2_delete_raw_data$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "rs2_get_max_usable_depth_range",
+        constants$3.const$0
     );
-    static final MethodHandle rs2_delete_raw_data$MH = RuntimeHelper.downcallHandle(
-        "rs2_delete_raw_data",
-        constants$111.rs2_delete_raw_data$FUNC
-    );
-    static final FunctionDescriptor rs2_get_raw_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_raw_data$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_raw_data",
-        constants$111.rs2_get_raw_data$FUNC
-    );
-    static final FunctionDescriptor rs2_get_api_version$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_api_version$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_api_version",
-        constants$111.rs2_get_api_version$FUNC
-    );
-    static final FunctionDescriptor rs2_log_to_console$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_log_to_console$MH = RuntimeHelper.downcallHandle(
-        "rs2_log_to_console",
-        constants$111.rs2_log_to_console$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "rs2_project_point_to_pixel",
+        constants$95.const$3
     );
 }
 

@@ -11,58 +11,55 @@ final class constants$13 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$13() {}
-    static final FunctionDescriptor realpath$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle realpath$MH = RuntimeHelper.downcallHandle(
-        "realpath",
-        constants$13.realpath$FUNC
-    );
-    static final FunctionDescriptor __compar_fn_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor __compar_fn_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle __compar_fn_t_UP$MH = RuntimeHelper.upcallHandle(__compar_fn_t.class, "apply", constants$13.__compar_fn_t_UP$FUNC);
-    static final FunctionDescriptor __compar_fn_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle __compar_fn_t_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$13.__compar_fn_t_DOWN$FUNC
-    );
-    static final FunctionDescriptor bsearch$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle bsearch$MH = RuntimeHelper.downcallHandle(
-        "bsearch",
-        constants$13.bsearch$FUNC
-    );
-    static final FunctionDescriptor qsort$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle qsort$MH = RuntimeHelper.downcallHandle(
-        "qsort",
-        constants$13.qsort$FUNC
-    );
-    static final FunctionDescriptor abs$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle abs$MH = RuntimeHelper.downcallHandle(
-        "abs",
-        constants$13.abs$FUNC
-    );
+    static final VarHandle const$0 = constants$12.const$5.varHandle(MemoryLayout.PathElement.groupElement("__align"));
+    static final UnionLayout const$1 = MemoryLayout.unionLayout(
+        MemoryLayout.sequenceLayout(56, JAVA_BYTE).withName("__size"),
+        JAVA_LONG.withName("__align")
+    ).withName("pthread_attr_t");
+    static final VarHandle const$2 = constants$13.const$1.varHandle(MemoryLayout.PathElement.groupElement("__align"));
+    static final UnionLayout const$3 = MemoryLayout.unionLayout(
+        MemoryLayout.structLayout(
+            JAVA_INT.withName("__lock"),
+            JAVA_INT.withName("__count"),
+            JAVA_INT.withName("__owner"),
+            JAVA_INT.withName("__nusers"),
+            JAVA_INT.withName("__kind"),
+            JAVA_SHORT.withName("__spins"),
+            JAVA_SHORT.withName("__elision"),
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("__prev"),
+                RuntimeHelper.POINTER.withName("__next")
+            ).withName("__list")
+        ).withName("__data"),
+        MemoryLayout.sequenceLayout(40, JAVA_BYTE).withName("__size"),
+        JAVA_LONG.withName("__align")
+    ).withName("");
+    static final VarHandle const$4 = constants$13.const$3.varHandle(MemoryLayout.PathElement.groupElement("__align"));
+    static final UnionLayout const$5 = MemoryLayout.unionLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.unionLayout(
+                JAVA_LONG.withName("__wseq"),
+                MemoryLayout.structLayout(
+                    JAVA_INT.withName("__low"),
+                    JAVA_INT.withName("__high")
+                ).withName("__wseq32")
+            ).withName("$anon$0"),
+            MemoryLayout.unionLayout(
+                JAVA_LONG.withName("__g1_start"),
+                MemoryLayout.structLayout(
+                    JAVA_INT.withName("__low"),
+                    JAVA_INT.withName("__high")
+                ).withName("__g1_start32")
+            ).withName("$anon$1"),
+            MemoryLayout.sequenceLayout(2, JAVA_INT).withName("__g_refs"),
+            MemoryLayout.sequenceLayout(2, JAVA_INT).withName("__g_size"),
+            JAVA_INT.withName("__g1_orig_size"),
+            JAVA_INT.withName("__wrefs"),
+            MemoryLayout.sequenceLayout(2, JAVA_INT).withName("__g_signals")
+        ).withName("__data"),
+        MemoryLayout.sequenceLayout(48, JAVA_BYTE).withName("__size"),
+        JAVA_LONG.withName("__align")
+    ).withName("");
 }
 
 

@@ -11,49 +11,30 @@ final class constants$34 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$34() {}
-    static final FunctionDescriptor gamma$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "wctomb",
+        constants$28.const$4
     );
-    static final MethodHandle gamma$MH = RuntimeHelper.downcallHandle(
-        "gamma",
-        constants$34.gamma$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG
     );
-    static final FunctionDescriptor __gamma$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "mbstowcs",
+        constants$34.const$1
     );
-    static final MethodHandle __gamma$MH = RuntimeHelper.downcallHandle(
-        "__gamma",
-        constants$34.__gamma$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "wcstombs",
+        constants$34.const$1
     );
-    static final FunctionDescriptor lgamma_r$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "rpmatch",
+        constants$2.const$0
     );
-    static final MethodHandle lgamma_r$MH = RuntimeHelper.downcallHandle(
-        "lgamma_r",
-        constants$34.lgamma_r$FUNC
-    );
-    static final FunctionDescriptor __lgamma_r$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle __lgamma_r$MH = RuntimeHelper.downcallHandle(
-        "__lgamma_r",
-        constants$34.__lgamma_r$FUNC
-    );
-    static final FunctionDescriptor rint$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle rint$MH = RuntimeHelper.downcallHandle(
-        "rint",
-        constants$34.rint$FUNC
-    );
-    static final FunctionDescriptor __rint$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __rint$MH = RuntimeHelper.downcallHandle(
-        "__rint",
-        constants$34.__rint$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "getsubopt",
+        constants$21.const$5
     );
 }
 

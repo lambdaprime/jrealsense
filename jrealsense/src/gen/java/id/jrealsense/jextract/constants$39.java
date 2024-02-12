@@ -11,51 +11,29 @@ final class constants$39 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$39() {}
-    static final FunctionDescriptor llround$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__tan",
+        constants$36.const$4
     );
-    static final MethodHandle llround$MH = RuntimeHelper.downcallHandle(
-        "llround",
-        constants$39.llround$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cosh",
+        constants$36.const$4
     );
-    static final FunctionDescriptor __llround$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__cosh",
+        constants$36.const$4
     );
-    static final MethodHandle __llround$MH = RuntimeHelper.downcallHandle(
-        "__llround",
-        constants$39.__llround$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "sinh",
+        constants$36.const$4
     );
-    static final FunctionDescriptor fdim$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__sinh",
+        constants$36.const$4
     );
-    static final MethodHandle fdim$MH = RuntimeHelper.downcallHandle(
-        "fdim",
-        constants$39.fdim$FUNC
-    );
-    static final FunctionDescriptor __fdim$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __fdim$MH = RuntimeHelper.downcallHandle(
-        "__fdim",
-        constants$39.__fdim$FUNC
-    );
-    static final FunctionDescriptor fmax$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle fmax$MH = RuntimeHelper.downcallHandle(
-        "fmax",
-        constants$39.fmax$FUNC
-    );
-    static final FunctionDescriptor __fmax$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __fmax$MH = RuntimeHelper.downcallHandle(
-        "__fmax",
-        constants$39.__fmax$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "tanh",
+        constants$36.const$4
     );
 }
 

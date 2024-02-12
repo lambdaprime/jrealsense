@@ -11,51 +11,29 @@ final class constants$98 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$98() {}
-    static final FunctionDescriptor rs2_extract_target_dimensions$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "rs2_stream_to_string",
+        constants$86.const$5
     );
-    static final MethodHandle rs2_extract_target_dimensions$MH = RuntimeHelper.downcallHandle(
-        "rs2_extract_target_dimensions",
-        constants$98.rs2_extract_target_dimensions$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "rs2_format_to_string",
+        constants$86.const$5
     );
-    static final FunctionDescriptor rs2_option_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.sequenceLayout(9, JAVA_FLOAT).withName("rotation"),
+        MemoryLayout.sequenceLayout(3, JAVA_FLOAT).withName("translation")
+    ).withName("rs2_extrinsics");
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "rs2_delete_sensor_list",
+        constants$20.const$5
     );
-    static final MethodHandle rs2_option_to_string$MH = RuntimeHelper.downcallHandle(
-        "rs2_option_to_string",
-        constants$98.rs2_option_to_string$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "rs2_get_sensors_count",
+        constants$17.const$2
     );
-    static final FunctionDescriptor rs2_sr300_visual_preset_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle rs2_sr300_visual_preset_to_string$MH = RuntimeHelper.downcallHandle(
-        "rs2_sr300_visual_preset_to_string",
-        constants$98.rs2_sr300_visual_preset_to_string$FUNC
-    );
-    static final FunctionDescriptor rs2_rs400_visual_preset_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle rs2_rs400_visual_preset_to_string$MH = RuntimeHelper.downcallHandle(
-        "rs2_rs400_visual_preset_to_string",
-        constants$98.rs2_rs400_visual_preset_to_string$FUNC
-    );
-    static final FunctionDescriptor rs2_l500_visual_preset_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle rs2_l500_visual_preset_to_string$MH = RuntimeHelper.downcallHandle(
-        "rs2_l500_visual_preset_to_string",
-        constants$98.rs2_l500_visual_preset_to_string$FUNC
-    );
-    static final FunctionDescriptor rs2_sensor_mode_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle rs2_sensor_mode_to_string$MH = RuntimeHelper.downcallHandle(
-        "rs2_sensor_mode_to_string",
-        constants$98.rs2_sensor_mode_to_string$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "rs2_delete_sensor",
+        constants$20.const$5
     );
 }
 

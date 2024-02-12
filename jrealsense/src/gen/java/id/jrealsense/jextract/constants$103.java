@@ -11,64 +11,29 @@ final class constants$103 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$103() {}
-    static final FunctionDescriptor rs2_create_processing_block_fptr$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "rs2_set_notifications_callback_cpp",
+        constants$95.const$3
     );
-    static final MethodHandle rs2_create_processing_block_fptr$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_processing_block_fptr",
-        constants$103.rs2_create_processing_block_fptr$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "rs2_get_notification_description",
+        constants$29.const$2
     );
-    static final FunctionDescriptor rs2_processing_block_register_simple_option$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "rs2_get_notification_timestamp",
+        constants$2.const$5
     );
-    static final MethodHandle rs2_processing_block_register_simple_option$MH = RuntimeHelper.downcallHandle(
-        "rs2_processing_block_register_simple_option",
-        constants$103.rs2_processing_block_register_simple_option$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "rs2_get_notification_severity",
+        constants$17.const$2
     );
-    static final FunctionDescriptor rs2_start_processing$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "rs2_get_notification_category",
+        constants$17.const$2
     );
-    static final MethodHandle rs2_start_processing$MH = RuntimeHelper.downcallHandle(
-        "rs2_start_processing",
-        constants$103.rs2_start_processing$FUNC
-    );
-    static final FunctionDescriptor rs2_start_processing_fptr$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_start_processing_fptr$MH = RuntimeHelper.downcallHandle(
-        "rs2_start_processing_fptr",
-        constants$103.rs2_start_processing_fptr$FUNC
-    );
-    static final FunctionDescriptor rs2_start_processing_queue$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_start_processing_queue$MH = RuntimeHelper.downcallHandle(
-        "rs2_start_processing_queue",
-        constants$103.rs2_start_processing_queue$FUNC
-    );
-    static final FunctionDescriptor rs2_process_frame$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_process_frame$MH = RuntimeHelper.downcallHandle(
-        "rs2_process_frame",
-        constants$103.rs2_process_frame$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "rs2_get_notification_serialized_data",
+        constants$29.const$2
     );
 }
 

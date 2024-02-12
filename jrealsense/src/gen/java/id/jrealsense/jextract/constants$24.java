@@ -11,49 +11,35 @@ final class constants$24 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$24() {}
-    static final FunctionDescriptor __log10$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_LONG
     );
-    static final MethodHandle __log10$MH = RuntimeHelper.downcallHandle(
-        "__log10",
-        constants$24.__log10$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "reallocarray",
+        constants$24.const$0
     );
-    static final FunctionDescriptor modf$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "free",
+        constants$20.const$5
     );
-    static final MethodHandle modf$MH = RuntimeHelper.downcallHandle(
-        "modf",
-        constants$24.modf$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "alloca",
+        constants$4.const$3
     );
-    static final FunctionDescriptor __modf$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "valloc",
+        constants$4.const$3
     );
-    static final MethodHandle __modf$MH = RuntimeHelper.downcallHandle(
-        "__modf",
-        constants$24.__modf$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_LONG
     );
-    static final FunctionDescriptor expm1$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle expm1$MH = RuntimeHelper.downcallHandle(
-        "expm1",
-        constants$24.expm1$FUNC
-    );
-    static final FunctionDescriptor __expm1$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __expm1$MH = RuntimeHelper.downcallHandle(
-        "__expm1",
-        constants$24.__expm1$FUNC
-    );
-    static final FunctionDescriptor log1p$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle log1p$MH = RuntimeHelper.downcallHandle(
-        "log1p",
-        constants$24.log1p$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "posix_memalign",
+        constants$24.const$5
     );
 }
 

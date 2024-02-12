@@ -11,49 +11,29 @@ final class constants$43 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$43() {}
-    static final FunctionDescriptor __atanf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__log10",
+        constants$36.const$4
     );
-    static final MethodHandle __atanf$MH = RuntimeHelper.downcallHandle(
-        "__atanf",
-        constants$43.__atanf$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "modf",
+        constants$41.const$3
     );
-    static final FunctionDescriptor atan2f$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__modf",
+        constants$41.const$3
     );
-    static final MethodHandle atan2f$MH = RuntimeHelper.downcallHandle(
-        "atan2f",
-        constants$43.atan2f$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "expm1",
+        constants$36.const$4
     );
-    static final FunctionDescriptor __atan2f$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__expm1",
+        constants$36.const$4
     );
-    static final MethodHandle __atan2f$MH = RuntimeHelper.downcallHandle(
-        "__atan2f",
-        constants$43.__atan2f$FUNC
-    );
-    static final FunctionDescriptor cosf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle cosf$MH = RuntimeHelper.downcallHandle(
-        "cosf",
-        constants$43.cosf$FUNC
-    );
-    static final FunctionDescriptor __cosf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle __cosf$MH = RuntimeHelper.downcallHandle(
-        "__cosf",
-        constants$43.__cosf$FUNC
-    );
-    static final FunctionDescriptor sinf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle sinf$MH = RuntimeHelper.downcallHandle(
-        "sinf",
-        constants$43.sinf$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "log1p",
+        constants$36.const$4
     );
 }
 

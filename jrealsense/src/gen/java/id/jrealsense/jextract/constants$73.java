@@ -11,58 +11,29 @@ final class constants$73 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$73() {}
-    static final FunctionDescriptor rs2_start_cpp$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__floorf",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_start_cpp$MH = RuntimeHelper.downcallHandle(
-        "rs2_start_cpp",
-        constants$73.rs2_start_cpp$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "fmodf",
+        constants$63.const$2
     );
-    static final FunctionDescriptor rs2_start_queue$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__fmodf",
+        constants$63.const$2
     );
-    static final MethodHandle rs2_start_queue$MH = RuntimeHelper.downcallHandle(
-        "rs2_start_queue",
-        constants$73.rs2_start_queue$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "isinff",
+        constants$60.const$5
     );
-    static final FunctionDescriptor rs2_stop$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "finitef",
+        constants$60.const$5
     );
-    static final MethodHandle rs2_stop$MH = RuntimeHelper.downcallHandle(
-        "rs2_stop",
-        constants$73.rs2_stop$FUNC
-    );
-    static final FunctionDescriptor rs2_set_notifications_callback$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_set_notifications_callback$MH = RuntimeHelper.downcallHandle(
-        "rs2_set_notifications_callback",
-        constants$73.rs2_set_notifications_callback$FUNC
-    );
-    static final FunctionDescriptor rs2_set_notifications_callback_cpp$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_set_notifications_callback_cpp$MH = RuntimeHelper.downcallHandle(
-        "rs2_set_notifications_callback_cpp",
-        constants$73.rs2_set_notifications_callback_cpp$FUNC
-    );
-    static final FunctionDescriptor rs2_get_notification_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_notification_description$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_notification_description",
-        constants$73.rs2_get_notification_description$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "dremf",
+        constants$63.const$2
     );
 }
 

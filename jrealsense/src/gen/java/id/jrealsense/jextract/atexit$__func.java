@@ -15,14 +15,14 @@ import static java.lang.foreign.ValueLayout.*;
 public interface atexit$__func {
 
     void apply();
-    static MemorySegment allocate(atexit$__func fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$9.atexit$__func_UP$MH, fi, constants$9.atexit$__func$FUNC, scope);
+    static MemorySegment allocate(atexit$__func fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$25.const$3, fi, constants$25.const$1, scope);
     }
-    static atexit$__func ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static atexit$__func ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return () -> {
             try {
-                constants$9.atexit$__func_DOWN$MH.invokeExact(symbol);
+                constants$25.const$4.invokeExact(symbol);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

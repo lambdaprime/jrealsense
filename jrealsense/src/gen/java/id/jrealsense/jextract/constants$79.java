@@ -11,69 +11,29 @@ final class constants$79 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$79() {}
-    static final FunctionDescriptor rs2_get_static_node$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__gammaf",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_get_static_node$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_static_node",
-        constants$79.rs2_get_static_node$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "lgammaf_r",
+        constants$67.const$1
     );
-    static final FunctionDescriptor rs2_remove_static_node$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__lgammaf_r",
+        constants$67.const$1
     );
-    static final MethodHandle rs2_remove_static_node$MH = RuntimeHelper.downcallHandle(
-        "rs2_remove_static_node",
-        constants$79.rs2_remove_static_node$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "rintf",
+        constants$62.const$1
     );
-    static final FunctionDescriptor rs2_load_wheel_odometry_config$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__rintf",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_load_wheel_odometry_config$MH = RuntimeHelper.downcallHandle(
-        "rs2_load_wheel_odometry_config",
-        constants$79.rs2_load_wheel_odometry_config$FUNC
-    );
-    static final FunctionDescriptor rs2_send_wheel_odometry$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        MemoryLayout.structLayout(
-            Constants$root.C_FLOAT$LAYOUT.withName("x"),
-            Constants$root.C_FLOAT$LAYOUT.withName("y"),
-            Constants$root.C_FLOAT$LAYOUT.withName("z")
-        ).withName("rs2_vector"),
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_send_wheel_odometry$MH = RuntimeHelper.downcallHandle(
-        "rs2_send_wheel_odometry",
-        constants$79.rs2_send_wheel_odometry$FUNC
-    );
-    static final FunctionDescriptor rs2_set_intrinsics$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_set_intrinsics$MH = RuntimeHelper.downcallHandle(
-        "rs2_set_intrinsics",
-        constants$79.rs2_set_intrinsics$FUNC
-    );
-    static final FunctionDescriptor rs2_override_intrinsics$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_override_intrinsics$MH = RuntimeHelper.downcallHandle(
-        "rs2_override_intrinsics",
-        constants$79.rs2_override_intrinsics$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "nextafterf",
+        constants$63.const$2
     );
 }
 

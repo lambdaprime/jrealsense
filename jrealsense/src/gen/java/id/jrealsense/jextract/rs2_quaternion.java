@@ -19,18 +19,11 @@ import static java.lang.foreign.ValueLayout.*;
  */
 public class rs2_quaternion {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_FLOAT$LAYOUT.withName("x"),
-        Constants$root.C_FLOAT$LAYOUT.withName("y"),
-        Constants$root.C_FLOAT$LAYOUT.withName("z"),
-        Constants$root.C_FLOAT$LAYOUT.withName("w")
-    ).withName("rs2_quaternion");
     public static MemoryLayout $LAYOUT() {
-        return rs2_quaternion.$struct$LAYOUT;
+        return constants$92.const$1;
     }
-    static final VarHandle x$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("x"));
     public static VarHandle x$VH() {
-        return rs2_quaternion.x$VH;
+        return constants$92.const$2;
     }
     /**
      * Getter for field:
@@ -39,7 +32,7 @@ public class rs2_quaternion {
      * }
      */
     public static float x$get(MemorySegment seg) {
-        return (float)rs2_quaternion.x$VH.get(seg);
+        return (float)constants$92.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -48,17 +41,16 @@ public class rs2_quaternion {
      * }
      */
     public static void x$set(MemorySegment seg, float x) {
-        rs2_quaternion.x$VH.set(seg, x);
+        constants$92.const$2.set(seg, x);
     }
     public static float x$get(MemorySegment seg, long index) {
-        return (float)rs2_quaternion.x$VH.get(seg.asSlice(index*sizeof()));
+        return (float)constants$92.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void x$set(MemorySegment seg, long index, float x) {
-        rs2_quaternion.x$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$92.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle y$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("y"));
     public static VarHandle y$VH() {
-        return rs2_quaternion.y$VH;
+        return constants$92.const$3;
     }
     /**
      * Getter for field:
@@ -67,7 +59,7 @@ public class rs2_quaternion {
      * }
      */
     public static float y$get(MemorySegment seg) {
-        return (float)rs2_quaternion.y$VH.get(seg);
+        return (float)constants$92.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -76,17 +68,16 @@ public class rs2_quaternion {
      * }
      */
     public static void y$set(MemorySegment seg, float x) {
-        rs2_quaternion.y$VH.set(seg, x);
+        constants$92.const$3.set(seg, x);
     }
     public static float y$get(MemorySegment seg, long index) {
-        return (float)rs2_quaternion.y$VH.get(seg.asSlice(index*sizeof()));
+        return (float)constants$92.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void y$set(MemorySegment seg, long index, float x) {
-        rs2_quaternion.y$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$92.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle z$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("z"));
     public static VarHandle z$VH() {
-        return rs2_quaternion.z$VH;
+        return constants$92.const$4;
     }
     /**
      * Getter for field:
@@ -95,7 +86,7 @@ public class rs2_quaternion {
      * }
      */
     public static float z$get(MemorySegment seg) {
-        return (float)rs2_quaternion.z$VH.get(seg);
+        return (float)constants$92.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -104,17 +95,16 @@ public class rs2_quaternion {
      * }
      */
     public static void z$set(MemorySegment seg, float x) {
-        rs2_quaternion.z$VH.set(seg, x);
+        constants$92.const$4.set(seg, x);
     }
     public static float z$get(MemorySegment seg, long index) {
-        return (float)rs2_quaternion.z$VH.get(seg.asSlice(index*sizeof()));
+        return (float)constants$92.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void z$set(MemorySegment seg, long index, float x) {
-        rs2_quaternion.z$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$92.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle w$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("w"));
     public static VarHandle w$VH() {
-        return rs2_quaternion.w$VH;
+        return constants$92.const$5;
     }
     /**
      * Getter for field:
@@ -123,7 +113,7 @@ public class rs2_quaternion {
      * }
      */
     public static float w$get(MemorySegment seg) {
-        return (float)rs2_quaternion.w$VH.get(seg);
+        return (float)constants$92.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -132,20 +122,20 @@ public class rs2_quaternion {
      * }
      */
     public static void w$set(MemorySegment seg, float x) {
-        rs2_quaternion.w$VH.set(seg, x);
+        constants$92.const$5.set(seg, x);
     }
     public static float w$get(MemorySegment seg, long index) {
-        return (float)rs2_quaternion.w$VH.get(seg.asSlice(index*sizeof()));
+        return (float)constants$92.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void w$set(MemorySegment seg, long index, float x) {
-        rs2_quaternion.w$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$92.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena arena) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, arena); }
 }
 
 

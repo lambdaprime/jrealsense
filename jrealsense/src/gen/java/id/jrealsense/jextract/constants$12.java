@@ -11,47 +11,15 @@ final class constants$12 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$12() {}
-    static final FunctionDescriptor clearenv$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle clearenv$MH = RuntimeHelper.downcallHandle(
-        "clearenv",
-        constants$12.clearenv$FUNC
-    );
-    static final FunctionDescriptor mktemp$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle mktemp$MH = RuntimeHelper.downcallHandle(
-        "mktemp",
-        constants$12.mktemp$FUNC
-    );
-    static final FunctionDescriptor mkstemp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle mkstemp$MH = RuntimeHelper.downcallHandle(
-        "mkstemp",
-        constants$12.mkstemp$FUNC
-    );
-    static final FunctionDescriptor mkstemps$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle mkstemps$MH = RuntimeHelper.downcallHandle(
-        "mkstemps",
-        constants$12.mkstemps$FUNC
-    );
-    static final FunctionDescriptor mkdtemp$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle mkdtemp$MH = RuntimeHelper.downcallHandle(
-        "mkdtemp",
-        constants$12.mkdtemp$FUNC
-    );
-    static final FunctionDescriptor system$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle system$MH = RuntimeHelper.downcallHandle(
-        "system",
-        constants$12.system$FUNC
-    );
+    static final VarHandle const$0 = constants$11.const$1.varHandle(MemoryLayout.PathElement.groupElement("$anon$1"), MemoryLayout.PathElement.groupElement("__g1_start"));
+    static final VarHandle const$1 = constants$11.const$3.varHandle(MemoryLayout.PathElement.groupElement("__low"));
+    static final VarHandle const$2 = constants$11.const$3.varHandle(MemoryLayout.PathElement.groupElement("__high"));
+    static final VarHandle const$3 = constants$11.const$1.varHandle(MemoryLayout.PathElement.groupElement("__g1_orig_size"));
+    static final VarHandle const$4 = constants$11.const$1.varHandle(MemoryLayout.PathElement.groupElement("__wrefs"));
+    static final UnionLayout const$5 = MemoryLayout.unionLayout(
+        MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("__size"),
+        JAVA_INT.withName("__align")
+    ).withName("");
 }
 
 

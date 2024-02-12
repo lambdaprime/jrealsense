@@ -11,54 +11,35 @@ final class constants$107 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$107() {}
-    static final FunctionDescriptor rs2_create_sequence_id_filter$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "rs2_delete_stream_profiles_list",
+        constants$20.const$5
     );
-    static final MethodHandle rs2_create_sequence_id_filter$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_sequence_id_filter",
-        constants$107.rs2_create_sequence_id_filter$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "rs2_get_extrinsics",
+        constants$102.const$0
     );
-    static final FunctionDescriptor rs2_get_processing_block_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        MemoryLayout.structLayout(
+            MemoryLayout.sequenceLayout(9, JAVA_FLOAT).withName("rotation"),
+            MemoryLayout.sequenceLayout(3, JAVA_FLOAT).withName("translation")
+        ).withName("rs2_extrinsics"),
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle rs2_get_processing_block_info$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_processing_block_info",
-        constants$107.rs2_get_processing_block_info$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "rs2_register_extrinsics",
+        constants$107.const$2
     );
-    static final FunctionDescriptor rs2_supports_processing_block_info$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "rs2_override_extrinsics",
+        constants$95.const$3
     );
-    static final MethodHandle rs2_supports_processing_block_info$MH = RuntimeHelper.downcallHandle(
-        "rs2_supports_processing_block_info",
-        constants$107.rs2_supports_processing_block_info$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "rs2_get_video_stream_intrinsics",
+        constants$95.const$3
     );
-    static final FunctionDescriptor rs2_is_processing_block_extendable_to$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_is_processing_block_extendable_to$MH = RuntimeHelper.downcallHandle(
-        "rs2_is_processing_block_extendable_to",
-        constants$107.rs2_is_processing_block_extendable_to$FUNC
-    );
-    static final FunctionDescriptor rs2_playback_status_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle rs2_playback_status_to_string$MH = RuntimeHelper.downcallHandle(
-        "rs2_playback_status_to_string",
-        constants$107.rs2_playback_status_to_string$FUNC
-    );
-    static final FunctionDescriptor rs2_playback_status_changed_callback_ptr$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor rs2_playback_status_changed_callback_ptr_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle rs2_playback_status_changed_callback_ptr_UP$MH = RuntimeHelper.upcallHandle(rs2_playback_status_changed_callback_ptr.class, "apply", constants$107.rs2_playback_status_changed_callback_ptr_UP$FUNC);
 }
 
 

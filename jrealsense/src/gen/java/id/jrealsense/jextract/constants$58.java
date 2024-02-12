@@ -11,49 +11,29 @@ final class constants$58 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$58() {}
-    static final FunctionDescriptor gammaf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "llrint",
+        constants$57.const$3
     );
-    static final MethodHandle gammaf$MH = RuntimeHelper.downcallHandle(
-        "gammaf",
-        constants$58.gammaf$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "__llrint",
+        constants$57.const$3
     );
-    static final FunctionDescriptor __gammaf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "lround",
+        constants$57.const$3
     );
-    static final MethodHandle __gammaf$MH = RuntimeHelper.downcallHandle(
-        "__gammaf",
-        constants$58.__gammaf$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "__lround",
+        constants$57.const$3
     );
-    static final FunctionDescriptor lgammaf_r$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "llround",
+        constants$57.const$3
     );
-    static final MethodHandle lgammaf_r$MH = RuntimeHelper.downcallHandle(
-        "lgammaf_r",
-        constants$58.lgammaf_r$FUNC
-    );
-    static final FunctionDescriptor __lgammaf_r$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle __lgammaf_r$MH = RuntimeHelper.downcallHandle(
-        "__lgammaf_r",
-        constants$58.__lgammaf_r$FUNC
-    );
-    static final FunctionDescriptor rintf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle rintf$MH = RuntimeHelper.downcallHandle(
-        "rintf",
-        constants$58.rintf$FUNC
-    );
-    static final FunctionDescriptor __rintf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle __rintf$MH = RuntimeHelper.downcallHandle(
-        "__rintf",
-        constants$58.__rintf$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "__llround",
+        constants$57.const$3
     );
 }
 

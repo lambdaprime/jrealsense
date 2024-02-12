@@ -9,14 +9,14 @@ import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 public class librealsense extends librealsense_1 {
 
-    public static final OfByte C_CHAR = Constants$root.C_CHAR$LAYOUT;
-    public static final OfShort C_SHORT = Constants$root.C_SHORT$LAYOUT;
-    public static final OfInt C_INT = Constants$root.C_INT$LAYOUT;
-    public static final OfLong C_LONG = Constants$root.C_LONG_LONG$LAYOUT;
-    public static final OfLong C_LONG_LONG = Constants$root.C_LONG_LONG$LAYOUT;
-    public static final OfFloat C_FLOAT = Constants$root.C_FLOAT$LAYOUT;
-    public static final OfDouble C_DOUBLE = Constants$root.C_DOUBLE$LAYOUT;
-    public static final OfAddress C_POINTER = Constants$root.C_POINTER$LAYOUT;
+    public static final OfByte C_CHAR = JAVA_BYTE;
+    public static final OfShort C_SHORT = JAVA_SHORT;
+    public static final OfInt C_INT = JAVA_INT;
+    public static final OfLong C_LONG = JAVA_LONG;
+    public static final OfLong C_LONG_LONG = JAVA_LONG;
+    public static final OfFloat C_FLOAT = JAVA_FLOAT;
+    public static final OfDouble C_DOUBLE = JAVA_DOUBLE;
+    public static final AddressLayout C_POINTER = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * #define _FEATURES_H 1
@@ -1206,13 +1206,13 @@ public class librealsense extends librealsense_1 {
      * typedef unsigned long size_t;
      * }
      */
-    public static final OfLong size_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong size_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef int wchar_t;
      * }
      */
-    public static final OfInt wchar_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt wchar_t = JAVA_INT;
     /**
      * {@snippet :
      * enum .P_ALL = 0;
@@ -1242,21 +1242,21 @@ public class librealsense extends librealsense_1 {
      * typedef float _Float32;
      * }
      */
-    public static final OfFloat _Float32 = Constants$root.C_FLOAT$LAYOUT;
+    public static final OfFloat _Float32 = JAVA_FLOAT;
     /**
      * {@snippet :
      * typedef double _Float64;
      * }
      */
-    public static final OfDouble _Float64 = Constants$root.C_DOUBLE$LAYOUT;
+    public static final OfDouble _Float64 = JAVA_DOUBLE;
     /**
      * {@snippet :
      * typedef double _Float32x;
      * }
      */
-    public static final OfDouble _Float32x = Constants$root.C_DOUBLE$LAYOUT;
+    public static final OfDouble _Float32x = JAVA_DOUBLE;
     public static MethodHandle __ctype_get_mb_cur_max$MH() {
-        return RuntimeHelper.requireNonNull(constants$0.__ctype_get_mb_cur_max$MH,"__ctype_get_mb_cur_max");
+        return RuntimeHelper.requireNonNull(constants$1.const$3,"__ctype_get_mb_cur_max");
     }
     /**
      * {@snippet :
@@ -1272,7 +1272,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle atof$MH() {
-        return RuntimeHelper.requireNonNull(constants$0.atof$MH,"atof");
+        return RuntimeHelper.requireNonNull(constants$1.const$5,"atof");
     }
     /**
      * {@snippet :
@@ -1288,7 +1288,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle atoi$MH() {
-        return RuntimeHelper.requireNonNull(constants$0.atoi$MH,"atoi");
+        return RuntimeHelper.requireNonNull(constants$2.const$1,"atoi");
     }
     /**
      * {@snippet :
@@ -1304,7 +1304,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle atol$MH() {
-        return RuntimeHelper.requireNonNull(constants$0.atol$MH,"atol");
+        return RuntimeHelper.requireNonNull(constants$2.const$3,"atol");
     }
     /**
      * {@snippet :
@@ -1320,7 +1320,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle atoll$MH() {
-        return RuntimeHelper.requireNonNull(constants$0.atoll$MH,"atoll");
+        return RuntimeHelper.requireNonNull(constants$2.const$4,"atoll");
     }
     /**
      * {@snippet :
@@ -1336,7 +1336,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle strtod$MH() {
-        return RuntimeHelper.requireNonNull(constants$0.strtod$MH,"strtod");
+        return RuntimeHelper.requireNonNull(constants$2.const$6,"strtod");
     }
     /**
      * {@snippet :
@@ -1352,7 +1352,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle strtof$MH() {
-        return RuntimeHelper.requireNonNull(constants$1.strtof$MH,"strtof");
+        return RuntimeHelper.requireNonNull(constants$3.const$1,"strtof");
     }
     /**
      * {@snippet :
@@ -1368,7 +1368,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle strtol$MH() {
-        return RuntimeHelper.requireNonNull(constants$1.strtol$MH,"strtol");
+        return RuntimeHelper.requireNonNull(constants$3.const$3,"strtol");
     }
     /**
      * {@snippet :
@@ -1384,7 +1384,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle strtoul$MH() {
-        return RuntimeHelper.requireNonNull(constants$1.strtoul$MH,"strtoul");
+        return RuntimeHelper.requireNonNull(constants$3.const$4,"strtoul");
     }
     /**
      * {@snippet :
@@ -1400,7 +1400,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle strtoq$MH() {
-        return RuntimeHelper.requireNonNull(constants$1.strtoq$MH,"strtoq");
+        return RuntimeHelper.requireNonNull(constants$3.const$5,"strtoq");
     }
     /**
      * {@snippet :
@@ -1416,7 +1416,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle strtouq$MH() {
-        return RuntimeHelper.requireNonNull(constants$1.strtouq$MH,"strtouq");
+        return RuntimeHelper.requireNonNull(constants$4.const$0,"strtouq");
     }
     /**
      * {@snippet :
@@ -1432,7 +1432,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle strtoll$MH() {
-        return RuntimeHelper.requireNonNull(constants$1.strtoll$MH,"strtoll");
+        return RuntimeHelper.requireNonNull(constants$4.const$1,"strtoll");
     }
     /**
      * {@snippet :
@@ -1448,7 +1448,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle strtoull$MH() {
-        return RuntimeHelper.requireNonNull(constants$2.strtoull$MH,"strtoull");
+        return RuntimeHelper.requireNonNull(constants$4.const$2,"strtoull");
     }
     /**
      * {@snippet :
@@ -1464,7 +1464,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle l64a$MH() {
-        return RuntimeHelper.requireNonNull(constants$2.l64a$MH,"l64a");
+        return RuntimeHelper.requireNonNull(constants$4.const$4,"l64a");
     }
     /**
      * {@snippet :
@@ -1480,7 +1480,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle a64l$MH() {
-        return RuntimeHelper.requireNonNull(constants$2.a64l$MH,"a64l");
+        return RuntimeHelper.requireNonNull(constants$4.const$5,"a64l");
     }
     /**
      * {@snippet :
@@ -1500,603 +1500,603 @@ public class librealsense extends librealsense_1 {
      * typedef unsigned char __u_char;
      * }
      */
-    public static final OfByte __u_char = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte __u_char = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef unsigned short __u_short;
      * }
      */
-    public static final OfShort __u_short = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort __u_short = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef unsigned int __u_int;
      * }
      */
-    public static final OfInt __u_int = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __u_int = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned long __u_long;
      * }
      */
-    public static final OfLong __u_long = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __u_long = JAVA_LONG;
     /**
      * {@snippet :
      * typedef signed char __int8_t;
      * }
      */
-    public static final OfByte __int8_t = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte __int8_t = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef unsigned char __uint8_t;
      * }
      */
-    public static final OfByte __uint8_t = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte __uint8_t = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef short __int16_t;
      * }
      */
-    public static final OfShort __int16_t = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort __int16_t = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef unsigned short __uint16_t;
      * }
      */
-    public static final OfShort __uint16_t = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort __uint16_t = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef int __int32_t;
      * }
      */
-    public static final OfInt __int32_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __int32_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned int __uint32_t;
      * }
      */
-    public static final OfInt __uint32_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __uint32_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef long __int64_t;
      * }
      */
-    public static final OfLong __int64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __int64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __uint64_t;
      * }
      */
-    public static final OfLong __uint64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __uint64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef signed char __int_least8_t;
      * }
      */
-    public static final OfByte __int_least8_t = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte __int_least8_t = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef unsigned char __uint_least8_t;
      * }
      */
-    public static final OfByte __uint_least8_t = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte __uint_least8_t = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef short __int_least16_t;
      * }
      */
-    public static final OfShort __int_least16_t = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort __int_least16_t = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef unsigned short __uint_least16_t;
      * }
      */
-    public static final OfShort __uint_least16_t = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort __uint_least16_t = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef int __int_least32_t;
      * }
      */
-    public static final OfInt __int_least32_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __int_least32_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned int __uint_least32_t;
      * }
      */
-    public static final OfInt __uint_least32_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __uint_least32_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef long __int_least64_t;
      * }
      */
-    public static final OfLong __int_least64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __int_least64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __uint_least64_t;
      * }
      */
-    public static final OfLong __uint_least64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __uint_least64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long __quad_t;
      * }
      */
-    public static final OfLong __quad_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __quad_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __u_quad_t;
      * }
      */
-    public static final OfLong __u_quad_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __u_quad_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long __intmax_t;
      * }
      */
-    public static final OfLong __intmax_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __intmax_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __uintmax_t;
      * }
      */
-    public static final OfLong __uintmax_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __uintmax_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __dev_t;
      * }
      */
-    public static final OfLong __dev_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __dev_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned int __uid_t;
      * }
      */
-    public static final OfInt __uid_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __uid_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned int __gid_t;
      * }
      */
-    public static final OfInt __gid_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __gid_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned long __ino_t;
      * }
      */
-    public static final OfLong __ino_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __ino_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __ino64_t;
      * }
      */
-    public static final OfLong __ino64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __ino64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned int __mode_t;
      * }
      */
-    public static final OfInt __mode_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __mode_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned long __nlink_t;
      * }
      */
-    public static final OfLong __nlink_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __nlink_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long __off_t;
      * }
      */
-    public static final OfLong __off_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __off_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long __off64_t;
      * }
      */
-    public static final OfLong __off64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __off64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef int __pid_t;
      * }
      */
-    public static final OfInt __pid_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __pid_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef long __clock_t;
      * }
      */
-    public static final OfLong __clock_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __clock_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __rlim_t;
      * }
      */
-    public static final OfLong __rlim_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __rlim_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __rlim64_t;
      * }
      */
-    public static final OfLong __rlim64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __rlim64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned int __id_t;
      * }
      */
-    public static final OfInt __id_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __id_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef long __time_t;
      * }
      */
-    public static final OfLong __time_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __time_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned int __useconds_t;
      * }
      */
-    public static final OfInt __useconds_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __useconds_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef long __suseconds_t;
      * }
      */
-    public static final OfLong __suseconds_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __suseconds_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef int __daddr_t;
      * }
      */
-    public static final OfInt __daddr_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __daddr_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef int __key_t;
      * }
      */
-    public static final OfInt __key_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __key_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef int __clockid_t;
      * }
      */
-    public static final OfInt __clockid_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __clockid_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef void* __timer_t;
      * }
      */
-    public static final OfAddress __timer_t = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout __timer_t = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef long __blksize_t;
      * }
      */
-    public static final OfLong __blksize_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __blksize_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long __blkcnt_t;
      * }
      */
-    public static final OfLong __blkcnt_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __blkcnt_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long __blkcnt64_t;
      * }
      */
-    public static final OfLong __blkcnt64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __blkcnt64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __fsblkcnt_t;
      * }
      */
-    public static final OfLong __fsblkcnt_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __fsblkcnt_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __fsblkcnt64_t;
      * }
      */
-    public static final OfLong __fsblkcnt64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __fsblkcnt64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __fsfilcnt_t;
      * }
      */
-    public static final OfLong __fsfilcnt_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __fsfilcnt_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __fsfilcnt64_t;
      * }
      */
-    public static final OfLong __fsfilcnt64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __fsfilcnt64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long __fsword_t;
      * }
      */
-    public static final OfLong __fsword_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __fsword_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long __ssize_t;
      * }
      */
-    public static final OfLong __ssize_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __ssize_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long __syscall_slong_t;
      * }
      */
-    public static final OfLong __syscall_slong_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __syscall_slong_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __syscall_ulong_t;
      * }
      */
-    public static final OfLong __syscall_ulong_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __syscall_ulong_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long __loff_t;
      * }
      */
-    public static final OfLong __loff_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __loff_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef char* __caddr_t;
      * }
      */
-    public static final OfAddress __caddr_t = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout __caddr_t = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef long __intptr_t;
      * }
      */
-    public static final OfLong __intptr_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __intptr_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned int __socklen_t;
      * }
      */
-    public static final OfInt __socklen_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __socklen_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef int __sig_atomic_t;
      * }
      */
-    public static final OfInt __sig_atomic_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __sig_atomic_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned char u_char;
      * }
      */
-    public static final OfByte u_char = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte u_char = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef unsigned short u_short;
      * }
      */
-    public static final OfShort u_short = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort u_short = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef unsigned int u_int;
      * }
      */
-    public static final OfInt u_int = Constants$root.C_INT$LAYOUT;
+    public static final OfInt u_int = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned long u_long;
      * }
      */
-    public static final OfLong u_long = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong u_long = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long quad_t;
      * }
      */
-    public static final OfLong quad_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong quad_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long u_quad_t;
      * }
      */
-    public static final OfLong u_quad_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong u_quad_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long loff_t;
      * }
      */
-    public static final OfLong loff_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong loff_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long ino_t;
      * }
      */
-    public static final OfLong ino_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong ino_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long dev_t;
      * }
      */
-    public static final OfLong dev_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong dev_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned int gid_t;
      * }
      */
-    public static final OfInt gid_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt gid_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned int mode_t;
      * }
      */
-    public static final OfInt mode_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt mode_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned long nlink_t;
      * }
      */
-    public static final OfLong nlink_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong nlink_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned int uid_t;
      * }
      */
-    public static final OfInt uid_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt uid_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef long off_t;
      * }
      */
-    public static final OfLong off_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong off_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef int pid_t;
      * }
      */
-    public static final OfInt pid_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt pid_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned int id_t;
      * }
      */
-    public static final OfInt id_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt id_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef long ssize_t;
      * }
      */
-    public static final OfLong ssize_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong ssize_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef int daddr_t;
      * }
      */
-    public static final OfInt daddr_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt daddr_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef char* caddr_t;
      * }
      */
-    public static final OfAddress caddr_t = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout caddr_t = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef int key_t;
      * }
      */
-    public static final OfInt key_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt key_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef long clock_t;
      * }
      */
-    public static final OfLong clock_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong clock_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef int clockid_t;
      * }
      */
-    public static final OfInt clockid_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt clockid_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef long time_t;
      * }
      */
-    public static final OfLong time_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong time_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef void* timer_t;
      * }
      */
-    public static final OfAddress timer_t = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout timer_t = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef unsigned long ulong;
      * }
      */
-    public static final OfLong ulong = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong ulong = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned short ushort;
      * }
      */
-    public static final OfShort ushort = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort ushort = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef unsigned int uint;
      * }
      */
-    public static final OfInt uint = Constants$root.C_INT$LAYOUT;
+    public static final OfInt uint = JAVA_INT;
     /**
      * {@snippet :
      * typedef signed char int8_t;
      * }
      */
-    public static final OfByte int8_t = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte int8_t = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef short int16_t;
      * }
      */
-    public static final OfShort int16_t = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort int16_t = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef int int32_t;
      * }
      */
-    public static final OfInt int32_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt int32_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef long int64_t;
      * }
      */
-    public static final OfLong int64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong int64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned char u_int8_t;
      * }
      */
-    public static final OfByte u_int8_t = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte u_int8_t = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef unsigned short u_int16_t;
      * }
      */
-    public static final OfShort u_int16_t = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort u_int16_t = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef unsigned int u_int32_t;
      * }
      */
-    public static final OfInt u_int32_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt u_int32_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned long u_int64_t;
      * }
      */
-    public static final OfLong u_int64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong u_int64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long register_t;
      * }
      */
-    public static final OfLong register_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong register_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long suseconds_t;
      * }
      */
-    public static final OfLong suseconds_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong suseconds_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long __fd_mask;
      * }
      */
-    public static final OfLong __fd_mask = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __fd_mask = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long fd_mask;
      * }
      */
-    public static final OfLong fd_mask = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong fd_mask = JAVA_LONG;
     public static MethodHandle select$MH() {
-        return RuntimeHelper.requireNonNull(constants$2.select$MH,"select");
+        return RuntimeHelper.requireNonNull(constants$6.const$4,"select");
     }
     /**
      * {@snippet :
@@ -2112,7 +2112,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle pselect$MH() {
-        return RuntimeHelper.requireNonNull(constants$2.pselect$MH,"pselect");
+        return RuntimeHelper.requireNonNull(constants$6.const$6,"pselect");
     }
     /**
      * {@snippet :
@@ -2132,51 +2132,51 @@ public class librealsense extends librealsense_1 {
      * typedef long blksize_t;
      * }
      */
-    public static final OfLong blksize_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong blksize_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long blkcnt_t;
      * }
      */
-    public static final OfLong blkcnt_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong blkcnt_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long fsblkcnt_t;
      * }
      */
-    public static final OfLong fsblkcnt_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong fsblkcnt_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long fsfilcnt_t;
      * }
      */
-    public static final OfLong fsfilcnt_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong fsfilcnt_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long pthread_t;
      * }
      */
-    public static final OfLong pthread_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong pthread_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned int pthread_key_t;
      * }
      */
-    public static final OfInt pthread_key_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt pthread_key_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef int pthread_once_t;
      * }
      */
-    public static final OfInt pthread_once_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt pthread_once_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef int pthread_spinlock_t;
      * }
      */
-    public static final OfInt pthread_spinlock_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt pthread_spinlock_t = JAVA_INT;
     public static MethodHandle random$MH() {
-        return RuntimeHelper.requireNonNull(constants$2.random$MH,"random");
+        return RuntimeHelper.requireNonNull(constants$14.const$5,"random");
     }
     /**
      * {@snippet :
@@ -2192,7 +2192,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle srandom$MH() {
-        return RuntimeHelper.requireNonNull(constants$3.srandom$MH,"srandom");
+        return RuntimeHelper.requireNonNull(constants$15.const$1,"srandom");
     }
     /**
      * {@snippet :
@@ -2208,7 +2208,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle initstate$MH() {
-        return RuntimeHelper.requireNonNull(constants$3.initstate$MH,"initstate");
+        return RuntimeHelper.requireNonNull(constants$15.const$3,"initstate");
     }
     /**
      * {@snippet :
@@ -2224,7 +2224,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle setstate$MH() {
-        return RuntimeHelper.requireNonNull(constants$3.setstate$MH,"setstate");
+        return RuntimeHelper.requireNonNull(constants$15.const$5,"setstate");
     }
     /**
      * {@snippet :
@@ -2240,7 +2240,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle random_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$3.random_r$MH,"random_r");
+        return RuntimeHelper.requireNonNull(constants$17.const$3,"random_r");
     }
     /**
      * {@snippet :
@@ -2256,7 +2256,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle srandom_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$3.srandom_r$MH,"srandom_r");
+        return RuntimeHelper.requireNonNull(constants$17.const$5,"srandom_r");
     }
     /**
      * {@snippet :
@@ -2272,7 +2272,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle initstate_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$3.initstate_r$MH,"initstate_r");
+        return RuntimeHelper.requireNonNull(constants$18.const$1,"initstate_r");
     }
     /**
      * {@snippet :
@@ -2288,7 +2288,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle setstate_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$4.setstate_r$MH,"setstate_r");
+        return RuntimeHelper.requireNonNull(constants$18.const$2,"setstate_r");
     }
     /**
      * {@snippet :
@@ -2304,7 +2304,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rand$MH() {
-        return RuntimeHelper.requireNonNull(constants$4.rand$MH,"rand");
+        return RuntimeHelper.requireNonNull(constants$18.const$4,"rand");
     }
     /**
      * {@snippet :
@@ -2320,7 +2320,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle srand$MH() {
-        return RuntimeHelper.requireNonNull(constants$4.srand$MH,"srand");
+        return RuntimeHelper.requireNonNull(constants$18.const$5,"srand");
     }
     /**
      * {@snippet :
@@ -2336,7 +2336,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rand_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$4.rand_r$MH,"rand_r");
+        return RuntimeHelper.requireNonNull(constants$19.const$0,"rand_r");
     }
     /**
      * {@snippet :
@@ -2352,7 +2352,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle drand48$MH() {
-        return RuntimeHelper.requireNonNull(constants$4.drand48$MH,"drand48");
+        return RuntimeHelper.requireNonNull(constants$19.const$2,"drand48");
     }
     /**
      * {@snippet :
@@ -2368,7 +2368,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle erand48$MH() {
-        return RuntimeHelper.requireNonNull(constants$4.erand48$MH,"erand48");
+        return RuntimeHelper.requireNonNull(constants$19.const$3,"erand48");
     }
     /**
      * {@snippet :
@@ -2384,7 +2384,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle lrand48$MH() {
-        return RuntimeHelper.requireNonNull(constants$5.lrand48$MH,"lrand48");
+        return RuntimeHelper.requireNonNull(constants$19.const$4,"lrand48");
     }
     /**
      * {@snippet :
@@ -2400,7 +2400,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle nrand48$MH() {
-        return RuntimeHelper.requireNonNull(constants$5.nrand48$MH,"nrand48");
+        return RuntimeHelper.requireNonNull(constants$19.const$5,"nrand48");
     }
     /**
      * {@snippet :
@@ -2416,7 +2416,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle mrand48$MH() {
-        return RuntimeHelper.requireNonNull(constants$5.mrand48$MH,"mrand48");
+        return RuntimeHelper.requireNonNull(constants$20.const$0,"mrand48");
     }
     /**
      * {@snippet :
@@ -2432,7 +2432,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle jrand48$MH() {
-        return RuntimeHelper.requireNonNull(constants$5.jrand48$MH,"jrand48");
+        return RuntimeHelper.requireNonNull(constants$20.const$1,"jrand48");
     }
     /**
      * {@snippet :
@@ -2448,7 +2448,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle srand48$MH() {
-        return RuntimeHelper.requireNonNull(constants$5.srand48$MH,"srand48");
+        return RuntimeHelper.requireNonNull(constants$20.const$3,"srand48");
     }
     /**
      * {@snippet :
@@ -2464,7 +2464,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle seed48$MH() {
-        return RuntimeHelper.requireNonNull(constants$5.seed48$MH,"seed48");
+        return RuntimeHelper.requireNonNull(constants$20.const$4,"seed48");
     }
     /**
      * {@snippet :
@@ -2480,7 +2480,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle lcong48$MH() {
-        return RuntimeHelper.requireNonNull(constants$6.lcong48$MH,"lcong48");
+        return RuntimeHelper.requireNonNull(constants$20.const$6,"lcong48");
     }
     /**
      * {@snippet :
@@ -2496,7 +2496,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle drand48_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$6.drand48_r$MH,"drand48_r");
+        return RuntimeHelper.requireNonNull(constants$21.const$4,"drand48_r");
     }
     /**
      * {@snippet :
@@ -2512,7 +2512,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle erand48_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$6.erand48_r$MH,"erand48_r");
+        return RuntimeHelper.requireNonNull(constants$21.const$6,"erand48_r");
     }
     /**
      * {@snippet :
@@ -2528,7 +2528,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle lrand48_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$6.lrand48_r$MH,"lrand48_r");
+        return RuntimeHelper.requireNonNull(constants$22.const$0,"lrand48_r");
     }
     /**
      * {@snippet :
@@ -2544,7 +2544,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle nrand48_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$6.nrand48_r$MH,"nrand48_r");
+        return RuntimeHelper.requireNonNull(constants$22.const$1,"nrand48_r");
     }
     /**
      * {@snippet :
@@ -2560,7 +2560,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle mrand48_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$6.mrand48_r$MH,"mrand48_r");
+        return RuntimeHelper.requireNonNull(constants$22.const$2,"mrand48_r");
     }
     /**
      * {@snippet :
@@ -2576,7 +2576,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle jrand48_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$7.jrand48_r$MH,"jrand48_r");
+        return RuntimeHelper.requireNonNull(constants$22.const$3,"jrand48_r");
     }
     /**
      * {@snippet :
@@ -2592,7 +2592,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle srand48_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$7.srand48_r$MH,"srand48_r");
+        return RuntimeHelper.requireNonNull(constants$22.const$5,"srand48_r");
     }
     /**
      * {@snippet :
@@ -2608,7 +2608,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle seed48_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$7.seed48_r$MH,"seed48_r");
+        return RuntimeHelper.requireNonNull(constants$23.const$0,"seed48_r");
     }
     /**
      * {@snippet :
@@ -2624,7 +2624,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle lcong48_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$7.lcong48_r$MH,"lcong48_r");
+        return RuntimeHelper.requireNonNull(constants$23.const$1,"lcong48_r");
     }
     /**
      * {@snippet :
@@ -2640,7 +2640,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle malloc$MH() {
-        return RuntimeHelper.requireNonNull(constants$7.malloc$MH,"malloc");
+        return RuntimeHelper.requireNonNull(constants$23.const$2,"malloc");
     }
     /**
      * {@snippet :
@@ -2656,7 +2656,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle calloc$MH() {
-        return RuntimeHelper.requireNonNull(constants$7.calloc$MH,"calloc");
+        return RuntimeHelper.requireNonNull(constants$23.const$4,"calloc");
     }
     /**
      * {@snippet :
@@ -2672,7 +2672,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle realloc$MH() {
-        return RuntimeHelper.requireNonNull(constants$8.realloc$MH,"realloc");
+        return RuntimeHelper.requireNonNull(constants$23.const$6,"realloc");
     }
     /**
      * {@snippet :
@@ -2688,7 +2688,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle reallocarray$MH() {
-        return RuntimeHelper.requireNonNull(constants$8.reallocarray$MH,"reallocarray");
+        return RuntimeHelper.requireNonNull(constants$24.const$1,"reallocarray");
     }
     /**
      * {@snippet :
@@ -2704,7 +2704,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle free$MH() {
-        return RuntimeHelper.requireNonNull(constants$8.free$MH,"free");
+        return RuntimeHelper.requireNonNull(constants$24.const$2,"free");
     }
     /**
      * {@snippet :
@@ -2720,7 +2720,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle alloca$MH() {
-        return RuntimeHelper.requireNonNull(constants$8.alloca$MH,"alloca");
+        return RuntimeHelper.requireNonNull(constants$24.const$3,"alloca");
     }
     /**
      * {@snippet :
@@ -2736,7 +2736,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle valloc$MH() {
-        return RuntimeHelper.requireNonNull(constants$8.valloc$MH,"valloc");
+        return RuntimeHelper.requireNonNull(constants$24.const$4,"valloc");
     }
     /**
      * {@snippet :
@@ -2752,7 +2752,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle posix_memalign$MH() {
-        return RuntimeHelper.requireNonNull(constants$8.posix_memalign$MH,"posix_memalign");
+        return RuntimeHelper.requireNonNull(constants$24.const$6,"posix_memalign");
     }
     /**
      * {@snippet :
@@ -2768,7 +2768,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle aligned_alloc$MH() {
-        return RuntimeHelper.requireNonNull(constants$9.aligned_alloc$MH,"aligned_alloc");
+        return RuntimeHelper.requireNonNull(constants$25.const$0,"aligned_alloc");
     }
     /**
      * {@snippet :
@@ -2784,7 +2784,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle abort$MH() {
-        return RuntimeHelper.requireNonNull(constants$9.abort$MH,"abort");
+        return RuntimeHelper.requireNonNull(constants$25.const$2,"abort");
     }
     /**
      * {@snippet :
@@ -2800,7 +2800,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle atexit$MH() {
-        return RuntimeHelper.requireNonNull(constants$9.atexit$MH,"atexit");
+        return RuntimeHelper.requireNonNull(constants$25.const$5,"atexit");
     }
     /**
      * {@snippet :
@@ -2816,7 +2816,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle at_quick_exit$MH() {
-        return RuntimeHelper.requireNonNull(constants$10.at_quick_exit$MH,"at_quick_exit");
+        return RuntimeHelper.requireNonNull(constants$26.const$1,"at_quick_exit");
     }
     /**
      * {@snippet :
@@ -2832,7 +2832,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle on_exit$MH() {
-        return RuntimeHelper.requireNonNull(constants$10.on_exit$MH,"on_exit");
+        return RuntimeHelper.requireNonNull(constants$26.const$5,"on_exit");
     }
     /**
      * {@snippet :
@@ -2848,7 +2848,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle exit$MH() {
-        return RuntimeHelper.requireNonNull(constants$10.exit$MH,"exit");
+        return RuntimeHelper.requireNonNull(constants$27.const$0,"exit");
     }
     /**
      * {@snippet :
@@ -2864,7 +2864,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle quick_exit$MH() {
-        return RuntimeHelper.requireNonNull(constants$11.quick_exit$MH,"quick_exit");
+        return RuntimeHelper.requireNonNull(constants$27.const$1,"quick_exit");
     }
     /**
      * {@snippet :
@@ -2880,7 +2880,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle _Exit$MH() {
-        return RuntimeHelper.requireNonNull(constants$11._Exit$MH,"_Exit");
+        return RuntimeHelper.requireNonNull(constants$27.const$2,"_Exit");
     }
     /**
      * {@snippet :
@@ -2896,7 +2896,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle getenv$MH() {
-        return RuntimeHelper.requireNonNull(constants$11.getenv$MH,"getenv");
+        return RuntimeHelper.requireNonNull(constants$27.const$3,"getenv");
     }
     /**
      * {@snippet :
@@ -2912,7 +2912,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle putenv$MH() {
-        return RuntimeHelper.requireNonNull(constants$11.putenv$MH,"putenv");
+        return RuntimeHelper.requireNonNull(constants$27.const$4,"putenv");
     }
     /**
      * {@snippet :
@@ -2928,7 +2928,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle setenv$MH() {
-        return RuntimeHelper.requireNonNull(constants$11.setenv$MH,"setenv");
+        return RuntimeHelper.requireNonNull(constants$27.const$6,"setenv");
     }
     /**
      * {@snippet :
@@ -2944,7 +2944,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle unsetenv$MH() {
-        return RuntimeHelper.requireNonNull(constants$11.unsetenv$MH,"unsetenv");
+        return RuntimeHelper.requireNonNull(constants$28.const$0,"unsetenv");
     }
     /**
      * {@snippet :
@@ -2960,7 +2960,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle clearenv$MH() {
-        return RuntimeHelper.requireNonNull(constants$12.clearenv$MH,"clearenv");
+        return RuntimeHelper.requireNonNull(constants$28.const$1,"clearenv");
     }
     /**
      * {@snippet :
@@ -2976,7 +2976,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle mktemp$MH() {
-        return RuntimeHelper.requireNonNull(constants$12.mktemp$MH,"mktemp");
+        return RuntimeHelper.requireNonNull(constants$28.const$2,"mktemp");
     }
     /**
      * {@snippet :
@@ -2992,7 +2992,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle mkstemp$MH() {
-        return RuntimeHelper.requireNonNull(constants$12.mkstemp$MH,"mkstemp");
+        return RuntimeHelper.requireNonNull(constants$28.const$3,"mkstemp");
     }
     /**
      * {@snippet :
@@ -3008,7 +3008,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle mkstemps$MH() {
-        return RuntimeHelper.requireNonNull(constants$12.mkstemps$MH,"mkstemps");
+        return RuntimeHelper.requireNonNull(constants$28.const$5,"mkstemps");
     }
     /**
      * {@snippet :
@@ -3024,7 +3024,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle mkdtemp$MH() {
-        return RuntimeHelper.requireNonNull(constants$12.mkdtemp$MH,"mkdtemp");
+        return RuntimeHelper.requireNonNull(constants$29.const$0,"mkdtemp");
     }
     /**
      * {@snippet :
@@ -3040,7 +3040,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle system$MH() {
-        return RuntimeHelper.requireNonNull(constants$12.system$MH,"system");
+        return RuntimeHelper.requireNonNull(constants$29.const$1,"system");
     }
     /**
      * {@snippet :
@@ -3056,7 +3056,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle realpath$MH() {
-        return RuntimeHelper.requireNonNull(constants$13.realpath$MH,"realpath");
+        return RuntimeHelper.requireNonNull(constants$29.const$3,"realpath");
     }
     /**
      * {@snippet :
@@ -3072,7 +3072,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle bsearch$MH() {
-        return RuntimeHelper.requireNonNull(constants$13.bsearch$MH,"bsearch");
+        return RuntimeHelper.requireNonNull(constants$30.const$1,"bsearch");
     }
     /**
      * {@snippet :
@@ -3088,7 +3088,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle qsort$MH() {
-        return RuntimeHelper.requireNonNull(constants$13.qsort$MH,"qsort");
+        return RuntimeHelper.requireNonNull(constants$30.const$3,"qsort");
     }
     /**
      * {@snippet :
@@ -3104,7 +3104,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle abs$MH() {
-        return RuntimeHelper.requireNonNull(constants$13.abs$MH,"abs");
+        return RuntimeHelper.requireNonNull(constants$30.const$5,"abs");
     }
     /**
      * {@snippet :
@@ -3120,7 +3120,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle labs$MH() {
-        return RuntimeHelper.requireNonNull(constants$14.labs$MH,"labs");
+        return RuntimeHelper.requireNonNull(constants$31.const$1,"labs");
     }
     /**
      * {@snippet :
@@ -3136,7 +3136,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle llabs$MH() {
-        return RuntimeHelper.requireNonNull(constants$14.llabs$MH,"llabs");
+        return RuntimeHelper.requireNonNull(constants$31.const$2,"llabs");
     }
     /**
      * {@snippet :
@@ -3152,7 +3152,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle div$MH() {
-        return RuntimeHelper.requireNonNull(constants$14.div$MH,"div");
+        return RuntimeHelper.requireNonNull(constants$31.const$4,"div");
     }
     /**
      * {@snippet :
@@ -3168,7 +3168,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle ldiv$MH() {
-        return RuntimeHelper.requireNonNull(constants$14.ldiv$MH,"ldiv");
+        return RuntimeHelper.requireNonNull(constants$31.const$6,"ldiv");
     }
     /**
      * {@snippet :
@@ -3184,7 +3184,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle lldiv$MH() {
-        return RuntimeHelper.requireNonNull(constants$14.lldiv$MH,"lldiv");
+        return RuntimeHelper.requireNonNull(constants$32.const$0,"lldiv");
     }
     /**
      * {@snippet :
@@ -3200,7 +3200,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle ecvt$MH() {
-        return RuntimeHelper.requireNonNull(constants$14.ecvt$MH,"ecvt");
+        return RuntimeHelper.requireNonNull(constants$32.const$2,"ecvt");
     }
     /**
      * {@snippet :
@@ -3216,7 +3216,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle fcvt$MH() {
-        return RuntimeHelper.requireNonNull(constants$15.fcvt$MH,"fcvt");
+        return RuntimeHelper.requireNonNull(constants$32.const$3,"fcvt");
     }
     /**
      * {@snippet :
@@ -3232,7 +3232,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle gcvt$MH() {
-        return RuntimeHelper.requireNonNull(constants$15.gcvt$MH,"gcvt");
+        return RuntimeHelper.requireNonNull(constants$32.const$5,"gcvt");
     }
     /**
      * {@snippet :
@@ -3248,7 +3248,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle ecvt_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$15.ecvt_r$MH,"ecvt_r");
+        return RuntimeHelper.requireNonNull(constants$33.const$1,"ecvt_r");
     }
     /**
      * {@snippet :
@@ -3264,7 +3264,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle fcvt_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$15.fcvt_r$MH,"fcvt_r");
+        return RuntimeHelper.requireNonNull(constants$33.const$2,"fcvt_r");
     }
     /**
      * {@snippet :
@@ -3280,7 +3280,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle mblen$MH() {
-        return RuntimeHelper.requireNonNull(constants$15.mblen$MH,"mblen");
+        return RuntimeHelper.requireNonNull(constants$33.const$4,"mblen");
     }
     /**
      * {@snippet :
@@ -3296,7 +3296,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle mbtowc$MH() {
-        return RuntimeHelper.requireNonNull(constants$15.mbtowc$MH,"mbtowc");
+        return RuntimeHelper.requireNonNull(constants$33.const$6,"mbtowc");
     }
     /**
      * {@snippet :
@@ -3312,7 +3312,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle wctomb$MH() {
-        return RuntimeHelper.requireNonNull(constants$16.wctomb$MH,"wctomb");
+        return RuntimeHelper.requireNonNull(constants$34.const$0,"wctomb");
     }
     /**
      * {@snippet :
@@ -3328,7 +3328,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle mbstowcs$MH() {
-        return RuntimeHelper.requireNonNull(constants$16.mbstowcs$MH,"mbstowcs");
+        return RuntimeHelper.requireNonNull(constants$34.const$2,"mbstowcs");
     }
     /**
      * {@snippet :
@@ -3344,7 +3344,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle wcstombs$MH() {
-        return RuntimeHelper.requireNonNull(constants$16.wcstombs$MH,"wcstombs");
+        return RuntimeHelper.requireNonNull(constants$34.const$3,"wcstombs");
     }
     /**
      * {@snippet :
@@ -3360,7 +3360,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rpmatch$MH() {
-        return RuntimeHelper.requireNonNull(constants$16.rpmatch$MH,"rpmatch");
+        return RuntimeHelper.requireNonNull(constants$34.const$4,"rpmatch");
     }
     /**
      * {@snippet :
@@ -3376,7 +3376,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle getsubopt$MH() {
-        return RuntimeHelper.requireNonNull(constants$16.getsubopt$MH,"getsubopt");
+        return RuntimeHelper.requireNonNull(constants$34.const$5,"getsubopt");
     }
     /**
      * {@snippet :
@@ -3392,7 +3392,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle getloadavg$MH() {
-        return RuntimeHelper.requireNonNull(constants$16.getloadavg$MH,"getloadavg");
+        return RuntimeHelper.requireNonNull(constants$35.const$0,"getloadavg");
     }
     /**
      * {@snippet :
@@ -3412,159 +3412,159 @@ public class librealsense extends librealsense_1 {
      * typedef unsigned char uint8_t;
      * }
      */
-    public static final OfByte uint8_t = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte uint8_t = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef unsigned short uint16_t;
      * }
      */
-    public static final OfShort uint16_t = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort uint16_t = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef unsigned int uint32_t;
      * }
      */
-    public static final OfInt uint32_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt uint32_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned long uint64_t;
      * }
      */
-    public static final OfLong uint64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong uint64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef signed char int_least8_t;
      * }
      */
-    public static final OfByte int_least8_t = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte int_least8_t = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef short int_least16_t;
      * }
      */
-    public static final OfShort int_least16_t = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort int_least16_t = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef int int_least32_t;
      * }
      */
-    public static final OfInt int_least32_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt int_least32_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef long int_least64_t;
      * }
      */
-    public static final OfLong int_least64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong int_least64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned char uint_least8_t;
      * }
      */
-    public static final OfByte uint_least8_t = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte uint_least8_t = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef unsigned short uint_least16_t;
      * }
      */
-    public static final OfShort uint_least16_t = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort uint_least16_t = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef unsigned int uint_least32_t;
      * }
      */
-    public static final OfInt uint_least32_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt uint_least32_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned long uint_least64_t;
      * }
      */
-    public static final OfLong uint_least64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong uint_least64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef signed char int_fast8_t;
      * }
      */
-    public static final OfByte int_fast8_t = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte int_fast8_t = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef long int_fast16_t;
      * }
      */
-    public static final OfLong int_fast16_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong int_fast16_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long int_fast32_t;
      * }
      */
-    public static final OfLong int_fast32_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong int_fast32_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long int_fast64_t;
      * }
      */
-    public static final OfLong int_fast64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong int_fast64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned char uint_fast8_t;
      * }
      */
-    public static final OfByte uint_fast8_t = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte uint_fast8_t = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef unsigned long uint_fast16_t;
      * }
      */
-    public static final OfLong uint_fast16_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong uint_fast16_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long uint_fast32_t;
      * }
      */
-    public static final OfLong uint_fast32_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong uint_fast32_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long uint_fast64_t;
      * }
      */
-    public static final OfLong uint_fast64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong uint_fast64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long intptr_t;
      * }
      */
-    public static final OfLong intptr_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong intptr_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long uintptr_t;
      * }
      */
-    public static final OfLong uintptr_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong uintptr_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long intmax_t;
      * }
      */
-    public static final OfLong intmax_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong intmax_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long uintmax_t;
      * }
      */
-    public static final OfLong uintmax_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong uintmax_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef float float_t;
      * }
      */
-    public static final OfFloat float_t = Constants$root.C_FLOAT$LAYOUT;
+    public static final OfFloat float_t = JAVA_FLOAT;
     /**
      * {@snippet :
      * typedef double double_t;
      * }
      */
-    public static final OfDouble double_t = Constants$root.C_DOUBLE$LAYOUT;
+    public static final OfDouble double_t = JAVA_DOUBLE;
     public static MethodHandle __fpclassify$MH() {
-        return RuntimeHelper.requireNonNull(constants$17.__fpclassify$MH,"__fpclassify");
+        return RuntimeHelper.requireNonNull(constants$35.const$2,"__fpclassify");
     }
     /**
      * {@snippet :
@@ -3580,7 +3580,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __signbit$MH() {
-        return RuntimeHelper.requireNonNull(constants$17.__signbit$MH,"__signbit");
+        return RuntimeHelper.requireNonNull(constants$35.const$3,"__signbit");
     }
     /**
      * {@snippet :
@@ -3596,7 +3596,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __isinf$MH() {
-        return RuntimeHelper.requireNonNull(constants$17.__isinf$MH,"__isinf");
+        return RuntimeHelper.requireNonNull(constants$35.const$4,"__isinf");
     }
     /**
      * {@snippet :
@@ -3612,7 +3612,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __finite$MH() {
-        return RuntimeHelper.requireNonNull(constants$17.__finite$MH,"__finite");
+        return RuntimeHelper.requireNonNull(constants$35.const$5,"__finite");
     }
     /**
      * {@snippet :
@@ -3628,7 +3628,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __isnan$MH() {
-        return RuntimeHelper.requireNonNull(constants$17.__isnan$MH,"__isnan");
+        return RuntimeHelper.requireNonNull(constants$36.const$0,"__isnan");
     }
     /**
      * {@snippet :
@@ -3644,7 +3644,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __iseqsig$MH() {
-        return RuntimeHelper.requireNonNull(constants$17.__iseqsig$MH,"__iseqsig");
+        return RuntimeHelper.requireNonNull(constants$36.const$2,"__iseqsig");
     }
     /**
      * {@snippet :
@@ -3660,7 +3660,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __issignaling$MH() {
-        return RuntimeHelper.requireNonNull(constants$18.__issignaling$MH,"__issignaling");
+        return RuntimeHelper.requireNonNull(constants$36.const$3,"__issignaling");
     }
     /**
      * {@snippet :
@@ -3676,7 +3676,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle acos$MH() {
-        return RuntimeHelper.requireNonNull(constants$18.acos$MH,"acos");
+        return RuntimeHelper.requireNonNull(constants$36.const$5,"acos");
     }
     /**
      * {@snippet :
@@ -3692,7 +3692,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __acos$MH() {
-        return RuntimeHelper.requireNonNull(constants$18.__acos$MH,"__acos");
+        return RuntimeHelper.requireNonNull(constants$37.const$0,"__acos");
     }
     /**
      * {@snippet :
@@ -3708,7 +3708,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle asin$MH() {
-        return RuntimeHelper.requireNonNull(constants$18.asin$MH,"asin");
+        return RuntimeHelper.requireNonNull(constants$37.const$1,"asin");
     }
     /**
      * {@snippet :
@@ -3724,7 +3724,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __asin$MH() {
-        return RuntimeHelper.requireNonNull(constants$18.__asin$MH,"__asin");
+        return RuntimeHelper.requireNonNull(constants$37.const$2,"__asin");
     }
     /**
      * {@snippet :
@@ -3740,7 +3740,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle atan$MH() {
-        return RuntimeHelper.requireNonNull(constants$18.atan$MH,"atan");
+        return RuntimeHelper.requireNonNull(constants$37.const$3,"atan");
     }
     /**
      * {@snippet :
@@ -3756,7 +3756,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __atan$MH() {
-        return RuntimeHelper.requireNonNull(constants$19.__atan$MH,"__atan");
+        return RuntimeHelper.requireNonNull(constants$37.const$4,"__atan");
     }
     /**
      * {@snippet :
@@ -3772,7 +3772,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle atan2$MH() {
-        return RuntimeHelper.requireNonNull(constants$19.atan2$MH,"atan2");
+        return RuntimeHelper.requireNonNull(constants$37.const$6,"atan2");
     }
     /**
      * {@snippet :
@@ -3788,7 +3788,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __atan2$MH() {
-        return RuntimeHelper.requireNonNull(constants$19.__atan2$MH,"__atan2");
+        return RuntimeHelper.requireNonNull(constants$38.const$0,"__atan2");
     }
     /**
      * {@snippet :
@@ -3804,7 +3804,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle cos$MH() {
-        return RuntimeHelper.requireNonNull(constants$19.cos$MH,"cos");
+        return RuntimeHelper.requireNonNull(constants$38.const$1,"cos");
     }
     /**
      * {@snippet :
@@ -3820,7 +3820,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __cos$MH() {
-        return RuntimeHelper.requireNonNull(constants$19.__cos$MH,"__cos");
+        return RuntimeHelper.requireNonNull(constants$38.const$2,"__cos");
     }
     /**
      * {@snippet :
@@ -3836,7 +3836,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle sin$MH() {
-        return RuntimeHelper.requireNonNull(constants$19.sin$MH,"sin");
+        return RuntimeHelper.requireNonNull(constants$38.const$3,"sin");
     }
     /**
      * {@snippet :
@@ -3852,7 +3852,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __sin$MH() {
-        return RuntimeHelper.requireNonNull(constants$20.__sin$MH,"__sin");
+        return RuntimeHelper.requireNonNull(constants$38.const$4,"__sin");
     }
     /**
      * {@snippet :
@@ -3868,7 +3868,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle tan$MH() {
-        return RuntimeHelper.requireNonNull(constants$20.tan$MH,"tan");
+        return RuntimeHelper.requireNonNull(constants$38.const$5,"tan");
     }
     /**
      * {@snippet :
@@ -3884,7 +3884,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __tan$MH() {
-        return RuntimeHelper.requireNonNull(constants$20.__tan$MH,"__tan");
+        return RuntimeHelper.requireNonNull(constants$39.const$0,"__tan");
     }
     /**
      * {@snippet :
@@ -3900,7 +3900,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle cosh$MH() {
-        return RuntimeHelper.requireNonNull(constants$20.cosh$MH,"cosh");
+        return RuntimeHelper.requireNonNull(constants$39.const$1,"cosh");
     }
     /**
      * {@snippet :
@@ -3916,7 +3916,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __cosh$MH() {
-        return RuntimeHelper.requireNonNull(constants$20.__cosh$MH,"__cosh");
+        return RuntimeHelper.requireNonNull(constants$39.const$2,"__cosh");
     }
     /**
      * {@snippet :
@@ -3932,7 +3932,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle sinh$MH() {
-        return RuntimeHelper.requireNonNull(constants$20.sinh$MH,"sinh");
+        return RuntimeHelper.requireNonNull(constants$39.const$3,"sinh");
     }
     /**
      * {@snippet :
@@ -3948,7 +3948,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __sinh$MH() {
-        return RuntimeHelper.requireNonNull(constants$21.__sinh$MH,"__sinh");
+        return RuntimeHelper.requireNonNull(constants$39.const$4,"__sinh");
     }
     /**
      * {@snippet :
@@ -3964,7 +3964,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle tanh$MH() {
-        return RuntimeHelper.requireNonNull(constants$21.tanh$MH,"tanh");
+        return RuntimeHelper.requireNonNull(constants$39.const$5,"tanh");
     }
     /**
      * {@snippet :
@@ -3980,7 +3980,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __tanh$MH() {
-        return RuntimeHelper.requireNonNull(constants$21.__tanh$MH,"__tanh");
+        return RuntimeHelper.requireNonNull(constants$40.const$0,"__tanh");
     }
     /**
      * {@snippet :
@@ -3996,7 +3996,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle acosh$MH() {
-        return RuntimeHelper.requireNonNull(constants$21.acosh$MH,"acosh");
+        return RuntimeHelper.requireNonNull(constants$40.const$1,"acosh");
     }
     /**
      * {@snippet :
@@ -4012,7 +4012,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __acosh$MH() {
-        return RuntimeHelper.requireNonNull(constants$21.__acosh$MH,"__acosh");
+        return RuntimeHelper.requireNonNull(constants$40.const$2,"__acosh");
     }
     /**
      * {@snippet :
@@ -4028,7 +4028,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle asinh$MH() {
-        return RuntimeHelper.requireNonNull(constants$21.asinh$MH,"asinh");
+        return RuntimeHelper.requireNonNull(constants$40.const$3,"asinh");
     }
     /**
      * {@snippet :
@@ -4044,7 +4044,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __asinh$MH() {
-        return RuntimeHelper.requireNonNull(constants$22.__asinh$MH,"__asinh");
+        return RuntimeHelper.requireNonNull(constants$40.const$4,"__asinh");
     }
     /**
      * {@snippet :
@@ -4060,7 +4060,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle atanh$MH() {
-        return RuntimeHelper.requireNonNull(constants$22.atanh$MH,"atanh");
+        return RuntimeHelper.requireNonNull(constants$40.const$5,"atanh");
     }
     /**
      * {@snippet :
@@ -4076,7 +4076,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __atanh$MH() {
-        return RuntimeHelper.requireNonNull(constants$22.__atanh$MH,"__atanh");
+        return RuntimeHelper.requireNonNull(constants$41.const$0,"__atanh");
     }
     /**
      * {@snippet :
@@ -4092,7 +4092,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle exp$MH() {
-        return RuntimeHelper.requireNonNull(constants$22.exp$MH,"exp");
+        return RuntimeHelper.requireNonNull(constants$41.const$1,"exp");
     }
     /**
      * {@snippet :
@@ -4108,7 +4108,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __exp$MH() {
-        return RuntimeHelper.requireNonNull(constants$22.__exp$MH,"__exp");
+        return RuntimeHelper.requireNonNull(constants$41.const$2,"__exp");
     }
     /**
      * {@snippet :
@@ -4124,7 +4124,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle frexp$MH() {
-        return RuntimeHelper.requireNonNull(constants$22.frexp$MH,"frexp");
+        return RuntimeHelper.requireNonNull(constants$41.const$4,"frexp");
     }
     /**
      * {@snippet :
@@ -4140,7 +4140,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __frexp$MH() {
-        return RuntimeHelper.requireNonNull(constants$23.__frexp$MH,"__frexp");
+        return RuntimeHelper.requireNonNull(constants$41.const$5,"__frexp");
     }
     /**
      * {@snippet :
@@ -4156,7 +4156,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle ldexp$MH() {
-        return RuntimeHelper.requireNonNull(constants$23.ldexp$MH,"ldexp");
+        return RuntimeHelper.requireNonNull(constants$42.const$1,"ldexp");
     }
     /**
      * {@snippet :
@@ -4172,7 +4172,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __ldexp$MH() {
-        return RuntimeHelper.requireNonNull(constants$23.__ldexp$MH,"__ldexp");
+        return RuntimeHelper.requireNonNull(constants$42.const$2,"__ldexp");
     }
     /**
      * {@snippet :
@@ -4188,7 +4188,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle log$MH() {
-        return RuntimeHelper.requireNonNull(constants$23.log$MH,"log");
+        return RuntimeHelper.requireNonNull(constants$42.const$3,"log");
     }
     /**
      * {@snippet :
@@ -4204,7 +4204,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __log$MH() {
-        return RuntimeHelper.requireNonNull(constants$23.__log$MH,"__log");
+        return RuntimeHelper.requireNonNull(constants$42.const$4,"__log");
     }
     /**
      * {@snippet :
@@ -4220,7 +4220,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle log10$MH() {
-        return RuntimeHelper.requireNonNull(constants$23.log10$MH,"log10");
+        return RuntimeHelper.requireNonNull(constants$42.const$5,"log10");
     }
     /**
      * {@snippet :
@@ -4236,7 +4236,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __log10$MH() {
-        return RuntimeHelper.requireNonNull(constants$24.__log10$MH,"__log10");
+        return RuntimeHelper.requireNonNull(constants$43.const$0,"__log10");
     }
     /**
      * {@snippet :
@@ -4252,7 +4252,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle modf$MH() {
-        return RuntimeHelper.requireNonNull(constants$24.modf$MH,"modf");
+        return RuntimeHelper.requireNonNull(constants$43.const$1,"modf");
     }
     /**
      * {@snippet :
@@ -4268,7 +4268,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __modf$MH() {
-        return RuntimeHelper.requireNonNull(constants$24.__modf$MH,"__modf");
+        return RuntimeHelper.requireNonNull(constants$43.const$2,"__modf");
     }
     /**
      * {@snippet :
@@ -4284,7 +4284,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle expm1$MH() {
-        return RuntimeHelper.requireNonNull(constants$24.expm1$MH,"expm1");
+        return RuntimeHelper.requireNonNull(constants$43.const$3,"expm1");
     }
     /**
      * {@snippet :
@@ -4300,7 +4300,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __expm1$MH() {
-        return RuntimeHelper.requireNonNull(constants$24.__expm1$MH,"__expm1");
+        return RuntimeHelper.requireNonNull(constants$43.const$4,"__expm1");
     }
     /**
      * {@snippet :
@@ -4316,7 +4316,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle log1p$MH() {
-        return RuntimeHelper.requireNonNull(constants$24.log1p$MH,"log1p");
+        return RuntimeHelper.requireNonNull(constants$43.const$5,"log1p");
     }
     /**
      * {@snippet :
@@ -4332,7 +4332,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __log1p$MH() {
-        return RuntimeHelper.requireNonNull(constants$25.__log1p$MH,"__log1p");
+        return RuntimeHelper.requireNonNull(constants$44.const$0,"__log1p");
     }
     /**
      * {@snippet :
@@ -4348,7 +4348,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle logb$MH() {
-        return RuntimeHelper.requireNonNull(constants$25.logb$MH,"logb");
+        return RuntimeHelper.requireNonNull(constants$44.const$1,"logb");
     }
     /**
      * {@snippet :
@@ -4364,7 +4364,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __logb$MH() {
-        return RuntimeHelper.requireNonNull(constants$25.__logb$MH,"__logb");
+        return RuntimeHelper.requireNonNull(constants$44.const$2,"__logb");
     }
     /**
      * {@snippet :
@@ -4380,7 +4380,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle exp2$MH() {
-        return RuntimeHelper.requireNonNull(constants$25.exp2$MH,"exp2");
+        return RuntimeHelper.requireNonNull(constants$44.const$3,"exp2");
     }
     /**
      * {@snippet :
@@ -4396,7 +4396,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __exp2$MH() {
-        return RuntimeHelper.requireNonNull(constants$25.__exp2$MH,"__exp2");
+        return RuntimeHelper.requireNonNull(constants$44.const$4,"__exp2");
     }
     /**
      * {@snippet :
@@ -4412,7 +4412,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle log2$MH() {
-        return RuntimeHelper.requireNonNull(constants$25.log2$MH,"log2");
+        return RuntimeHelper.requireNonNull(constants$44.const$5,"log2");
     }
     /**
      * {@snippet :
@@ -4428,7 +4428,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __log2$MH() {
-        return RuntimeHelper.requireNonNull(constants$26.__log2$MH,"__log2");
+        return RuntimeHelper.requireNonNull(constants$45.const$0,"__log2");
     }
     /**
      * {@snippet :
@@ -4444,7 +4444,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle pow$MH() {
-        return RuntimeHelper.requireNonNull(constants$26.pow$MH,"pow");
+        return RuntimeHelper.requireNonNull(constants$45.const$1,"pow");
     }
     /**
      * {@snippet :
@@ -4460,7 +4460,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __pow$MH() {
-        return RuntimeHelper.requireNonNull(constants$26.__pow$MH,"__pow");
+        return RuntimeHelper.requireNonNull(constants$45.const$2,"__pow");
     }
     /**
      * {@snippet :
@@ -4476,7 +4476,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle sqrt$MH() {
-        return RuntimeHelper.requireNonNull(constants$26.sqrt$MH,"sqrt");
+        return RuntimeHelper.requireNonNull(constants$45.const$3,"sqrt");
     }
     /**
      * {@snippet :
@@ -4492,7 +4492,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __sqrt$MH() {
-        return RuntimeHelper.requireNonNull(constants$26.__sqrt$MH,"__sqrt");
+        return RuntimeHelper.requireNonNull(constants$45.const$4,"__sqrt");
     }
     /**
      * {@snippet :
@@ -4508,7 +4508,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle hypot$MH() {
-        return RuntimeHelper.requireNonNull(constants$26.hypot$MH,"hypot");
+        return RuntimeHelper.requireNonNull(constants$45.const$5,"hypot");
     }
     /**
      * {@snippet :
@@ -4524,7 +4524,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __hypot$MH() {
-        return RuntimeHelper.requireNonNull(constants$27.__hypot$MH,"__hypot");
+        return RuntimeHelper.requireNonNull(constants$46.const$0,"__hypot");
     }
     /**
      * {@snippet :
@@ -4540,7 +4540,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle cbrt$MH() {
-        return RuntimeHelper.requireNonNull(constants$27.cbrt$MH,"cbrt");
+        return RuntimeHelper.requireNonNull(constants$46.const$1,"cbrt");
     }
     /**
      * {@snippet :
@@ -4556,7 +4556,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __cbrt$MH() {
-        return RuntimeHelper.requireNonNull(constants$27.__cbrt$MH,"__cbrt");
+        return RuntimeHelper.requireNonNull(constants$46.const$2,"__cbrt");
     }
     /**
      * {@snippet :
@@ -4572,7 +4572,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle ceil$MH() {
-        return RuntimeHelper.requireNonNull(constants$27.ceil$MH,"ceil");
+        return RuntimeHelper.requireNonNull(constants$46.const$3,"ceil");
     }
     /**
      * {@snippet :
@@ -4588,7 +4588,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __ceil$MH() {
-        return RuntimeHelper.requireNonNull(constants$27.__ceil$MH,"__ceil");
+        return RuntimeHelper.requireNonNull(constants$46.const$4,"__ceil");
     }
     /**
      * {@snippet :
@@ -4604,7 +4604,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle fabs$MH() {
-        return RuntimeHelper.requireNonNull(constants$27.fabs$MH,"fabs");
+        return RuntimeHelper.requireNonNull(constants$46.const$5,"fabs");
     }
     /**
      * {@snippet :
@@ -4620,7 +4620,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __fabs$MH() {
-        return RuntimeHelper.requireNonNull(constants$28.__fabs$MH,"__fabs");
+        return RuntimeHelper.requireNonNull(constants$47.const$0,"__fabs");
     }
     /**
      * {@snippet :
@@ -4636,7 +4636,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle floor$MH() {
-        return RuntimeHelper.requireNonNull(constants$28.floor$MH,"floor");
+        return RuntimeHelper.requireNonNull(constants$47.const$1,"floor");
     }
     /**
      * {@snippet :
@@ -4652,7 +4652,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __floor$MH() {
-        return RuntimeHelper.requireNonNull(constants$28.__floor$MH,"__floor");
+        return RuntimeHelper.requireNonNull(constants$47.const$2,"__floor");
     }
     /**
      * {@snippet :
@@ -4668,7 +4668,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle fmod$MH() {
-        return RuntimeHelper.requireNonNull(constants$28.fmod$MH,"fmod");
+        return RuntimeHelper.requireNonNull(constants$47.const$3,"fmod");
     }
     /**
      * {@snippet :
@@ -4684,7 +4684,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __fmod$MH() {
-        return RuntimeHelper.requireNonNull(constants$28.__fmod$MH,"__fmod");
+        return RuntimeHelper.requireNonNull(constants$47.const$4,"__fmod");
     }
     /**
      * {@snippet :
@@ -4700,7 +4700,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle isinf$MH() {
-        return RuntimeHelper.requireNonNull(constants$28.isinf$MH,"isinf");
+        return RuntimeHelper.requireNonNull(constants$47.const$5,"isinf");
     }
     /**
      * {@snippet :
@@ -4716,7 +4716,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle finite$MH() {
-        return RuntimeHelper.requireNonNull(constants$29.finite$MH,"finite");
+        return RuntimeHelper.requireNonNull(constants$48.const$0,"finite");
     }
     /**
      * {@snippet :
@@ -4732,7 +4732,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle drem$MH() {
-        return RuntimeHelper.requireNonNull(constants$29.drem$MH,"drem");
+        return RuntimeHelper.requireNonNull(constants$48.const$1,"drem");
     }
     /**
      * {@snippet :
@@ -4748,7 +4748,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __drem$MH() {
-        return RuntimeHelper.requireNonNull(constants$29.__drem$MH,"__drem");
+        return RuntimeHelper.requireNonNull(constants$48.const$2,"__drem");
     }
     /**
      * {@snippet :
@@ -4764,7 +4764,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle significand$MH() {
-        return RuntimeHelper.requireNonNull(constants$29.significand$MH,"significand");
+        return RuntimeHelper.requireNonNull(constants$48.const$3,"significand");
     }
     /**
      * {@snippet :
@@ -4780,7 +4780,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __significand$MH() {
-        return RuntimeHelper.requireNonNull(constants$29.__significand$MH,"__significand");
+        return RuntimeHelper.requireNonNull(constants$48.const$4,"__significand");
     }
     /**
      * {@snippet :
@@ -4796,7 +4796,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle copysign$MH() {
-        return RuntimeHelper.requireNonNull(constants$29.copysign$MH,"copysign");
+        return RuntimeHelper.requireNonNull(constants$48.const$5,"copysign");
     }
     /**
      * {@snippet :
@@ -4812,7 +4812,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __copysign$MH() {
-        return RuntimeHelper.requireNonNull(constants$30.__copysign$MH,"__copysign");
+        return RuntimeHelper.requireNonNull(constants$49.const$0,"__copysign");
     }
     /**
      * {@snippet :
@@ -4828,7 +4828,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle nan$MH() {
-        return RuntimeHelper.requireNonNull(constants$30.nan$MH,"nan");
+        return RuntimeHelper.requireNonNull(constants$49.const$1,"nan");
     }
     /**
      * {@snippet :
@@ -4844,7 +4844,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __nan$MH() {
-        return RuntimeHelper.requireNonNull(constants$30.__nan$MH,"__nan");
+        return RuntimeHelper.requireNonNull(constants$49.const$2,"__nan");
     }
     /**
      * {@snippet :
@@ -4860,7 +4860,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle isnan$MH() {
-        return RuntimeHelper.requireNonNull(constants$30.isnan$MH,"isnan");
+        return RuntimeHelper.requireNonNull(constants$49.const$3,"isnan");
     }
     /**
      * {@snippet :
@@ -4876,7 +4876,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle j0$MH() {
-        return RuntimeHelper.requireNonNull(constants$30.j0$MH,"j0");
+        return RuntimeHelper.requireNonNull(constants$49.const$4,"j0");
     }
     /**
      * {@snippet :
@@ -4892,7 +4892,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __j0$MH() {
-        return RuntimeHelper.requireNonNull(constants$30.__j0$MH,"__j0");
+        return RuntimeHelper.requireNonNull(constants$49.const$5,"__j0");
     }
     /**
      * {@snippet :
@@ -4908,7 +4908,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle j1$MH() {
-        return RuntimeHelper.requireNonNull(constants$31.j1$MH,"j1");
+        return RuntimeHelper.requireNonNull(constants$50.const$0,"j1");
     }
     /**
      * {@snippet :
@@ -4924,7 +4924,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __j1$MH() {
-        return RuntimeHelper.requireNonNull(constants$31.__j1$MH,"__j1");
+        return RuntimeHelper.requireNonNull(constants$50.const$1,"__j1");
     }
     /**
      * {@snippet :
@@ -4940,7 +4940,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle jn$MH() {
-        return RuntimeHelper.requireNonNull(constants$31.jn$MH,"jn");
+        return RuntimeHelper.requireNonNull(constants$50.const$3,"jn");
     }
     /**
      * {@snippet :
@@ -4956,7 +4956,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __jn$MH() {
-        return RuntimeHelper.requireNonNull(constants$31.__jn$MH,"__jn");
+        return RuntimeHelper.requireNonNull(constants$50.const$4,"__jn");
     }
     /**
      * {@snippet :
@@ -4972,7 +4972,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle y0$MH() {
-        return RuntimeHelper.requireNonNull(constants$31.y0$MH,"y0");
+        return RuntimeHelper.requireNonNull(constants$50.const$5,"y0");
     }
     /**
      * {@snippet :
@@ -4988,7 +4988,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __y0$MH() {
-        return RuntimeHelper.requireNonNull(constants$31.__y0$MH,"__y0");
+        return RuntimeHelper.requireNonNull(constants$51.const$0,"__y0");
     }
     /**
      * {@snippet :
@@ -5004,7 +5004,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle y1$MH() {
-        return RuntimeHelper.requireNonNull(constants$32.y1$MH,"y1");
+        return RuntimeHelper.requireNonNull(constants$51.const$1,"y1");
     }
     /**
      * {@snippet :
@@ -5020,7 +5020,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __y1$MH() {
-        return RuntimeHelper.requireNonNull(constants$32.__y1$MH,"__y1");
+        return RuntimeHelper.requireNonNull(constants$51.const$2,"__y1");
     }
     /**
      * {@snippet :
@@ -5036,7 +5036,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle yn$MH() {
-        return RuntimeHelper.requireNonNull(constants$32.yn$MH,"yn");
+        return RuntimeHelper.requireNonNull(constants$51.const$3,"yn");
     }
     /**
      * {@snippet :
@@ -5052,7 +5052,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __yn$MH() {
-        return RuntimeHelper.requireNonNull(constants$32.__yn$MH,"__yn");
+        return RuntimeHelper.requireNonNull(constants$51.const$4,"__yn");
     }
     /**
      * {@snippet :
@@ -5068,7 +5068,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle erf$MH() {
-        return RuntimeHelper.requireNonNull(constants$32.erf$MH,"erf");
+        return RuntimeHelper.requireNonNull(constants$51.const$5,"erf");
     }
     /**
      * {@snippet :
@@ -5084,7 +5084,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __erf$MH() {
-        return RuntimeHelper.requireNonNull(constants$32.__erf$MH,"__erf");
+        return RuntimeHelper.requireNonNull(constants$52.const$0,"__erf");
     }
     /**
      * {@snippet :
@@ -5100,7 +5100,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle erfc$MH() {
-        return RuntimeHelper.requireNonNull(constants$33.erfc$MH,"erfc");
+        return RuntimeHelper.requireNonNull(constants$52.const$1,"erfc");
     }
     /**
      * {@snippet :
@@ -5116,7 +5116,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __erfc$MH() {
-        return RuntimeHelper.requireNonNull(constants$33.__erfc$MH,"__erfc");
+        return RuntimeHelper.requireNonNull(constants$52.const$2,"__erfc");
     }
     /**
      * {@snippet :
@@ -5132,7 +5132,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle lgamma$MH() {
-        return RuntimeHelper.requireNonNull(constants$33.lgamma$MH,"lgamma");
+        return RuntimeHelper.requireNonNull(constants$52.const$3,"lgamma");
     }
     /**
      * {@snippet :
@@ -5148,7 +5148,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __lgamma$MH() {
-        return RuntimeHelper.requireNonNull(constants$33.__lgamma$MH,"__lgamma");
+        return RuntimeHelper.requireNonNull(constants$52.const$4,"__lgamma");
     }
     /**
      * {@snippet :
@@ -5164,7 +5164,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle tgamma$MH() {
-        return RuntimeHelper.requireNonNull(constants$33.tgamma$MH,"tgamma");
+        return RuntimeHelper.requireNonNull(constants$52.const$5,"tgamma");
     }
     /**
      * {@snippet :
@@ -5180,7 +5180,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __tgamma$MH() {
-        return RuntimeHelper.requireNonNull(constants$33.__tgamma$MH,"__tgamma");
+        return RuntimeHelper.requireNonNull(constants$53.const$0,"__tgamma");
     }
     /**
      * {@snippet :
@@ -5196,7 +5196,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle gamma$MH() {
-        return RuntimeHelper.requireNonNull(constants$34.gamma$MH,"gamma");
+        return RuntimeHelper.requireNonNull(constants$53.const$1,"gamma");
     }
     /**
      * {@snippet :
@@ -5212,7 +5212,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __gamma$MH() {
-        return RuntimeHelper.requireNonNull(constants$34.__gamma$MH,"__gamma");
+        return RuntimeHelper.requireNonNull(constants$53.const$2,"__gamma");
     }
     /**
      * {@snippet :
@@ -5228,7 +5228,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle lgamma_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$34.lgamma_r$MH,"lgamma_r");
+        return RuntimeHelper.requireNonNull(constants$53.const$3,"lgamma_r");
     }
     /**
      * {@snippet :
@@ -5244,7 +5244,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __lgamma_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$34.__lgamma_r$MH,"__lgamma_r");
+        return RuntimeHelper.requireNonNull(constants$53.const$4,"__lgamma_r");
     }
     /**
      * {@snippet :
@@ -5260,7 +5260,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rint$MH() {
-        return RuntimeHelper.requireNonNull(constants$34.rint$MH,"rint");
+        return RuntimeHelper.requireNonNull(constants$53.const$5,"rint");
     }
     /**
      * {@snippet :
@@ -5276,7 +5276,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __rint$MH() {
-        return RuntimeHelper.requireNonNull(constants$34.__rint$MH,"__rint");
+        return RuntimeHelper.requireNonNull(constants$54.const$0,"__rint");
     }
     /**
      * {@snippet :
@@ -5292,7 +5292,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle nextafter$MH() {
-        return RuntimeHelper.requireNonNull(constants$35.nextafter$MH,"nextafter");
+        return RuntimeHelper.requireNonNull(constants$54.const$1,"nextafter");
     }
     /**
      * {@snippet :
@@ -5308,7 +5308,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __nextafter$MH() {
-        return RuntimeHelper.requireNonNull(constants$35.__nextafter$MH,"__nextafter");
+        return RuntimeHelper.requireNonNull(constants$54.const$2,"__nextafter");
     }
     /**
      * {@snippet :
@@ -5324,7 +5324,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle remainder$MH() {
-        return RuntimeHelper.requireNonNull(constants$35.remainder$MH,"remainder");
+        return RuntimeHelper.requireNonNull(constants$54.const$3,"remainder");
     }
     /**
      * {@snippet :
@@ -5340,7 +5340,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __remainder$MH() {
-        return RuntimeHelper.requireNonNull(constants$35.__remainder$MH,"__remainder");
+        return RuntimeHelper.requireNonNull(constants$54.const$4,"__remainder");
     }
     /**
      * {@snippet :
@@ -5356,7 +5356,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle scalbn$MH() {
-        return RuntimeHelper.requireNonNull(constants$35.scalbn$MH,"scalbn");
+        return RuntimeHelper.requireNonNull(constants$54.const$5,"scalbn");
     }
     /**
      * {@snippet :
@@ -5372,7 +5372,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __scalbn$MH() {
-        return RuntimeHelper.requireNonNull(constants$35.__scalbn$MH,"__scalbn");
+        return RuntimeHelper.requireNonNull(constants$55.const$0,"__scalbn");
     }
     /**
      * {@snippet :
@@ -5388,7 +5388,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle ilogb$MH() {
-        return RuntimeHelper.requireNonNull(constants$36.ilogb$MH,"ilogb");
+        return RuntimeHelper.requireNonNull(constants$55.const$1,"ilogb");
     }
     /**
      * {@snippet :
@@ -5404,7 +5404,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __ilogb$MH() {
-        return RuntimeHelper.requireNonNull(constants$36.__ilogb$MH,"__ilogb");
+        return RuntimeHelper.requireNonNull(constants$55.const$2,"__ilogb");
     }
     /**
      * {@snippet :
@@ -5420,7 +5420,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle scalbln$MH() {
-        return RuntimeHelper.requireNonNull(constants$36.scalbln$MH,"scalbln");
+        return RuntimeHelper.requireNonNull(constants$55.const$4,"scalbln");
     }
     /**
      * {@snippet :
@@ -5436,7 +5436,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __scalbln$MH() {
-        return RuntimeHelper.requireNonNull(constants$36.__scalbln$MH,"__scalbln");
+        return RuntimeHelper.requireNonNull(constants$55.const$5,"__scalbln");
     }
     /**
      * {@snippet :
@@ -5452,7 +5452,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle nearbyint$MH() {
-        return RuntimeHelper.requireNonNull(constants$36.nearbyint$MH,"nearbyint");
+        return RuntimeHelper.requireNonNull(constants$56.const$0,"nearbyint");
     }
     /**
      * {@snippet :
@@ -5468,7 +5468,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __nearbyint$MH() {
-        return RuntimeHelper.requireNonNull(constants$36.__nearbyint$MH,"__nearbyint");
+        return RuntimeHelper.requireNonNull(constants$56.const$1,"__nearbyint");
     }
     /**
      * {@snippet :
@@ -5484,7 +5484,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle round$MH() {
-        return RuntimeHelper.requireNonNull(constants$37.round$MH,"round");
+        return RuntimeHelper.requireNonNull(constants$56.const$2,"round");
     }
     /**
      * {@snippet :
@@ -5500,7 +5500,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __round$MH() {
-        return RuntimeHelper.requireNonNull(constants$37.__round$MH,"__round");
+        return RuntimeHelper.requireNonNull(constants$56.const$3,"__round");
     }
     /**
      * {@snippet :
@@ -5516,7 +5516,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle trunc$MH() {
-        return RuntimeHelper.requireNonNull(constants$37.trunc$MH,"trunc");
+        return RuntimeHelper.requireNonNull(constants$56.const$4,"trunc");
     }
     /**
      * {@snippet :
@@ -5532,7 +5532,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __trunc$MH() {
-        return RuntimeHelper.requireNonNull(constants$37.__trunc$MH,"__trunc");
+        return RuntimeHelper.requireNonNull(constants$56.const$5,"__trunc");
     }
     /**
      * {@snippet :
@@ -5548,7 +5548,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle remquo$MH() {
-        return RuntimeHelper.requireNonNull(constants$37.remquo$MH,"remquo");
+        return RuntimeHelper.requireNonNull(constants$57.const$1,"remquo");
     }
     /**
      * {@snippet :
@@ -5564,7 +5564,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __remquo$MH() {
-        return RuntimeHelper.requireNonNull(constants$37.__remquo$MH,"__remquo");
+        return RuntimeHelper.requireNonNull(constants$57.const$2,"__remquo");
     }
     /**
      * {@snippet :
@@ -5580,7 +5580,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle lrint$MH() {
-        return RuntimeHelper.requireNonNull(constants$38.lrint$MH,"lrint");
+        return RuntimeHelper.requireNonNull(constants$57.const$4,"lrint");
     }
     /**
      * {@snippet :
@@ -5596,7 +5596,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __lrint$MH() {
-        return RuntimeHelper.requireNonNull(constants$38.__lrint$MH,"__lrint");
+        return RuntimeHelper.requireNonNull(constants$57.const$5,"__lrint");
     }
     /**
      * {@snippet :
@@ -5612,7 +5612,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle llrint$MH() {
-        return RuntimeHelper.requireNonNull(constants$38.llrint$MH,"llrint");
+        return RuntimeHelper.requireNonNull(constants$58.const$0,"llrint");
     }
     /**
      * {@snippet :
@@ -5628,7 +5628,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __llrint$MH() {
-        return RuntimeHelper.requireNonNull(constants$38.__llrint$MH,"__llrint");
+        return RuntimeHelper.requireNonNull(constants$58.const$1,"__llrint");
     }
     /**
      * {@snippet :
@@ -5644,7 +5644,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle lround$MH() {
-        return RuntimeHelper.requireNonNull(constants$38.lround$MH,"lround");
+        return RuntimeHelper.requireNonNull(constants$58.const$2,"lround");
     }
     /**
      * {@snippet :
@@ -5660,7 +5660,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __lround$MH() {
-        return RuntimeHelper.requireNonNull(constants$38.__lround$MH,"__lround");
+        return RuntimeHelper.requireNonNull(constants$58.const$3,"__lround");
     }
     /**
      * {@snippet :
@@ -5676,7 +5676,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle llround$MH() {
-        return RuntimeHelper.requireNonNull(constants$39.llround$MH,"llround");
+        return RuntimeHelper.requireNonNull(constants$58.const$4,"llround");
     }
     /**
      * {@snippet :
@@ -5692,7 +5692,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __llround$MH() {
-        return RuntimeHelper.requireNonNull(constants$39.__llround$MH,"__llround");
+        return RuntimeHelper.requireNonNull(constants$58.const$5,"__llround");
     }
     /**
      * {@snippet :
@@ -5708,7 +5708,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle fdim$MH() {
-        return RuntimeHelper.requireNonNull(constants$39.fdim$MH,"fdim");
+        return RuntimeHelper.requireNonNull(constants$59.const$0,"fdim");
     }
     /**
      * {@snippet :
@@ -5724,7 +5724,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __fdim$MH() {
-        return RuntimeHelper.requireNonNull(constants$39.__fdim$MH,"__fdim");
+        return RuntimeHelper.requireNonNull(constants$59.const$1,"__fdim");
     }
     /**
      * {@snippet :
@@ -5740,7 +5740,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle fmax$MH() {
-        return RuntimeHelper.requireNonNull(constants$39.fmax$MH,"fmax");
+        return RuntimeHelper.requireNonNull(constants$59.const$2,"fmax");
     }
     /**
      * {@snippet :
@@ -5756,7 +5756,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __fmax$MH() {
-        return RuntimeHelper.requireNonNull(constants$39.__fmax$MH,"__fmax");
+        return RuntimeHelper.requireNonNull(constants$59.const$3,"__fmax");
     }
     /**
      * {@snippet :
@@ -5772,7 +5772,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle fmin$MH() {
-        return RuntimeHelper.requireNonNull(constants$40.fmin$MH,"fmin");
+        return RuntimeHelper.requireNonNull(constants$59.const$4,"fmin");
     }
     /**
      * {@snippet :
@@ -5788,7 +5788,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __fmin$MH() {
-        return RuntimeHelper.requireNonNull(constants$40.__fmin$MH,"__fmin");
+        return RuntimeHelper.requireNonNull(constants$59.const$5,"__fmin");
     }
     /**
      * {@snippet :
@@ -5804,7 +5804,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle fma$MH() {
-        return RuntimeHelper.requireNonNull(constants$40.fma$MH,"fma");
+        return RuntimeHelper.requireNonNull(constants$60.const$1,"fma");
     }
     /**
      * {@snippet :
@@ -5820,7 +5820,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __fma$MH() {
-        return RuntimeHelper.requireNonNull(constants$40.__fma$MH,"__fma");
+        return RuntimeHelper.requireNonNull(constants$60.const$2,"__fma");
     }
     /**
      * {@snippet :
@@ -5836,7 +5836,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle scalb$MH() {
-        return RuntimeHelper.requireNonNull(constants$40.scalb$MH,"scalb");
+        return RuntimeHelper.requireNonNull(constants$60.const$3,"scalb");
     }
     /**
      * {@snippet :
@@ -5852,7 +5852,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __scalb$MH() {
-        return RuntimeHelper.requireNonNull(constants$40.__scalb$MH,"__scalb");
+        return RuntimeHelper.requireNonNull(constants$60.const$4,"__scalb");
     }
     /**
      * {@snippet :
@@ -5868,7 +5868,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __fpclassifyf$MH() {
-        return RuntimeHelper.requireNonNull(constants$41.__fpclassifyf$MH,"__fpclassifyf");
+        return RuntimeHelper.requireNonNull(constants$60.const$6,"__fpclassifyf");
     }
     /**
      * {@snippet :
@@ -5884,7 +5884,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __signbitf$MH() {
-        return RuntimeHelper.requireNonNull(constants$41.__signbitf$MH,"__signbitf");
+        return RuntimeHelper.requireNonNull(constants$61.const$0,"__signbitf");
     }
     /**
      * {@snippet :
@@ -5900,7 +5900,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __isinff$MH() {
-        return RuntimeHelper.requireNonNull(constants$41.__isinff$MH,"__isinff");
+        return RuntimeHelper.requireNonNull(constants$61.const$1,"__isinff");
     }
     /**
      * {@snippet :
@@ -5916,7 +5916,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __finitef$MH() {
-        return RuntimeHelper.requireNonNull(constants$41.__finitef$MH,"__finitef");
+        return RuntimeHelper.requireNonNull(constants$61.const$2,"__finitef");
     }
     /**
      * {@snippet :
@@ -5932,7 +5932,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __isnanf$MH() {
-        return RuntimeHelper.requireNonNull(constants$41.__isnanf$MH,"__isnanf");
+        return RuntimeHelper.requireNonNull(constants$61.const$3,"__isnanf");
     }
     /**
      * {@snippet :
@@ -5948,7 +5948,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __iseqsigf$MH() {
-        return RuntimeHelper.requireNonNull(constants$41.__iseqsigf$MH,"__iseqsigf");
+        return RuntimeHelper.requireNonNull(constants$61.const$5,"__iseqsigf");
     }
     /**
      * {@snippet :
@@ -5964,7 +5964,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __issignalingf$MH() {
-        return RuntimeHelper.requireNonNull(constants$42.__issignalingf$MH,"__issignalingf");
+        return RuntimeHelper.requireNonNull(constants$62.const$0,"__issignalingf");
     }
     /**
      * {@snippet :
@@ -5980,7 +5980,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle acosf$MH() {
-        return RuntimeHelper.requireNonNull(constants$42.acosf$MH,"acosf");
+        return RuntimeHelper.requireNonNull(constants$62.const$2,"acosf");
     }
     /**
      * {@snippet :
@@ -5996,7 +5996,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __acosf$MH() {
-        return RuntimeHelper.requireNonNull(constants$42.__acosf$MH,"__acosf");
+        return RuntimeHelper.requireNonNull(constants$62.const$3,"__acosf");
     }
     /**
      * {@snippet :
@@ -6012,7 +6012,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle asinf$MH() {
-        return RuntimeHelper.requireNonNull(constants$42.asinf$MH,"asinf");
+        return RuntimeHelper.requireNonNull(constants$62.const$4,"asinf");
     }
     /**
      * {@snippet :
@@ -6028,7 +6028,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __asinf$MH() {
-        return RuntimeHelper.requireNonNull(constants$42.__asinf$MH,"__asinf");
+        return RuntimeHelper.requireNonNull(constants$62.const$5,"__asinf");
     }
     /**
      * {@snippet :
@@ -6044,7 +6044,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle atanf$MH() {
-        return RuntimeHelper.requireNonNull(constants$42.atanf$MH,"atanf");
+        return RuntimeHelper.requireNonNull(constants$63.const$0,"atanf");
     }
     /**
      * {@snippet :
@@ -6060,7 +6060,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __atanf$MH() {
-        return RuntimeHelper.requireNonNull(constants$43.__atanf$MH,"__atanf");
+        return RuntimeHelper.requireNonNull(constants$63.const$1,"__atanf");
     }
     /**
      * {@snippet :
@@ -6076,7 +6076,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle atan2f$MH() {
-        return RuntimeHelper.requireNonNull(constants$43.atan2f$MH,"atan2f");
+        return RuntimeHelper.requireNonNull(constants$63.const$3,"atan2f");
     }
     /**
      * {@snippet :
@@ -6092,7 +6092,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __atan2f$MH() {
-        return RuntimeHelper.requireNonNull(constants$43.__atan2f$MH,"__atan2f");
+        return RuntimeHelper.requireNonNull(constants$63.const$4,"__atan2f");
     }
     /**
      * {@snippet :
@@ -6108,7 +6108,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle cosf$MH() {
-        return RuntimeHelper.requireNonNull(constants$43.cosf$MH,"cosf");
+        return RuntimeHelper.requireNonNull(constants$63.const$5,"cosf");
     }
     /**
      * {@snippet :
@@ -6124,7 +6124,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __cosf$MH() {
-        return RuntimeHelper.requireNonNull(constants$43.__cosf$MH,"__cosf");
+        return RuntimeHelper.requireNonNull(constants$64.const$0,"__cosf");
     }
     /**
      * {@snippet :
@@ -6140,7 +6140,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle sinf$MH() {
-        return RuntimeHelper.requireNonNull(constants$43.sinf$MH,"sinf");
+        return RuntimeHelper.requireNonNull(constants$64.const$1,"sinf");
     }
     /**
      * {@snippet :
@@ -6156,7 +6156,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __sinf$MH() {
-        return RuntimeHelper.requireNonNull(constants$44.__sinf$MH,"__sinf");
+        return RuntimeHelper.requireNonNull(constants$64.const$2,"__sinf");
     }
     /**
      * {@snippet :
@@ -6172,7 +6172,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle tanf$MH() {
-        return RuntimeHelper.requireNonNull(constants$44.tanf$MH,"tanf");
+        return RuntimeHelper.requireNonNull(constants$64.const$3,"tanf");
     }
     /**
      * {@snippet :
@@ -6188,7 +6188,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __tanf$MH() {
-        return RuntimeHelper.requireNonNull(constants$44.__tanf$MH,"__tanf");
+        return RuntimeHelper.requireNonNull(constants$64.const$4,"__tanf");
     }
     /**
      * {@snippet :
@@ -6204,7 +6204,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle coshf$MH() {
-        return RuntimeHelper.requireNonNull(constants$44.coshf$MH,"coshf");
+        return RuntimeHelper.requireNonNull(constants$64.const$5,"coshf");
     }
     /**
      * {@snippet :
@@ -6220,7 +6220,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __coshf$MH() {
-        return RuntimeHelper.requireNonNull(constants$44.__coshf$MH,"__coshf");
+        return RuntimeHelper.requireNonNull(constants$65.const$0,"__coshf");
     }
     /**
      * {@snippet :
@@ -6236,7 +6236,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle sinhf$MH() {
-        return RuntimeHelper.requireNonNull(constants$44.sinhf$MH,"sinhf");
+        return RuntimeHelper.requireNonNull(constants$65.const$1,"sinhf");
     }
     /**
      * {@snippet :
@@ -6252,7 +6252,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __sinhf$MH() {
-        return RuntimeHelper.requireNonNull(constants$45.__sinhf$MH,"__sinhf");
+        return RuntimeHelper.requireNonNull(constants$65.const$2,"__sinhf");
     }
     /**
      * {@snippet :
@@ -6268,7 +6268,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle tanhf$MH() {
-        return RuntimeHelper.requireNonNull(constants$45.tanhf$MH,"tanhf");
+        return RuntimeHelper.requireNonNull(constants$65.const$3,"tanhf");
     }
     /**
      * {@snippet :
@@ -6284,7 +6284,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __tanhf$MH() {
-        return RuntimeHelper.requireNonNull(constants$45.__tanhf$MH,"__tanhf");
+        return RuntimeHelper.requireNonNull(constants$65.const$4,"__tanhf");
     }
     /**
      * {@snippet :
@@ -6300,7 +6300,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle acoshf$MH() {
-        return RuntimeHelper.requireNonNull(constants$45.acoshf$MH,"acoshf");
+        return RuntimeHelper.requireNonNull(constants$65.const$5,"acoshf");
     }
     /**
      * {@snippet :
@@ -6316,7 +6316,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __acoshf$MH() {
-        return RuntimeHelper.requireNonNull(constants$45.__acoshf$MH,"__acoshf");
+        return RuntimeHelper.requireNonNull(constants$66.const$0,"__acoshf");
     }
     /**
      * {@snippet :
@@ -6332,7 +6332,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle asinhf$MH() {
-        return RuntimeHelper.requireNonNull(constants$45.asinhf$MH,"asinhf");
+        return RuntimeHelper.requireNonNull(constants$66.const$1,"asinhf");
     }
     /**
      * {@snippet :
@@ -6348,7 +6348,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __asinhf$MH() {
-        return RuntimeHelper.requireNonNull(constants$46.__asinhf$MH,"__asinhf");
+        return RuntimeHelper.requireNonNull(constants$66.const$2,"__asinhf");
     }
     /**
      * {@snippet :
@@ -6364,7 +6364,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle atanhf$MH() {
-        return RuntimeHelper.requireNonNull(constants$46.atanhf$MH,"atanhf");
+        return RuntimeHelper.requireNonNull(constants$66.const$3,"atanhf");
     }
     /**
      * {@snippet :
@@ -6380,7 +6380,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __atanhf$MH() {
-        return RuntimeHelper.requireNonNull(constants$46.__atanhf$MH,"__atanhf");
+        return RuntimeHelper.requireNonNull(constants$66.const$4,"__atanhf");
     }
     /**
      * {@snippet :
@@ -6396,7 +6396,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle expf$MH() {
-        return RuntimeHelper.requireNonNull(constants$46.expf$MH,"expf");
+        return RuntimeHelper.requireNonNull(constants$66.const$5,"expf");
     }
     /**
      * {@snippet :
@@ -6412,7 +6412,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __expf$MH() {
-        return RuntimeHelper.requireNonNull(constants$46.__expf$MH,"__expf");
+        return RuntimeHelper.requireNonNull(constants$67.const$0,"__expf");
     }
     /**
      * {@snippet :
@@ -6428,7 +6428,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle frexpf$MH() {
-        return RuntimeHelper.requireNonNull(constants$46.frexpf$MH,"frexpf");
+        return RuntimeHelper.requireNonNull(constants$67.const$2,"frexpf");
     }
     /**
      * {@snippet :
@@ -6444,7 +6444,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __frexpf$MH() {
-        return RuntimeHelper.requireNonNull(constants$47.__frexpf$MH,"__frexpf");
+        return RuntimeHelper.requireNonNull(constants$67.const$3,"__frexpf");
     }
     /**
      * {@snippet :
@@ -6460,7 +6460,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle ldexpf$MH() {
-        return RuntimeHelper.requireNonNull(constants$47.ldexpf$MH,"ldexpf");
+        return RuntimeHelper.requireNonNull(constants$67.const$5,"ldexpf");
     }
     /**
      * {@snippet :
@@ -6476,7 +6476,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __ldexpf$MH() {
-        return RuntimeHelper.requireNonNull(constants$47.__ldexpf$MH,"__ldexpf");
+        return RuntimeHelper.requireNonNull(constants$68.const$0,"__ldexpf");
     }
     /**
      * {@snippet :
@@ -6492,7 +6492,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle logf$MH() {
-        return RuntimeHelper.requireNonNull(constants$47.logf$MH,"logf");
+        return RuntimeHelper.requireNonNull(constants$68.const$1,"logf");
     }
     /**
      * {@snippet :
@@ -6508,7 +6508,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __logf$MH() {
-        return RuntimeHelper.requireNonNull(constants$47.__logf$MH,"__logf");
+        return RuntimeHelper.requireNonNull(constants$68.const$2,"__logf");
     }
     /**
      * {@snippet :
@@ -6524,7 +6524,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle log10f$MH() {
-        return RuntimeHelper.requireNonNull(constants$47.log10f$MH,"log10f");
+        return RuntimeHelper.requireNonNull(constants$68.const$3,"log10f");
     }
     /**
      * {@snippet :
@@ -6540,7 +6540,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __log10f$MH() {
-        return RuntimeHelper.requireNonNull(constants$48.__log10f$MH,"__log10f");
+        return RuntimeHelper.requireNonNull(constants$68.const$4,"__log10f");
     }
     /**
      * {@snippet :
@@ -6556,7 +6556,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle modff$MH() {
-        return RuntimeHelper.requireNonNull(constants$48.modff$MH,"modff");
+        return RuntimeHelper.requireNonNull(constants$68.const$5,"modff");
     }
     /**
      * {@snippet :
@@ -6572,7 +6572,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __modff$MH() {
-        return RuntimeHelper.requireNonNull(constants$48.__modff$MH,"__modff");
+        return RuntimeHelper.requireNonNull(constants$69.const$0,"__modff");
     }
     /**
      * {@snippet :
@@ -6588,7 +6588,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle expm1f$MH() {
-        return RuntimeHelper.requireNonNull(constants$48.expm1f$MH,"expm1f");
+        return RuntimeHelper.requireNonNull(constants$69.const$1,"expm1f");
     }
     /**
      * {@snippet :
@@ -6604,7 +6604,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __expm1f$MH() {
-        return RuntimeHelper.requireNonNull(constants$48.__expm1f$MH,"__expm1f");
+        return RuntimeHelper.requireNonNull(constants$69.const$2,"__expm1f");
     }
     /**
      * {@snippet :
@@ -6620,7 +6620,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle log1pf$MH() {
-        return RuntimeHelper.requireNonNull(constants$48.log1pf$MH,"log1pf");
+        return RuntimeHelper.requireNonNull(constants$69.const$3,"log1pf");
     }
     /**
      * {@snippet :
@@ -6636,7 +6636,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __log1pf$MH() {
-        return RuntimeHelper.requireNonNull(constants$49.__log1pf$MH,"__log1pf");
+        return RuntimeHelper.requireNonNull(constants$69.const$4,"__log1pf");
     }
     /**
      * {@snippet :
@@ -6652,7 +6652,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle logbf$MH() {
-        return RuntimeHelper.requireNonNull(constants$49.logbf$MH,"logbf");
+        return RuntimeHelper.requireNonNull(constants$69.const$5,"logbf");
     }
     /**
      * {@snippet :
@@ -6668,7 +6668,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __logbf$MH() {
-        return RuntimeHelper.requireNonNull(constants$49.__logbf$MH,"__logbf");
+        return RuntimeHelper.requireNonNull(constants$70.const$0,"__logbf");
     }
     /**
      * {@snippet :
@@ -6684,7 +6684,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle exp2f$MH() {
-        return RuntimeHelper.requireNonNull(constants$49.exp2f$MH,"exp2f");
+        return RuntimeHelper.requireNonNull(constants$70.const$1,"exp2f");
     }
     /**
      * {@snippet :
@@ -6700,7 +6700,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __exp2f$MH() {
-        return RuntimeHelper.requireNonNull(constants$49.__exp2f$MH,"__exp2f");
+        return RuntimeHelper.requireNonNull(constants$70.const$2,"__exp2f");
     }
     /**
      * {@snippet :
@@ -6716,7 +6716,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle log2f$MH() {
-        return RuntimeHelper.requireNonNull(constants$49.log2f$MH,"log2f");
+        return RuntimeHelper.requireNonNull(constants$70.const$3,"log2f");
     }
     /**
      * {@snippet :
@@ -6732,7 +6732,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __log2f$MH() {
-        return RuntimeHelper.requireNonNull(constants$50.__log2f$MH,"__log2f");
+        return RuntimeHelper.requireNonNull(constants$70.const$4,"__log2f");
     }
     /**
      * {@snippet :
@@ -6748,7 +6748,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle powf$MH() {
-        return RuntimeHelper.requireNonNull(constants$50.powf$MH,"powf");
+        return RuntimeHelper.requireNonNull(constants$70.const$5,"powf");
     }
     /**
      * {@snippet :
@@ -6764,7 +6764,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __powf$MH() {
-        return RuntimeHelper.requireNonNull(constants$50.__powf$MH,"__powf");
+        return RuntimeHelper.requireNonNull(constants$71.const$0,"__powf");
     }
     /**
      * {@snippet :
@@ -6780,7 +6780,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle sqrtf$MH() {
-        return RuntimeHelper.requireNonNull(constants$50.sqrtf$MH,"sqrtf");
+        return RuntimeHelper.requireNonNull(constants$71.const$1,"sqrtf");
     }
     /**
      * {@snippet :
@@ -6796,7 +6796,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __sqrtf$MH() {
-        return RuntimeHelper.requireNonNull(constants$50.__sqrtf$MH,"__sqrtf");
+        return RuntimeHelper.requireNonNull(constants$71.const$2,"__sqrtf");
     }
     /**
      * {@snippet :
@@ -6812,7 +6812,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle hypotf$MH() {
-        return RuntimeHelper.requireNonNull(constants$50.hypotf$MH,"hypotf");
+        return RuntimeHelper.requireNonNull(constants$71.const$3,"hypotf");
     }
     /**
      * {@snippet :
@@ -6828,7 +6828,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __hypotf$MH() {
-        return RuntimeHelper.requireNonNull(constants$51.__hypotf$MH,"__hypotf");
+        return RuntimeHelper.requireNonNull(constants$71.const$4,"__hypotf");
     }
     /**
      * {@snippet :
@@ -6844,7 +6844,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle cbrtf$MH() {
-        return RuntimeHelper.requireNonNull(constants$51.cbrtf$MH,"cbrtf");
+        return RuntimeHelper.requireNonNull(constants$71.const$5,"cbrtf");
     }
     /**
      * {@snippet :
@@ -6860,7 +6860,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __cbrtf$MH() {
-        return RuntimeHelper.requireNonNull(constants$51.__cbrtf$MH,"__cbrtf");
+        return RuntimeHelper.requireNonNull(constants$72.const$0,"__cbrtf");
     }
     /**
      * {@snippet :
@@ -6876,7 +6876,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle ceilf$MH() {
-        return RuntimeHelper.requireNonNull(constants$51.ceilf$MH,"ceilf");
+        return RuntimeHelper.requireNonNull(constants$72.const$1,"ceilf");
     }
     /**
      * {@snippet :
@@ -6892,7 +6892,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __ceilf$MH() {
-        return RuntimeHelper.requireNonNull(constants$51.__ceilf$MH,"__ceilf");
+        return RuntimeHelper.requireNonNull(constants$72.const$2,"__ceilf");
     }
     /**
      * {@snippet :
@@ -6908,7 +6908,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle fabsf$MH() {
-        return RuntimeHelper.requireNonNull(constants$51.fabsf$MH,"fabsf");
+        return RuntimeHelper.requireNonNull(constants$72.const$3,"fabsf");
     }
     /**
      * {@snippet :
@@ -6924,7 +6924,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __fabsf$MH() {
-        return RuntimeHelper.requireNonNull(constants$52.__fabsf$MH,"__fabsf");
+        return RuntimeHelper.requireNonNull(constants$72.const$4,"__fabsf");
     }
     /**
      * {@snippet :
@@ -6940,7 +6940,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle floorf$MH() {
-        return RuntimeHelper.requireNonNull(constants$52.floorf$MH,"floorf");
+        return RuntimeHelper.requireNonNull(constants$72.const$5,"floorf");
     }
     /**
      * {@snippet :
@@ -6956,7 +6956,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __floorf$MH() {
-        return RuntimeHelper.requireNonNull(constants$52.__floorf$MH,"__floorf");
+        return RuntimeHelper.requireNonNull(constants$73.const$0,"__floorf");
     }
     /**
      * {@snippet :
@@ -6972,7 +6972,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle fmodf$MH() {
-        return RuntimeHelper.requireNonNull(constants$52.fmodf$MH,"fmodf");
+        return RuntimeHelper.requireNonNull(constants$73.const$1,"fmodf");
     }
     /**
      * {@snippet :
@@ -6988,7 +6988,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __fmodf$MH() {
-        return RuntimeHelper.requireNonNull(constants$52.__fmodf$MH,"__fmodf");
+        return RuntimeHelper.requireNonNull(constants$73.const$2,"__fmodf");
     }
     /**
      * {@snippet :
@@ -7004,7 +7004,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle isinff$MH() {
-        return RuntimeHelper.requireNonNull(constants$52.isinff$MH,"isinff");
+        return RuntimeHelper.requireNonNull(constants$73.const$3,"isinff");
     }
     /**
      * {@snippet :
@@ -7020,7 +7020,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle finitef$MH() {
-        return RuntimeHelper.requireNonNull(constants$53.finitef$MH,"finitef");
+        return RuntimeHelper.requireNonNull(constants$73.const$4,"finitef");
     }
     /**
      * {@snippet :
@@ -7036,7 +7036,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle dremf$MH() {
-        return RuntimeHelper.requireNonNull(constants$53.dremf$MH,"dremf");
+        return RuntimeHelper.requireNonNull(constants$73.const$5,"dremf");
     }
     /**
      * {@snippet :
@@ -7052,7 +7052,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __dremf$MH() {
-        return RuntimeHelper.requireNonNull(constants$53.__dremf$MH,"__dremf");
+        return RuntimeHelper.requireNonNull(constants$74.const$0,"__dremf");
     }
     /**
      * {@snippet :
@@ -7068,7 +7068,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle significandf$MH() {
-        return RuntimeHelper.requireNonNull(constants$53.significandf$MH,"significandf");
+        return RuntimeHelper.requireNonNull(constants$74.const$1,"significandf");
     }
     /**
      * {@snippet :
@@ -7084,7 +7084,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __significandf$MH() {
-        return RuntimeHelper.requireNonNull(constants$53.__significandf$MH,"__significandf");
+        return RuntimeHelper.requireNonNull(constants$74.const$2,"__significandf");
     }
     /**
      * {@snippet :
@@ -7100,7 +7100,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle copysignf$MH() {
-        return RuntimeHelper.requireNonNull(constants$53.copysignf$MH,"copysignf");
+        return RuntimeHelper.requireNonNull(constants$74.const$3,"copysignf");
     }
     /**
      * {@snippet :
@@ -7116,7 +7116,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __copysignf$MH() {
-        return RuntimeHelper.requireNonNull(constants$54.__copysignf$MH,"__copysignf");
+        return RuntimeHelper.requireNonNull(constants$74.const$4,"__copysignf");
     }
     /**
      * {@snippet :
@@ -7132,7 +7132,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle nanf$MH() {
-        return RuntimeHelper.requireNonNull(constants$54.nanf$MH,"nanf");
+        return RuntimeHelper.requireNonNull(constants$74.const$6,"nanf");
     }
     /**
      * {@snippet :
@@ -7148,7 +7148,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __nanf$MH() {
-        return RuntimeHelper.requireNonNull(constants$54.__nanf$MH,"__nanf");
+        return RuntimeHelper.requireNonNull(constants$75.const$0,"__nanf");
     }
     /**
      * {@snippet :
@@ -7164,7 +7164,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle isnanf$MH() {
-        return RuntimeHelper.requireNonNull(constants$54.isnanf$MH,"isnanf");
+        return RuntimeHelper.requireNonNull(constants$75.const$1,"isnanf");
     }
     /**
      * {@snippet :
@@ -7180,7 +7180,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle j0f$MH() {
-        return RuntimeHelper.requireNonNull(constants$54.j0f$MH,"j0f");
+        return RuntimeHelper.requireNonNull(constants$75.const$2,"j0f");
     }
     /**
      * {@snippet :
@@ -7196,7 +7196,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __j0f$MH() {
-        return RuntimeHelper.requireNonNull(constants$54.__j0f$MH,"__j0f");
+        return RuntimeHelper.requireNonNull(constants$75.const$3,"__j0f");
     }
     /**
      * {@snippet :
@@ -7212,7 +7212,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle j1f$MH() {
-        return RuntimeHelper.requireNonNull(constants$55.j1f$MH,"j1f");
+        return RuntimeHelper.requireNonNull(constants$75.const$4,"j1f");
     }
     /**
      * {@snippet :
@@ -7228,7 +7228,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __j1f$MH() {
-        return RuntimeHelper.requireNonNull(constants$55.__j1f$MH,"__j1f");
+        return RuntimeHelper.requireNonNull(constants$75.const$5,"__j1f");
     }
     /**
      * {@snippet :
@@ -7244,7 +7244,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle jnf$MH() {
-        return RuntimeHelper.requireNonNull(constants$55.jnf$MH,"jnf");
+        return RuntimeHelper.requireNonNull(constants$76.const$1,"jnf");
     }
     /**
      * {@snippet :
@@ -7260,7 +7260,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __jnf$MH() {
-        return RuntimeHelper.requireNonNull(constants$55.__jnf$MH,"__jnf");
+        return RuntimeHelper.requireNonNull(constants$76.const$2,"__jnf");
     }
     /**
      * {@snippet :
@@ -7276,7 +7276,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle y0f$MH() {
-        return RuntimeHelper.requireNonNull(constants$55.y0f$MH,"y0f");
+        return RuntimeHelper.requireNonNull(constants$76.const$3,"y0f");
     }
     /**
      * {@snippet :
@@ -7292,7 +7292,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __y0f$MH() {
-        return RuntimeHelper.requireNonNull(constants$55.__y0f$MH,"__y0f");
+        return RuntimeHelper.requireNonNull(constants$76.const$4,"__y0f");
     }
     /**
      * {@snippet :
@@ -7308,7 +7308,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle y1f$MH() {
-        return RuntimeHelper.requireNonNull(constants$56.y1f$MH,"y1f");
+        return RuntimeHelper.requireNonNull(constants$76.const$5,"y1f");
     }
     /**
      * {@snippet :
@@ -7324,7 +7324,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __y1f$MH() {
-        return RuntimeHelper.requireNonNull(constants$56.__y1f$MH,"__y1f");
+        return RuntimeHelper.requireNonNull(constants$77.const$0,"__y1f");
     }
     /**
      * {@snippet :
@@ -7340,7 +7340,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle ynf$MH() {
-        return RuntimeHelper.requireNonNull(constants$56.ynf$MH,"ynf");
+        return RuntimeHelper.requireNonNull(constants$77.const$1,"ynf");
     }
     /**
      * {@snippet :
@@ -7356,7 +7356,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __ynf$MH() {
-        return RuntimeHelper.requireNonNull(constants$56.__ynf$MH,"__ynf");
+        return RuntimeHelper.requireNonNull(constants$77.const$2,"__ynf");
     }
     /**
      * {@snippet :
@@ -7372,7 +7372,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle erff$MH() {
-        return RuntimeHelper.requireNonNull(constants$56.erff$MH,"erff");
+        return RuntimeHelper.requireNonNull(constants$77.const$3,"erff");
     }
     /**
      * {@snippet :
@@ -7388,7 +7388,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __erff$MH() {
-        return RuntimeHelper.requireNonNull(constants$56.__erff$MH,"__erff");
+        return RuntimeHelper.requireNonNull(constants$77.const$4,"__erff");
     }
     /**
      * {@snippet :
@@ -7404,7 +7404,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle erfcf$MH() {
-        return RuntimeHelper.requireNonNull(constants$57.erfcf$MH,"erfcf");
+        return RuntimeHelper.requireNonNull(constants$77.const$5,"erfcf");
     }
     /**
      * {@snippet :
@@ -7420,7 +7420,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __erfcf$MH() {
-        return RuntimeHelper.requireNonNull(constants$57.__erfcf$MH,"__erfcf");
+        return RuntimeHelper.requireNonNull(constants$78.const$0,"__erfcf");
     }
     /**
      * {@snippet :
@@ -7436,7 +7436,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle lgammaf$MH() {
-        return RuntimeHelper.requireNonNull(constants$57.lgammaf$MH,"lgammaf");
+        return RuntimeHelper.requireNonNull(constants$78.const$1,"lgammaf");
     }
     /**
      * {@snippet :
@@ -7452,7 +7452,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __lgammaf$MH() {
-        return RuntimeHelper.requireNonNull(constants$57.__lgammaf$MH,"__lgammaf");
+        return RuntimeHelper.requireNonNull(constants$78.const$2,"__lgammaf");
     }
     /**
      * {@snippet :
@@ -7468,7 +7468,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle tgammaf$MH() {
-        return RuntimeHelper.requireNonNull(constants$57.tgammaf$MH,"tgammaf");
+        return RuntimeHelper.requireNonNull(constants$78.const$3,"tgammaf");
     }
     /**
      * {@snippet :
@@ -7484,7 +7484,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __tgammaf$MH() {
-        return RuntimeHelper.requireNonNull(constants$57.__tgammaf$MH,"__tgammaf");
+        return RuntimeHelper.requireNonNull(constants$78.const$4,"__tgammaf");
     }
     /**
      * {@snippet :
@@ -7500,7 +7500,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle gammaf$MH() {
-        return RuntimeHelper.requireNonNull(constants$58.gammaf$MH,"gammaf");
+        return RuntimeHelper.requireNonNull(constants$78.const$5,"gammaf");
     }
     /**
      * {@snippet :
@@ -7516,7 +7516,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __gammaf$MH() {
-        return RuntimeHelper.requireNonNull(constants$58.__gammaf$MH,"__gammaf");
+        return RuntimeHelper.requireNonNull(constants$79.const$0,"__gammaf");
     }
     /**
      * {@snippet :
@@ -7532,7 +7532,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle lgammaf_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$58.lgammaf_r$MH,"lgammaf_r");
+        return RuntimeHelper.requireNonNull(constants$79.const$1,"lgammaf_r");
     }
     /**
      * {@snippet :
@@ -7548,7 +7548,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __lgammaf_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$58.__lgammaf_r$MH,"__lgammaf_r");
+        return RuntimeHelper.requireNonNull(constants$79.const$2,"__lgammaf_r");
     }
     /**
      * {@snippet :
@@ -7564,7 +7564,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$58.rintf$MH,"rintf");
+        return RuntimeHelper.requireNonNull(constants$79.const$3,"rintf");
     }
     /**
      * {@snippet :
@@ -7580,7 +7580,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __rintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$58.__rintf$MH,"__rintf");
+        return RuntimeHelper.requireNonNull(constants$79.const$4,"__rintf");
     }
     /**
      * {@snippet :
@@ -7596,7 +7596,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle nextafterf$MH() {
-        return RuntimeHelper.requireNonNull(constants$59.nextafterf$MH,"nextafterf");
+        return RuntimeHelper.requireNonNull(constants$79.const$5,"nextafterf");
     }
     /**
      * {@snippet :
@@ -7612,7 +7612,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __nextafterf$MH() {
-        return RuntimeHelper.requireNonNull(constants$59.__nextafterf$MH,"__nextafterf");
+        return RuntimeHelper.requireNonNull(constants$80.const$0,"__nextafterf");
     }
     /**
      * {@snippet :
@@ -7628,7 +7628,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle remainderf$MH() {
-        return RuntimeHelper.requireNonNull(constants$59.remainderf$MH,"remainderf");
+        return RuntimeHelper.requireNonNull(constants$80.const$1,"remainderf");
     }
     /**
      * {@snippet :
@@ -7644,7 +7644,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __remainderf$MH() {
-        return RuntimeHelper.requireNonNull(constants$59.__remainderf$MH,"__remainderf");
+        return RuntimeHelper.requireNonNull(constants$80.const$2,"__remainderf");
     }
     /**
      * {@snippet :
@@ -7660,7 +7660,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle scalbnf$MH() {
-        return RuntimeHelper.requireNonNull(constants$59.scalbnf$MH,"scalbnf");
+        return RuntimeHelper.requireNonNull(constants$80.const$3,"scalbnf");
     }
     /**
      * {@snippet :
@@ -7676,7 +7676,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __scalbnf$MH() {
-        return RuntimeHelper.requireNonNull(constants$59.__scalbnf$MH,"__scalbnf");
+        return RuntimeHelper.requireNonNull(constants$80.const$4,"__scalbnf");
     }
     /**
      * {@snippet :
@@ -7692,7 +7692,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle ilogbf$MH() {
-        return RuntimeHelper.requireNonNull(constants$60.ilogbf$MH,"ilogbf");
+        return RuntimeHelper.requireNonNull(constants$80.const$5,"ilogbf");
     }
     /**
      * {@snippet :
@@ -7708,7 +7708,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __ilogbf$MH() {
-        return RuntimeHelper.requireNonNull(constants$60.__ilogbf$MH,"__ilogbf");
+        return RuntimeHelper.requireNonNull(constants$81.const$0,"__ilogbf");
     }
     /**
      * {@snippet :
@@ -7724,7 +7724,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle scalblnf$MH() {
-        return RuntimeHelper.requireNonNull(constants$60.scalblnf$MH,"scalblnf");
+        return RuntimeHelper.requireNonNull(constants$81.const$2,"scalblnf");
     }
     /**
      * {@snippet :
@@ -7740,7 +7740,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __scalblnf$MH() {
-        return RuntimeHelper.requireNonNull(constants$60.__scalblnf$MH,"__scalblnf");
+        return RuntimeHelper.requireNonNull(constants$81.const$3,"__scalblnf");
     }
     /**
      * {@snippet :
@@ -7756,7 +7756,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle nearbyintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$60.nearbyintf$MH,"nearbyintf");
+        return RuntimeHelper.requireNonNull(constants$81.const$4,"nearbyintf");
     }
     /**
      * {@snippet :
@@ -7772,7 +7772,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __nearbyintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$60.__nearbyintf$MH,"__nearbyintf");
+        return RuntimeHelper.requireNonNull(constants$81.const$5,"__nearbyintf");
     }
     /**
      * {@snippet :
@@ -7788,7 +7788,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle roundf$MH() {
-        return RuntimeHelper.requireNonNull(constants$61.roundf$MH,"roundf");
+        return RuntimeHelper.requireNonNull(constants$82.const$0,"roundf");
     }
     /**
      * {@snippet :
@@ -7804,7 +7804,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __roundf$MH() {
-        return RuntimeHelper.requireNonNull(constants$61.__roundf$MH,"__roundf");
+        return RuntimeHelper.requireNonNull(constants$82.const$1,"__roundf");
     }
     /**
      * {@snippet :
@@ -7820,7 +7820,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle truncf$MH() {
-        return RuntimeHelper.requireNonNull(constants$61.truncf$MH,"truncf");
+        return RuntimeHelper.requireNonNull(constants$82.const$2,"truncf");
     }
     /**
      * {@snippet :
@@ -7836,7 +7836,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __truncf$MH() {
-        return RuntimeHelper.requireNonNull(constants$61.__truncf$MH,"__truncf");
+        return RuntimeHelper.requireNonNull(constants$82.const$3,"__truncf");
     }
     /**
      * {@snippet :
@@ -7852,7 +7852,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle remquof$MH() {
-        return RuntimeHelper.requireNonNull(constants$61.remquof$MH,"remquof");
+        return RuntimeHelper.requireNonNull(constants$82.const$5,"remquof");
     }
     /**
      * {@snippet :
@@ -7868,7 +7868,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __remquof$MH() {
-        return RuntimeHelper.requireNonNull(constants$61.__remquof$MH,"__remquof");
+        return RuntimeHelper.requireNonNull(constants$83.const$0,"__remquof");
     }
     /**
      * {@snippet :
@@ -7884,7 +7884,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle lrintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$62.lrintf$MH,"lrintf");
+        return RuntimeHelper.requireNonNull(constants$83.const$2,"lrintf");
     }
     /**
      * {@snippet :
@@ -7900,7 +7900,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __lrintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$62.__lrintf$MH,"__lrintf");
+        return RuntimeHelper.requireNonNull(constants$83.const$3,"__lrintf");
     }
     /**
      * {@snippet :
@@ -7916,7 +7916,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle llrintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$62.llrintf$MH,"llrintf");
+        return RuntimeHelper.requireNonNull(constants$83.const$4,"llrintf");
     }
     /**
      * {@snippet :
@@ -7932,7 +7932,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __llrintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$62.__llrintf$MH,"__llrintf");
+        return RuntimeHelper.requireNonNull(constants$83.const$5,"__llrintf");
     }
     /**
      * {@snippet :
@@ -7948,7 +7948,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle lroundf$MH() {
-        return RuntimeHelper.requireNonNull(constants$62.lroundf$MH,"lroundf");
+        return RuntimeHelper.requireNonNull(constants$84.const$0,"lroundf");
     }
     /**
      * {@snippet :
@@ -7964,7 +7964,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __lroundf$MH() {
-        return RuntimeHelper.requireNonNull(constants$62.__lroundf$MH,"__lroundf");
+        return RuntimeHelper.requireNonNull(constants$84.const$1,"__lroundf");
     }
     /**
      * {@snippet :
@@ -7980,7 +7980,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle llroundf$MH() {
-        return RuntimeHelper.requireNonNull(constants$63.llroundf$MH,"llroundf");
+        return RuntimeHelper.requireNonNull(constants$84.const$2,"llroundf");
     }
     /**
      * {@snippet :
@@ -7996,7 +7996,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __llroundf$MH() {
-        return RuntimeHelper.requireNonNull(constants$63.__llroundf$MH,"__llroundf");
+        return RuntimeHelper.requireNonNull(constants$84.const$3,"__llroundf");
     }
     /**
      * {@snippet :
@@ -8012,7 +8012,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle fdimf$MH() {
-        return RuntimeHelper.requireNonNull(constants$63.fdimf$MH,"fdimf");
+        return RuntimeHelper.requireNonNull(constants$84.const$4,"fdimf");
     }
     /**
      * {@snippet :
@@ -8028,7 +8028,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __fdimf$MH() {
-        return RuntimeHelper.requireNonNull(constants$63.__fdimf$MH,"__fdimf");
+        return RuntimeHelper.requireNonNull(constants$84.const$5,"__fdimf");
     }
     /**
      * {@snippet :
@@ -8044,7 +8044,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle fmaxf$MH() {
-        return RuntimeHelper.requireNonNull(constants$63.fmaxf$MH,"fmaxf");
+        return RuntimeHelper.requireNonNull(constants$85.const$0,"fmaxf");
     }
     /**
      * {@snippet :
@@ -8060,7 +8060,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __fmaxf$MH() {
-        return RuntimeHelper.requireNonNull(constants$63.__fmaxf$MH,"__fmaxf");
+        return RuntimeHelper.requireNonNull(constants$85.const$1,"__fmaxf");
     }
     /**
      * {@snippet :
@@ -8076,7 +8076,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle fminf$MH() {
-        return RuntimeHelper.requireNonNull(constants$64.fminf$MH,"fminf");
+        return RuntimeHelper.requireNonNull(constants$85.const$2,"fminf");
     }
     /**
      * {@snippet :
@@ -8092,7 +8092,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __fminf$MH() {
-        return RuntimeHelper.requireNonNull(constants$64.__fminf$MH,"__fminf");
+        return RuntimeHelper.requireNonNull(constants$85.const$3,"__fminf");
     }
     /**
      * {@snippet :
@@ -8108,7 +8108,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle fmaf$MH() {
-        return RuntimeHelper.requireNonNull(constants$64.fmaf$MH,"fmaf");
+        return RuntimeHelper.requireNonNull(constants$85.const$5,"fmaf");
     }
     /**
      * {@snippet :
@@ -8124,7 +8124,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __fmaf$MH() {
-        return RuntimeHelper.requireNonNull(constants$64.__fmaf$MH,"__fmaf");
+        return RuntimeHelper.requireNonNull(constants$86.const$0,"__fmaf");
     }
     /**
      * {@snippet :
@@ -8140,7 +8140,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle scalbf$MH() {
-        return RuntimeHelper.requireNonNull(constants$64.scalbf$MH,"scalbf");
+        return RuntimeHelper.requireNonNull(constants$86.const$1,"scalbf");
     }
     /**
      * {@snippet :
@@ -8156,7 +8156,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle __scalbf$MH() {
-        return RuntimeHelper.requireNonNull(constants$64.__scalbf$MH,"__scalbf");
+        return RuntimeHelper.requireNonNull(constants$86.const$2,"__scalbf");
     }
     /**
      * {@snippet :
@@ -8172,13 +8172,13 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MemoryLayout signgam$LAYOUT() {
-        return constants$65.signgam$LAYOUT;
+        return JAVA_INT;
     }
     public static VarHandle signgam$VH() {
-        return constants$65.signgam$VH;
+        return constants$86.const$3;
     }
     public static MemorySegment signgam$SEGMENT() {
-        return RuntimeHelper.requireNonNull(constants$65.signgam$SEGMENT,"signgam");
+        return RuntimeHelper.requireNonNull(constants$86.const$4,"signgam");
     }
     /**
      * Getter for variable:
@@ -8187,7 +8187,7 @@ public class librealsense extends librealsense_1 {
      * }
      */
     public static int signgam$get() {
-        return (int) constants$65.signgam$VH.get(RuntimeHelper.requireNonNull(constants$65.signgam$SEGMENT, "signgam"));
+        return (int) constants$86.const$3.get(RuntimeHelper.requireNonNull(constants$86.const$4, "signgam"));
     }
     /**
      * Setter for variable:
@@ -8196,7 +8196,7 @@ public class librealsense extends librealsense_1 {
      * }
      */
     public static void signgam$set(int x) {
-        constants$65.signgam$VH.set(RuntimeHelper.requireNonNull(constants$65.signgam$SEGMENT, "signgam"), x);
+        constants$86.const$3.set(RuntimeHelper.requireNonNull(constants$86.const$4, "signgam"), x);
     }
     /**
      * {@snippet :
@@ -8263,7 +8263,7 @@ public class librealsense extends librealsense_1 {
         return (int)7L;
     }
     public static MethodHandle rs2_notification_category_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$65.rs2_notification_category_to_string$MH,"rs2_notification_category_to_string");
+        return RuntimeHelper.requireNonNull(constants$86.const$6,"rs2_notification_category_to_string");
     }
     /**
      * {@snippet :
@@ -8351,7 +8351,7 @@ public class librealsense extends librealsense_1 {
         return (int)8L;
     }
     public static MethodHandle rs2_exception_type_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$65.rs2_exception_type_to_string$MH,"rs2_exception_type_to_string");
+        return RuntimeHelper.requireNonNull(constants$87.const$0,"rs2_exception_type_to_string");
     }
     /**
      * {@snippet :
@@ -8423,7 +8423,7 @@ public class librealsense extends librealsense_1 {
         return (int)6L;
     }
     public static MethodHandle rs2_distortion_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$65.rs2_distortion_to_string$MH,"rs2_distortion_to_string");
+        return RuntimeHelper.requireNonNull(constants$87.const$1,"rs2_distortion_to_string");
     }
     /**
      * {@snippet :
@@ -8535,7 +8535,7 @@ public class librealsense extends librealsense_1 {
         return (int)0L;
     }
     public static MethodHandle rs2_log_severity_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$65.rs2_log_severity_to_string$MH,"rs2_log_severity_to_string");
+        return RuntimeHelper.requireNonNull(constants$93.const$3,"rs2_log_severity_to_string");
     }
     /**
      * {@snippet :
@@ -9007,7 +9007,7 @@ public class librealsense extends librealsense_1 {
         return (int)56L;
     }
     public static MethodHandle rs2_extension_type_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$65.rs2_extension_type_to_string$MH,"rs2_extension_type_to_string");
+        return RuntimeHelper.requireNonNull(constants$93.const$4,"rs2_extension_type_to_string");
     }
     /**
      * {@snippet :
@@ -9023,7 +9023,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_extension_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$66.rs2_extension_to_string$MH,"rs2_extension_to_string");
+        return RuntimeHelper.requireNonNull(constants$93.const$5,"rs2_extension_to_string");
     }
     /**
      * {@snippet :
@@ -9103,7 +9103,7 @@ public class librealsense extends librealsense_1 {
         return (int)7L;
     }
     public static MethodHandle rs2_matchers_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$66.rs2_matchers_to_string$MH,"rs2_matchers_to_string");
+        return RuntimeHelper.requireNonNull(constants$94.const$0,"rs2_matchers_to_string");
     }
     /**
      * {@snippet :
@@ -9123,15 +9123,15 @@ public class librealsense extends librealsense_1 {
      * typedef double rs2_time_t;
      * }
      */
-    public static final OfDouble rs2_time_t = Constants$root.C_DOUBLE$LAYOUT;
+    public static final OfDouble rs2_time_t = JAVA_DOUBLE;
     /**
      * {@snippet :
      * typedef long long rs2_metadata_type;
      * }
      */
-    public static final OfLong rs2_metadata_type = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong rs2_metadata_type = JAVA_LONG;
     public static MethodHandle rs2_create_error$MH() {
-        return RuntimeHelper.requireNonNull(constants$68.rs2_create_error$MH,"rs2_create_error");
+        return RuntimeHelper.requireNonNull(constants$96.const$6,"rs2_create_error");
     }
     /**
      * {@snippet :
@@ -9147,7 +9147,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_librealsense_exception_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$68.rs2_get_librealsense_exception_type$MH,"rs2_get_librealsense_exception_type");
+        return RuntimeHelper.requireNonNull(constants$97.const$0,"rs2_get_librealsense_exception_type");
     }
     /**
      * {@snippet :
@@ -9163,7 +9163,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_failed_function$MH() {
-        return RuntimeHelper.requireNonNull(constants$69.rs2_get_failed_function$MH,"rs2_get_failed_function");
+        return RuntimeHelper.requireNonNull(constants$97.const$1,"rs2_get_failed_function");
     }
     /**
      * {@snippet :
@@ -9179,7 +9179,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_failed_args$MH() {
-        return RuntimeHelper.requireNonNull(constants$69.rs2_get_failed_args$MH,"rs2_get_failed_args");
+        return RuntimeHelper.requireNonNull(constants$97.const$2,"rs2_get_failed_args");
     }
     /**
      * {@snippet :
@@ -9195,7 +9195,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_error_message$MH() {
-        return RuntimeHelper.requireNonNull(constants$69.rs2_get_error_message$MH,"rs2_get_error_message");
+        return RuntimeHelper.requireNonNull(constants$97.const$3,"rs2_get_error_message");
     }
     /**
      * {@snippet :
@@ -9211,7 +9211,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_free_error$MH() {
-        return RuntimeHelper.requireNonNull(constants$69.rs2_free_error$MH,"rs2_free_error");
+        return RuntimeHelper.requireNonNull(constants$97.const$4,"rs2_free_error");
     }
     /**
      * {@snippet :
@@ -9347,7 +9347,7 @@ public class librealsense extends librealsense_1 {
         return (int)14L;
     }
     public static MethodHandle rs2_camera_info_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$69.rs2_camera_info_to_string$MH,"rs2_camera_info_to_string");
+        return RuntimeHelper.requireNonNull(constants$97.const$5,"rs2_camera_info_to_string");
     }
     /**
      * {@snippet :
@@ -9451,7 +9451,7 @@ public class librealsense extends librealsense_1 {
         return (int)10L;
     }
     public static MethodHandle rs2_stream_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$69.rs2_stream_to_string$MH,"rs2_stream_to_string");
+        return RuntimeHelper.requireNonNull(constants$98.const$0,"rs2_stream_to_string");
     }
     /**
      * {@snippet :
@@ -9731,7 +9731,7 @@ public class librealsense extends librealsense_1 {
         return (int)32L;
     }
     public static MethodHandle rs2_format_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$70.rs2_format_to_string$MH,"rs2_format_to_string");
+        return RuntimeHelper.requireNonNull(constants$98.const$1,"rs2_format_to_string");
     }
     /**
      * {@snippet :
@@ -9747,7 +9747,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_delete_sensor_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$70.rs2_delete_sensor_list$MH,"rs2_delete_sensor_list");
+        return RuntimeHelper.requireNonNull(constants$98.const$3,"rs2_delete_sensor_list");
     }
     /**
      * {@snippet :
@@ -9763,7 +9763,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_sensors_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$70.rs2_get_sensors_count$MH,"rs2_get_sensors_count");
+        return RuntimeHelper.requireNonNull(constants$98.const$4,"rs2_get_sensors_count");
     }
     /**
      * {@snippet :
@@ -9779,7 +9779,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_delete_sensor$MH() {
-        return RuntimeHelper.requireNonNull(constants$70.rs2_delete_sensor$MH,"rs2_delete_sensor");
+        return RuntimeHelper.requireNonNull(constants$98.const$5,"rs2_delete_sensor");
     }
     /**
      * {@snippet :
@@ -9795,7 +9795,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_sensor$MH() {
-        return RuntimeHelper.requireNonNull(constants$70.rs2_create_sensor$MH,"rs2_create_sensor");
+        return RuntimeHelper.requireNonNull(constants$99.const$1,"rs2_create_sensor");
     }
     /**
      * {@snippet :
@@ -9811,7 +9811,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_device_from_sensor$MH() {
-        return RuntimeHelper.requireNonNull(constants$70.rs2_create_device_from_sensor$MH,"rs2_create_device_from_sensor");
+        return RuntimeHelper.requireNonNull(constants$99.const$2,"rs2_create_device_from_sensor");
     }
     /**
      * {@snippet :
@@ -9827,7 +9827,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_sensor_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$71.rs2_get_sensor_info$MH,"rs2_get_sensor_info");
+        return RuntimeHelper.requireNonNull(constants$99.const$3,"rs2_get_sensor_info");
     }
     /**
      * {@snippet :
@@ -9843,7 +9843,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_supports_sensor_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$71.rs2_supports_sensor_info$MH,"rs2_supports_sensor_info");
+        return RuntimeHelper.requireNonNull(constants$99.const$5,"rs2_supports_sensor_info");
     }
     /**
      * {@snippet :
@@ -9859,7 +9859,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_is_sensor_extendable_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$71.rs2_is_sensor_extendable_to$MH,"rs2_is_sensor_extendable_to");
+        return RuntimeHelper.requireNonNull(constants$100.const$0,"rs2_is_sensor_extendable_to");
     }
     /**
      * {@snippet :
@@ -9875,7 +9875,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_depth_scale$MH() {
-        return RuntimeHelper.requireNonNull(constants$71.rs2_get_depth_scale$MH,"rs2_get_depth_scale");
+        return RuntimeHelper.requireNonNull(constants$100.const$1,"rs2_get_depth_scale");
     }
     /**
      * {@snippet :
@@ -9891,7 +9891,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_depth_stereo_frame_get_baseline$MH() {
-        return RuntimeHelper.requireNonNull(constants$71.rs2_depth_stereo_frame_get_baseline$MH,"rs2_depth_stereo_frame_get_baseline");
+        return RuntimeHelper.requireNonNull(constants$100.const$2,"rs2_depth_stereo_frame_get_baseline");
     }
     /**
      * {@snippet :
@@ -9907,7 +9907,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_stereo_baseline$MH() {
-        return RuntimeHelper.requireNonNull(constants$71.rs2_get_stereo_baseline$MH,"rs2_get_stereo_baseline");
+        return RuntimeHelper.requireNonNull(constants$100.const$3,"rs2_get_stereo_baseline");
     }
     /**
      * {@snippet :
@@ -9923,7 +9923,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_set_region_of_interest$MH() {
-        return RuntimeHelper.requireNonNull(constants$72.rs2_set_region_of_interest$MH,"rs2_set_region_of_interest");
+        return RuntimeHelper.requireNonNull(constants$100.const$5,"rs2_set_region_of_interest");
     }
     /**
      * {@snippet :
@@ -9939,7 +9939,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_region_of_interest$MH() {
-        return RuntimeHelper.requireNonNull(constants$72.rs2_get_region_of_interest$MH,"rs2_get_region_of_interest");
+        return RuntimeHelper.requireNonNull(constants$101.const$1,"rs2_get_region_of_interest");
     }
     /**
      * {@snippet :
@@ -9955,7 +9955,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_open$MH() {
-        return RuntimeHelper.requireNonNull(constants$72.rs2_open$MH,"rs2_open");
+        return RuntimeHelper.requireNonNull(constants$101.const$2,"rs2_open");
     }
     /**
      * {@snippet :
@@ -9971,7 +9971,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_open_multiple$MH() {
-        return RuntimeHelper.requireNonNull(constants$72.rs2_open_multiple$MH,"rs2_open_multiple");
+        return RuntimeHelper.requireNonNull(constants$101.const$4,"rs2_open_multiple");
     }
     /**
      * {@snippet :
@@ -9987,7 +9987,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_close$MH() {
-        return RuntimeHelper.requireNonNull(constants$72.rs2_close$MH,"rs2_close");
+        return RuntimeHelper.requireNonNull(constants$101.const$5,"rs2_close");
     }
     /**
      * {@snippet :
@@ -10003,7 +10003,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_start$MH() {
-        return RuntimeHelper.requireNonNull(constants$72.rs2_start$MH,"rs2_start");
+        return RuntimeHelper.requireNonNull(constants$102.const$1,"rs2_start");
     }
     /**
      * {@snippet :
@@ -10019,7 +10019,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_start_cpp$MH() {
-        return RuntimeHelper.requireNonNull(constants$73.rs2_start_cpp$MH,"rs2_start_cpp");
+        return RuntimeHelper.requireNonNull(constants$102.const$2,"rs2_start_cpp");
     }
     /**
      * {@snippet :
@@ -10035,7 +10035,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_start_queue$MH() {
-        return RuntimeHelper.requireNonNull(constants$73.rs2_start_queue$MH,"rs2_start_queue");
+        return RuntimeHelper.requireNonNull(constants$102.const$3,"rs2_start_queue");
     }
     /**
      * {@snippet :
@@ -10051,7 +10051,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_stop$MH() {
-        return RuntimeHelper.requireNonNull(constants$73.rs2_stop$MH,"rs2_stop");
+        return RuntimeHelper.requireNonNull(constants$102.const$4,"rs2_stop");
     }
     /**
      * {@snippet :
@@ -10067,7 +10067,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_set_notifications_callback$MH() {
-        return RuntimeHelper.requireNonNull(constants$73.rs2_set_notifications_callback$MH,"rs2_set_notifications_callback");
+        return RuntimeHelper.requireNonNull(constants$102.const$5,"rs2_set_notifications_callback");
     }
     /**
      * {@snippet :
@@ -10083,7 +10083,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_set_notifications_callback_cpp$MH() {
-        return RuntimeHelper.requireNonNull(constants$73.rs2_set_notifications_callback_cpp$MH,"rs2_set_notifications_callback_cpp");
+        return RuntimeHelper.requireNonNull(constants$103.const$0,"rs2_set_notifications_callback_cpp");
     }
     /**
      * {@snippet :
@@ -10099,7 +10099,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_notification_description$MH() {
-        return RuntimeHelper.requireNonNull(constants$73.rs2_get_notification_description$MH,"rs2_get_notification_description");
+        return RuntimeHelper.requireNonNull(constants$103.const$1,"rs2_get_notification_description");
     }
     /**
      * {@snippet :
@@ -10115,7 +10115,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_notification_timestamp$MH() {
-        return RuntimeHelper.requireNonNull(constants$74.rs2_get_notification_timestamp$MH,"rs2_get_notification_timestamp");
+        return RuntimeHelper.requireNonNull(constants$103.const$2,"rs2_get_notification_timestamp");
     }
     /**
      * {@snippet :
@@ -10131,7 +10131,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_notification_severity$MH() {
-        return RuntimeHelper.requireNonNull(constants$74.rs2_get_notification_severity$MH,"rs2_get_notification_severity");
+        return RuntimeHelper.requireNonNull(constants$103.const$3,"rs2_get_notification_severity");
     }
     /**
      * {@snippet :
@@ -10147,7 +10147,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_notification_category$MH() {
-        return RuntimeHelper.requireNonNull(constants$74.rs2_get_notification_category$MH,"rs2_get_notification_category");
+        return RuntimeHelper.requireNonNull(constants$103.const$4,"rs2_get_notification_category");
     }
     /**
      * {@snippet :
@@ -10163,7 +10163,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_notification_serialized_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$74.rs2_get_notification_serialized_data$MH,"rs2_get_notification_serialized_data");
+        return RuntimeHelper.requireNonNull(constants$103.const$5,"rs2_get_notification_serialized_data");
     }
     /**
      * {@snippet :
@@ -10179,7 +10179,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_stream_profiles$MH() {
-        return RuntimeHelper.requireNonNull(constants$74.rs2_get_stream_profiles$MH,"rs2_get_stream_profiles");
+        return RuntimeHelper.requireNonNull(constants$104.const$0,"rs2_get_stream_profiles");
     }
     /**
      * {@snippet :
@@ -10195,7 +10195,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_debug_stream_profiles$MH() {
-        return RuntimeHelper.requireNonNull(constants$74.rs2_get_debug_stream_profiles$MH,"rs2_get_debug_stream_profiles");
+        return RuntimeHelper.requireNonNull(constants$104.const$1,"rs2_get_debug_stream_profiles");
     }
     /**
      * {@snippet :
@@ -10211,7 +10211,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_active_streams$MH() {
-        return RuntimeHelper.requireNonNull(constants$75.rs2_get_active_streams$MH,"rs2_get_active_streams");
+        return RuntimeHelper.requireNonNull(constants$104.const$2,"rs2_get_active_streams");
     }
     /**
      * {@snippet :
@@ -10227,7 +10227,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_stream_profile$MH() {
-        return RuntimeHelper.requireNonNull(constants$75.rs2_get_stream_profile$MH,"rs2_get_stream_profile");
+        return RuntimeHelper.requireNonNull(constants$104.const$3,"rs2_get_stream_profile");
     }
     /**
      * {@snippet :
@@ -10243,7 +10243,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_stream_profile_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$75.rs2_get_stream_profile_data$MH,"rs2_get_stream_profile_data");
+        return RuntimeHelper.requireNonNull(constants$104.const$5,"rs2_get_stream_profile_data");
     }
     /**
      * {@snippet :
@@ -10259,7 +10259,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_set_stream_profile_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$75.rs2_set_stream_profile_data$MH,"rs2_set_stream_profile_data");
+        return RuntimeHelper.requireNonNull(constants$105.const$1,"rs2_set_stream_profile_data");
     }
     /**
      * {@snippet :
@@ -10275,7 +10275,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_clone_stream_profile$MH() {
-        return RuntimeHelper.requireNonNull(constants$75.rs2_clone_stream_profile$MH,"rs2_clone_stream_profile");
+        return RuntimeHelper.requireNonNull(constants$105.const$3,"rs2_clone_stream_profile");
     }
     /**
      * {@snippet :
@@ -10291,7 +10291,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_clone_video_stream_profile$MH() {
-        return RuntimeHelper.requireNonNull(constants$75.rs2_clone_video_stream_profile$MH,"rs2_clone_video_stream_profile");
+        return RuntimeHelper.requireNonNull(constants$105.const$5,"rs2_clone_video_stream_profile");
     }
     /**
      * {@snippet :
@@ -10307,7 +10307,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_delete_stream_profile$MH() {
-        return RuntimeHelper.requireNonNull(constants$76.rs2_delete_stream_profile$MH,"rs2_delete_stream_profile");
+        return RuntimeHelper.requireNonNull(constants$106.const$0,"rs2_delete_stream_profile");
     }
     /**
      * {@snippet :
@@ -10323,7 +10323,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_stream_profile_is$MH() {
-        return RuntimeHelper.requireNonNull(constants$76.rs2_stream_profile_is$MH,"rs2_stream_profile_is");
+        return RuntimeHelper.requireNonNull(constants$106.const$1,"rs2_stream_profile_is");
     }
     /**
      * {@snippet :
@@ -10339,7 +10339,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_video_stream_resolution$MH() {
-        return RuntimeHelper.requireNonNull(constants$76.rs2_get_video_stream_resolution$MH,"rs2_get_video_stream_resolution");
+        return RuntimeHelper.requireNonNull(constants$106.const$2,"rs2_get_video_stream_resolution");
     }
     /**
      * {@snippet :
@@ -10355,7 +10355,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_motion_intrinsics$MH() {
-        return RuntimeHelper.requireNonNull(constants$76.rs2_get_motion_intrinsics$MH,"rs2_get_motion_intrinsics");
+        return RuntimeHelper.requireNonNull(constants$106.const$3,"rs2_get_motion_intrinsics");
     }
     /**
      * {@snippet :
@@ -10371,7 +10371,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_is_stream_profile_default$MH() {
-        return RuntimeHelper.requireNonNull(constants$76.rs2_is_stream_profile_default$MH,"rs2_is_stream_profile_default");
+        return RuntimeHelper.requireNonNull(constants$106.const$4,"rs2_is_stream_profile_default");
     }
     /**
      * {@snippet :
@@ -10387,7 +10387,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_stream_profiles_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$76.rs2_get_stream_profiles_count$MH,"rs2_get_stream_profiles_count");
+        return RuntimeHelper.requireNonNull(constants$106.const$5,"rs2_get_stream_profiles_count");
     }
     /**
      * {@snippet :
@@ -10403,7 +10403,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_delete_stream_profiles_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$77.rs2_delete_stream_profiles_list$MH,"rs2_delete_stream_profiles_list");
+        return RuntimeHelper.requireNonNull(constants$107.const$0,"rs2_delete_stream_profiles_list");
     }
     /**
      * {@snippet :
@@ -10419,7 +10419,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_extrinsics$MH() {
-        return RuntimeHelper.requireNonNull(constants$77.rs2_get_extrinsics$MH,"rs2_get_extrinsics");
+        return RuntimeHelper.requireNonNull(constants$107.const$1,"rs2_get_extrinsics");
     }
     /**
      * {@snippet :
@@ -10435,7 +10435,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_register_extrinsics$MH() {
-        return RuntimeHelper.requireNonNull(constants$77.rs2_register_extrinsics$MH,"rs2_register_extrinsics");
+        return RuntimeHelper.requireNonNull(constants$107.const$3,"rs2_register_extrinsics");
     }
     /**
      * {@snippet :
@@ -10451,7 +10451,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_override_extrinsics$MH() {
-        return RuntimeHelper.requireNonNull(constants$77.rs2_override_extrinsics$MH,"rs2_override_extrinsics");
+        return RuntimeHelper.requireNonNull(constants$107.const$4,"rs2_override_extrinsics");
     }
     /**
      * {@snippet :
@@ -10467,7 +10467,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_video_stream_intrinsics$MH() {
-        return RuntimeHelper.requireNonNull(constants$77.rs2_get_video_stream_intrinsics$MH,"rs2_get_video_stream_intrinsics");
+        return RuntimeHelper.requireNonNull(constants$107.const$5,"rs2_get_video_stream_intrinsics");
     }
     /**
      * {@snippet :
@@ -10483,7 +10483,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_recommended_processing_blocks$MH() {
-        return RuntimeHelper.requireNonNull(constants$77.rs2_get_recommended_processing_blocks$MH,"rs2_get_recommended_processing_blocks");
+        return RuntimeHelper.requireNonNull(constants$108.const$0,"rs2_get_recommended_processing_blocks");
     }
     /**
      * {@snippet :
@@ -10499,7 +10499,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_processing_block$MH() {
-        return RuntimeHelper.requireNonNull(constants$78.rs2_get_processing_block$MH,"rs2_get_processing_block");
+        return RuntimeHelper.requireNonNull(constants$108.const$1,"rs2_get_processing_block");
     }
     /**
      * {@snippet :
@@ -10515,7 +10515,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_recommended_processing_blocks_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$78.rs2_get_recommended_processing_blocks_count$MH,"rs2_get_recommended_processing_blocks_count");
+        return RuntimeHelper.requireNonNull(constants$108.const$2,"rs2_get_recommended_processing_blocks_count");
     }
     /**
      * {@snippet :
@@ -10531,7 +10531,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_delete_recommended_processing_blocks$MH() {
-        return RuntimeHelper.requireNonNull(constants$78.rs2_delete_recommended_processing_blocks$MH,"rs2_delete_recommended_processing_blocks");
+        return RuntimeHelper.requireNonNull(constants$108.const$3,"rs2_delete_recommended_processing_blocks");
     }
     /**
      * {@snippet :
@@ -10547,7 +10547,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_import_localization_map$MH() {
-        return RuntimeHelper.requireNonNull(constants$78.rs2_import_localization_map$MH,"rs2_import_localization_map");
+        return RuntimeHelper.requireNonNull(constants$108.const$5,"rs2_import_localization_map");
     }
     /**
      * {@snippet :
@@ -10563,7 +10563,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_export_localization_map$MH() {
-        return RuntimeHelper.requireNonNull(constants$78.rs2_export_localization_map$MH,"rs2_export_localization_map");
+        return RuntimeHelper.requireNonNull(constants$109.const$0,"rs2_export_localization_map");
     }
     /**
      * {@snippet :
@@ -10579,7 +10579,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_set_static_node$MH() {
-        return RuntimeHelper.requireNonNull(constants$78.rs2_set_static_node$MH,"rs2_set_static_node");
+        return RuntimeHelper.requireNonNull(constants$109.const$2,"rs2_set_static_node");
     }
     /**
      * {@snippet :
@@ -10595,7 +10595,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_static_node$MH() {
-        return RuntimeHelper.requireNonNull(constants$79.rs2_get_static_node$MH,"rs2_get_static_node");
+        return RuntimeHelper.requireNonNull(constants$109.const$4,"rs2_get_static_node");
     }
     /**
      * {@snippet :
@@ -10611,7 +10611,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_remove_static_node$MH() {
-        return RuntimeHelper.requireNonNull(constants$79.rs2_remove_static_node$MH,"rs2_remove_static_node");
+        return RuntimeHelper.requireNonNull(constants$109.const$5,"rs2_remove_static_node");
     }
     /**
      * {@snippet :
@@ -10627,7 +10627,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_load_wheel_odometry_config$MH() {
-        return RuntimeHelper.requireNonNull(constants$79.rs2_load_wheel_odometry_config$MH,"rs2_load_wheel_odometry_config");
+        return RuntimeHelper.requireNonNull(constants$110.const$0,"rs2_load_wheel_odometry_config");
     }
     /**
      * {@snippet :
@@ -10643,7 +10643,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_send_wheel_odometry$MH() {
-        return RuntimeHelper.requireNonNull(constants$79.rs2_send_wheel_odometry$MH,"rs2_send_wheel_odometry");
+        return RuntimeHelper.requireNonNull(constants$110.const$2,"rs2_send_wheel_odometry");
     }
     /**
      * {@snippet :
@@ -10659,7 +10659,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_set_intrinsics$MH() {
-        return RuntimeHelper.requireNonNull(constants$79.rs2_set_intrinsics$MH,"rs2_set_intrinsics");
+        return RuntimeHelper.requireNonNull(constants$110.const$3,"rs2_set_intrinsics");
     }
     /**
      * {@snippet :
@@ -10675,7 +10675,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_override_intrinsics$MH() {
-        return RuntimeHelper.requireNonNull(constants$79.rs2_override_intrinsics$MH,"rs2_override_intrinsics");
+        return RuntimeHelper.requireNonNull(constants$110.const$4,"rs2_override_intrinsics");
     }
     /**
      * {@snippet :
@@ -10691,7 +10691,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_set_extrinsics$MH() {
-        return RuntimeHelper.requireNonNull(constants$80.rs2_set_extrinsics$MH,"rs2_set_extrinsics");
+        return RuntimeHelper.requireNonNull(constants$110.const$5,"rs2_set_extrinsics");
     }
     /**
      * {@snippet :
@@ -10707,7 +10707,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_dsm_params$MH() {
-        return RuntimeHelper.requireNonNull(constants$80.rs2_get_dsm_params$MH,"rs2_get_dsm_params");
+        return RuntimeHelper.requireNonNull(constants$111.const$0,"rs2_get_dsm_params");
     }
     /**
      * {@snippet :
@@ -10723,7 +10723,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_override_dsm_params$MH() {
-        return RuntimeHelper.requireNonNull(constants$80.rs2_override_dsm_params$MH,"rs2_override_dsm_params");
+        return RuntimeHelper.requireNonNull(constants$111.const$1,"rs2_override_dsm_params");
     }
     /**
      * {@snippet :
@@ -10739,7 +10739,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_reset_sensor_calibration$MH() {
-        return RuntimeHelper.requireNonNull(constants$80.rs2_reset_sensor_calibration$MH,"rs2_reset_sensor_calibration");
+        return RuntimeHelper.requireNonNull(constants$111.const$2,"rs2_reset_sensor_calibration");
     }
     /**
      * {@snippet :
@@ -10755,7 +10755,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_set_motion_device_intrinsics$MH() {
-        return RuntimeHelper.requireNonNull(constants$80.rs2_set_motion_device_intrinsics$MH,"rs2_set_motion_device_intrinsics");
+        return RuntimeHelper.requireNonNull(constants$111.const$3,"rs2_set_motion_device_intrinsics");
     }
     /**
      * {@snippet :
@@ -10771,7 +10771,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_max_usable_depth_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$80.rs2_get_max_usable_depth_range$MH,"rs2_get_max_usable_depth_range");
+        return RuntimeHelper.requireNonNull(constants$111.const$4,"rs2_get_max_usable_depth_range");
     }
     /**
      * {@snippet :
@@ -10787,7 +10787,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_project_point_to_pixel$MH() {
-        return RuntimeHelper.requireNonNull(constants$81.rs2_project_point_to_pixel$MH,"rs2_project_point_to_pixel");
+        return RuntimeHelper.requireNonNull(constants$111.const$5,"rs2_project_point_to_pixel");
     }
     /**
      * {@snippet :
@@ -10803,7 +10803,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_deproject_pixel_to_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$81.rs2_deproject_pixel_to_point$MH,"rs2_deproject_pixel_to_point");
+        return RuntimeHelper.requireNonNull(constants$112.const$1,"rs2_deproject_pixel_to_point");
     }
     /**
      * {@snippet :
@@ -10819,7 +10819,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_transform_point_to_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$81.rs2_transform_point_to_point$MH,"rs2_transform_point_to_point");
+        return RuntimeHelper.requireNonNull(constants$112.const$2,"rs2_transform_point_to_point");
     }
     /**
      * {@snippet :
@@ -10835,7 +10835,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_fov$MH() {
-        return RuntimeHelper.requireNonNull(constants$81.rs2_fov$MH,"rs2_fov");
+        return RuntimeHelper.requireNonNull(constants$112.const$3,"rs2_fov");
     }
     /**
      * {@snippet :
@@ -10851,7 +10851,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_project_color_pixel_to_depth_pixel$MH() {
-        return RuntimeHelper.requireNonNull(constants$81.rs2_project_color_pixel_to_depth_pixel$MH,"rs2_project_color_pixel_to_depth_pixel");
+        return RuntimeHelper.requireNonNull(constants$112.const$5,"rs2_project_color_pixel_to_depth_pixel");
     }
     /**
      * {@snippet :
@@ -10867,7 +10867,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_context$MH() {
-        return RuntimeHelper.requireNonNull(constants$81.rs2_create_context$MH,"rs2_create_context");
+        return RuntimeHelper.requireNonNull(constants$113.const$1,"rs2_create_context");
     }
     /**
      * {@snippet :
@@ -10883,7 +10883,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_delete_context$MH() {
-        return RuntimeHelper.requireNonNull(constants$82.rs2_delete_context$MH,"rs2_delete_context");
+        return RuntimeHelper.requireNonNull(constants$113.const$2,"rs2_delete_context");
     }
     /**
      * {@snippet :
@@ -10899,7 +10899,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_set_devices_changed_callback_cpp$MH() {
-        return RuntimeHelper.requireNonNull(constants$82.rs2_set_devices_changed_callback_cpp$MH,"rs2_set_devices_changed_callback_cpp");
+        return RuntimeHelper.requireNonNull(constants$113.const$3,"rs2_set_devices_changed_callback_cpp");
     }
     /**
      * {@snippet :
@@ -10915,7 +10915,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_set_devices_changed_callback$MH() {
-        return RuntimeHelper.requireNonNull(constants$82.rs2_set_devices_changed_callback$MH,"rs2_set_devices_changed_callback");
+        return RuntimeHelper.requireNonNull(constants$113.const$4,"rs2_set_devices_changed_callback");
     }
     /**
      * {@snippet :
@@ -10931,7 +10931,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_context_add_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$82.rs2_context_add_device$MH,"rs2_context_add_device");
+        return RuntimeHelper.requireNonNull(constants$113.const$6,"rs2_context_add_device");
     }
     /**
      * {@snippet :
@@ -10947,7 +10947,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_context_add_software_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$82.rs2_context_add_software_device$MH,"rs2_context_add_software_device");
+        return RuntimeHelper.requireNonNull(constants$114.const$0,"rs2_context_add_software_device");
     }
     /**
      * {@snippet :
@@ -10963,7 +10963,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_context_remove_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$82.rs2_context_remove_device$MH,"rs2_context_remove_device");
+        return RuntimeHelper.requireNonNull(constants$114.const$1,"rs2_context_remove_device");
     }
     /**
      * {@snippet :
@@ -10979,7 +10979,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_context_unload_tracking_module$MH() {
-        return RuntimeHelper.requireNonNull(constants$83.rs2_context_unload_tracking_module$MH,"rs2_context_unload_tracking_module");
+        return RuntimeHelper.requireNonNull(constants$114.const$2,"rs2_context_unload_tracking_module");
     }
     /**
      * {@snippet :
@@ -10995,7 +10995,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_query_devices$MH() {
-        return RuntimeHelper.requireNonNull(constants$83.rs2_query_devices$MH,"rs2_query_devices");
+        return RuntimeHelper.requireNonNull(constants$114.const$3,"rs2_query_devices");
     }
     /**
      * {@snippet :
@@ -11011,7 +11011,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_query_devices_ex$MH() {
-        return RuntimeHelper.requireNonNull(constants$83.rs2_query_devices_ex$MH,"rs2_query_devices_ex");
+        return RuntimeHelper.requireNonNull(constants$114.const$4,"rs2_query_devices_ex");
     }
     /**
      * {@snippet :
@@ -11027,7 +11027,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_device_hub$MH() {
-        return RuntimeHelper.requireNonNull(constants$83.rs2_create_device_hub$MH,"rs2_create_device_hub");
+        return RuntimeHelper.requireNonNull(constants$114.const$5,"rs2_create_device_hub");
     }
     /**
      * {@snippet :
@@ -11043,7 +11043,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_delete_device_hub$MH() {
-        return RuntimeHelper.requireNonNull(constants$83.rs2_delete_device_hub$MH,"rs2_delete_device_hub");
+        return RuntimeHelper.requireNonNull(constants$115.const$0,"rs2_delete_device_hub");
     }
     /**
      * {@snippet :
@@ -11059,7 +11059,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_device_hub_wait_for_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$83.rs2_device_hub_wait_for_device$MH,"rs2_device_hub_wait_for_device");
+        return RuntimeHelper.requireNonNull(constants$115.const$1,"rs2_device_hub_wait_for_device");
     }
     /**
      * {@snippet :
@@ -11075,7 +11075,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_device_hub_is_device_connected$MH() {
-        return RuntimeHelper.requireNonNull(constants$84.rs2_device_hub_is_device_connected$MH,"rs2_device_hub_is_device_connected");
+        return RuntimeHelper.requireNonNull(constants$115.const$2,"rs2_device_hub_is_device_connected");
     }
     /**
      * {@snippet :
@@ -11091,7 +11091,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_device_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$84.rs2_get_device_count$MH,"rs2_get_device_count");
+        return RuntimeHelper.requireNonNull(constants$115.const$3,"rs2_get_device_count");
     }
     /**
      * {@snippet :
@@ -11107,7 +11107,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_delete_device_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$84.rs2_delete_device_list$MH,"rs2_delete_device_list");
+        return RuntimeHelper.requireNonNull(constants$115.const$4,"rs2_delete_device_list");
     }
     /**
      * {@snippet :
@@ -11123,7 +11123,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_device_list_contains$MH() {
-        return RuntimeHelper.requireNonNull(constants$84.rs2_device_list_contains$MH,"rs2_device_list_contains");
+        return RuntimeHelper.requireNonNull(constants$115.const$5,"rs2_device_list_contains");
     }
     /**
      * {@snippet :
@@ -11139,7 +11139,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$84.rs2_create_device$MH,"rs2_create_device");
+        return RuntimeHelper.requireNonNull(constants$116.const$0,"rs2_create_device");
     }
     /**
      * {@snippet :
@@ -11155,7 +11155,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_delete_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$84.rs2_delete_device$MH,"rs2_delete_device");
+        return RuntimeHelper.requireNonNull(constants$116.const$1,"rs2_delete_device");
     }
     /**
      * {@snippet :
@@ -11171,7 +11171,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_device_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$85.rs2_get_device_info$MH,"rs2_get_device_info");
+        return RuntimeHelper.requireNonNull(constants$116.const$2,"rs2_get_device_info");
     }
     /**
      * {@snippet :
@@ -11187,7 +11187,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_supports_device_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$85.rs2_supports_device_info$MH,"rs2_supports_device_info");
+        return RuntimeHelper.requireNonNull(constants$116.const$3,"rs2_supports_device_info");
     }
     /**
      * {@snippet :
@@ -11203,7 +11203,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_hardware_reset$MH() {
-        return RuntimeHelper.requireNonNull(constants$85.rs2_hardware_reset$MH,"rs2_hardware_reset");
+        return RuntimeHelper.requireNonNull(constants$116.const$4,"rs2_hardware_reset");
     }
     /**
      * {@snippet :
@@ -11219,7 +11219,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_build_debug_protocol_command$MH() {
-        return RuntimeHelper.requireNonNull(constants$85.rs2_build_debug_protocol_command$MH,"rs2_build_debug_protocol_command");
+        return RuntimeHelper.requireNonNull(constants$116.const$6,"rs2_build_debug_protocol_command");
     }
     /**
      * {@snippet :
@@ -11235,7 +11235,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_send_and_receive_raw_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$85.rs2_send_and_receive_raw_data$MH,"rs2_send_and_receive_raw_data");
+        return RuntimeHelper.requireNonNull(constants$117.const$1,"rs2_send_and_receive_raw_data");
     }
     /**
      * {@snippet :
@@ -11251,7 +11251,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_is_device_extendable_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$85.rs2_is_device_extendable_to$MH,"rs2_is_device_extendable_to");
+        return RuntimeHelper.requireNonNull(constants$117.const$2,"rs2_is_device_extendable_to");
     }
     /**
      * {@snippet :
@@ -11267,7 +11267,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_query_sensors$MH() {
-        return RuntimeHelper.requireNonNull(constants$86.rs2_query_sensors$MH,"rs2_query_sensors");
+        return RuntimeHelper.requireNonNull(constants$117.const$3,"rs2_query_sensors");
     }
     /**
      * {@snippet :
@@ -11283,7 +11283,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_loopback_enable$MH() {
-        return RuntimeHelper.requireNonNull(constants$86.rs2_loopback_enable$MH,"rs2_loopback_enable");
+        return RuntimeHelper.requireNonNull(constants$117.const$4,"rs2_loopback_enable");
     }
     /**
      * {@snippet :
@@ -11299,7 +11299,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_loopback_disable$MH() {
-        return RuntimeHelper.requireNonNull(constants$86.rs2_loopback_disable$MH,"rs2_loopback_disable");
+        return RuntimeHelper.requireNonNull(constants$117.const$5,"rs2_loopback_disable");
     }
     /**
      * {@snippet :
@@ -11315,7 +11315,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_loopback_is_enabled$MH() {
-        return RuntimeHelper.requireNonNull(constants$86.rs2_loopback_is_enabled$MH,"rs2_loopback_is_enabled");
+        return RuntimeHelper.requireNonNull(constants$118.const$0,"rs2_loopback_is_enabled");
     }
     /**
      * {@snippet :
@@ -11331,7 +11331,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_connect_tm2_controller$MH() {
-        return RuntimeHelper.requireNonNull(constants$86.rs2_connect_tm2_controller$MH,"rs2_connect_tm2_controller");
+        return RuntimeHelper.requireNonNull(constants$118.const$1,"rs2_connect_tm2_controller");
     }
     /**
      * {@snippet :
@@ -11347,7 +11347,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_disconnect_tm2_controller$MH() {
-        return RuntimeHelper.requireNonNull(constants$86.rs2_disconnect_tm2_controller$MH,"rs2_disconnect_tm2_controller");
+        return RuntimeHelper.requireNonNull(constants$118.const$3,"rs2_disconnect_tm2_controller");
     }
     /**
      * {@snippet :
@@ -11363,7 +11363,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_reset_to_factory_calibration$MH() {
-        return RuntimeHelper.requireNonNull(constants$87.rs2_reset_to_factory_calibration$MH,"rs2_reset_to_factory_calibration");
+        return RuntimeHelper.requireNonNull(constants$118.const$4,"rs2_reset_to_factory_calibration");
     }
     /**
      * {@snippet :
@@ -11379,7 +11379,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_write_calibration$MH() {
-        return RuntimeHelper.requireNonNull(constants$87.rs2_write_calibration$MH,"rs2_write_calibration");
+        return RuntimeHelper.requireNonNull(constants$118.const$5,"rs2_write_calibration");
     }
     /**
      * {@snippet :
@@ -11395,7 +11395,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_update_firmware_cpp$MH() {
-        return RuntimeHelper.requireNonNull(constants$87.rs2_update_firmware_cpp$MH,"rs2_update_firmware_cpp");
+        return RuntimeHelper.requireNonNull(constants$119.const$1,"rs2_update_firmware_cpp");
     }
     /**
      * {@snippet :
@@ -11411,7 +11411,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_update_firmware$MH() {
-        return RuntimeHelper.requireNonNull(constants$87.rs2_update_firmware$MH,"rs2_update_firmware");
+        return RuntimeHelper.requireNonNull(constants$119.const$3,"rs2_update_firmware");
     }
     /**
      * {@snippet :
@@ -11427,7 +11427,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_flash_backup_cpp$MH() {
-        return RuntimeHelper.requireNonNull(constants$87.rs2_create_flash_backup_cpp$MH,"rs2_create_flash_backup_cpp");
+        return RuntimeHelper.requireNonNull(constants$119.const$4,"rs2_create_flash_backup_cpp");
     }
     /**
      * {@snippet :
@@ -11443,7 +11443,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_flash_backup$MH() {
-        return RuntimeHelper.requireNonNull(constants$87.rs2_create_flash_backup$MH,"rs2_create_flash_backup");
+        return RuntimeHelper.requireNonNull(constants$119.const$6,"rs2_create_flash_backup");
     }
     /**
      * {@snippet :
@@ -11459,7 +11459,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_update_firmware_unsigned_cpp$MH() {
-        return RuntimeHelper.requireNonNull(constants$88.rs2_update_firmware_unsigned_cpp$MH,"rs2_update_firmware_unsigned_cpp");
+        return RuntimeHelper.requireNonNull(constants$120.const$1,"rs2_update_firmware_unsigned_cpp");
     }
     /**
      * {@snippet :
@@ -11475,7 +11475,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_check_firmware_compatibility$MH() {
-        return RuntimeHelper.requireNonNull(constants$88.rs2_check_firmware_compatibility$MH,"rs2_check_firmware_compatibility");
+        return RuntimeHelper.requireNonNull(constants$120.const$2,"rs2_check_firmware_compatibility");
     }
     /**
      * {@snippet :
@@ -11491,7 +11491,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_update_firmware_unsigned$MH() {
-        return RuntimeHelper.requireNonNull(constants$88.rs2_update_firmware_unsigned$MH,"rs2_update_firmware_unsigned");
+        return RuntimeHelper.requireNonNull(constants$120.const$4,"rs2_update_firmware_unsigned");
     }
     /**
      * {@snippet :
@@ -11507,7 +11507,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_enter_update_state$MH() {
-        return RuntimeHelper.requireNonNull(constants$88.rs2_enter_update_state$MH,"rs2_enter_update_state");
+        return RuntimeHelper.requireNonNull(constants$120.const$5,"rs2_enter_update_state");
     }
     /**
      * {@snippet :
@@ -11523,7 +11523,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_run_on_chip_calibration_cpp$MH() {
-        return RuntimeHelper.requireNonNull(constants$88.rs2_run_on_chip_calibration_cpp$MH,"rs2_run_on_chip_calibration_cpp");
+        return RuntimeHelper.requireNonNull(constants$121.const$1,"rs2_run_on_chip_calibration_cpp");
     }
     /**
      * {@snippet :
@@ -11539,7 +11539,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_run_on_chip_calibration$MH() {
-        return RuntimeHelper.requireNonNull(constants$88.rs2_run_on_chip_calibration$MH,"rs2_run_on_chip_calibration");
+        return RuntimeHelper.requireNonNull(constants$121.const$3,"rs2_run_on_chip_calibration");
     }
     /**
      * {@snippet :
@@ -11555,7 +11555,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_run_tare_calibration_cpp$MH() {
-        return RuntimeHelper.requireNonNull(constants$89.rs2_run_tare_calibration_cpp$MH,"rs2_run_tare_calibration_cpp");
+        return RuntimeHelper.requireNonNull(constants$121.const$5,"rs2_run_tare_calibration_cpp");
     }
     /**
      * {@snippet :
@@ -11571,7 +11571,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_process_calibration_frame$MH() {
-        return RuntimeHelper.requireNonNull(constants$89.rs2_process_calibration_frame$MH,"rs2_process_calibration_frame");
+        return RuntimeHelper.requireNonNull(constants$122.const$1,"rs2_process_calibration_frame");
     }
     /**
      * {@snippet :
@@ -11619,7 +11619,7 @@ public class librealsense extends librealsense_1 {
         return (int)3L;
     }
     public static MethodHandle rs2_calibration_type_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$89.rs2_calibration_type_to_string$MH,"rs2_calibration_type_to_string");
+        return RuntimeHelper.requireNonNull(constants$122.const$2,"rs2_calibration_type_to_string");
     }
     /**
      * {@snippet :
@@ -11739,7 +11739,7 @@ public class librealsense extends librealsense_1 {
         return (int)10L;
     }
     public static MethodHandle rs2_calibration_status_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$89.rs2_calibration_status_to_string$MH,"rs2_calibration_status_to_string");
+        return RuntimeHelper.requireNonNull(constants$122.const$3,"rs2_calibration_status_to_string");
     }
     /**
      * {@snippet :
@@ -11755,7 +11755,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_register_calibration_change_callback$MH() {
-        return RuntimeHelper.requireNonNull(constants$90.rs2_register_calibration_change_callback$MH,"rs2_register_calibration_change_callback");
+        return RuntimeHelper.requireNonNull(constants$122.const$5,"rs2_register_calibration_change_callback");
     }
     /**
      * {@snippet :
@@ -11771,7 +11771,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_register_calibration_change_callback_cpp$MH() {
-        return RuntimeHelper.requireNonNull(constants$90.rs2_register_calibration_change_callback_cpp$MH,"rs2_register_calibration_change_callback_cpp");
+        return RuntimeHelper.requireNonNull(constants$123.const$0,"rs2_register_calibration_change_callback_cpp");
     }
     /**
      * {@snippet :
@@ -11787,7 +11787,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_trigger_device_calibration$MH() {
-        return RuntimeHelper.requireNonNull(constants$90.rs2_trigger_device_calibration$MH,"rs2_trigger_device_calibration");
+        return RuntimeHelper.requireNonNull(constants$123.const$1,"rs2_trigger_device_calibration");
     }
     /**
      * {@snippet :
@@ -11803,7 +11803,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_run_tare_calibration$MH() {
-        return RuntimeHelper.requireNonNull(constants$90.rs2_run_tare_calibration$MH,"rs2_run_tare_calibration");
+        return RuntimeHelper.requireNonNull(constants$123.const$3,"rs2_run_tare_calibration");
     }
     /**
      * {@snippet :
@@ -11819,7 +11819,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_calibration_table$MH() {
-        return RuntimeHelper.requireNonNull(constants$90.rs2_get_calibration_table$MH,"rs2_get_calibration_table");
+        return RuntimeHelper.requireNonNull(constants$123.const$4,"rs2_get_calibration_table");
     }
     /**
      * {@snippet :
@@ -11835,7 +11835,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_set_calibration_table$MH() {
-        return RuntimeHelper.requireNonNull(constants$90.rs2_set_calibration_table$MH,"rs2_set_calibration_table");
+        return RuntimeHelper.requireNonNull(constants$123.const$5,"rs2_set_calibration_table");
     }
     /**
      * {@snippet :
@@ -11851,7 +11851,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_serialize_json$MH() {
-        return RuntimeHelper.requireNonNull(constants$91.rs2_serialize_json$MH,"rs2_serialize_json");
+        return RuntimeHelper.requireNonNull(constants$124.const$0,"rs2_serialize_json");
     }
     /**
      * {@snippet :
@@ -11867,7 +11867,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_load_json$MH() {
-        return RuntimeHelper.requireNonNull(constants$91.rs2_load_json$MH,"rs2_load_json");
+        return RuntimeHelper.requireNonNull(constants$124.const$1,"rs2_load_json");
     }
     /**
      * {@snippet :
@@ -11883,7 +11883,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_run_focal_length_calibration_cpp$MH() {
-        return RuntimeHelper.requireNonNull(constants$91.rs2_run_focal_length_calibration_cpp$MH,"rs2_run_focal_length_calibration_cpp");
+        return RuntimeHelper.requireNonNull(constants$124.const$3,"rs2_run_focal_length_calibration_cpp");
     }
     /**
      * {@snippet :
@@ -11899,7 +11899,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_run_focal_length_calibration$MH() {
-        return RuntimeHelper.requireNonNull(constants$91.rs2_run_focal_length_calibration$MH,"rs2_run_focal_length_calibration");
+        return RuntimeHelper.requireNonNull(constants$124.const$5,"rs2_run_focal_length_calibration");
     }
     /**
      * {@snippet :
@@ -11915,7 +11915,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_run_uv_map_calibration_cpp$MH() {
-        return RuntimeHelper.requireNonNull(constants$91.rs2_run_uv_map_calibration_cpp$MH,"rs2_run_uv_map_calibration_cpp");
+        return RuntimeHelper.requireNonNull(constants$125.const$1,"rs2_run_uv_map_calibration_cpp");
     }
     /**
      * {@snippet :
@@ -11931,7 +11931,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_run_uv_map_calibration$MH() {
-        return RuntimeHelper.requireNonNull(constants$91.rs2_run_uv_map_calibration$MH,"rs2_run_uv_map_calibration");
+        return RuntimeHelper.requireNonNull(constants$125.const$3,"rs2_run_uv_map_calibration");
     }
     /**
      * {@snippet :
@@ -11947,7 +11947,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_calculate_target_z_cpp$MH() {
-        return RuntimeHelper.requireNonNull(constants$92.rs2_calculate_target_z_cpp$MH,"rs2_calculate_target_z_cpp");
+        return RuntimeHelper.requireNonNull(constants$125.const$5,"rs2_calculate_target_z_cpp");
     }
     /**
      * {@snippet :
@@ -11963,7 +11963,7 @@ public class librealsense extends librealsense_1 {
         }
     }
     public static MethodHandle rs2_calculate_target_z$MH() {
-        return RuntimeHelper.requireNonNull(constants$92.rs2_calculate_target_z$MH,"rs2_calculate_target_z");
+        return RuntimeHelper.requireNonNull(constants$126.const$1,"rs2_calculate_target_z");
     }
     /**
      * {@snippet :

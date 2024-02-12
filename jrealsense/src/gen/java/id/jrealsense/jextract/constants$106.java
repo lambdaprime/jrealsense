@@ -11,48 +11,29 @@ final class constants$106 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$106() {}
-    static final FunctionDescriptor rs2_create_disparity_transform_block$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "rs2_delete_stream_profile",
+        constants$20.const$5
     );
-    static final MethodHandle rs2_create_disparity_transform_block$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_disparity_transform_block",
-        constants$106.rs2_create_disparity_transform_block$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "rs2_stream_profile_is",
+        constants$99.const$4
     );
-    static final FunctionDescriptor rs2_create_hole_filling_filter_block$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "rs2_get_video_stream_resolution",
+        constants$102.const$0
     );
-    static final MethodHandle rs2_create_hole_filling_filter_block$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_hole_filling_filter_block",
-        constants$106.rs2_create_hole_filling_filter_block$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "rs2_get_motion_intrinsics",
+        constants$95.const$3
     );
-    static final FunctionDescriptor rs2_create_rates_printer_block$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "rs2_is_stream_profile_default",
+        constants$17.const$2
     );
-    static final MethodHandle rs2_create_rates_printer_block$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_rates_printer_block",
-        constants$106.rs2_create_rates_printer_block$FUNC
-    );
-    static final FunctionDescriptor rs2_create_zero_order_invalidation_block$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_create_zero_order_invalidation_block$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_zero_order_invalidation_block",
-        constants$106.rs2_create_zero_order_invalidation_block$FUNC
-    );
-    static final FunctionDescriptor rs2_create_huffman_depth_decompress_block$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_create_huffman_depth_decompress_block$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_huffman_depth_decompress_block",
-        constants$106.rs2_create_huffman_depth_decompress_block$FUNC
-    );
-    static final FunctionDescriptor rs2_create_hdr_merge_processing_block$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_create_hdr_merge_processing_block$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_hdr_merge_processing_block",
-        constants$106.rs2_create_hdr_merge_processing_block$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "rs2_get_stream_profiles_count",
+        constants$17.const$2
     );
 }
 

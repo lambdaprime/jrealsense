@@ -21,8 +21,8 @@ import id.jrealsense.exceptions.JRealSenseException;
 import id.jrealsense.frames.Frame;
 import id.jrealsense.frames.RealSenseFrame;
 import id.jrealsense.jextract.librealsense;
+import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentScope;
 import java.lang.foreign.ValueLayout;
 
 /**
@@ -51,8 +51,7 @@ public class FrameQueue implements AutoCloseable {
 
     public <T extends Frame<T>> T poll(Class<T> frameClass) {
         var e = new RealSenseError();
-        var framePtr =
-                MemorySegment.allocateNative(ValueLayout.ADDRESS.byteSize(), SegmentScope.auto());
+        var framePtr = Arena.ofAuto().allocate(ValueLayout.ADDRESS.byteSize());
         var numOfFrames = librealsense.rs2_poll_for_frame(queue, framePtr, e.get_rs2_error());
         e.verify();
         if (numOfFrames != 1)
@@ -69,8 +68,7 @@ public class FrameQueue implements AutoCloseable {
 
     public FrameSet pollFrameSet() {
         var e = new RealSenseError();
-        var framePtr =
-                MemorySegment.allocateNative(ValueLayout.ADDRESS.byteSize(), SegmentScope.auto());
+        var framePtr = Arena.ofAuto().allocate(ValueLayout.ADDRESS.byteSize());
         var numOfFrames = librealsense.rs2_poll_for_frame(queue, framePtr, e.get_rs2_error());
         e.verify();
         if (numOfFrames != 1)

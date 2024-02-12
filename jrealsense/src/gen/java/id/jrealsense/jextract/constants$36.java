@@ -11,49 +11,28 @@ final class constants$36 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$36() {}
-    static final FunctionDescriptor ilogb$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__isnan",
+        constants$35.const$1
     );
-    static final MethodHandle ilogb$MH = RuntimeHelper.downcallHandle(
-        "ilogb",
-        constants$36.ilogb$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
-    static final FunctionDescriptor __ilogb$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__iseqsig",
+        constants$36.const$1
     );
-    static final MethodHandle __ilogb$MH = RuntimeHelper.downcallHandle(
-        "__ilogb",
-        constants$36.__ilogb$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "__issignaling",
+        constants$35.const$1
     );
-    static final FunctionDescriptor scalbln$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
-    static final MethodHandle scalbln$MH = RuntimeHelper.downcallHandle(
-        "scalbln",
-        constants$36.scalbln$FUNC
-    );
-    static final FunctionDescriptor __scalbln$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle __scalbln$MH = RuntimeHelper.downcallHandle(
-        "__scalbln",
-        constants$36.__scalbln$FUNC
-    );
-    static final FunctionDescriptor nearbyint$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle nearbyint$MH = RuntimeHelper.downcallHandle(
-        "nearbyint",
-        constants$36.nearbyint$FUNC
-    );
-    static final FunctionDescriptor __nearbyint$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __nearbyint$MH = RuntimeHelper.downcallHandle(
-        "__nearbyint",
-        constants$36.__nearbyint$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "acos",
+        constants$36.const$4
     );
 }
 

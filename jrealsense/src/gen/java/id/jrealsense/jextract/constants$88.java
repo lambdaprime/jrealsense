@@ -11,76 +11,28 @@ final class constants$88 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$88() {}
-    static final FunctionDescriptor rs2_update_firmware_unsigned_cpp$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_update_firmware_unsigned_cpp$MH = RuntimeHelper.downcallHandle(
-        "rs2_update_firmware_unsigned_cpp",
-        constants$88.rs2_update_firmware_unsigned_cpp$FUNC
-    );
-    static final FunctionDescriptor rs2_check_firmware_compatibility$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_check_firmware_compatibility$MH = RuntimeHelper.downcallHandle(
-        "rs2_check_firmware_compatibility",
-        constants$88.rs2_check_firmware_compatibility$FUNC
-    );
-    static final FunctionDescriptor rs2_update_firmware_unsigned$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_update_firmware_unsigned$MH = RuntimeHelper.downcallHandle(
-        "rs2_update_firmware_unsigned",
-        constants$88.rs2_update_firmware_unsigned$FUNC
-    );
-    static final FunctionDescriptor rs2_enter_update_state$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_enter_update_state$MH = RuntimeHelper.downcallHandle(
-        "rs2_enter_update_state",
-        constants$88.rs2_enter_update_state$FUNC
-    );
-    static final FunctionDescriptor rs2_run_on_chip_calibration_cpp$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_run_on_chip_calibration_cpp$MH = RuntimeHelper.downcallHandle(
-        "rs2_run_on_chip_calibration_cpp",
-        constants$88.rs2_run_on_chip_calibration_cpp$FUNC
-    );
-    static final FunctionDescriptor rs2_run_on_chip_calibration$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_run_on_chip_calibration$MH = RuntimeHelper.downcallHandle(
-        "rs2_run_on_chip_calibration",
-        constants$88.rs2_run_on_chip_calibration$FUNC
-    );
+    static final VarHandle const$0 = constants$87.const$2.varHandle(MemoryLayout.PathElement.groupElement("ppy"));
+    static final VarHandle const$1 = constants$87.const$2.varHandle(MemoryLayout.PathElement.groupElement("fx"));
+    static final VarHandle const$2 = constants$87.const$2.varHandle(MemoryLayout.PathElement.groupElement("fy"));
+    static final VarHandle const$3 = constants$87.const$2.varHandle(MemoryLayout.PathElement.groupElement("model"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_LONG.withByteAlignment(1).withName("timestamp"),
+        JAVA_SHORT.withByteAlignment(1).withName("version"),
+        JAVA_BYTE.withName("model"),
+        MemoryLayout.sequenceLayout(5, JAVA_BYTE).withName("flags"),
+        JAVA_FLOAT.withByteAlignment(1).withName("h_scale"),
+        JAVA_FLOAT.withByteAlignment(1).withName("v_scale"),
+        JAVA_FLOAT.withByteAlignment(1).withName("h_offset"),
+        JAVA_FLOAT.withByteAlignment(1).withName("v_offset"),
+        JAVA_FLOAT.withByteAlignment(1).withName("rtd_offset"),
+        JAVA_BYTE.withName("temp_x2"),
+        JAVA_FLOAT.withByteAlignment(1).withName("mc_h_scale"),
+        JAVA_FLOAT.withByteAlignment(1).withName("mc_v_scale"),
+        JAVA_BYTE.withName("weeks_since_calibration"),
+        JAVA_BYTE.withName("ac_weeks_since_calibaration"),
+        MemoryLayout.sequenceLayout(1, JAVA_BYTE).withName("reserved")
+    ).withName("rs2_dsm_params");
+    static final VarHandle const$5 = constants$88.const$4.varHandle(MemoryLayout.PathElement.groupElement("timestamp"));
 }
 
 

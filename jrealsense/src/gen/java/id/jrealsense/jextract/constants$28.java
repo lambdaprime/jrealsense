@@ -11,49 +11,29 @@ final class constants$28 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$28() {}
-    static final FunctionDescriptor __fabs$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "unsetenv",
+        constants$2.const$0
     );
-    static final MethodHandle __fabs$MH = RuntimeHelper.downcallHandle(
-        "__fabs",
-        constants$28.__fabs$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "clearenv",
+        constants$18.const$3
     );
-    static final FunctionDescriptor floor$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "mktemp",
+        constants$15.const$4
     );
-    static final MethodHandle floor$MH = RuntimeHelper.downcallHandle(
-        "floor",
-        constants$28.floor$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "mkstemp",
+        constants$2.const$0
     );
-    static final FunctionDescriptor __floor$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final MethodHandle __floor$MH = RuntimeHelper.downcallHandle(
-        "__floor",
-        constants$28.__floor$FUNC
-    );
-    static final FunctionDescriptor fmod$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle fmod$MH = RuntimeHelper.downcallHandle(
-        "fmod",
-        constants$28.fmod$FUNC
-    );
-    static final FunctionDescriptor __fmod$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __fmod$MH = RuntimeHelper.downcallHandle(
-        "__fmod",
-        constants$28.__fmod$FUNC
-    );
-    static final FunctionDescriptor isinf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle isinf$MH = RuntimeHelper.downcallHandle(
-        "isinf",
-        constants$28.isinf$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "mkstemps",
+        constants$28.const$4
     );
 }
 

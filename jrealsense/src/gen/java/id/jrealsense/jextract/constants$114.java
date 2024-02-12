@@ -11,59 +11,29 @@ final class constants$114 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$114() {}
-    static final FunctionDescriptor rs2_create_config$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "rs2_context_add_software_device",
+        constants$95.const$3
     );
-    static final MethodHandle rs2_create_config$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_config",
-        constants$114.rs2_create_config$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "rs2_context_remove_device",
+        constants$95.const$3
     );
-    static final FunctionDescriptor rs2_delete_config$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "rs2_context_unload_tracking_module",
+        constants$94.const$4
     );
-    static final MethodHandle rs2_delete_config$MH = RuntimeHelper.downcallHandle(
-        "rs2_delete_config",
-        constants$114.rs2_delete_config$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "rs2_query_devices",
+        constants$29.const$2
     );
-    static final FunctionDescriptor rs2_config_enable_stream$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "rs2_query_devices_ex",
+        constants$99.const$0
     );
-    static final MethodHandle rs2_config_enable_stream$MH = RuntimeHelper.downcallHandle(
-        "rs2_config_enable_stream",
-        constants$114.rs2_config_enable_stream$FUNC
-    );
-    static final FunctionDescriptor rs2_config_enable_all_stream$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_config_enable_all_stream$MH = RuntimeHelper.downcallHandle(
-        "rs2_config_enable_all_stream",
-        constants$114.rs2_config_enable_all_stream$FUNC
-    );
-    static final FunctionDescriptor rs2_config_enable_device$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_config_enable_device$MH = RuntimeHelper.downcallHandle(
-        "rs2_config_enable_device",
-        constants$114.rs2_config_enable_device$FUNC
-    );
-    static final FunctionDescriptor rs2_config_enable_device_from_file$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_config_enable_device_from_file$MH = RuntimeHelper.downcallHandle(
-        "rs2_config_enable_device_from_file",
-        constants$114.rs2_config_enable_device_from_file$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "rs2_create_device_hub",
+        constants$29.const$2
     );
 }
 

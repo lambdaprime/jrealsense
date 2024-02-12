@@ -11,47 +11,29 @@ final class constants$42 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$42() {}
-    static final FunctionDescriptor __issignalingf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_INT
     );
-    static final MethodHandle __issignalingf$MH = RuntimeHelper.downcallHandle(
-        "__issignalingf",
-        constants$42.__issignalingf$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "ldexp",
+        constants$42.const$0
     );
-    static final FunctionDescriptor acosf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__ldexp",
+        constants$42.const$0
     );
-    static final MethodHandle acosf$MH = RuntimeHelper.downcallHandle(
-        "acosf",
-        constants$42.acosf$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "log",
+        constants$36.const$4
     );
-    static final FunctionDescriptor __acosf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__log",
+        constants$36.const$4
     );
-    static final MethodHandle __acosf$MH = RuntimeHelper.downcallHandle(
-        "__acosf",
-        constants$42.__acosf$FUNC
-    );
-    static final FunctionDescriptor asinf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle asinf$MH = RuntimeHelper.downcallHandle(
-        "asinf",
-        constants$42.asinf$FUNC
-    );
-    static final FunctionDescriptor __asinf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle __asinf$MH = RuntimeHelper.downcallHandle(
-        "__asinf",
-        constants$42.__asinf$FUNC
-    );
-    static final FunctionDescriptor atanf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle atanf$MH = RuntimeHelper.downcallHandle(
-        "atanf",
-        constants$42.atanf$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "log10",
+        constants$36.const$4
     );
 }
 

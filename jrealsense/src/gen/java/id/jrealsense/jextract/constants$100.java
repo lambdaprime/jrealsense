@@ -11,56 +11,33 @@ final class constants$100 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$100() {}
-    static final FunctionDescriptor rs2_set_option$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "rs2_is_sensor_extendable_to",
+        constants$99.const$4
     );
-    static final MethodHandle rs2_set_option$MH = RuntimeHelper.downcallHandle(
-        "rs2_set_option",
-        constants$100.rs2_set_option$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "rs2_get_depth_scale",
+        constants$3.const$0
     );
-    static final FunctionDescriptor rs2_get_options_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "rs2_depth_stereo_frame_get_baseline",
+        constants$3.const$0
     );
-    static final MethodHandle rs2_get_options_list$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_options_list",
-        constants$100.rs2_get_options_list$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "rs2_get_stereo_baseline",
+        constants$3.const$0
     );
-    static final FunctionDescriptor rs2_get_options_list_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle rs2_get_options_list_size$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_options_list_size",
-        constants$100.rs2_get_options_list_size$FUNC
-    );
-    static final FunctionDescriptor rs2_get_option_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_option_name$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_option_name",
-        constants$100.rs2_get_option_name$FUNC
-    );
-    static final FunctionDescriptor rs2_get_option_from_list$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_option_from_list$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_option_from_list",
-        constants$100.rs2_get_option_from_list$FUNC
-    );
-    static final FunctionDescriptor rs2_delete_options_list$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_delete_options_list$MH = RuntimeHelper.downcallHandle(
-        "rs2_delete_options_list",
-        constants$100.rs2_delete_options_list$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "rs2_set_region_of_interest",
+        constants$100.const$4
     );
 }
 

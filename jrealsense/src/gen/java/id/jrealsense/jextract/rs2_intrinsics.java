@@ -23,22 +23,11 @@ import static java.lang.foreign.ValueLayout.*;
  */
 public class rs2_intrinsics {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("width"),
-        Constants$root.C_INT$LAYOUT.withName("height"),
-        Constants$root.C_FLOAT$LAYOUT.withName("ppx"),
-        Constants$root.C_FLOAT$LAYOUT.withName("ppy"),
-        Constants$root.C_FLOAT$LAYOUT.withName("fx"),
-        Constants$root.C_FLOAT$LAYOUT.withName("fy"),
-        Constants$root.C_INT$LAYOUT.withName("model"),
-        MemoryLayout.sequenceLayout(5, Constants$root.C_FLOAT$LAYOUT).withName("coeffs")
-    ).withName("rs2_intrinsics");
     public static MemoryLayout $LAYOUT() {
-        return rs2_intrinsics.$struct$LAYOUT;
+        return constants$87.const$2;
     }
-    static final VarHandle width$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("width"));
     public static VarHandle width$VH() {
-        return rs2_intrinsics.width$VH;
+        return constants$87.const$3;
     }
     /**
      * Getter for field:
@@ -47,7 +36,7 @@ public class rs2_intrinsics {
      * }
      */
     public static int width$get(MemorySegment seg) {
-        return (int)rs2_intrinsics.width$VH.get(seg);
+        return (int)constants$87.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -56,17 +45,16 @@ public class rs2_intrinsics {
      * }
      */
     public static void width$set(MemorySegment seg, int x) {
-        rs2_intrinsics.width$VH.set(seg, x);
+        constants$87.const$3.set(seg, x);
     }
     public static int width$get(MemorySegment seg, long index) {
-        return (int)rs2_intrinsics.width$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$87.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void width$set(MemorySegment seg, long index, int x) {
-        rs2_intrinsics.width$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$87.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle height$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("height"));
     public static VarHandle height$VH() {
-        return rs2_intrinsics.height$VH;
+        return constants$87.const$4;
     }
     /**
      * Getter for field:
@@ -75,7 +63,7 @@ public class rs2_intrinsics {
      * }
      */
     public static int height$get(MemorySegment seg) {
-        return (int)rs2_intrinsics.height$VH.get(seg);
+        return (int)constants$87.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -84,17 +72,16 @@ public class rs2_intrinsics {
      * }
      */
     public static void height$set(MemorySegment seg, int x) {
-        rs2_intrinsics.height$VH.set(seg, x);
+        constants$87.const$4.set(seg, x);
     }
     public static int height$get(MemorySegment seg, long index) {
-        return (int)rs2_intrinsics.height$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$87.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void height$set(MemorySegment seg, long index, int x) {
-        rs2_intrinsics.height$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$87.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle ppx$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("ppx"));
     public static VarHandle ppx$VH() {
-        return rs2_intrinsics.ppx$VH;
+        return constants$87.const$5;
     }
     /**
      * Getter for field:
@@ -103,7 +90,7 @@ public class rs2_intrinsics {
      * }
      */
     public static float ppx$get(MemorySegment seg) {
-        return (float)rs2_intrinsics.ppx$VH.get(seg);
+        return (float)constants$87.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -112,17 +99,16 @@ public class rs2_intrinsics {
      * }
      */
     public static void ppx$set(MemorySegment seg, float x) {
-        rs2_intrinsics.ppx$VH.set(seg, x);
+        constants$87.const$5.set(seg, x);
     }
     public static float ppx$get(MemorySegment seg, long index) {
-        return (float)rs2_intrinsics.ppx$VH.get(seg.asSlice(index*sizeof()));
+        return (float)constants$87.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void ppx$set(MemorySegment seg, long index, float x) {
-        rs2_intrinsics.ppx$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$87.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle ppy$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("ppy"));
     public static VarHandle ppy$VH() {
-        return rs2_intrinsics.ppy$VH;
+        return constants$88.const$0;
     }
     /**
      * Getter for field:
@@ -131,7 +117,7 @@ public class rs2_intrinsics {
      * }
      */
     public static float ppy$get(MemorySegment seg) {
-        return (float)rs2_intrinsics.ppy$VH.get(seg);
+        return (float)constants$88.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -140,17 +126,16 @@ public class rs2_intrinsics {
      * }
      */
     public static void ppy$set(MemorySegment seg, float x) {
-        rs2_intrinsics.ppy$VH.set(seg, x);
+        constants$88.const$0.set(seg, x);
     }
     public static float ppy$get(MemorySegment seg, long index) {
-        return (float)rs2_intrinsics.ppy$VH.get(seg.asSlice(index*sizeof()));
+        return (float)constants$88.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void ppy$set(MemorySegment seg, long index, float x) {
-        rs2_intrinsics.ppy$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$88.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle fx$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("fx"));
     public static VarHandle fx$VH() {
-        return rs2_intrinsics.fx$VH;
+        return constants$88.const$1;
     }
     /**
      * Getter for field:
@@ -159,7 +144,7 @@ public class rs2_intrinsics {
      * }
      */
     public static float fx$get(MemorySegment seg) {
-        return (float)rs2_intrinsics.fx$VH.get(seg);
+        return (float)constants$88.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -168,17 +153,16 @@ public class rs2_intrinsics {
      * }
      */
     public static void fx$set(MemorySegment seg, float x) {
-        rs2_intrinsics.fx$VH.set(seg, x);
+        constants$88.const$1.set(seg, x);
     }
     public static float fx$get(MemorySegment seg, long index) {
-        return (float)rs2_intrinsics.fx$VH.get(seg.asSlice(index*sizeof()));
+        return (float)constants$88.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void fx$set(MemorySegment seg, long index, float x) {
-        rs2_intrinsics.fx$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$88.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle fy$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("fy"));
     public static VarHandle fy$VH() {
-        return rs2_intrinsics.fy$VH;
+        return constants$88.const$2;
     }
     /**
      * Getter for field:
@@ -187,7 +171,7 @@ public class rs2_intrinsics {
      * }
      */
     public static float fy$get(MemorySegment seg) {
-        return (float)rs2_intrinsics.fy$VH.get(seg);
+        return (float)constants$88.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -196,17 +180,16 @@ public class rs2_intrinsics {
      * }
      */
     public static void fy$set(MemorySegment seg, float x) {
-        rs2_intrinsics.fy$VH.set(seg, x);
+        constants$88.const$2.set(seg, x);
     }
     public static float fy$get(MemorySegment seg, long index) {
-        return (float)rs2_intrinsics.fy$VH.get(seg.asSlice(index*sizeof()));
+        return (float)constants$88.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void fy$set(MemorySegment seg, long index, float x) {
-        rs2_intrinsics.fy$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$88.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle model$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("model"));
     public static VarHandle model$VH() {
-        return rs2_intrinsics.model$VH;
+        return constants$88.const$3;
     }
     /**
      * Getter for field:
@@ -215,7 +198,7 @@ public class rs2_intrinsics {
      * }
      */
     public static int model$get(MemorySegment seg) {
-        return (int)rs2_intrinsics.model$VH.get(seg);
+        return (int)constants$88.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -224,13 +207,13 @@ public class rs2_intrinsics {
      * }
      */
     public static void model$set(MemorySegment seg, int x) {
-        rs2_intrinsics.model$VH.set(seg, x);
+        constants$88.const$3.set(seg, x);
     }
     public static int model$get(MemorySegment seg, long index) {
-        return (int)rs2_intrinsics.model$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$88.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void model$set(MemorySegment seg, long index, int x) {
-        rs2_intrinsics.model$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$88.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment coeffs$slice(MemorySegment seg) {
         return seg.asSlice(28, 20);
@@ -240,7 +223,7 @@ public class rs2_intrinsics {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena arena) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, arena); }
 }
 
 

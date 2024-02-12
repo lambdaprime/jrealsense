@@ -11,43 +11,29 @@ final class constants$65 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$65() {}
-    static final OfInt signgam$LAYOUT = Constants$root.C_INT$LAYOUT;
-    static final VarHandle signgam$VH = constants$65.signgam$LAYOUT.varHandle();
-    static final MemorySegment signgam$SEGMENT = RuntimeHelper.lookupGlobalVariable("signgam", constants$65.signgam$LAYOUT);
-    static final FunctionDescriptor rs2_notification_category_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__coshf",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_notification_category_to_string$MH = RuntimeHelper.downcallHandle(
-        "rs2_notification_category_to_string",
-        constants$65.rs2_notification_category_to_string$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "sinhf",
+        constants$62.const$1
     );
-    static final FunctionDescriptor rs2_exception_type_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__sinhf",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_exception_type_to_string$MH = RuntimeHelper.downcallHandle(
-        "rs2_exception_type_to_string",
-        constants$65.rs2_exception_type_to_string$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "tanhf",
+        constants$62.const$1
     );
-    static final FunctionDescriptor rs2_distortion_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__tanhf",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_distortion_to_string$MH = RuntimeHelper.downcallHandle(
-        "rs2_distortion_to_string",
-        constants$65.rs2_distortion_to_string$FUNC
-    );
-    static final FunctionDescriptor rs2_log_severity_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle rs2_log_severity_to_string$MH = RuntimeHelper.downcallHandle(
-        "rs2_log_severity_to_string",
-        constants$65.rs2_log_severity_to_string$FUNC
-    );
-    static final FunctionDescriptor rs2_extension_type_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle rs2_extension_type_to_string$MH = RuntimeHelper.downcallHandle(
-        "rs2_extension_type_to_string",
-        constants$65.rs2_extension_type_to_string$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "acoshf",
+        constants$62.const$1
     );
 }
 

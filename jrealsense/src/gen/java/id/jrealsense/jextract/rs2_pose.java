@@ -23,43 +23,8 @@ import static java.lang.foreign.ValueLayout.*;
  */
 public class rs2_pose {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            Constants$root.C_FLOAT$LAYOUT.withName("x"),
-            Constants$root.C_FLOAT$LAYOUT.withName("y"),
-            Constants$root.C_FLOAT$LAYOUT.withName("z")
-        ).withName("translation"),
-        MemoryLayout.structLayout(
-            Constants$root.C_FLOAT$LAYOUT.withName("x"),
-            Constants$root.C_FLOAT$LAYOUT.withName("y"),
-            Constants$root.C_FLOAT$LAYOUT.withName("z")
-        ).withName("velocity"),
-        MemoryLayout.structLayout(
-            Constants$root.C_FLOAT$LAYOUT.withName("x"),
-            Constants$root.C_FLOAT$LAYOUT.withName("y"),
-            Constants$root.C_FLOAT$LAYOUT.withName("z")
-        ).withName("acceleration"),
-        MemoryLayout.structLayout(
-            Constants$root.C_FLOAT$LAYOUT.withName("x"),
-            Constants$root.C_FLOAT$LAYOUT.withName("y"),
-            Constants$root.C_FLOAT$LAYOUT.withName("z"),
-            Constants$root.C_FLOAT$LAYOUT.withName("w")
-        ).withName("rotation"),
-        MemoryLayout.structLayout(
-            Constants$root.C_FLOAT$LAYOUT.withName("x"),
-            Constants$root.C_FLOAT$LAYOUT.withName("y"),
-            Constants$root.C_FLOAT$LAYOUT.withName("z")
-        ).withName("angular_velocity"),
-        MemoryLayout.structLayout(
-            Constants$root.C_FLOAT$LAYOUT.withName("x"),
-            Constants$root.C_FLOAT$LAYOUT.withName("y"),
-            Constants$root.C_FLOAT$LAYOUT.withName("z")
-        ).withName("angular_acceleration"),
-        Constants$root.C_INT$LAYOUT.withName("tracker_confidence"),
-        Constants$root.C_INT$LAYOUT.withName("mapper_confidence")
-    ).withName("rs2_pose");
     public static MemoryLayout $LAYOUT() {
-        return rs2_pose.$struct$LAYOUT;
+        return constants$93.const$0;
     }
     public static MemorySegment translation$slice(MemorySegment seg) {
         return seg.asSlice(0, 12);
@@ -79,9 +44,8 @@ public class rs2_pose {
     public static MemorySegment angular_acceleration$slice(MemorySegment seg) {
         return seg.asSlice(64, 12);
     }
-    static final VarHandle tracker_confidence$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("tracker_confidence"));
     public static VarHandle tracker_confidence$VH() {
-        return rs2_pose.tracker_confidence$VH;
+        return constants$93.const$1;
     }
     /**
      * Getter for field:
@@ -90,7 +54,7 @@ public class rs2_pose {
      * }
      */
     public static int tracker_confidence$get(MemorySegment seg) {
-        return (int)rs2_pose.tracker_confidence$VH.get(seg);
+        return (int)constants$93.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -99,17 +63,16 @@ public class rs2_pose {
      * }
      */
     public static void tracker_confidence$set(MemorySegment seg, int x) {
-        rs2_pose.tracker_confidence$VH.set(seg, x);
+        constants$93.const$1.set(seg, x);
     }
     public static int tracker_confidence$get(MemorySegment seg, long index) {
-        return (int)rs2_pose.tracker_confidence$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$93.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void tracker_confidence$set(MemorySegment seg, long index, int x) {
-        rs2_pose.tracker_confidence$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$93.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle mapper_confidence$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("mapper_confidence"));
     public static VarHandle mapper_confidence$VH() {
-        return rs2_pose.mapper_confidence$VH;
+        return constants$93.const$2;
     }
     /**
      * Getter for field:
@@ -118,7 +81,7 @@ public class rs2_pose {
      * }
      */
     public static int mapper_confidence$get(MemorySegment seg) {
-        return (int)rs2_pose.mapper_confidence$VH.get(seg);
+        return (int)constants$93.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -127,20 +90,20 @@ public class rs2_pose {
      * }
      */
     public static void mapper_confidence$set(MemorySegment seg, int x) {
-        rs2_pose.mapper_confidence$VH.set(seg, x);
+        constants$93.const$2.set(seg, x);
     }
     public static int mapper_confidence$get(MemorySegment seg, long index) {
-        return (int)rs2_pose.mapper_confidence$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$93.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void mapper_confidence$set(MemorySegment seg, long index, int x) {
-        rs2_pose.mapper_confidence$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$93.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena arena) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, arena); }
 }
 
 

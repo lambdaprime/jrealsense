@@ -11,48 +11,23 @@ final class constants$17 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$17() {}
-    static final FunctionDescriptor __fpclassify$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final VarHandle const$0 = constants$16.const$0.varHandle(MemoryLayout.PathElement.groupElement("rand_sep"));
+    static final VarHandle const$1 = constants$16.const$0.varHandle(MemoryLayout.PathElement.groupElement("end_ptr"));
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle __fpclassify$MH = RuntimeHelper.downcallHandle(
-        "__fpclassify",
-        constants$17.__fpclassify$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "random_r",
+        constants$17.const$2
     );
-    static final FunctionDescriptor __signbit$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle __signbit$MH = RuntimeHelper.downcallHandle(
-        "__signbit",
-        constants$17.__signbit$FUNC
-    );
-    static final FunctionDescriptor __isinf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __isinf$MH = RuntimeHelper.downcallHandle(
-        "__isinf",
-        constants$17.__isinf$FUNC
-    );
-    static final FunctionDescriptor __finite$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __finite$MH = RuntimeHelper.downcallHandle(
-        "__finite",
-        constants$17.__finite$FUNC
-    );
-    static final FunctionDescriptor __isnan$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __isnan$MH = RuntimeHelper.downcallHandle(
-        "__isnan",
-        constants$17.__isnan$FUNC
-    );
-    static final FunctionDescriptor __iseqsig$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __iseqsig$MH = RuntimeHelper.downcallHandle(
-        "__iseqsig",
-        constants$17.__iseqsig$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "srandom_r",
+        constants$17.const$4
     );
 }
 

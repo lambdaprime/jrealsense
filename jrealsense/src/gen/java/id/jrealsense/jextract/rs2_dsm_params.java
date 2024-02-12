@@ -30,29 +30,11 @@ import static java.lang.foreign.ValueLayout.*;
  */
 public class rs2_dsm_params {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_LONG_LONG$LAYOUT.withName("timestamp"),
-        Constants$root.C_SHORT$LAYOUT.withName("version"),
-        Constants$root.C_CHAR$LAYOUT.withName("model"),
-        MemoryLayout.sequenceLayout(5, Constants$root.C_CHAR$LAYOUT).withName("flags"),
-        Constants$root.C_FLOAT$LAYOUT.withName("h_scale"),
-        Constants$root.C_FLOAT$LAYOUT.withName("v_scale"),
-        Constants$root.C_FLOAT$LAYOUT.withName("h_offset"),
-        Constants$root.C_FLOAT$LAYOUT.withName("v_offset"),
-        Constants$root.C_FLOAT$LAYOUT.withName("rtd_offset"),
-        Constants$root.C_CHAR$LAYOUT.withName("temp_x2"),
-        Constants$root.C_FLOAT$LAYOUT.withBitAlignment(8).withName("mc_h_scale"),
-        Constants$root.C_FLOAT$LAYOUT.withBitAlignment(8).withName("mc_v_scale"),
-        Constants$root.C_CHAR$LAYOUT.withName("weeks_since_calibration"),
-        Constants$root.C_CHAR$LAYOUT.withName("ac_weeks_since_calibaration"),
-        MemoryLayout.sequenceLayout(1, Constants$root.C_CHAR$LAYOUT).withName("reserved")
-    ).withName("rs2_dsm_params");
     public static MemoryLayout $LAYOUT() {
-        return rs2_dsm_params.$struct$LAYOUT;
+        return constants$88.const$4;
     }
-    static final VarHandle timestamp$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("timestamp"));
     public static VarHandle timestamp$VH() {
-        return rs2_dsm_params.timestamp$VH;
+        return constants$88.const$5;
     }
     /**
      * Getter for field:
@@ -61,7 +43,7 @@ public class rs2_dsm_params {
      * }
      */
     public static long timestamp$get(MemorySegment seg) {
-        return (long)rs2_dsm_params.timestamp$VH.get(seg);
+        return (long)constants$88.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -70,17 +52,16 @@ public class rs2_dsm_params {
      * }
      */
     public static void timestamp$set(MemorySegment seg, long x) {
-        rs2_dsm_params.timestamp$VH.set(seg, x);
+        constants$88.const$5.set(seg, x);
     }
     public static long timestamp$get(MemorySegment seg, long index) {
-        return (long)rs2_dsm_params.timestamp$VH.get(seg.asSlice(index*sizeof()));
+        return (long)constants$88.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void timestamp$set(MemorySegment seg, long index, long x) {
-        rs2_dsm_params.timestamp$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$88.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle version$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("version"));
     public static VarHandle version$VH() {
-        return rs2_dsm_params.version$VH;
+        return constants$89.const$0;
     }
     /**
      * Getter for field:
@@ -89,7 +70,7 @@ public class rs2_dsm_params {
      * }
      */
     public static short version$get(MemorySegment seg) {
-        return (short)rs2_dsm_params.version$VH.get(seg);
+        return (short)constants$89.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -98,17 +79,16 @@ public class rs2_dsm_params {
      * }
      */
     public static void version$set(MemorySegment seg, short x) {
-        rs2_dsm_params.version$VH.set(seg, x);
+        constants$89.const$0.set(seg, x);
     }
     public static short version$get(MemorySegment seg, long index) {
-        return (short)rs2_dsm_params.version$VH.get(seg.asSlice(index*sizeof()));
+        return (short)constants$89.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void version$set(MemorySegment seg, long index, short x) {
-        rs2_dsm_params.version$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$89.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle model$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("model"));
     public static VarHandle model$VH() {
-        return rs2_dsm_params.model$VH;
+        return constants$89.const$1;
     }
     /**
      * Getter for field:
@@ -117,7 +97,7 @@ public class rs2_dsm_params {
      * }
      */
     public static byte model$get(MemorySegment seg) {
-        return (byte)rs2_dsm_params.model$VH.get(seg);
+        return (byte)constants$89.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -126,20 +106,19 @@ public class rs2_dsm_params {
      * }
      */
     public static void model$set(MemorySegment seg, byte x) {
-        rs2_dsm_params.model$VH.set(seg, x);
+        constants$89.const$1.set(seg, x);
     }
     public static byte model$get(MemorySegment seg, long index) {
-        return (byte)rs2_dsm_params.model$VH.get(seg.asSlice(index*sizeof()));
+        return (byte)constants$89.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void model$set(MemorySegment seg, long index, byte x) {
-        rs2_dsm_params.model$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$89.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment flags$slice(MemorySegment seg) {
         return seg.asSlice(11, 5);
     }
-    static final VarHandle h_scale$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("h_scale"));
     public static VarHandle h_scale$VH() {
-        return rs2_dsm_params.h_scale$VH;
+        return constants$89.const$2;
     }
     /**
      * Getter for field:
@@ -148,7 +127,7 @@ public class rs2_dsm_params {
      * }
      */
     public static float h_scale$get(MemorySegment seg) {
-        return (float)rs2_dsm_params.h_scale$VH.get(seg);
+        return (float)constants$89.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -157,17 +136,16 @@ public class rs2_dsm_params {
      * }
      */
     public static void h_scale$set(MemorySegment seg, float x) {
-        rs2_dsm_params.h_scale$VH.set(seg, x);
+        constants$89.const$2.set(seg, x);
     }
     public static float h_scale$get(MemorySegment seg, long index) {
-        return (float)rs2_dsm_params.h_scale$VH.get(seg.asSlice(index*sizeof()));
+        return (float)constants$89.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void h_scale$set(MemorySegment seg, long index, float x) {
-        rs2_dsm_params.h_scale$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$89.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle v_scale$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("v_scale"));
     public static VarHandle v_scale$VH() {
-        return rs2_dsm_params.v_scale$VH;
+        return constants$89.const$3;
     }
     /**
      * Getter for field:
@@ -176,7 +154,7 @@ public class rs2_dsm_params {
      * }
      */
     public static float v_scale$get(MemorySegment seg) {
-        return (float)rs2_dsm_params.v_scale$VH.get(seg);
+        return (float)constants$89.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -185,17 +163,16 @@ public class rs2_dsm_params {
      * }
      */
     public static void v_scale$set(MemorySegment seg, float x) {
-        rs2_dsm_params.v_scale$VH.set(seg, x);
+        constants$89.const$3.set(seg, x);
     }
     public static float v_scale$get(MemorySegment seg, long index) {
-        return (float)rs2_dsm_params.v_scale$VH.get(seg.asSlice(index*sizeof()));
+        return (float)constants$89.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void v_scale$set(MemorySegment seg, long index, float x) {
-        rs2_dsm_params.v_scale$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$89.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle h_offset$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("h_offset"));
     public static VarHandle h_offset$VH() {
-        return rs2_dsm_params.h_offset$VH;
+        return constants$89.const$4;
     }
     /**
      * Getter for field:
@@ -204,7 +181,7 @@ public class rs2_dsm_params {
      * }
      */
     public static float h_offset$get(MemorySegment seg) {
-        return (float)rs2_dsm_params.h_offset$VH.get(seg);
+        return (float)constants$89.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -213,17 +190,16 @@ public class rs2_dsm_params {
      * }
      */
     public static void h_offset$set(MemorySegment seg, float x) {
-        rs2_dsm_params.h_offset$VH.set(seg, x);
+        constants$89.const$4.set(seg, x);
     }
     public static float h_offset$get(MemorySegment seg, long index) {
-        return (float)rs2_dsm_params.h_offset$VH.get(seg.asSlice(index*sizeof()));
+        return (float)constants$89.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void h_offset$set(MemorySegment seg, long index, float x) {
-        rs2_dsm_params.h_offset$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$89.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle v_offset$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("v_offset"));
     public static VarHandle v_offset$VH() {
-        return rs2_dsm_params.v_offset$VH;
+        return constants$89.const$5;
     }
     /**
      * Getter for field:
@@ -232,7 +208,7 @@ public class rs2_dsm_params {
      * }
      */
     public static float v_offset$get(MemorySegment seg) {
-        return (float)rs2_dsm_params.v_offset$VH.get(seg);
+        return (float)constants$89.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -241,17 +217,16 @@ public class rs2_dsm_params {
      * }
      */
     public static void v_offset$set(MemorySegment seg, float x) {
-        rs2_dsm_params.v_offset$VH.set(seg, x);
+        constants$89.const$5.set(seg, x);
     }
     public static float v_offset$get(MemorySegment seg, long index) {
-        return (float)rs2_dsm_params.v_offset$VH.get(seg.asSlice(index*sizeof()));
+        return (float)constants$89.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void v_offset$set(MemorySegment seg, long index, float x) {
-        rs2_dsm_params.v_offset$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$89.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle rtd_offset$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("rtd_offset"));
     public static VarHandle rtd_offset$VH() {
-        return rs2_dsm_params.rtd_offset$VH;
+        return constants$90.const$0;
     }
     /**
      * Getter for field:
@@ -260,7 +235,7 @@ public class rs2_dsm_params {
      * }
      */
     public static float rtd_offset$get(MemorySegment seg) {
-        return (float)rs2_dsm_params.rtd_offset$VH.get(seg);
+        return (float)constants$90.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -269,17 +244,16 @@ public class rs2_dsm_params {
      * }
      */
     public static void rtd_offset$set(MemorySegment seg, float x) {
-        rs2_dsm_params.rtd_offset$VH.set(seg, x);
+        constants$90.const$0.set(seg, x);
     }
     public static float rtd_offset$get(MemorySegment seg, long index) {
-        return (float)rs2_dsm_params.rtd_offset$VH.get(seg.asSlice(index*sizeof()));
+        return (float)constants$90.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void rtd_offset$set(MemorySegment seg, long index, float x) {
-        rs2_dsm_params.rtd_offset$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$90.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle temp_x2$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("temp_x2"));
     public static VarHandle temp_x2$VH() {
-        return rs2_dsm_params.temp_x2$VH;
+        return constants$90.const$1;
     }
     /**
      * Getter for field:
@@ -288,7 +262,7 @@ public class rs2_dsm_params {
      * }
      */
     public static byte temp_x2$get(MemorySegment seg) {
-        return (byte)rs2_dsm_params.temp_x2$VH.get(seg);
+        return (byte)constants$90.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -297,17 +271,16 @@ public class rs2_dsm_params {
      * }
      */
     public static void temp_x2$set(MemorySegment seg, byte x) {
-        rs2_dsm_params.temp_x2$VH.set(seg, x);
+        constants$90.const$1.set(seg, x);
     }
     public static byte temp_x2$get(MemorySegment seg, long index) {
-        return (byte)rs2_dsm_params.temp_x2$VH.get(seg.asSlice(index*sizeof()));
+        return (byte)constants$90.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void temp_x2$set(MemorySegment seg, long index, byte x) {
-        rs2_dsm_params.temp_x2$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$90.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle mc_h_scale$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("mc_h_scale"));
     public static VarHandle mc_h_scale$VH() {
-        return rs2_dsm_params.mc_h_scale$VH;
+        return constants$90.const$2;
     }
     /**
      * Getter for field:
@@ -316,7 +289,7 @@ public class rs2_dsm_params {
      * }
      */
     public static float mc_h_scale$get(MemorySegment seg) {
-        return (float)rs2_dsm_params.mc_h_scale$VH.get(seg);
+        return (float)constants$90.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -325,17 +298,16 @@ public class rs2_dsm_params {
      * }
      */
     public static void mc_h_scale$set(MemorySegment seg, float x) {
-        rs2_dsm_params.mc_h_scale$VH.set(seg, x);
+        constants$90.const$2.set(seg, x);
     }
     public static float mc_h_scale$get(MemorySegment seg, long index) {
-        return (float)rs2_dsm_params.mc_h_scale$VH.get(seg.asSlice(index*sizeof()));
+        return (float)constants$90.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void mc_h_scale$set(MemorySegment seg, long index, float x) {
-        rs2_dsm_params.mc_h_scale$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$90.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle mc_v_scale$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("mc_v_scale"));
     public static VarHandle mc_v_scale$VH() {
-        return rs2_dsm_params.mc_v_scale$VH;
+        return constants$90.const$3;
     }
     /**
      * Getter for field:
@@ -344,7 +316,7 @@ public class rs2_dsm_params {
      * }
      */
     public static float mc_v_scale$get(MemorySegment seg) {
-        return (float)rs2_dsm_params.mc_v_scale$VH.get(seg);
+        return (float)constants$90.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -353,17 +325,16 @@ public class rs2_dsm_params {
      * }
      */
     public static void mc_v_scale$set(MemorySegment seg, float x) {
-        rs2_dsm_params.mc_v_scale$VH.set(seg, x);
+        constants$90.const$3.set(seg, x);
     }
     public static float mc_v_scale$get(MemorySegment seg, long index) {
-        return (float)rs2_dsm_params.mc_v_scale$VH.get(seg.asSlice(index*sizeof()));
+        return (float)constants$90.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void mc_v_scale$set(MemorySegment seg, long index, float x) {
-        rs2_dsm_params.mc_v_scale$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$90.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle weeks_since_calibration$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("weeks_since_calibration"));
     public static VarHandle weeks_since_calibration$VH() {
-        return rs2_dsm_params.weeks_since_calibration$VH;
+        return constants$90.const$4;
     }
     /**
      * Getter for field:
@@ -372,7 +343,7 @@ public class rs2_dsm_params {
      * }
      */
     public static byte weeks_since_calibration$get(MemorySegment seg) {
-        return (byte)rs2_dsm_params.weeks_since_calibration$VH.get(seg);
+        return (byte)constants$90.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -381,17 +352,16 @@ public class rs2_dsm_params {
      * }
      */
     public static void weeks_since_calibration$set(MemorySegment seg, byte x) {
-        rs2_dsm_params.weeks_since_calibration$VH.set(seg, x);
+        constants$90.const$4.set(seg, x);
     }
     public static byte weeks_since_calibration$get(MemorySegment seg, long index) {
-        return (byte)rs2_dsm_params.weeks_since_calibration$VH.get(seg.asSlice(index*sizeof()));
+        return (byte)constants$90.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void weeks_since_calibration$set(MemorySegment seg, long index, byte x) {
-        rs2_dsm_params.weeks_since_calibration$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$90.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle ac_weeks_since_calibaration$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("ac_weeks_since_calibaration"));
     public static VarHandle ac_weeks_since_calibaration$VH() {
-        return rs2_dsm_params.ac_weeks_since_calibaration$VH;
+        return constants$90.const$5;
     }
     /**
      * Getter for field:
@@ -400,7 +370,7 @@ public class rs2_dsm_params {
      * }
      */
     public static byte ac_weeks_since_calibaration$get(MemorySegment seg) {
-        return (byte)rs2_dsm_params.ac_weeks_since_calibaration$VH.get(seg);
+        return (byte)constants$90.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -409,13 +379,13 @@ public class rs2_dsm_params {
      * }
      */
     public static void ac_weeks_since_calibaration$set(MemorySegment seg, byte x) {
-        rs2_dsm_params.ac_weeks_since_calibaration$VH.set(seg, x);
+        constants$90.const$5.set(seg, x);
     }
     public static byte ac_weeks_since_calibaration$get(MemorySegment seg, long index) {
-        return (byte)rs2_dsm_params.ac_weeks_since_calibaration$VH.get(seg.asSlice(index*sizeof()));
+        return (byte)constants$90.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void ac_weeks_since_calibaration$set(MemorySegment seg, long index, byte x) {
-        rs2_dsm_params.ac_weeks_since_calibaration$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$90.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment reserved$slice(MemorySegment seg) {
         return seg.asSlice(47, 1);
@@ -425,7 +395,7 @@ public class rs2_dsm_params {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena arena) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, arena); }
 }
 
 

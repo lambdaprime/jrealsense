@@ -11,48 +11,29 @@ final class constants$41 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$41() {}
-    static final FunctionDescriptor __fpclassifyf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__atanh",
+        constants$36.const$4
     );
-    static final MethodHandle __fpclassifyf$MH = RuntimeHelper.downcallHandle(
-        "__fpclassifyf",
-        constants$41.__fpclassifyf$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "exp",
+        constants$36.const$4
     );
-    static final FunctionDescriptor __signbitf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__exp",
+        constants$36.const$4
     );
-    static final MethodHandle __signbitf$MH = RuntimeHelper.downcallHandle(
-        "__signbitf",
-        constants$41.__signbitf$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor __isinff$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "frexp",
+        constants$41.const$3
     );
-    static final MethodHandle __isinff$MH = RuntimeHelper.downcallHandle(
-        "__isinff",
-        constants$41.__isinff$FUNC
-    );
-    static final FunctionDescriptor __finitef$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle __finitef$MH = RuntimeHelper.downcallHandle(
-        "__finitef",
-        constants$41.__finitef$FUNC
-    );
-    static final FunctionDescriptor __isnanf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle __isnanf$MH = RuntimeHelper.downcallHandle(
-        "__isnanf",
-        constants$41.__isnanf$FUNC
-    );
-    static final FunctionDescriptor __iseqsigf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle __iseqsigf$MH = RuntimeHelper.downcallHandle(
-        "__iseqsigf",
-        constants$41.__iseqsigf$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "__frexp",
+        constants$41.const$3
     );
 }
 

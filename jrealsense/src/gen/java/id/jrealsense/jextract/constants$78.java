@@ -11,67 +11,29 @@ final class constants$78 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$78() {}
-    static final FunctionDescriptor rs2_get_processing_block$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__erfcf",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_get_processing_block$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_processing_block",
-        constants$78.rs2_get_processing_block$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "lgammaf",
+        constants$62.const$1
     );
-    static final FunctionDescriptor rs2_get_recommended_processing_blocks_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__lgammaf",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_get_recommended_processing_blocks_count$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_recommended_processing_blocks_count",
-        constants$78.rs2_get_recommended_processing_blocks_count$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "tgammaf",
+        constants$62.const$1
     );
-    static final FunctionDescriptor rs2_delete_recommended_processing_blocks$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__tgammaf",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_delete_recommended_processing_blocks$MH = RuntimeHelper.downcallHandle(
-        "rs2_delete_recommended_processing_blocks",
-        constants$78.rs2_delete_recommended_processing_blocks$FUNC
-    );
-    static final FunctionDescriptor rs2_import_localization_map$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_import_localization_map$MH = RuntimeHelper.downcallHandle(
-        "rs2_import_localization_map",
-        constants$78.rs2_import_localization_map$FUNC
-    );
-    static final FunctionDescriptor rs2_export_localization_map$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_export_localization_map$MH = RuntimeHelper.downcallHandle(
-        "rs2_export_localization_map",
-        constants$78.rs2_export_localization_map$FUNC
-    );
-    static final FunctionDescriptor rs2_set_static_node$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        MemoryLayout.structLayout(
-            Constants$root.C_FLOAT$LAYOUT.withName("x"),
-            Constants$root.C_FLOAT$LAYOUT.withName("y"),
-            Constants$root.C_FLOAT$LAYOUT.withName("z")
-        ).withName("rs2_vector"),
-        MemoryLayout.structLayout(
-            Constants$root.C_FLOAT$LAYOUT.withName("x"),
-            Constants$root.C_FLOAT$LAYOUT.withName("y"),
-            Constants$root.C_FLOAT$LAYOUT.withName("z"),
-            Constants$root.C_FLOAT$LAYOUT.withName("w")
-        ).withName("rs2_quaternion"),
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_set_static_node$MH = RuntimeHelper.downcallHandle(
-        "rs2_set_static_node",
-        constants$78.rs2_set_static_node$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gammaf",
+        constants$62.const$1
     );
 }
 

@@ -11,36 +11,26 @@ final class constants$9 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$9() {}
-    static final FunctionDescriptor aligned_alloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle aligned_alloc$MH = RuntimeHelper.downcallHandle(
-        "aligned_alloc",
-        constants$9.aligned_alloc$FUNC
-    );
-    static final FunctionDescriptor abort$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle abort$MH = RuntimeHelper.downcallHandle(
-        "abort",
-        constants$9.abort$FUNC
-    );
-    static final FunctionDescriptor atexit$__func$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor atexit$__func_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle atexit$__func_UP$MH = RuntimeHelper.upcallHandle(atexit$__func.class, "apply", constants$9.atexit$__func_UP$FUNC);
-    static final FunctionDescriptor atexit$__func_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle atexit$__func_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$9.atexit$__func_DOWN$FUNC
-    );
-    static final FunctionDescriptor atexit$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atexit$MH = RuntimeHelper.downcallHandle(
-        "atexit",
-        constants$9.atexit$FUNC
-    );
-    static final FunctionDescriptor at_quick_exit$__func$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor at_quick_exit$__func_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle at_quick_exit$__func_UP$MH = RuntimeHelper.upcallHandle(at_quick_exit$__func.class, "apply", constants$9.at_quick_exit$__func_UP$FUNC);
+    static final VarHandle const$0 = constants$7.const$5.varHandle(MemoryLayout.PathElement.groupElement("__elision"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        JAVA_INT.withName("__readers"),
+        JAVA_INT.withName("__writers"),
+        JAVA_INT.withName("__wrphase_futex"),
+        JAVA_INT.withName("__writers_futex"),
+        JAVA_INT.withName("__pad3"),
+        JAVA_INT.withName("__pad4"),
+        JAVA_INT.withName("__cur_writer"),
+        JAVA_INT.withName("__shared"),
+        JAVA_BYTE.withName("__rwelision"),
+        MemoryLayout.sequenceLayout(7, JAVA_BYTE).withName("__pad1"),
+        JAVA_LONG.withName("__pad2"),
+        JAVA_INT.withName("__flags"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("__pthread_rwlock_arch_t");
+    static final VarHandle const$2 = constants$9.const$1.varHandle(MemoryLayout.PathElement.groupElement("__readers"));
+    static final VarHandle const$3 = constants$9.const$1.varHandle(MemoryLayout.PathElement.groupElement("__writers"));
+    static final VarHandle const$4 = constants$9.const$1.varHandle(MemoryLayout.PathElement.groupElement("__wrphase_futex"));
+    static final VarHandle const$5 = constants$9.const$1.varHandle(MemoryLayout.PathElement.groupElement("__writers_futex"));
 }
 
 

@@ -11,54 +11,29 @@ final class constants$84 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$84() {}
-    static final FunctionDescriptor rs2_device_hub_is_device_connected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "lroundf",
+        constants$83.const$1
     );
-    static final MethodHandle rs2_device_hub_is_device_connected$MH = RuntimeHelper.downcallHandle(
-        "rs2_device_hub_is_device_connected",
-        constants$84.rs2_device_hub_is_device_connected$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "__lroundf",
+        constants$83.const$1
     );
-    static final FunctionDescriptor rs2_get_device_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "llroundf",
+        constants$83.const$1
     );
-    static final MethodHandle rs2_get_device_count$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_device_count",
-        constants$84.rs2_get_device_count$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "__llroundf",
+        constants$83.const$1
     );
-    static final FunctionDescriptor rs2_delete_device_list$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "fdimf",
+        constants$63.const$2
     );
-    static final MethodHandle rs2_delete_device_list$MH = RuntimeHelper.downcallHandle(
-        "rs2_delete_device_list",
-        constants$84.rs2_delete_device_list$FUNC
-    );
-    static final FunctionDescriptor rs2_device_list_contains$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_device_list_contains$MH = RuntimeHelper.downcallHandle(
-        "rs2_device_list_contains",
-        constants$84.rs2_device_list_contains$FUNC
-    );
-    static final FunctionDescriptor rs2_create_device$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_create_device$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_device",
-        constants$84.rs2_create_device$FUNC
-    );
-    static final FunctionDescriptor rs2_delete_device$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_delete_device$MH = RuntimeHelper.downcallHandle(
-        "rs2_delete_device",
-        constants$84.rs2_delete_device$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "__fdimf",
+        constants$63.const$2
     );
 }
 

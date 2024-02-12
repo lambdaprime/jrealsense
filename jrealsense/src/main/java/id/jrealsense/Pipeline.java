@@ -20,8 +20,8 @@ package id.jrealsense;
 import id.jrealsense.frames.RealSenseFrame;
 import id.jrealsense.jextract.librealsense;
 import id.xfunction.logging.XLogger;
+import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentScope;
 import java.lang.foreign.ValueLayout;
 import java.util.Optional;
 
@@ -95,8 +95,7 @@ public class Pipeline implements AutoCloseable {
     public Optional<FrameSet> pollForFrames() {
         LOG.entering("pollForFrames");
         var e = new RealSenseError();
-        var outputPtr =
-                MemorySegment.allocateNative(ValueLayout.ADDRESS.byteSize(), SegmentScope.auto());
+        var outputPtr = Arena.ofAuto().allocate(ValueLayout.ADDRESS.byteSize());
         var ret = librealsense.rs2_pipeline_poll_for_frames(pipeline, outputPtr, e.get_rs2_error());
         e.verify();
         if (ret == 0) return Optional.empty();

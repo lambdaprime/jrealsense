@@ -11,48 +11,29 @@ final class constants$46 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$46() {}
-    static final FunctionDescriptor __asinhf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__hypot",
+        constants$37.const$5
     );
-    static final MethodHandle __asinhf$MH = RuntimeHelper.downcallHandle(
-        "__asinhf",
-        constants$46.__asinhf$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cbrt",
+        constants$36.const$4
     );
-    static final FunctionDescriptor atanhf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__cbrt",
+        constants$36.const$4
     );
-    static final MethodHandle atanhf$MH = RuntimeHelper.downcallHandle(
-        "atanhf",
-        constants$46.atanhf$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "ceil",
+        constants$36.const$4
     );
-    static final FunctionDescriptor __atanhf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__ceil",
+        constants$36.const$4
     );
-    static final MethodHandle __atanhf$MH = RuntimeHelper.downcallHandle(
-        "__atanhf",
-        constants$46.__atanhf$FUNC
-    );
-    static final FunctionDescriptor expf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle expf$MH = RuntimeHelper.downcallHandle(
-        "expf",
-        constants$46.expf$FUNC
-    );
-    static final FunctionDescriptor __expf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle __expf$MH = RuntimeHelper.downcallHandle(
-        "__expf",
-        constants$46.__expf$FUNC
-    );
-    static final FunctionDescriptor frexpf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle frexpf$MH = RuntimeHelper.downcallHandle(
-        "frexpf",
-        constants$46.frexpf$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "fabs",
+        constants$36.const$4
     );
 }
 

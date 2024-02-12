@@ -11,67 +11,12 @@ final class constants$90 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$90() {}
-    static final FunctionDescriptor rs2_register_calibration_change_callback$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_register_calibration_change_callback$MH = RuntimeHelper.downcallHandle(
-        "rs2_register_calibration_change_callback",
-        constants$90.rs2_register_calibration_change_callback$FUNC
-    );
-    static final FunctionDescriptor rs2_register_calibration_change_callback_cpp$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_register_calibration_change_callback_cpp$MH = RuntimeHelper.downcallHandle(
-        "rs2_register_calibration_change_callback_cpp",
-        constants$90.rs2_register_calibration_change_callback_cpp$FUNC
-    );
-    static final FunctionDescriptor rs2_trigger_device_calibration$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_trigger_device_calibration$MH = RuntimeHelper.downcallHandle(
-        "rs2_trigger_device_calibration",
-        constants$90.rs2_trigger_device_calibration$FUNC
-    );
-    static final FunctionDescriptor rs2_run_tare_calibration$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_run_tare_calibration$MH = RuntimeHelper.downcallHandle(
-        "rs2_run_tare_calibration",
-        constants$90.rs2_run_tare_calibration$FUNC
-    );
-    static final FunctionDescriptor rs2_get_calibration_table$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_calibration_table$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_calibration_table",
-        constants$90.rs2_get_calibration_table$FUNC
-    );
-    static final FunctionDescriptor rs2_set_calibration_table$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_set_calibration_table$MH = RuntimeHelper.downcallHandle(
-        "rs2_set_calibration_table",
-        constants$90.rs2_set_calibration_table$FUNC
-    );
+    static final VarHandle const$0 = constants$88.const$4.varHandle(MemoryLayout.PathElement.groupElement("rtd_offset"));
+    static final VarHandle const$1 = constants$88.const$4.varHandle(MemoryLayout.PathElement.groupElement("temp_x2"));
+    static final VarHandle const$2 = constants$88.const$4.varHandle(MemoryLayout.PathElement.groupElement("mc_h_scale"));
+    static final VarHandle const$3 = constants$88.const$4.varHandle(MemoryLayout.PathElement.groupElement("mc_v_scale"));
+    static final VarHandle const$4 = constants$88.const$4.varHandle(MemoryLayout.PathElement.groupElement("weeks_since_calibration"));
+    static final VarHandle const$5 = constants$88.const$4.varHandle(MemoryLayout.PathElement.groupElement("ac_weeks_since_calibaration"));
 }
 
 

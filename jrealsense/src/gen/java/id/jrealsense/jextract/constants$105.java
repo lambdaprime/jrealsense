@@ -11,52 +11,41 @@ final class constants$105 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$105() {}
-    static final FunctionDescriptor rs2_try_wait_for_frame$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle rs2_try_wait_for_frame$MH = RuntimeHelper.downcallHandle(
-        "rs2_try_wait_for_frame",
-        constants$105.rs2_try_wait_for_frame$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "rs2_set_stream_profile_data",
+        constants$105.const$0
     );
-    static final FunctionDescriptor rs2_enqueue_frame$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle rs2_enqueue_frame$MH = RuntimeHelper.downcallHandle(
-        "rs2_enqueue_frame",
-        constants$105.rs2_enqueue_frame$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "rs2_clone_stream_profile",
+        constants$105.const$2
     );
-    static final FunctionDescriptor rs2_create_align$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle rs2_create_align$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_align",
-        constants$105.rs2_create_align$FUNC
-    );
-    static final FunctionDescriptor rs2_create_decimation_filter_block$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_create_decimation_filter_block$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_decimation_filter_block",
-        constants$105.rs2_create_decimation_filter_block$FUNC
-    );
-    static final FunctionDescriptor rs2_create_temporal_filter_block$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_create_temporal_filter_block$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_temporal_filter_block",
-        constants$105.rs2_create_temporal_filter_block$FUNC
-    );
-    static final FunctionDescriptor rs2_create_spatial_filter_block$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_create_spatial_filter_block$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_spatial_filter_block",
-        constants$105.rs2_create_spatial_filter_block$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "rs2_clone_video_stream_profile",
+        constants$105.const$4
     );
 }
 

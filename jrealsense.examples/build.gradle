@@ -32,6 +32,10 @@ configurations {
   customConfig.extendsFrom implementation
 }
 
+compileJava {
+  options.compilerArgs << "--enable-preview"
+}
+
 def packageDir = "$buildDir/package/${projectName}"
 
 ext.artifacts = fileTree(include: ['*'], dir: "$packageDir/libs")

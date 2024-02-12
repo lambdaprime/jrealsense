@@ -11,47 +11,31 @@ final class constants$20 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$20() {}
-    static final FunctionDescriptor __sin$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "mrand48",
+        constants$1.const$2
     );
-    static final MethodHandle __sin$MH = RuntimeHelper.downcallHandle(
-        "__sin",
-        constants$20.__sin$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "jrand48",
+        constants$2.const$2
     );
-    static final FunctionDescriptor tan$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        JAVA_LONG
     );
-    static final MethodHandle tan$MH = RuntimeHelper.downcallHandle(
-        "tan",
-        constants$20.tan$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "srand48",
+        constants$20.const$2
     );
-    static final FunctionDescriptor __tan$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "seed48",
+        constants$15.const$4
     );
-    static final MethodHandle __tan$MH = RuntimeHelper.downcallHandle(
-        "__tan",
-        constants$20.__tan$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor cosh$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cosh$MH = RuntimeHelper.downcallHandle(
-        "cosh",
-        constants$20.cosh$FUNC
-    );
-    static final FunctionDescriptor __cosh$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __cosh$MH = RuntimeHelper.downcallHandle(
-        "__cosh",
-        constants$20.__cosh$FUNC
-    );
-    static final FunctionDescriptor sinh$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle sinh$MH = RuntimeHelper.downcallHandle(
-        "sinh",
-        constants$20.sinh$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "lcong48",
+        constants$20.const$5
     );
 }
 

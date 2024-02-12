@@ -11,47 +11,28 @@ final class constants$18 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$18() {}
-    static final FunctionDescriptor __issignaling$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle __issignaling$MH = RuntimeHelper.downcallHandle(
-        "__issignaling",
-        constants$18.__issignaling$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "initstate_r",
+        constants$18.const$0
     );
-    static final FunctionDescriptor acos$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "setstate_r",
+        constants$17.const$2
     );
-    static final MethodHandle acos$MH = RuntimeHelper.downcallHandle(
-        "acos",
-        constants$18.acos$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_INT);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "rand",
+        constants$18.const$3
     );
-    static final FunctionDescriptor __acos$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __acos$MH = RuntimeHelper.downcallHandle(
-        "__acos",
-        constants$18.__acos$FUNC
-    );
-    static final FunctionDescriptor asin$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle asin$MH = RuntimeHelper.downcallHandle(
-        "asin",
-        constants$18.asin$FUNC
-    );
-    static final FunctionDescriptor __asin$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __asin$MH = RuntimeHelper.downcallHandle(
-        "__asin",
-        constants$18.__asin$FUNC
-    );
-    static final FunctionDescriptor atan$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle atan$MH = RuntimeHelper.downcallHandle(
-        "atan",
-        constants$18.atan$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "srand",
+        constants$15.const$0
     );
 }
 

@@ -11,47 +11,29 @@ final class constants$69 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$69() {}
-    static final FunctionDescriptor rs2_get_failed_function$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__modff",
+        constants$67.const$1
     );
-    static final MethodHandle rs2_get_failed_function$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_failed_function",
-        constants$69.rs2_get_failed_function$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "expm1f",
+        constants$62.const$1
     );
-    static final FunctionDescriptor rs2_get_failed_args$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__expm1f",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_get_failed_args$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_failed_args",
-        constants$69.rs2_get_failed_args$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "log1pf",
+        constants$62.const$1
     );
-    static final FunctionDescriptor rs2_get_error_message$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__log1pf",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_get_error_message$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_error_message",
-        constants$69.rs2_get_error_message$FUNC
-    );
-    static final FunctionDescriptor rs2_free_error$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_free_error$MH = RuntimeHelper.downcallHandle(
-        "rs2_free_error",
-        constants$69.rs2_free_error$FUNC
-    );
-    static final FunctionDescriptor rs2_camera_info_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle rs2_camera_info_to_string$MH = RuntimeHelper.downcallHandle(
-        "rs2_camera_info_to_string",
-        constants$69.rs2_camera_info_to_string$FUNC
-    );
-    static final FunctionDescriptor rs2_stream_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle rs2_stream_to_string$MH = RuntimeHelper.downcallHandle(
-        "rs2_stream_to_string",
-        constants$69.rs2_stream_to_string$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "logbf",
+        constants$62.const$1
     );
 }
 

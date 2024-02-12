@@ -11,48 +11,31 @@ final class constants$102 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$102() {}
-    static final FunctionDescriptor rs2_create_pointcloud$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle rs2_create_pointcloud$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_pointcloud",
-        constants$102.rs2_create_pointcloud$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "rs2_start",
+        constants$102.const$0
     );
-    static final FunctionDescriptor rs2_create_yuy_decoder$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "rs2_start_cpp",
+        constants$95.const$3
     );
-    static final MethodHandle rs2_create_yuy_decoder$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_yuy_decoder",
-        constants$102.rs2_create_yuy_decoder$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "rs2_start_queue",
+        constants$95.const$3
     );
-    static final FunctionDescriptor rs2_create_y411_decoder$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "rs2_stop",
+        constants$94.const$4
     );
-    static final MethodHandle rs2_create_y411_decoder$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_y411_decoder",
-        constants$102.rs2_create_y411_decoder$FUNC
-    );
-    static final FunctionDescriptor rs2_create_threshold$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_create_threshold$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_threshold",
-        constants$102.rs2_create_threshold$FUNC
-    );
-    static final FunctionDescriptor rs2_create_units_transform$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_create_units_transform$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_units_transform",
-        constants$102.rs2_create_units_transform$FUNC
-    );
-    static final FunctionDescriptor rs2_create_processing_block$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_create_processing_block$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_processing_block",
-        constants$102.rs2_create_processing_block$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "rs2_set_notifications_callback",
+        constants$102.const$0
     );
 }
 

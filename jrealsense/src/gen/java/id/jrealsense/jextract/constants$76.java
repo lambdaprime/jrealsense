@@ -11,56 +11,29 @@ final class constants$76 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$76() {}
-    static final FunctionDescriptor rs2_delete_stream_profile$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_FLOAT,
+        JAVA_INT,
+        JAVA_FLOAT
     );
-    static final MethodHandle rs2_delete_stream_profile$MH = RuntimeHelper.downcallHandle(
-        "rs2_delete_stream_profile",
-        constants$76.rs2_delete_stream_profile$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "jnf",
+        constants$76.const$0
     );
-    static final FunctionDescriptor rs2_stream_profile_is$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__jnf",
+        constants$76.const$0
     );
-    static final MethodHandle rs2_stream_profile_is$MH = RuntimeHelper.downcallHandle(
-        "rs2_stream_profile_is",
-        constants$76.rs2_stream_profile_is$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "y0f",
+        constants$62.const$1
     );
-    static final FunctionDescriptor rs2_get_video_stream_resolution$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__y0f",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_get_video_stream_resolution$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_video_stream_resolution",
-        constants$76.rs2_get_video_stream_resolution$FUNC
-    );
-    static final FunctionDescriptor rs2_get_motion_intrinsics$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_motion_intrinsics$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_motion_intrinsics",
-        constants$76.rs2_get_motion_intrinsics$FUNC
-    );
-    static final FunctionDescriptor rs2_is_stream_profile_default$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_is_stream_profile_default$MH = RuntimeHelper.downcallHandle(
-        "rs2_is_stream_profile_default",
-        constants$76.rs2_is_stream_profile_default$FUNC
-    );
-    static final FunctionDescriptor rs2_get_stream_profiles_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_stream_profiles_count$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_stream_profiles_count",
-        constants$76.rs2_get_stream_profiles_count$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "y1f",
+        constants$62.const$1
     );
 }
 

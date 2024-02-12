@@ -1,6 +1,10 @@
 This library is still under development
 
-**jrealsense** - Java module which allows to interact with Intel RealSense cameras. It is based on [Java FFM](https://docs.oracle.com/en/java/javase/19/core/foreign-function-and-memory-api.html) and so, it does not require any additional JNI libraries in the system.
+**jrealsense** - Java module which allows to interact with Intel RealSense cameras. It is based on [Java FFM](https://docs.oracle.com/en/java/javase/19/core/foreign-function-and-memory-api.html) and does not require any additional JNI libraries in the system to be present.
+
+# Requirements
+
+- Java 21
 
 # Download
 
@@ -12,6 +16,6 @@ This library is still under development
 
 [Development](DEVELOPMENT.md)
 
-# Contributors
+# Contacts
 
 lambdaprime <intid@protonmail.com>

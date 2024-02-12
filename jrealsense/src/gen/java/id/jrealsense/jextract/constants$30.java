@@ -11,48 +11,33 @@ final class constants$30 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$30() {}
-    static final FunctionDescriptor __copysign$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_LONG,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle __copysign$MH = RuntimeHelper.downcallHandle(
-        "__copysign",
-        constants$30.__copysign$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "bsearch",
+        constants$30.const$0
     );
-    static final FunctionDescriptor nan$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_LONG,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle nan$MH = RuntimeHelper.downcallHandle(
-        "nan",
-        constants$30.nan$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "qsort",
+        constants$30.const$2
     );
-    static final FunctionDescriptor __nan$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT
     );
-    static final MethodHandle __nan$MH = RuntimeHelper.downcallHandle(
-        "__nan",
-        constants$30.__nan$FUNC
-    );
-    static final FunctionDescriptor isnan$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle isnan$MH = RuntimeHelper.downcallHandle(
-        "isnan",
-        constants$30.isnan$FUNC
-    );
-    static final FunctionDescriptor j0$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle j0$MH = RuntimeHelper.downcallHandle(
-        "j0",
-        constants$30.j0$FUNC
-    );
-    static final FunctionDescriptor __j0$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __j0$MH = RuntimeHelper.downcallHandle(
-        "__j0",
-        constants$30.__j0$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "abs",
+        constants$30.const$4
     );
 }
 

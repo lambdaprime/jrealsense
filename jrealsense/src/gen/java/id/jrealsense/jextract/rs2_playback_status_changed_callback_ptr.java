@@ -15,14 +15,14 @@ import static java.lang.foreign.ValueLayout.*;
 public interface rs2_playback_status_changed_callback_ptr {
 
     void apply(int _x0);
-    static MemorySegment allocate(rs2_playback_status_changed_callback_ptr fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$107.rs2_playback_status_changed_callback_ptr_UP$MH, fi, constants$107.rs2_playback_status_changed_callback_ptr$FUNC, scope);
+    static MemorySegment allocate(rs2_playback_status_changed_callback_ptr fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$143.const$4, fi, constants$15.const$0, scope);
     }
-    static rs2_playback_status_changed_callback_ptr ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static rs2_playback_status_changed_callback_ptr ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (int __x0) -> {
             try {
-                constants$108.rs2_playback_status_changed_callback_ptr_DOWN$MH.invokeExact(symbol, __x0);
+                constants$143.const$5.invokeExact(symbol, __x0);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

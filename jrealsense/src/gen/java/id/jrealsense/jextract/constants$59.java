@@ -11,53 +11,29 @@ final class constants$59 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$59() {}
-    static final FunctionDescriptor nextafterf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "fdim",
+        constants$37.const$5
     );
-    static final MethodHandle nextafterf$MH = RuntimeHelper.downcallHandle(
-        "nextafterf",
-        constants$59.nextafterf$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "__fdim",
+        constants$37.const$5
     );
-    static final FunctionDescriptor __nextafterf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "fmax",
+        constants$37.const$5
     );
-    static final MethodHandle __nextafterf$MH = RuntimeHelper.downcallHandle(
-        "__nextafterf",
-        constants$59.__nextafterf$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "__fmax",
+        constants$37.const$5
     );
-    static final FunctionDescriptor remainderf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "fmin",
+        constants$37.const$5
     );
-    static final MethodHandle remainderf$MH = RuntimeHelper.downcallHandle(
-        "remainderf",
-        constants$59.remainderf$FUNC
-    );
-    static final FunctionDescriptor __remainderf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle __remainderf$MH = RuntimeHelper.downcallHandle(
-        "__remainderf",
-        constants$59.__remainderf$FUNC
-    );
-    static final FunctionDescriptor scalbnf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle scalbnf$MH = RuntimeHelper.downcallHandle(
-        "scalbnf",
-        constants$59.scalbnf$FUNC
-    );
-    static final FunctionDescriptor __scalbnf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle __scalbnf$MH = RuntimeHelper.downcallHandle(
-        "__scalbnf",
-        constants$59.__scalbnf$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "__fmin",
+        constants$37.const$5
     );
 }
 

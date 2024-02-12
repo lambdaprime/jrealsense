@@ -17,8 +17,8 @@
  */
 package id.jrealsense;
 
+import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentScope;
 import java.lang.foreign.ValueLayout;
 
 /**
@@ -29,7 +29,7 @@ public class FormatTypeHolder {
     private MemorySegment value;
 
     FormatTypeHolder(FormatType stream) {
-        value = MemorySegment.allocateNative(ValueLayout.JAVA_INT.byteSize(), SegmentScope.auto());
+        value = Arena.ofAuto().allocate(ValueLayout.JAVA_INT.byteSize());
         value.set(ValueLayout.JAVA_INT, 0, stream.getValue());
     }
 

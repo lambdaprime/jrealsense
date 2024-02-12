@@ -11,49 +11,32 @@ final class constants$32 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$32() {}
-    static final FunctionDescriptor y1$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "lldiv",
+        constants$31.const$5
     );
-    static final MethodHandle y1$MH = RuntimeHelper.downcallHandle(
-        "y1",
-        constants$32.y1$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor __y1$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "ecvt",
+        constants$32.const$1
     );
-    static final MethodHandle __y1$MH = RuntimeHelper.downcallHandle(
-        "__y1",
-        constants$32.__y1$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "fcvt",
+        constants$32.const$1
     );
-    static final FunctionDescriptor yn$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle yn$MH = RuntimeHelper.downcallHandle(
-        "yn",
-        constants$32.yn$FUNC
-    );
-    static final FunctionDescriptor __yn$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __yn$MH = RuntimeHelper.downcallHandle(
-        "__yn",
-        constants$32.__yn$FUNC
-    );
-    static final FunctionDescriptor erf$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle erf$MH = RuntimeHelper.downcallHandle(
-        "erf",
-        constants$32.erf$FUNC
-    );
-    static final FunctionDescriptor __erf$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __erf$MH = RuntimeHelper.downcallHandle(
-        "__erf",
-        constants$32.__erf$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gcvt",
+        constants$32.const$4
     );
 }
 

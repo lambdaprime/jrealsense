@@ -11,56 +11,36 @@ final class constants$110 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$110() {}
-    static final FunctionDescriptor rs2_playback_device_pause$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "rs2_load_wheel_odometry_config",
+        constants$108.const$4
     );
-    static final MethodHandle rs2_playback_device_pause$MH = RuntimeHelper.downcallHandle(
-        "rs2_playback_device_pause",
-        constants$110.rs2_playback_device_pause$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_BYTE,
+        JAVA_INT,
+        MemoryLayout.structLayout(
+            JAVA_FLOAT.withName("x"),
+            JAVA_FLOAT.withName("y"),
+            JAVA_FLOAT.withName("z")
+        ).withName("rs2_vector"),
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor rs2_playback_device_set_real_time$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "rs2_send_wheel_odometry",
+        constants$110.const$1
     );
-    static final MethodHandle rs2_playback_device_set_real_time$MH = RuntimeHelper.downcallHandle(
-        "rs2_playback_device_set_real_time",
-        constants$110.rs2_playback_device_set_real_time$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "rs2_set_intrinsics",
+        constants$102.const$0
     );
-    static final FunctionDescriptor rs2_playback_device_is_real_time$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "rs2_override_intrinsics",
+        constants$95.const$3
     );
-    static final MethodHandle rs2_playback_device_is_real_time$MH = RuntimeHelper.downcallHandle(
-        "rs2_playback_device_is_real_time",
-        constants$110.rs2_playback_device_is_real_time$FUNC
-    );
-    static final FunctionDescriptor rs2_playback_device_set_status_changed_callback$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_playback_device_set_status_changed_callback$MH = RuntimeHelper.downcallHandle(
-        "rs2_playback_device_set_status_changed_callback",
-        constants$110.rs2_playback_device_set_status_changed_callback$FUNC
-    );
-    static final FunctionDescriptor rs2_playback_device_get_current_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_playback_device_get_current_status$MH = RuntimeHelper.downcallHandle(
-        "rs2_playback_device_get_current_status",
-        constants$110.rs2_playback_device_get_current_status$FUNC
-    );
-    static final FunctionDescriptor rs2_playback_device_set_playback_speed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_playback_device_set_playback_speed$MH = RuntimeHelper.downcallHandle(
-        "rs2_playback_device_set_playback_speed",
-        constants$110.rs2_playback_device_set_playback_speed$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "rs2_set_extrinsics",
+        constants$101.const$0
     );
 }
 

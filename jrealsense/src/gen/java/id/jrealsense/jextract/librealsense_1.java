@@ -42,7 +42,7 @@ public class librealsense_1 {
         return (int)3L;
     }
     public static MethodHandle rs2_timestamp_domain_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$92.rs2_timestamp_domain_to_string$MH,"rs2_timestamp_domain_to_string");
+        return RuntimeHelper.requireNonNull(constants$126.const$2,"rs2_timestamp_domain_to_string");
     }
     /**
      * {@snippet :
@@ -410,7 +410,7 @@ public class librealsense_1 {
         return (int)43L;
     }
     public static MethodHandle rs2_frame_metadata_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$92.rs2_frame_metadata_to_string$MH,"rs2_frame_metadata_to_string");
+        return RuntimeHelper.requireNonNull(constants$126.const$3,"rs2_frame_metadata_to_string");
     }
     /**
      * {@snippet :
@@ -426,7 +426,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_frame_metadata_value_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$92.rs2_frame_metadata_value_to_string$MH,"rs2_frame_metadata_value_to_string");
+        return RuntimeHelper.requireNonNull(constants$126.const$4,"rs2_frame_metadata_value_to_string");
     }
     /**
      * {@snippet :
@@ -474,7 +474,7 @@ public class librealsense_1 {
         return (int)3L;
     }
     public static MethodHandle rs2_calib_target_type_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$92.rs2_calib_target_type_to_string$MH,"rs2_calib_target_type_to_string");
+        return RuntimeHelper.requireNonNull(constants$126.const$5,"rs2_calib_target_type_to_string");
     }
     /**
      * {@snippet :
@@ -490,7 +490,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_frame_metadata$MH() {
-        return RuntimeHelper.requireNonNull(constants$93.rs2_get_frame_metadata$MH,"rs2_get_frame_metadata");
+        return RuntimeHelper.requireNonNull(constants$127.const$1,"rs2_get_frame_metadata");
     }
     /**
      * {@snippet :
@@ -506,7 +506,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_supports_frame_metadata$MH() {
-        return RuntimeHelper.requireNonNull(constants$93.rs2_supports_frame_metadata$MH,"rs2_supports_frame_metadata");
+        return RuntimeHelper.requireNonNull(constants$127.const$2,"rs2_supports_frame_metadata");
     }
     /**
      * {@snippet :
@@ -522,7 +522,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_frame_timestamp_domain$MH() {
-        return RuntimeHelper.requireNonNull(constants$93.rs2_get_frame_timestamp_domain$MH,"rs2_get_frame_timestamp_domain");
+        return RuntimeHelper.requireNonNull(constants$127.const$3,"rs2_get_frame_timestamp_domain");
     }
     /**
      * {@snippet :
@@ -538,7 +538,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_frame_timestamp$MH() {
-        return RuntimeHelper.requireNonNull(constants$93.rs2_get_frame_timestamp$MH,"rs2_get_frame_timestamp");
+        return RuntimeHelper.requireNonNull(constants$127.const$4,"rs2_get_frame_timestamp");
     }
     /**
      * {@snippet :
@@ -554,7 +554,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_frame_sensor$MH() {
-        return RuntimeHelper.requireNonNull(constants$93.rs2_get_frame_sensor$MH,"rs2_get_frame_sensor");
+        return RuntimeHelper.requireNonNull(constants$127.const$5,"rs2_get_frame_sensor");
     }
     /**
      * {@snippet :
@@ -570,7 +570,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_frame_number$MH() {
-        return RuntimeHelper.requireNonNull(constants$93.rs2_get_frame_number$MH,"rs2_get_frame_number");
+        return RuntimeHelper.requireNonNull(constants$128.const$1,"rs2_get_frame_number");
     }
     /**
      * {@snippet :
@@ -586,7 +586,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_frame_data_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$94.rs2_get_frame_data_size$MH,"rs2_get_frame_data_size");
+        return RuntimeHelper.requireNonNull(constants$128.const$2,"rs2_get_frame_data_size");
     }
     /**
      * {@snippet :
@@ -602,7 +602,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_frame_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$94.rs2_get_frame_data$MH,"rs2_get_frame_data");
+        return RuntimeHelper.requireNonNull(constants$128.const$3,"rs2_get_frame_data");
     }
     /**
      * {@snippet :
@@ -618,7 +618,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_frame_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$94.rs2_get_frame_width$MH,"rs2_get_frame_width");
+        return RuntimeHelper.requireNonNull(constants$128.const$4,"rs2_get_frame_width");
     }
     /**
      * {@snippet :
@@ -634,7 +634,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_frame_height$MH() {
-        return RuntimeHelper.requireNonNull(constants$94.rs2_get_frame_height$MH,"rs2_get_frame_height");
+        return RuntimeHelper.requireNonNull(constants$128.const$5,"rs2_get_frame_height");
     }
     /**
      * {@snippet :
@@ -650,7 +650,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_depth_frame_get_units$MH() {
-        return RuntimeHelper.requireNonNull(constants$94.rs2_depth_frame_get_units$MH,"rs2_depth_frame_get_units");
+        return RuntimeHelper.requireNonNull(constants$129.const$0,"rs2_depth_frame_get_units");
     }
     /**
      * {@snippet :
@@ -666,7 +666,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_frame_stride_in_bytes$MH() {
-        return RuntimeHelper.requireNonNull(constants$94.rs2_get_frame_stride_in_bytes$MH,"rs2_get_frame_stride_in_bytes");
+        return RuntimeHelper.requireNonNull(constants$129.const$1,"rs2_get_frame_stride_in_bytes");
     }
     /**
      * {@snippet :
@@ -682,7 +682,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_frame_bits_per_pixel$MH() {
-        return RuntimeHelper.requireNonNull(constants$95.rs2_get_frame_bits_per_pixel$MH,"rs2_get_frame_bits_per_pixel");
+        return RuntimeHelper.requireNonNull(constants$129.const$2,"rs2_get_frame_bits_per_pixel");
     }
     /**
      * {@snippet :
@@ -698,7 +698,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_frame_add_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$95.rs2_frame_add_ref$MH,"rs2_frame_add_ref");
+        return RuntimeHelper.requireNonNull(constants$129.const$3,"rs2_frame_add_ref");
     }
     /**
      * {@snippet :
@@ -714,7 +714,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_release_frame$MH() {
-        return RuntimeHelper.requireNonNull(constants$95.rs2_release_frame$MH,"rs2_release_frame");
+        return RuntimeHelper.requireNonNull(constants$129.const$4,"rs2_release_frame");
     }
     /**
      * {@snippet :
@@ -730,7 +730,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_keep_frame$MH() {
-        return RuntimeHelper.requireNonNull(constants$95.rs2_keep_frame$MH,"rs2_keep_frame");
+        return RuntimeHelper.requireNonNull(constants$129.const$5,"rs2_keep_frame");
     }
     /**
      * {@snippet :
@@ -746,7 +746,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_frame_vertices$MH() {
-        return RuntimeHelper.requireNonNull(constants$95.rs2_get_frame_vertices$MH,"rs2_get_frame_vertices");
+        return RuntimeHelper.requireNonNull(constants$130.const$0,"rs2_get_frame_vertices");
     }
     /**
      * {@snippet :
@@ -762,7 +762,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_export_to_ply$MH() {
-        return RuntimeHelper.requireNonNull(constants$95.rs2_export_to_ply$MH,"rs2_export_to_ply");
+        return RuntimeHelper.requireNonNull(constants$130.const$1,"rs2_export_to_ply");
     }
     /**
      * {@snippet :
@@ -778,7 +778,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_frame_texture_coordinates$MH() {
-        return RuntimeHelper.requireNonNull(constants$96.rs2_get_frame_texture_coordinates$MH,"rs2_get_frame_texture_coordinates");
+        return RuntimeHelper.requireNonNull(constants$130.const$2,"rs2_get_frame_texture_coordinates");
     }
     /**
      * {@snippet :
@@ -794,7 +794,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_frame_points_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$96.rs2_get_frame_points_count$MH,"rs2_get_frame_points_count");
+        return RuntimeHelper.requireNonNull(constants$130.const$3,"rs2_get_frame_points_count");
     }
     /**
      * {@snippet :
@@ -810,7 +810,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_frame_stream_profile$MH() {
-        return RuntimeHelper.requireNonNull(constants$96.rs2_get_frame_stream_profile$MH,"rs2_get_frame_stream_profile");
+        return RuntimeHelper.requireNonNull(constants$130.const$4,"rs2_get_frame_stream_profile");
     }
     /**
      * {@snippet :
@@ -826,7 +826,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_is_frame_extendable_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$96.rs2_is_frame_extendable_to$MH,"rs2_is_frame_extendable_to");
+        return RuntimeHelper.requireNonNull(constants$130.const$5,"rs2_is_frame_extendable_to");
     }
     /**
      * {@snippet :
@@ -842,7 +842,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_allocate_synthetic_video_frame$MH() {
-        return RuntimeHelper.requireNonNull(constants$96.rs2_allocate_synthetic_video_frame$MH,"rs2_allocate_synthetic_video_frame");
+        return RuntimeHelper.requireNonNull(constants$131.const$1,"rs2_allocate_synthetic_video_frame");
     }
     /**
      * {@snippet :
@@ -858,7 +858,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_allocate_synthetic_motion_frame$MH() {
-        return RuntimeHelper.requireNonNull(constants$96.rs2_allocate_synthetic_motion_frame$MH,"rs2_allocate_synthetic_motion_frame");
+        return RuntimeHelper.requireNonNull(constants$131.const$3,"rs2_allocate_synthetic_motion_frame");
     }
     /**
      * {@snippet :
@@ -874,7 +874,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_allocate_points$MH() {
-        return RuntimeHelper.requireNonNull(constants$97.rs2_allocate_points$MH,"rs2_allocate_points");
+        return RuntimeHelper.requireNonNull(constants$131.const$4,"rs2_allocate_points");
     }
     /**
      * {@snippet :
@@ -890,7 +890,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_allocate_composite_frame$MH() {
-        return RuntimeHelper.requireNonNull(constants$97.rs2_allocate_composite_frame$MH,"rs2_allocate_composite_frame");
+        return RuntimeHelper.requireNonNull(constants$131.const$5,"rs2_allocate_composite_frame");
     }
     /**
      * {@snippet :
@@ -906,7 +906,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_extract_frame$MH() {
-        return RuntimeHelper.requireNonNull(constants$97.rs2_extract_frame$MH,"rs2_extract_frame");
+        return RuntimeHelper.requireNonNull(constants$132.const$0,"rs2_extract_frame");
     }
     /**
      * {@snippet :
@@ -922,7 +922,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_embedded_frames_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$97.rs2_embedded_frames_count$MH,"rs2_embedded_frames_count");
+        return RuntimeHelper.requireNonNull(constants$132.const$1,"rs2_embedded_frames_count");
     }
     /**
      * {@snippet :
@@ -938,7 +938,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_synthetic_frame_ready$MH() {
-        return RuntimeHelper.requireNonNull(constants$97.rs2_synthetic_frame_ready$MH,"rs2_synthetic_frame_ready");
+        return RuntimeHelper.requireNonNull(constants$132.const$2,"rs2_synthetic_frame_ready");
     }
     /**
      * {@snippet :
@@ -954,7 +954,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_pose_frame_get_pose_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$97.rs2_pose_frame_get_pose_data$MH,"rs2_pose_frame_get_pose_data");
+        return RuntimeHelper.requireNonNull(constants$132.const$3,"rs2_pose_frame_get_pose_data");
     }
     /**
      * {@snippet :
@@ -970,7 +970,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_extract_target_dimensions$MH() {
-        return RuntimeHelper.requireNonNull(constants$98.rs2_extract_target_dimensions$MH,"rs2_extract_target_dimensions");
+        return RuntimeHelper.requireNonNull(constants$132.const$5,"rs2_extract_target_dimensions");
     }
     /**
      * {@snippet :
@@ -1754,7 +1754,7 @@ public class librealsense_1 {
         return (int)94L;
     }
     public static MethodHandle rs2_option_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$98.rs2_option_to_string$MH,"rs2_option_to_string");
+        return RuntimeHelper.requireNonNull(constants$133.const$0,"rs2_option_to_string");
     }
     /**
      * {@snippet :
@@ -1866,7 +1866,7 @@ public class librealsense_1 {
         return (int)11L;
     }
     public static MethodHandle rs2_sr300_visual_preset_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$98.rs2_sr300_visual_preset_to_string$MH,"rs2_sr300_visual_preset_to_string");
+        return RuntimeHelper.requireNonNull(constants$133.const$1,"rs2_sr300_visual_preset_to_string");
     }
     /**
      * {@snippet :
@@ -1946,7 +1946,7 @@ public class librealsense_1 {
         return (int)7L;
     }
     public static MethodHandle rs2_rs400_visual_preset_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$98.rs2_rs400_visual_preset_to_string$MH,"rs2_rs400_visual_preset_to_string");
+        return RuntimeHelper.requireNonNull(constants$133.const$2,"rs2_rs400_visual_preset_to_string");
     }
     /**
      * {@snippet :
@@ -2026,7 +2026,7 @@ public class librealsense_1 {
         return (int)7L;
     }
     public static MethodHandle rs2_l500_visual_preset_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$98.rs2_l500_visual_preset_to_string$MH,"rs2_l500_visual_preset_to_string");
+        return RuntimeHelper.requireNonNull(constants$133.const$3,"rs2_l500_visual_preset_to_string");
     }
     /**
      * {@snippet :
@@ -2074,7 +2074,7 @@ public class librealsense_1 {
         return (int)3L;
     }
     public static MethodHandle rs2_sensor_mode_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$98.rs2_sensor_mode_to_string$MH,"rs2_sensor_mode_to_string");
+        return RuntimeHelper.requireNonNull(constants$133.const$4,"rs2_sensor_mode_to_string");
     }
     /**
      * {@snippet :
@@ -2106,7 +2106,7 @@ public class librealsense_1 {
         return (int)2L;
     }
     public static MethodHandle rs2_ambient_light_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$99.rs2_ambient_light_to_string$MH,"rs2_ambient_light_to_string");
+        return RuntimeHelper.requireNonNull(constants$133.const$5,"rs2_ambient_light_to_string");
     }
     /**
      * {@snippet :
@@ -2146,7 +2146,7 @@ public class librealsense_1 {
         return (int)2L;
     }
     public static MethodHandle rs2_digital_gain_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$99.rs2_digital_gain_to_string$MH,"rs2_digital_gain_to_string");
+        return RuntimeHelper.requireNonNull(constants$134.const$0,"rs2_digital_gain_to_string");
     }
     /**
      * {@snippet :
@@ -2194,7 +2194,7 @@ public class librealsense_1 {
         return (int)3L;
     }
     public static MethodHandle rs2_host_perf_mode_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$99.rs2_host_perf_mode_to_string$MH,"rs2_host_perf_mode_to_string");
+        return RuntimeHelper.requireNonNull(constants$134.const$1,"rs2_host_perf_mode_to_string");
     }
     /**
      * {@snippet :
@@ -2234,7 +2234,7 @@ public class librealsense_1 {
         return (int)2L;
     }
     public static MethodHandle rs2_emitter_frequency_mode_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$99.rs2_emitter_frequency_mode_to_string$MH,"rs2_emitter_frequency_mode_to_string");
+        return RuntimeHelper.requireNonNull(constants$134.const$2,"rs2_emitter_frequency_mode_to_string");
     }
     /**
      * {@snippet :
@@ -2250,7 +2250,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_is_option_read_only$MH() {
-        return RuntimeHelper.requireNonNull(constants$99.rs2_is_option_read_only$MH,"rs2_is_option_read_only");
+        return RuntimeHelper.requireNonNull(constants$134.const$3,"rs2_is_option_read_only");
     }
     /**
      * {@snippet :
@@ -2266,7 +2266,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_option$MH() {
-        return RuntimeHelper.requireNonNull(constants$99.rs2_get_option$MH,"rs2_get_option");
+        return RuntimeHelper.requireNonNull(constants$134.const$5,"rs2_get_option");
     }
     /**
      * {@snippet :
@@ -2282,7 +2282,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_set_option$MH() {
-        return RuntimeHelper.requireNonNull(constants$100.rs2_set_option$MH,"rs2_set_option");
+        return RuntimeHelper.requireNonNull(constants$135.const$1,"rs2_set_option");
     }
     /**
      * {@snippet :
@@ -2298,7 +2298,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_options_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$100.rs2_get_options_list$MH,"rs2_get_options_list");
+        return RuntimeHelper.requireNonNull(constants$135.const$2,"rs2_get_options_list");
     }
     /**
      * {@snippet :
@@ -2314,7 +2314,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_options_list_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$100.rs2_get_options_list_size$MH,"rs2_get_options_list_size");
+        return RuntimeHelper.requireNonNull(constants$135.const$3,"rs2_get_options_list_size");
     }
     /**
      * {@snippet :
@@ -2330,7 +2330,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_option_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$100.rs2_get_option_name$MH,"rs2_get_option_name");
+        return RuntimeHelper.requireNonNull(constants$135.const$4,"rs2_get_option_name");
     }
     /**
      * {@snippet :
@@ -2346,7 +2346,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_option_from_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$100.rs2_get_option_from_list$MH,"rs2_get_option_from_list");
+        return RuntimeHelper.requireNonNull(constants$135.const$5,"rs2_get_option_from_list");
     }
     /**
      * {@snippet :
@@ -2362,7 +2362,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_delete_options_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$100.rs2_delete_options_list$MH,"rs2_delete_options_list");
+        return RuntimeHelper.requireNonNull(constants$136.const$0,"rs2_delete_options_list");
     }
     /**
      * {@snippet :
@@ -2378,7 +2378,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_supports_option$MH() {
-        return RuntimeHelper.requireNonNull(constants$101.rs2_supports_option$MH,"rs2_supports_option");
+        return RuntimeHelper.requireNonNull(constants$136.const$1,"rs2_supports_option");
     }
     /**
      * {@snippet :
@@ -2394,7 +2394,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_option_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$101.rs2_get_option_range$MH,"rs2_get_option_range");
+        return RuntimeHelper.requireNonNull(constants$136.const$3,"rs2_get_option_range");
     }
     /**
      * {@snippet :
@@ -2410,7 +2410,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_option_description$MH() {
-        return RuntimeHelper.requireNonNull(constants$101.rs2_get_option_description$MH,"rs2_get_option_description");
+        return RuntimeHelper.requireNonNull(constants$136.const$4,"rs2_get_option_description");
     }
     /**
      * {@snippet :
@@ -2426,7 +2426,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_option_value_description$MH() {
-        return RuntimeHelper.requireNonNull(constants$101.rs2_get_option_value_description$MH,"rs2_get_option_value_description");
+        return RuntimeHelper.requireNonNull(constants$136.const$6,"rs2_get_option_value_description");
     }
     /**
      * {@snippet :
@@ -2442,7 +2442,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_colorizer$MH() {
-        return RuntimeHelper.requireNonNull(constants$101.rs2_create_colorizer$MH,"rs2_create_colorizer");
+        return RuntimeHelper.requireNonNull(constants$137.const$0,"rs2_create_colorizer");
     }
     /**
      * {@snippet :
@@ -2458,7 +2458,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_sync_processing_block$MH() {
-        return RuntimeHelper.requireNonNull(constants$101.rs2_create_sync_processing_block$MH,"rs2_create_sync_processing_block");
+        return RuntimeHelper.requireNonNull(constants$137.const$1,"rs2_create_sync_processing_block");
     }
     /**
      * {@snippet :
@@ -2474,7 +2474,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_pointcloud$MH() {
-        return RuntimeHelper.requireNonNull(constants$102.rs2_create_pointcloud$MH,"rs2_create_pointcloud");
+        return RuntimeHelper.requireNonNull(constants$137.const$2,"rs2_create_pointcloud");
     }
     /**
      * {@snippet :
@@ -2490,7 +2490,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_yuy_decoder$MH() {
-        return RuntimeHelper.requireNonNull(constants$102.rs2_create_yuy_decoder$MH,"rs2_create_yuy_decoder");
+        return RuntimeHelper.requireNonNull(constants$137.const$3,"rs2_create_yuy_decoder");
     }
     /**
      * {@snippet :
@@ -2506,7 +2506,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_y411_decoder$MH() {
-        return RuntimeHelper.requireNonNull(constants$102.rs2_create_y411_decoder$MH,"rs2_create_y411_decoder");
+        return RuntimeHelper.requireNonNull(constants$137.const$4,"rs2_create_y411_decoder");
     }
     /**
      * {@snippet :
@@ -2522,7 +2522,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_threshold$MH() {
-        return RuntimeHelper.requireNonNull(constants$102.rs2_create_threshold$MH,"rs2_create_threshold");
+        return RuntimeHelper.requireNonNull(constants$137.const$5,"rs2_create_threshold");
     }
     /**
      * {@snippet :
@@ -2538,7 +2538,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_units_transform$MH() {
-        return RuntimeHelper.requireNonNull(constants$102.rs2_create_units_transform$MH,"rs2_create_units_transform");
+        return RuntimeHelper.requireNonNull(constants$138.const$0,"rs2_create_units_transform");
     }
     /**
      * {@snippet :
@@ -2554,7 +2554,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_processing_block$MH() {
-        return RuntimeHelper.requireNonNull(constants$102.rs2_create_processing_block$MH,"rs2_create_processing_block");
+        return RuntimeHelper.requireNonNull(constants$138.const$1,"rs2_create_processing_block");
     }
     /**
      * {@snippet :
@@ -2570,7 +2570,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_processing_block_fptr$MH() {
-        return RuntimeHelper.requireNonNull(constants$103.rs2_create_processing_block_fptr$MH,"rs2_create_processing_block_fptr");
+        return RuntimeHelper.requireNonNull(constants$138.const$2,"rs2_create_processing_block_fptr");
     }
     /**
      * {@snippet :
@@ -2586,7 +2586,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_processing_block_register_simple_option$MH() {
-        return RuntimeHelper.requireNonNull(constants$103.rs2_processing_block_register_simple_option$MH,"rs2_processing_block_register_simple_option");
+        return RuntimeHelper.requireNonNull(constants$138.const$4,"rs2_processing_block_register_simple_option");
     }
     /**
      * {@snippet :
@@ -2602,7 +2602,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_start_processing$MH() {
-        return RuntimeHelper.requireNonNull(constants$103.rs2_start_processing$MH,"rs2_start_processing");
+        return RuntimeHelper.requireNonNull(constants$138.const$5,"rs2_start_processing");
     }
     /**
      * {@snippet :
@@ -2618,7 +2618,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_start_processing_fptr$MH() {
-        return RuntimeHelper.requireNonNull(constants$103.rs2_start_processing_fptr$MH,"rs2_start_processing_fptr");
+        return RuntimeHelper.requireNonNull(constants$139.const$0,"rs2_start_processing_fptr");
     }
     /**
      * {@snippet :
@@ -2634,7 +2634,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_start_processing_queue$MH() {
-        return RuntimeHelper.requireNonNull(constants$103.rs2_start_processing_queue$MH,"rs2_start_processing_queue");
+        return RuntimeHelper.requireNonNull(constants$139.const$1,"rs2_start_processing_queue");
     }
     /**
      * {@snippet :
@@ -2650,7 +2650,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_process_frame$MH() {
-        return RuntimeHelper.requireNonNull(constants$103.rs2_process_frame$MH,"rs2_process_frame");
+        return RuntimeHelper.requireNonNull(constants$139.const$2,"rs2_process_frame");
     }
     /**
      * {@snippet :
@@ -2666,7 +2666,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_delete_processing_block$MH() {
-        return RuntimeHelper.requireNonNull(constants$104.rs2_delete_processing_block$MH,"rs2_delete_processing_block");
+        return RuntimeHelper.requireNonNull(constants$139.const$3,"rs2_delete_processing_block");
     }
     /**
      * {@snippet :
@@ -2682,7 +2682,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_frame_queue$MH() {
-        return RuntimeHelper.requireNonNull(constants$104.rs2_create_frame_queue$MH,"rs2_create_frame_queue");
+        return RuntimeHelper.requireNonNull(constants$139.const$4,"rs2_create_frame_queue");
     }
     /**
      * {@snippet :
@@ -2698,7 +2698,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_delete_frame_queue$MH() {
-        return RuntimeHelper.requireNonNull(constants$104.rs2_delete_frame_queue$MH,"rs2_delete_frame_queue");
+        return RuntimeHelper.requireNonNull(constants$139.const$5,"rs2_delete_frame_queue");
     }
     /**
      * {@snippet :
@@ -2714,7 +2714,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_frame_queue_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$104.rs2_frame_queue_size$MH,"rs2_frame_queue_size");
+        return RuntimeHelper.requireNonNull(constants$140.const$0,"rs2_frame_queue_size");
     }
     /**
      * {@snippet :
@@ -2730,7 +2730,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_wait_for_frame$MH() {
-        return RuntimeHelper.requireNonNull(constants$104.rs2_wait_for_frame$MH,"rs2_wait_for_frame");
+        return RuntimeHelper.requireNonNull(constants$140.const$1,"rs2_wait_for_frame");
     }
     /**
      * {@snippet :
@@ -2746,7 +2746,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_poll_for_frame$MH() {
-        return RuntimeHelper.requireNonNull(constants$104.rs2_poll_for_frame$MH,"rs2_poll_for_frame");
+        return RuntimeHelper.requireNonNull(constants$140.const$2,"rs2_poll_for_frame");
     }
     /**
      * {@snippet :
@@ -2762,7 +2762,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_try_wait_for_frame$MH() {
-        return RuntimeHelper.requireNonNull(constants$105.rs2_try_wait_for_frame$MH,"rs2_try_wait_for_frame");
+        return RuntimeHelper.requireNonNull(constants$140.const$4,"rs2_try_wait_for_frame");
     }
     /**
      * {@snippet :
@@ -2778,7 +2778,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_enqueue_frame$MH() {
-        return RuntimeHelper.requireNonNull(constants$105.rs2_enqueue_frame$MH,"rs2_enqueue_frame");
+        return RuntimeHelper.requireNonNull(constants$140.const$5,"rs2_enqueue_frame");
     }
     /**
      * {@snippet :
@@ -2794,7 +2794,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_align$MH() {
-        return RuntimeHelper.requireNonNull(constants$105.rs2_create_align$MH,"rs2_create_align");
+        return RuntimeHelper.requireNonNull(constants$141.const$0,"rs2_create_align");
     }
     /**
      * {@snippet :
@@ -2810,7 +2810,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_decimation_filter_block$MH() {
-        return RuntimeHelper.requireNonNull(constants$105.rs2_create_decimation_filter_block$MH,"rs2_create_decimation_filter_block");
+        return RuntimeHelper.requireNonNull(constants$141.const$1,"rs2_create_decimation_filter_block");
     }
     /**
      * {@snippet :
@@ -2826,7 +2826,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_temporal_filter_block$MH() {
-        return RuntimeHelper.requireNonNull(constants$105.rs2_create_temporal_filter_block$MH,"rs2_create_temporal_filter_block");
+        return RuntimeHelper.requireNonNull(constants$141.const$2,"rs2_create_temporal_filter_block");
     }
     /**
      * {@snippet :
@@ -2842,7 +2842,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_spatial_filter_block$MH() {
-        return RuntimeHelper.requireNonNull(constants$105.rs2_create_spatial_filter_block$MH,"rs2_create_spatial_filter_block");
+        return RuntimeHelper.requireNonNull(constants$141.const$3,"rs2_create_spatial_filter_block");
     }
     /**
      * {@snippet :
@@ -2858,7 +2858,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_disparity_transform_block$MH() {
-        return RuntimeHelper.requireNonNull(constants$106.rs2_create_disparity_transform_block$MH,"rs2_create_disparity_transform_block");
+        return RuntimeHelper.requireNonNull(constants$141.const$5,"rs2_create_disparity_transform_block");
     }
     /**
      * {@snippet :
@@ -2874,7 +2874,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_hole_filling_filter_block$MH() {
-        return RuntimeHelper.requireNonNull(constants$106.rs2_create_hole_filling_filter_block$MH,"rs2_create_hole_filling_filter_block");
+        return RuntimeHelper.requireNonNull(constants$142.const$0,"rs2_create_hole_filling_filter_block");
     }
     /**
      * {@snippet :
@@ -2890,7 +2890,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_rates_printer_block$MH() {
-        return RuntimeHelper.requireNonNull(constants$106.rs2_create_rates_printer_block$MH,"rs2_create_rates_printer_block");
+        return RuntimeHelper.requireNonNull(constants$142.const$1,"rs2_create_rates_printer_block");
     }
     /**
      * {@snippet :
@@ -2906,7 +2906,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_zero_order_invalidation_block$MH() {
-        return RuntimeHelper.requireNonNull(constants$106.rs2_create_zero_order_invalidation_block$MH,"rs2_create_zero_order_invalidation_block");
+        return RuntimeHelper.requireNonNull(constants$142.const$2,"rs2_create_zero_order_invalidation_block");
     }
     /**
      * {@snippet :
@@ -2922,7 +2922,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_huffman_depth_decompress_block$MH() {
-        return RuntimeHelper.requireNonNull(constants$106.rs2_create_huffman_depth_decompress_block$MH,"rs2_create_huffman_depth_decompress_block");
+        return RuntimeHelper.requireNonNull(constants$142.const$3,"rs2_create_huffman_depth_decompress_block");
     }
     /**
      * {@snippet :
@@ -2938,7 +2938,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_hdr_merge_processing_block$MH() {
-        return RuntimeHelper.requireNonNull(constants$106.rs2_create_hdr_merge_processing_block$MH,"rs2_create_hdr_merge_processing_block");
+        return RuntimeHelper.requireNonNull(constants$142.const$4,"rs2_create_hdr_merge_processing_block");
     }
     /**
      * {@snippet :
@@ -2954,7 +2954,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_sequence_id_filter$MH() {
-        return RuntimeHelper.requireNonNull(constants$107.rs2_create_sequence_id_filter$MH,"rs2_create_sequence_id_filter");
+        return RuntimeHelper.requireNonNull(constants$142.const$5,"rs2_create_sequence_id_filter");
     }
     /**
      * {@snippet :
@@ -2970,7 +2970,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_processing_block_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$107.rs2_get_processing_block_info$MH,"rs2_get_processing_block_info");
+        return RuntimeHelper.requireNonNull(constants$143.const$0,"rs2_get_processing_block_info");
     }
     /**
      * {@snippet :
@@ -2986,7 +2986,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_supports_processing_block_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$107.rs2_supports_processing_block_info$MH,"rs2_supports_processing_block_info");
+        return RuntimeHelper.requireNonNull(constants$143.const$1,"rs2_supports_processing_block_info");
     }
     /**
      * {@snippet :
@@ -3002,7 +3002,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_is_processing_block_extendable_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$107.rs2_is_processing_block_extendable_to$MH,"rs2_is_processing_block_extendable_to");
+        return RuntimeHelper.requireNonNull(constants$143.const$2,"rs2_is_processing_block_extendable_to");
     }
     /**
      * {@snippet :
@@ -3058,7 +3058,7 @@ public class librealsense_1 {
         return (int)4L;
     }
     public static MethodHandle rs2_playback_status_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$107.rs2_playback_status_to_string$MH,"rs2_playback_status_to_string");
+        return RuntimeHelper.requireNonNull(constants$143.const$3,"rs2_playback_status_to_string");
     }
     /**
      * {@snippet :
@@ -3074,7 +3074,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_record_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$108.rs2_create_record_device$MH,"rs2_create_record_device");
+        return RuntimeHelper.requireNonNull(constants$144.const$0,"rs2_create_record_device");
     }
     /**
      * {@snippet :
@@ -3090,7 +3090,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_record_device_ex$MH() {
-        return RuntimeHelper.requireNonNull(constants$108.rs2_create_record_device_ex$MH,"rs2_create_record_device_ex");
+        return RuntimeHelper.requireNonNull(constants$144.const$1,"rs2_create_record_device_ex");
     }
     /**
      * {@snippet :
@@ -3106,7 +3106,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_record_device_pause$MH() {
-        return RuntimeHelper.requireNonNull(constants$108.rs2_record_device_pause$MH,"rs2_record_device_pause");
+        return RuntimeHelper.requireNonNull(constants$144.const$2,"rs2_record_device_pause");
     }
     /**
      * {@snippet :
@@ -3122,7 +3122,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_record_device_resume$MH() {
-        return RuntimeHelper.requireNonNull(constants$108.rs2_record_device_resume$MH,"rs2_record_device_resume");
+        return RuntimeHelper.requireNonNull(constants$144.const$3,"rs2_record_device_resume");
     }
     /**
      * {@snippet :
@@ -3138,7 +3138,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_record_device_filename$MH() {
-        return RuntimeHelper.requireNonNull(constants$108.rs2_record_device_filename$MH,"rs2_record_device_filename");
+        return RuntimeHelper.requireNonNull(constants$144.const$4,"rs2_record_device_filename");
     }
     /**
      * {@snippet :
@@ -3154,7 +3154,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_playback_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$109.rs2_create_playback_device$MH,"rs2_create_playback_device");
+        return RuntimeHelper.requireNonNull(constants$144.const$5,"rs2_create_playback_device");
     }
     /**
      * {@snippet :
@@ -3170,7 +3170,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_playback_device_get_file_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$109.rs2_playback_device_get_file_path$MH,"rs2_playback_device_get_file_path");
+        return RuntimeHelper.requireNonNull(constants$145.const$0,"rs2_playback_device_get_file_path");
     }
     /**
      * {@snippet :
@@ -3186,7 +3186,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_playback_get_duration$MH() {
-        return RuntimeHelper.requireNonNull(constants$109.rs2_playback_get_duration$MH,"rs2_playback_get_duration");
+        return RuntimeHelper.requireNonNull(constants$145.const$1,"rs2_playback_get_duration");
     }
     /**
      * {@snippet :
@@ -3202,7 +3202,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_playback_seek$MH() {
-        return RuntimeHelper.requireNonNull(constants$109.rs2_playback_seek$MH,"rs2_playback_seek");
+        return RuntimeHelper.requireNonNull(constants$145.const$3,"rs2_playback_seek");
     }
     /**
      * {@snippet :
@@ -3218,7 +3218,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_playback_get_position$MH() {
-        return RuntimeHelper.requireNonNull(constants$109.rs2_playback_get_position$MH,"rs2_playback_get_position");
+        return RuntimeHelper.requireNonNull(constants$145.const$4,"rs2_playback_get_position");
     }
     /**
      * {@snippet :
@@ -3234,7 +3234,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_playback_device_resume$MH() {
-        return RuntimeHelper.requireNonNull(constants$109.rs2_playback_device_resume$MH,"rs2_playback_device_resume");
+        return RuntimeHelper.requireNonNull(constants$145.const$5,"rs2_playback_device_resume");
     }
     /**
      * {@snippet :
@@ -3250,7 +3250,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_playback_device_pause$MH() {
-        return RuntimeHelper.requireNonNull(constants$110.rs2_playback_device_pause$MH,"rs2_playback_device_pause");
+        return RuntimeHelper.requireNonNull(constants$146.const$0,"rs2_playback_device_pause");
     }
     /**
      * {@snippet :
@@ -3266,7 +3266,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_playback_device_set_real_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$110.rs2_playback_device_set_real_time$MH,"rs2_playback_device_set_real_time");
+        return RuntimeHelper.requireNonNull(constants$146.const$1,"rs2_playback_device_set_real_time");
     }
     /**
      * {@snippet :
@@ -3282,7 +3282,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_playback_device_is_real_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$110.rs2_playback_device_is_real_time$MH,"rs2_playback_device_is_real_time");
+        return RuntimeHelper.requireNonNull(constants$146.const$2,"rs2_playback_device_is_real_time");
     }
     /**
      * {@snippet :
@@ -3298,7 +3298,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_playback_device_set_status_changed_callback$MH() {
-        return RuntimeHelper.requireNonNull(constants$110.rs2_playback_device_set_status_changed_callback$MH,"rs2_playback_device_set_status_changed_callback");
+        return RuntimeHelper.requireNonNull(constants$146.const$3,"rs2_playback_device_set_status_changed_callback");
     }
     /**
      * {@snippet :
@@ -3314,7 +3314,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_playback_device_get_current_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$110.rs2_playback_device_get_current_status$MH,"rs2_playback_device_get_current_status");
+        return RuntimeHelper.requireNonNull(constants$146.const$4,"rs2_playback_device_get_current_status");
     }
     /**
      * {@snippet :
@@ -3330,7 +3330,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_playback_device_set_playback_speed$MH() {
-        return RuntimeHelper.requireNonNull(constants$110.rs2_playback_device_set_playback_speed$MH,"rs2_playback_device_set_playback_speed");
+        return RuntimeHelper.requireNonNull(constants$146.const$6,"rs2_playback_device_set_playback_speed");
     }
     /**
      * {@snippet :
@@ -3346,7 +3346,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_playback_device_stop$MH() {
-        return RuntimeHelper.requireNonNull(constants$111.rs2_playback_device_stop$MH,"rs2_playback_device_stop");
+        return RuntimeHelper.requireNonNull(constants$147.const$0,"rs2_playback_device_stop");
     }
     /**
      * {@snippet :
@@ -3362,7 +3362,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_raw_data_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$111.rs2_get_raw_data_size$MH,"rs2_get_raw_data_size");
+        return RuntimeHelper.requireNonNull(constants$147.const$1,"rs2_get_raw_data_size");
     }
     /**
      * {@snippet :
@@ -3378,7 +3378,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_delete_raw_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$111.rs2_delete_raw_data$MH,"rs2_delete_raw_data");
+        return RuntimeHelper.requireNonNull(constants$147.const$2,"rs2_delete_raw_data");
     }
     /**
      * {@snippet :
@@ -3394,7 +3394,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_raw_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$111.rs2_get_raw_data$MH,"rs2_get_raw_data");
+        return RuntimeHelper.requireNonNull(constants$147.const$3,"rs2_get_raw_data");
     }
     /**
      * {@snippet :
@@ -3410,7 +3410,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_api_version$MH() {
-        return RuntimeHelper.requireNonNull(constants$111.rs2_get_api_version$MH,"rs2_get_api_version");
+        return RuntimeHelper.requireNonNull(constants$147.const$4,"rs2_get_api_version");
     }
     /**
      * {@snippet :
@@ -3426,7 +3426,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_log_to_console$MH() {
-        return RuntimeHelper.requireNonNull(constants$111.rs2_log_to_console$MH,"rs2_log_to_console");
+        return RuntimeHelper.requireNonNull(constants$147.const$5,"rs2_log_to_console");
     }
     /**
      * {@snippet :
@@ -3442,7 +3442,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_log_to_file$MH() {
-        return RuntimeHelper.requireNonNull(constants$112.rs2_log_to_file$MH,"rs2_log_to_file");
+        return RuntimeHelper.requireNonNull(constants$148.const$0,"rs2_log_to_file");
     }
     /**
      * {@snippet :
@@ -3458,7 +3458,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_log_to_callback_cpp$MH() {
-        return RuntimeHelper.requireNonNull(constants$112.rs2_log_to_callback_cpp$MH,"rs2_log_to_callback_cpp");
+        return RuntimeHelper.requireNonNull(constants$148.const$1,"rs2_log_to_callback_cpp");
     }
     /**
      * {@snippet :
@@ -3474,7 +3474,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_log_to_callback$MH() {
-        return RuntimeHelper.requireNonNull(constants$112.rs2_log_to_callback$MH,"rs2_log_to_callback");
+        return RuntimeHelper.requireNonNull(constants$148.const$3,"rs2_log_to_callback");
     }
     /**
      * {@snippet :
@@ -3490,7 +3490,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_reset_logger$MH() {
-        return RuntimeHelper.requireNonNull(constants$112.rs2_reset_logger$MH,"rs2_reset_logger");
+        return RuntimeHelper.requireNonNull(constants$148.const$4,"rs2_reset_logger");
     }
     /**
      * {@snippet :
@@ -3506,7 +3506,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_enable_rolling_log_file$MH() {
-        return RuntimeHelper.requireNonNull(constants$112.rs2_enable_rolling_log_file$MH,"rs2_enable_rolling_log_file");
+        return RuntimeHelper.requireNonNull(constants$148.const$5,"rs2_enable_rolling_log_file");
     }
     /**
      * {@snippet :
@@ -3522,7 +3522,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_log_message_line_number$MH() {
-        return RuntimeHelper.requireNonNull(constants$112.rs2_get_log_message_line_number$MH,"rs2_get_log_message_line_number");
+        return RuntimeHelper.requireNonNull(constants$149.const$0,"rs2_get_log_message_line_number");
     }
     /**
      * {@snippet :
@@ -3538,7 +3538,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_log_message_filename$MH() {
-        return RuntimeHelper.requireNonNull(constants$113.rs2_get_log_message_filename$MH,"rs2_get_log_message_filename");
+        return RuntimeHelper.requireNonNull(constants$149.const$1,"rs2_get_log_message_filename");
     }
     /**
      * {@snippet :
@@ -3554,7 +3554,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_raw_log_message$MH() {
-        return RuntimeHelper.requireNonNull(constants$113.rs2_get_raw_log_message$MH,"rs2_get_raw_log_message");
+        return RuntimeHelper.requireNonNull(constants$149.const$2,"rs2_get_raw_log_message");
     }
     /**
      * {@snippet :
@@ -3570,7 +3570,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_full_log_message$MH() {
-        return RuntimeHelper.requireNonNull(constants$113.rs2_get_full_log_message$MH,"rs2_get_full_log_message");
+        return RuntimeHelper.requireNonNull(constants$149.const$3,"rs2_get_full_log_message");
     }
     /**
      * {@snippet :
@@ -3586,7 +3586,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_log$MH() {
-        return RuntimeHelper.requireNonNull(constants$113.rs2_log$MH,"rs2_log");
+        return RuntimeHelper.requireNonNull(constants$149.const$4,"rs2_log");
     }
     /**
      * {@snippet :
@@ -3602,7 +3602,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_depth_frame_get_distance$MH() {
-        return RuntimeHelper.requireNonNull(constants$113.rs2_depth_frame_get_distance$MH,"rs2_depth_frame_get_distance");
+        return RuntimeHelper.requireNonNull(constants$149.const$6,"rs2_depth_frame_get_distance");
     }
     /**
      * {@snippet :
@@ -3618,7 +3618,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_get_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$113.rs2_get_time$MH,"rs2_get_time");
+        return RuntimeHelper.requireNonNull(constants$150.const$0,"rs2_get_time");
     }
     /**
      * {@snippet :
@@ -3634,7 +3634,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_config$MH() {
-        return RuntimeHelper.requireNonNull(constants$114.rs2_create_config$MH,"rs2_create_config");
+        return RuntimeHelper.requireNonNull(constants$150.const$1,"rs2_create_config");
     }
     /**
      * {@snippet :
@@ -3650,7 +3650,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_delete_config$MH() {
-        return RuntimeHelper.requireNonNull(constants$114.rs2_delete_config$MH,"rs2_delete_config");
+        return RuntimeHelper.requireNonNull(constants$150.const$2,"rs2_delete_config");
     }
     /**
      * {@snippet :
@@ -3666,7 +3666,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_config_enable_stream$MH() {
-        return RuntimeHelper.requireNonNull(constants$114.rs2_config_enable_stream$MH,"rs2_config_enable_stream");
+        return RuntimeHelper.requireNonNull(constants$150.const$4,"rs2_config_enable_stream");
     }
     /**
      * {@snippet :
@@ -3682,7 +3682,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_config_enable_all_stream$MH() {
-        return RuntimeHelper.requireNonNull(constants$114.rs2_config_enable_all_stream$MH,"rs2_config_enable_all_stream");
+        return RuntimeHelper.requireNonNull(constants$150.const$5,"rs2_config_enable_all_stream");
     }
     /**
      * {@snippet :
@@ -3698,7 +3698,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_config_enable_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$114.rs2_config_enable_device$MH,"rs2_config_enable_device");
+        return RuntimeHelper.requireNonNull(constants$151.const$0,"rs2_config_enable_device");
     }
     /**
      * {@snippet :
@@ -3714,7 +3714,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_config_enable_device_from_file$MH() {
-        return RuntimeHelper.requireNonNull(constants$114.rs2_config_enable_device_from_file$MH,"rs2_config_enable_device_from_file");
+        return RuntimeHelper.requireNonNull(constants$151.const$1,"rs2_config_enable_device_from_file");
     }
     /**
      * {@snippet :
@@ -3730,7 +3730,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_config_enable_device_from_file_repeat_option$MH() {
-        return RuntimeHelper.requireNonNull(constants$115.rs2_config_enable_device_from_file_repeat_option$MH,"rs2_config_enable_device_from_file_repeat_option");
+        return RuntimeHelper.requireNonNull(constants$151.const$2,"rs2_config_enable_device_from_file_repeat_option");
     }
     /**
      * {@snippet :
@@ -3746,7 +3746,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_config_enable_record_to_file$MH() {
-        return RuntimeHelper.requireNonNull(constants$115.rs2_config_enable_record_to_file$MH,"rs2_config_enable_record_to_file");
+        return RuntimeHelper.requireNonNull(constants$151.const$3,"rs2_config_enable_record_to_file");
     }
     /**
      * {@snippet :
@@ -3762,7 +3762,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_config_disable_stream$MH() {
-        return RuntimeHelper.requireNonNull(constants$115.rs2_config_disable_stream$MH,"rs2_config_disable_stream");
+        return RuntimeHelper.requireNonNull(constants$151.const$4,"rs2_config_disable_stream");
     }
     /**
      * {@snippet :
@@ -3778,7 +3778,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_config_disable_indexed_stream$MH() {
-        return RuntimeHelper.requireNonNull(constants$115.rs2_config_disable_indexed_stream$MH,"rs2_config_disable_indexed_stream");
+        return RuntimeHelper.requireNonNull(constants$151.const$6,"rs2_config_disable_indexed_stream");
     }
     /**
      * {@snippet :
@@ -3794,7 +3794,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_config_disable_all_streams$MH() {
-        return RuntimeHelper.requireNonNull(constants$115.rs2_config_disable_all_streams$MH,"rs2_config_disable_all_streams");
+        return RuntimeHelper.requireNonNull(constants$152.const$0,"rs2_config_disable_all_streams");
     }
     /**
      * {@snippet :
@@ -3810,7 +3810,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_config_resolve$MH() {
-        return RuntimeHelper.requireNonNull(constants$115.rs2_config_resolve$MH,"rs2_config_resolve");
+        return RuntimeHelper.requireNonNull(constants$152.const$1,"rs2_config_resolve");
     }
     /**
      * {@snippet :
@@ -3826,7 +3826,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_config_can_resolve$MH() {
-        return RuntimeHelper.requireNonNull(constants$116.rs2_config_can_resolve$MH,"rs2_config_can_resolve");
+        return RuntimeHelper.requireNonNull(constants$152.const$2,"rs2_config_can_resolve");
     }
     /**
      * {@snippet :
@@ -3842,7 +3842,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_create_pipeline$MH() {
-        return RuntimeHelper.requireNonNull(constants$116.rs2_create_pipeline$MH,"rs2_create_pipeline");
+        return RuntimeHelper.requireNonNull(constants$152.const$3,"rs2_create_pipeline");
     }
     /**
      * {@snippet :
@@ -3858,7 +3858,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_pipeline_stop$MH() {
-        return RuntimeHelper.requireNonNull(constants$116.rs2_pipeline_stop$MH,"rs2_pipeline_stop");
+        return RuntimeHelper.requireNonNull(constants$152.const$4,"rs2_pipeline_stop");
     }
     /**
      * {@snippet :
@@ -3874,7 +3874,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_pipeline_wait_for_frames$MH() {
-        return RuntimeHelper.requireNonNull(constants$116.rs2_pipeline_wait_for_frames$MH,"rs2_pipeline_wait_for_frames");
+        return RuntimeHelper.requireNonNull(constants$152.const$5,"rs2_pipeline_wait_for_frames");
     }
     /**
      * {@snippet :
@@ -3890,7 +3890,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_pipeline_poll_for_frames$MH() {
-        return RuntimeHelper.requireNonNull(constants$116.rs2_pipeline_poll_for_frames$MH,"rs2_pipeline_poll_for_frames");
+        return RuntimeHelper.requireNonNull(constants$153.const$0,"rs2_pipeline_poll_for_frames");
     }
     /**
      * {@snippet :
@@ -3906,7 +3906,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_pipeline_try_wait_for_frames$MH() {
-        return RuntimeHelper.requireNonNull(constants$116.rs2_pipeline_try_wait_for_frames$MH,"rs2_pipeline_try_wait_for_frames");
+        return RuntimeHelper.requireNonNull(constants$153.const$1,"rs2_pipeline_try_wait_for_frames");
     }
     /**
      * {@snippet :
@@ -3922,7 +3922,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_delete_pipeline$MH() {
-        return RuntimeHelper.requireNonNull(constants$117.rs2_delete_pipeline$MH,"rs2_delete_pipeline");
+        return RuntimeHelper.requireNonNull(constants$153.const$2,"rs2_delete_pipeline");
     }
     /**
      * {@snippet :
@@ -3938,7 +3938,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_pipeline_start$MH() {
-        return RuntimeHelper.requireNonNull(constants$117.rs2_pipeline_start$MH,"rs2_pipeline_start");
+        return RuntimeHelper.requireNonNull(constants$153.const$3,"rs2_pipeline_start");
     }
     /**
      * {@snippet :
@@ -3954,7 +3954,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_pipeline_start_with_config$MH() {
-        return RuntimeHelper.requireNonNull(constants$117.rs2_pipeline_start_with_config$MH,"rs2_pipeline_start_with_config");
+        return RuntimeHelper.requireNonNull(constants$153.const$4,"rs2_pipeline_start_with_config");
     }
     /**
      * {@snippet :
@@ -3970,7 +3970,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_pipeline_start_with_callback$MH() {
-        return RuntimeHelper.requireNonNull(constants$117.rs2_pipeline_start_with_callback$MH,"rs2_pipeline_start_with_callback");
+        return RuntimeHelper.requireNonNull(constants$153.const$5,"rs2_pipeline_start_with_callback");
     }
     /**
      * {@snippet :
@@ -3986,7 +3986,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_pipeline_start_with_callback_cpp$MH() {
-        return RuntimeHelper.requireNonNull(constants$117.rs2_pipeline_start_with_callback_cpp$MH,"rs2_pipeline_start_with_callback_cpp");
+        return RuntimeHelper.requireNonNull(constants$154.const$0,"rs2_pipeline_start_with_callback_cpp");
     }
     /**
      * {@snippet :
@@ -4002,7 +4002,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_pipeline_start_with_config_and_callback$MH() {
-        return RuntimeHelper.requireNonNull(constants$117.rs2_pipeline_start_with_config_and_callback$MH,"rs2_pipeline_start_with_config_and_callback");
+        return RuntimeHelper.requireNonNull(constants$154.const$2,"rs2_pipeline_start_with_config_and_callback");
     }
     /**
      * {@snippet :
@@ -4018,7 +4018,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_pipeline_start_with_config_and_callback_cpp$MH() {
-        return RuntimeHelper.requireNonNull(constants$118.rs2_pipeline_start_with_config_and_callback_cpp$MH,"rs2_pipeline_start_with_config_and_callback_cpp");
+        return RuntimeHelper.requireNonNull(constants$154.const$3,"rs2_pipeline_start_with_config_and_callback_cpp");
     }
     /**
      * {@snippet :
@@ -4034,7 +4034,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_pipeline_get_active_profile$MH() {
-        return RuntimeHelper.requireNonNull(constants$118.rs2_pipeline_get_active_profile$MH,"rs2_pipeline_get_active_profile");
+        return RuntimeHelper.requireNonNull(constants$154.const$4,"rs2_pipeline_get_active_profile");
     }
     /**
      * {@snippet :
@@ -4050,7 +4050,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_pipeline_profile_get_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$118.rs2_pipeline_profile_get_device$MH,"rs2_pipeline_profile_get_device");
+        return RuntimeHelper.requireNonNull(constants$154.const$5,"rs2_pipeline_profile_get_device");
     }
     /**
      * {@snippet :
@@ -4066,7 +4066,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_pipeline_profile_get_streams$MH() {
-        return RuntimeHelper.requireNonNull(constants$118.rs2_pipeline_profile_get_streams$MH,"rs2_pipeline_profile_get_streams");
+        return RuntimeHelper.requireNonNull(constants$155.const$0,"rs2_pipeline_profile_get_streams");
     }
     /**
      * {@snippet :
@@ -4082,7 +4082,7 @@ public class librealsense_1 {
         }
     }
     public static MethodHandle rs2_delete_pipeline_profile$MH() {
-        return RuntimeHelper.requireNonNull(constants$118.rs2_delete_pipeline_profile$MH,"rs2_delete_pipeline_profile");
+        return RuntimeHelper.requireNonNull(constants$155.const$1,"rs2_delete_pipeline_profile");
     }
     /**
      * {@snippet :
@@ -4119,7 +4119,7 @@ public class librealsense_1 {
      * }
      */
     public static MemorySegment NULL() {
-        return constants$118.NULL$ADDR;
+        return constants$155.const$2;
     }
     /**
      * {@snippet :
@@ -4215,7 +4215,7 @@ public class librealsense_1 {
      * }
      */
     public static MemorySegment __FD_ZERO_STOS() {
-        return constants$119.__FD_ZERO_STOS$SEGMENT;
+        return constants$155.const$3;
     }
     /**
      * {@snippet :

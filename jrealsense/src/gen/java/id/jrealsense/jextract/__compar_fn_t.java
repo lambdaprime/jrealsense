@@ -15,14 +15,14 @@ import static java.lang.foreign.ValueLayout.*;
 public interface __compar_fn_t {
 
     int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-    static MemorySegment allocate(__compar_fn_t fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$13.__compar_fn_t_UP$MH, fi, constants$13.__compar_fn_t$FUNC, scope);
+    static MemorySegment allocate(__compar_fn_t fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$29.const$4, fi, constants$17.const$2, scope);
     }
-    static __compar_fn_t ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static __compar_fn_t ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
             try {
-                return (int)constants$13.__compar_fn_t_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                return (int)constants$29.const$5.invokeExact(symbol, __x0, __x1);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

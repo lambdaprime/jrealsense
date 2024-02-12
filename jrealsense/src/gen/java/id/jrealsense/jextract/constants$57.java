@@ -11,47 +11,29 @@ final class constants$57 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$57() {}
-    static final FunctionDescriptor erfcf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle erfcf$MH = RuntimeHelper.downcallHandle(
-        "erfcf",
-        constants$57.erfcf$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "remquo",
+        constants$57.const$0
     );
-    static final FunctionDescriptor __erfcf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__remquo",
+        constants$57.const$0
     );
-    static final MethodHandle __erfcf$MH = RuntimeHelper.downcallHandle(
-        "__erfcf",
-        constants$57.__erfcf$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_LONG,
+        JAVA_DOUBLE
     );
-    static final FunctionDescriptor lgammaf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "lrint",
+        constants$57.const$3
     );
-    static final MethodHandle lgammaf$MH = RuntimeHelper.downcallHandle(
-        "lgammaf",
-        constants$57.lgammaf$FUNC
-    );
-    static final FunctionDescriptor __lgammaf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle __lgammaf$MH = RuntimeHelper.downcallHandle(
-        "__lgammaf",
-        constants$57.__lgammaf$FUNC
-    );
-    static final FunctionDescriptor tgammaf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle tgammaf$MH = RuntimeHelper.downcallHandle(
-        "tgammaf",
-        constants$57.tgammaf$FUNC
-    );
-    static final FunctionDescriptor __tgammaf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle __tgammaf$MH = RuntimeHelper.downcallHandle(
-        "__tgammaf",
-        constants$57.__tgammaf$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "__lrint",
+        constants$57.const$3
     );
 }
 

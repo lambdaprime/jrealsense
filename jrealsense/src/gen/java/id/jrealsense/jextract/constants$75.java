@@ -11,71 +11,29 @@ final class constants$75 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$75() {}
-    static final FunctionDescriptor rs2_get_active_streams$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__nanf",
+        constants$74.const$5
     );
-    static final MethodHandle rs2_get_active_streams$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_active_streams",
-        constants$75.rs2_get_active_streams$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "isnanf",
+        constants$60.const$5
     );
-    static final FunctionDescriptor rs2_get_stream_profile$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "j0f",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_get_stream_profile$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_stream_profile",
-        constants$75.rs2_get_stream_profile$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "__j0f",
+        constants$62.const$1
     );
-    static final FunctionDescriptor rs2_get_stream_profile_data$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "j1f",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_get_stream_profile_data$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_stream_profile_data",
-        constants$75.rs2_get_stream_profile_data$FUNC
-    );
-    static final FunctionDescriptor rs2_set_stream_profile_data$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_set_stream_profile_data$MH = RuntimeHelper.downcallHandle(
-        "rs2_set_stream_profile_data",
-        constants$75.rs2_set_stream_profile_data$FUNC
-    );
-    static final FunctionDescriptor rs2_clone_stream_profile$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_clone_stream_profile$MH = RuntimeHelper.downcallHandle(
-        "rs2_clone_stream_profile",
-        constants$75.rs2_clone_stream_profile$FUNC
-    );
-    static final FunctionDescriptor rs2_clone_video_stream_profile$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_clone_video_stream_profile$MH = RuntimeHelper.downcallHandle(
-        "rs2_clone_video_stream_profile",
-        constants$75.rs2_clone_video_stream_profile$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "__j1f",
+        constants$62.const$1
     );
 }
 

@@ -11,54 +11,29 @@ final class constants$7 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$7() {}
-    static final FunctionDescriptor jrand48_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle jrand48_r$MH = RuntimeHelper.downcallHandle(
-        "jrand48_r",
-        constants$7.jrand48_r$FUNC
-    );
-    static final FunctionDescriptor srand48_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle srand48_r$MH = RuntimeHelper.downcallHandle(
-        "srand48_r",
-        constants$7.srand48_r$FUNC
-    );
-    static final FunctionDescriptor seed48_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle seed48_r$MH = RuntimeHelper.downcallHandle(
-        "seed48_r",
-        constants$7.seed48_r$FUNC
-    );
-    static final FunctionDescriptor lcong48_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lcong48_r$MH = RuntimeHelper.downcallHandle(
-        "lcong48_r",
-        constants$7.lcong48_r$FUNC
-    );
-    static final FunctionDescriptor malloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle malloc$MH = RuntimeHelper.downcallHandle(
-        "malloc",
-        constants$7.malloc$FUNC
-    );
-    static final FunctionDescriptor calloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle calloc$MH = RuntimeHelper.downcallHandle(
-        "calloc",
-        constants$7.calloc$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("__prev"),
+        RuntimeHelper.POINTER.withName("__next")
+    ).withName("__pthread_internal_list");
+    static final VarHandle const$1 = constants$7.const$0.varHandle(MemoryLayout.PathElement.groupElement("__prev"));
+    static final VarHandle const$2 = constants$7.const$0.varHandle(MemoryLayout.PathElement.groupElement("__next"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("__next")
+    ).withName("__pthread_internal_slist");
+    static final VarHandle const$4 = constants$7.const$3.varHandle(MemoryLayout.PathElement.groupElement("__next"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        JAVA_INT.withName("__lock"),
+        JAVA_INT.withName("__count"),
+        JAVA_INT.withName("__owner"),
+        JAVA_INT.withName("__nusers"),
+        JAVA_INT.withName("__kind"),
+        JAVA_SHORT.withName("__spins"),
+        JAVA_SHORT.withName("__elision"),
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__prev"),
+            RuntimeHelper.POINTER.withName("__next")
+        ).withName("__list")
+    ).withName("__pthread_mutex_s");
 }
 
 

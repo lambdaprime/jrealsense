@@ -11,49 +11,33 @@ final class constants$60 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$60() {}
-    static final FunctionDescriptor ilogbf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
-    static final MethodHandle ilogbf$MH = RuntimeHelper.downcallHandle(
-        "ilogbf",
-        constants$60.ilogbf$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "fma",
+        constants$60.const$0
     );
-    static final FunctionDescriptor __ilogbf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__fma",
+        constants$60.const$0
     );
-    static final MethodHandle __ilogbf$MH = RuntimeHelper.downcallHandle(
-        "__ilogbf",
-        constants$60.__ilogbf$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "scalb",
+        constants$37.const$5
     );
-    static final FunctionDescriptor scalblnf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__scalb",
+        constants$37.const$5
     );
-    static final MethodHandle scalblnf$MH = RuntimeHelper.downcallHandle(
-        "scalblnf",
-        constants$60.scalblnf$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_FLOAT
     );
-    static final FunctionDescriptor __scalblnf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle __scalblnf$MH = RuntimeHelper.downcallHandle(
-        "__scalblnf",
-        constants$60.__scalblnf$FUNC
-    );
-    static final FunctionDescriptor nearbyintf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle nearbyintf$MH = RuntimeHelper.downcallHandle(
-        "nearbyintf",
-        constants$60.nearbyintf$FUNC
-    );
-    static final FunctionDescriptor __nearbyintf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle __nearbyintf$MH = RuntimeHelper.downcallHandle(
-        "__nearbyintf",
-        constants$60.__nearbyintf$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "__fpclassifyf",
+        constants$60.const$5
     );
 }
 

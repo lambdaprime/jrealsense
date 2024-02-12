@@ -16,11 +16,8 @@ import static java.lang.foreign.ValueLayout.*;
  */
 public class rs2_vertex {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.sequenceLayout(3, Constants$root.C_FLOAT$LAYOUT).withName("xyz")
-    ).withName("rs2_vertex");
     public static MemoryLayout $LAYOUT() {
-        return rs2_vertex.$struct$LAYOUT;
+        return constants$91.const$1;
     }
     public static MemorySegment xyz$slice(MemorySegment seg) {
         return seg.asSlice(0, 12);
@@ -30,7 +27,7 @@ public class rs2_vertex {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena arena) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, arena); }
 }
 
 

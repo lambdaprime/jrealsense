@@ -11,57 +11,29 @@ final class constants$68 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$68() {}
-    static final FunctionDescriptor rs2_frame_processor_callback_ptr$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__ldexpf",
+        constants$67.const$4
     );
-    static final FunctionDescriptor rs2_frame_processor_callback_ptr_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "logf",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_frame_processor_callback_ptr_UP$MH = RuntimeHelper.upcallHandle(rs2_frame_processor_callback_ptr.class, "apply", constants$68.rs2_frame_processor_callback_ptr_UP$FUNC);
-    static final FunctionDescriptor rs2_frame_processor_callback_ptr_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__logf",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_frame_processor_callback_ptr_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$68.rs2_frame_processor_callback_ptr_DOWN$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "log10f",
+        constants$62.const$1
     );
-    static final FunctionDescriptor rs2_update_progress_callback_ptr$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__log10f",
+        constants$62.const$1
     );
-    static final FunctionDescriptor rs2_update_progress_callback_ptr_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_update_progress_callback_ptr_UP$MH = RuntimeHelper.upcallHandle(rs2_update_progress_callback_ptr.class, "apply", constants$68.rs2_update_progress_callback_ptr_UP$FUNC);
-    static final FunctionDescriptor rs2_update_progress_callback_ptr_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_update_progress_callback_ptr_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$68.rs2_update_progress_callback_ptr_DOWN$FUNC
-    );
-    static final FunctionDescriptor rs2_create_error$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle rs2_create_error$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_error",
-        constants$68.rs2_create_error$FUNC
-    );
-    static final FunctionDescriptor rs2_get_librealsense_exception_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_librealsense_exception_type$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_librealsense_exception_type",
-        constants$68.rs2_get_librealsense_exception_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "modff",
+        constants$67.const$1
     );
 }
 

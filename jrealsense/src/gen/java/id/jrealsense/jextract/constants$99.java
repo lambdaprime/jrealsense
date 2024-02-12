@@ -11,51 +11,31 @@ final class constants$99 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$99() {}
-    static final FunctionDescriptor rs2_ambient_light_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle rs2_ambient_light_to_string$MH = RuntimeHelper.downcallHandle(
-        "rs2_ambient_light_to_string",
-        constants$99.rs2_ambient_light_to_string$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "rs2_create_sensor",
+        constants$99.const$0
     );
-    static final FunctionDescriptor rs2_digital_gain_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "rs2_create_device_from_sensor",
+        constants$29.const$2
     );
-    static final MethodHandle rs2_digital_gain_to_string$MH = RuntimeHelper.downcallHandle(
-        "rs2_digital_gain_to_string",
-        constants$99.rs2_digital_gain_to_string$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "rs2_get_sensor_info",
+        constants$99.const$0
     );
-    static final FunctionDescriptor rs2_host_perf_mode_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle rs2_host_perf_mode_to_string$MH = RuntimeHelper.downcallHandle(
-        "rs2_host_perf_mode_to_string",
-        constants$99.rs2_host_perf_mode_to_string$FUNC
-    );
-    static final FunctionDescriptor rs2_emitter_frequency_mode_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle rs2_emitter_frequency_mode_to_string$MH = RuntimeHelper.downcallHandle(
-        "rs2_emitter_frequency_mode_to_string",
-        constants$99.rs2_emitter_frequency_mode_to_string$FUNC
-    );
-    static final FunctionDescriptor rs2_is_option_read_only$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_is_option_read_only$MH = RuntimeHelper.downcallHandle(
-        "rs2_is_option_read_only",
-        constants$99.rs2_is_option_read_only$FUNC
-    );
-    static final FunctionDescriptor rs2_get_option$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_option$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_option",
-        constants$99.rs2_get_option$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "rs2_supports_sensor_info",
+        constants$99.const$4
     );
 }
 

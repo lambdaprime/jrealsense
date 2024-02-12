@@ -11,48 +11,29 @@ final class constants$54 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$54() {}
-    static final FunctionDescriptor __copysignf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__rint",
+        constants$36.const$4
     );
-    static final MethodHandle __copysignf$MH = RuntimeHelper.downcallHandle(
-        "__copysignf",
-        constants$54.__copysignf$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "nextafter",
+        constants$37.const$5
     );
-    static final FunctionDescriptor nanf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__nextafter",
+        constants$37.const$5
     );
-    static final MethodHandle nanf$MH = RuntimeHelper.downcallHandle(
-        "nanf",
-        constants$54.nanf$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "remainder",
+        constants$37.const$5
     );
-    static final FunctionDescriptor __nanf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__remainder",
+        constants$37.const$5
     );
-    static final MethodHandle __nanf$MH = RuntimeHelper.downcallHandle(
-        "__nanf",
-        constants$54.__nanf$FUNC
-    );
-    static final FunctionDescriptor isnanf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle isnanf$MH = RuntimeHelper.downcallHandle(
-        "isnanf",
-        constants$54.isnanf$FUNC
-    );
-    static final FunctionDescriptor j0f$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle j0f$MH = RuntimeHelper.downcallHandle(
-        "j0f",
-        constants$54.j0f$FUNC
-    );
-    static final FunctionDescriptor __j0f$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle __j0f$MH = RuntimeHelper.downcallHandle(
-        "__j0f",
-        constants$54.__j0f$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "scalbn",
+        constants$42.const$0
     );
 }
 

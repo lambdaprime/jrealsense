@@ -11,50 +11,35 @@ final class constants$11 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$11() {}
-    static final FunctionDescriptor quick_exit$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle quick_exit$MH = RuntimeHelper.downcallHandle(
-        "quick_exit",
-        constants$11.quick_exit$FUNC
-    );
-    static final FunctionDescriptor _Exit$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle _Exit$MH = RuntimeHelper.downcallHandle(
-        "_Exit",
-        constants$11._Exit$FUNC
-    );
-    static final FunctionDescriptor getenv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle getenv$MH = RuntimeHelper.downcallHandle(
-        "getenv",
-        constants$11.getenv$FUNC
-    );
-    static final FunctionDescriptor putenv$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle putenv$MH = RuntimeHelper.downcallHandle(
-        "putenv",
-        constants$11.putenv$FUNC
-    );
-    static final FunctionDescriptor setenv$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle setenv$MH = RuntimeHelper.downcallHandle(
-        "setenv",
-        constants$11.setenv$FUNC
-    );
-    static final FunctionDescriptor unsetenv$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle unsetenv$MH = RuntimeHelper.downcallHandle(
-        "unsetenv",
-        constants$11.unsetenv$FUNC
-    );
+    static final VarHandle const$0 = constants$9.const$1.varHandle(MemoryLayout.PathElement.groupElement("__flags"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.unionLayout(
+            JAVA_LONG.withName("__wseq"),
+            MemoryLayout.structLayout(
+                JAVA_INT.withName("__low"),
+                JAVA_INT.withName("__high")
+            ).withName("__wseq32")
+        ).withName("$anon$0"),
+        MemoryLayout.unionLayout(
+            JAVA_LONG.withName("__g1_start"),
+            MemoryLayout.structLayout(
+                JAVA_INT.withName("__low"),
+                JAVA_INT.withName("__high")
+            ).withName("__g1_start32")
+        ).withName("$anon$1"),
+        MemoryLayout.sequenceLayout(2, JAVA_INT).withName("__g_refs"),
+        MemoryLayout.sequenceLayout(2, JAVA_INT).withName("__g_size"),
+        JAVA_INT.withName("__g1_orig_size"),
+        JAVA_INT.withName("__wrefs"),
+        MemoryLayout.sequenceLayout(2, JAVA_INT).withName("__g_signals")
+    ).withName("__pthread_cond_s");
+    static final VarHandle const$2 = constants$11.const$1.varHandle(MemoryLayout.PathElement.groupElement("$anon$0"), MemoryLayout.PathElement.groupElement("__wseq"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_INT.withName("__low"),
+        JAVA_INT.withName("__high")
+    ).withName("");
+    static final VarHandle const$4 = constants$11.const$3.varHandle(MemoryLayout.PathElement.groupElement("__low"));
+    static final VarHandle const$5 = constants$11.const$3.varHandle(MemoryLayout.PathElement.groupElement("__high"));
 }
 
 

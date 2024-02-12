@@ -11,60 +11,29 @@ final class constants$97 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$97() {}
-    static final FunctionDescriptor rs2_allocate_points$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "rs2_get_librealsense_exception_type",
+        constants$2.const$0
     );
-    static final MethodHandle rs2_allocate_points$MH = RuntimeHelper.downcallHandle(
-        "rs2_allocate_points",
-        constants$97.rs2_allocate_points$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "rs2_get_failed_function",
+        constants$15.const$4
     );
-    static final FunctionDescriptor rs2_allocate_composite_frame$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "rs2_get_failed_args",
+        constants$15.const$4
     );
-    static final MethodHandle rs2_allocate_composite_frame$MH = RuntimeHelper.downcallHandle(
-        "rs2_allocate_composite_frame",
-        constants$97.rs2_allocate_composite_frame$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "rs2_get_error_message",
+        constants$15.const$4
     );
-    static final FunctionDescriptor rs2_extract_frame$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "rs2_free_error",
+        constants$20.const$5
     );
-    static final MethodHandle rs2_extract_frame$MH = RuntimeHelper.downcallHandle(
-        "rs2_extract_frame",
-        constants$97.rs2_extract_frame$FUNC
-    );
-    static final FunctionDescriptor rs2_embedded_frames_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_embedded_frames_count$MH = RuntimeHelper.downcallHandle(
-        "rs2_embedded_frames_count",
-        constants$97.rs2_embedded_frames_count$FUNC
-    );
-    static final FunctionDescriptor rs2_synthetic_frame_ready$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_synthetic_frame_ready$MH = RuntimeHelper.downcallHandle(
-        "rs2_synthetic_frame_ready",
-        constants$97.rs2_synthetic_frame_ready$FUNC
-    );
-    static final FunctionDescriptor rs2_pose_frame_get_pose_data$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_pose_frame_get_pose_data$MH = RuntimeHelper.downcallHandle(
-        "rs2_pose_frame_get_pose_data",
-        constants$97.rs2_pose_frame_get_pose_data$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "rs2_camera_info_to_string",
+        constants$86.const$5
     );
 }
 

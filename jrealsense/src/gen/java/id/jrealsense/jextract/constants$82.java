@@ -11,58 +11,30 @@ final class constants$82 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$82() {}
-    static final FunctionDescriptor rs2_delete_context$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "roundf",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_delete_context$MH = RuntimeHelper.downcallHandle(
-        "rs2_delete_context",
-        constants$82.rs2_delete_context$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "__roundf",
+        constants$62.const$1
     );
-    static final FunctionDescriptor rs2_set_devices_changed_callback_cpp$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "truncf",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_set_devices_changed_callback_cpp$MH = RuntimeHelper.downcallHandle(
-        "rs2_set_devices_changed_callback_cpp",
-        constants$82.rs2_set_devices_changed_callback_cpp$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "__truncf",
+        constants$62.const$1
     );
-    static final FunctionDescriptor rs2_set_devices_changed_callback$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle rs2_set_devices_changed_callback$MH = RuntimeHelper.downcallHandle(
-        "rs2_set_devices_changed_callback",
-        constants$82.rs2_set_devices_changed_callback$FUNC
-    );
-    static final FunctionDescriptor rs2_context_add_device$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_context_add_device$MH = RuntimeHelper.downcallHandle(
-        "rs2_context_add_device",
-        constants$82.rs2_context_add_device$FUNC
-    );
-    static final FunctionDescriptor rs2_context_add_software_device$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_context_add_software_device$MH = RuntimeHelper.downcallHandle(
-        "rs2_context_add_software_device",
-        constants$82.rs2_context_add_software_device$FUNC
-    );
-    static final FunctionDescriptor rs2_context_remove_device$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_context_remove_device$MH = RuntimeHelper.downcallHandle(
-        "rs2_context_remove_device",
-        constants$82.rs2_context_remove_device$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "remquof",
+        constants$82.const$4
     );
 }
 

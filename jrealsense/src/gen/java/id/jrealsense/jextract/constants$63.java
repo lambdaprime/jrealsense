@@ -11,51 +11,29 @@ final class constants$63 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$63() {}
-    static final FunctionDescriptor llroundf$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atanf",
+        constants$62.const$1
     );
-    static final MethodHandle llroundf$MH = RuntimeHelper.downcallHandle(
-        "llroundf",
-        constants$63.llroundf$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "__atanf",
+        constants$62.const$1
     );
-    static final FunctionDescriptor __llroundf$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT
     );
-    static final MethodHandle __llroundf$MH = RuntimeHelper.downcallHandle(
-        "__llroundf",
-        constants$63.__llroundf$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atan2f",
+        constants$63.const$2
     );
-    static final FunctionDescriptor fdimf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__atan2f",
+        constants$63.const$2
     );
-    static final MethodHandle fdimf$MH = RuntimeHelper.downcallHandle(
-        "fdimf",
-        constants$63.fdimf$FUNC
-    );
-    static final FunctionDescriptor __fdimf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle __fdimf$MH = RuntimeHelper.downcallHandle(
-        "__fdimf",
-        constants$63.__fdimf$FUNC
-    );
-    static final FunctionDescriptor fmaxf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle fmaxf$MH = RuntimeHelper.downcallHandle(
-        "fmaxf",
-        constants$63.fmaxf$FUNC
-    );
-    static final FunctionDescriptor __fmaxf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle __fmaxf$MH = RuntimeHelper.downcallHandle(
-        "__fmaxf",
-        constants$63.__fmaxf$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cosf",
+        constants$62.const$1
     );
 }
 

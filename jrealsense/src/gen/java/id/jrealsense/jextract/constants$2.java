@@ -11,56 +11,31 @@ final class constants$2 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2() {}
-    static final FunctionDescriptor strtoull$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle strtoull$MH = RuntimeHelper.downcallHandle(
-        "strtoull",
-        constants$2.strtoull$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atoi",
+        constants$2.const$0
     );
-    static final FunctionDescriptor l64a$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_LONG,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle l64a$MH = RuntimeHelper.downcallHandle(
-        "l64a",
-        constants$2.l64a$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atol",
+        constants$2.const$2
     );
-    static final FunctionDescriptor a64l$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atoll",
+        constants$2.const$2
     );
-    static final MethodHandle a64l$MH = RuntimeHelper.downcallHandle(
-        "a64l",
-        constants$2.a64l$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_DOUBLE,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor select$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle select$MH = RuntimeHelper.downcallHandle(
-        "select",
-        constants$2.select$FUNC
-    );
-    static final FunctionDescriptor pselect$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pselect$MH = RuntimeHelper.downcallHandle(
-        "pselect",
-        constants$2.pselect$FUNC
-    );
-    static final FunctionDescriptor random$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle random$MH = RuntimeHelper.downcallHandle(
-        "random",
-        constants$2.random$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "strtod",
+        constants$2.const$5
     );
 }
 

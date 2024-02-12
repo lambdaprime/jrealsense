@@ -11,55 +11,54 @@ final class constants$93 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$93() {}
-    static final FunctionDescriptor rs2_get_frame_metadata$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_FLOAT.withName("x"),
+            JAVA_FLOAT.withName("y"),
+            JAVA_FLOAT.withName("z")
+        ).withName("translation"),
+        MemoryLayout.structLayout(
+            JAVA_FLOAT.withName("x"),
+            JAVA_FLOAT.withName("y"),
+            JAVA_FLOAT.withName("z")
+        ).withName("velocity"),
+        MemoryLayout.structLayout(
+            JAVA_FLOAT.withName("x"),
+            JAVA_FLOAT.withName("y"),
+            JAVA_FLOAT.withName("z")
+        ).withName("acceleration"),
+        MemoryLayout.structLayout(
+            JAVA_FLOAT.withName("x"),
+            JAVA_FLOAT.withName("y"),
+            JAVA_FLOAT.withName("z"),
+            JAVA_FLOAT.withName("w")
+        ).withName("rotation"),
+        MemoryLayout.structLayout(
+            JAVA_FLOAT.withName("x"),
+            JAVA_FLOAT.withName("y"),
+            JAVA_FLOAT.withName("z")
+        ).withName("angular_velocity"),
+        MemoryLayout.structLayout(
+            JAVA_FLOAT.withName("x"),
+            JAVA_FLOAT.withName("y"),
+            JAVA_FLOAT.withName("z")
+        ).withName("angular_acceleration"),
+        JAVA_INT.withName("tracker_confidence"),
+        JAVA_INT.withName("mapper_confidence")
+    ).withName("rs2_pose");
+    static final VarHandle const$1 = constants$93.const$0.varHandle(MemoryLayout.PathElement.groupElement("tracker_confidence"));
+    static final VarHandle const$2 = constants$93.const$0.varHandle(MemoryLayout.PathElement.groupElement("mapper_confidence"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "rs2_log_severity_to_string",
+        constants$86.const$5
     );
-    static final MethodHandle rs2_get_frame_metadata$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_frame_metadata",
-        constants$93.rs2_get_frame_metadata$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "rs2_extension_type_to_string",
+        constants$86.const$5
     );
-    static final FunctionDescriptor rs2_supports_frame_metadata$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_supports_frame_metadata$MH = RuntimeHelper.downcallHandle(
-        "rs2_supports_frame_metadata",
-        constants$93.rs2_supports_frame_metadata$FUNC
-    );
-    static final FunctionDescriptor rs2_get_frame_timestamp_domain$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_frame_timestamp_domain$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_frame_timestamp_domain",
-        constants$93.rs2_get_frame_timestamp_domain$FUNC
-    );
-    static final FunctionDescriptor rs2_get_frame_timestamp$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_frame_timestamp$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_frame_timestamp",
-        constants$93.rs2_get_frame_timestamp$FUNC
-    );
-    static final FunctionDescriptor rs2_get_frame_sensor$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_frame_sensor$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_frame_sensor",
-        constants$93.rs2_get_frame_sensor$FUNC
-    );
-    static final FunctionDescriptor rs2_get_frame_number$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_frame_number$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_frame_number",
-        constants$93.rs2_get_frame_number$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "rs2_extension_to_string",
+        constants$86.const$5
     );
 }
 

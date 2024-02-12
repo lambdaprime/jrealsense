@@ -17,16 +17,11 @@ import static java.lang.foreign.ValueLayout.*;
  */
 public class lldiv_t {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_LONG_LONG$LAYOUT.withName("quot"),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("rem")
-    );
     public static MemoryLayout $LAYOUT() {
-        return lldiv_t.$struct$LAYOUT;
+        return constants$0.const$3;
     }
-    static final VarHandle quot$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("quot"));
     public static VarHandle quot$VH() {
-        return lldiv_t.quot$VH;
+        return constants$1.const$0;
     }
     /**
      * Getter for field:
@@ -35,7 +30,7 @@ public class lldiv_t {
      * }
      */
     public static long quot$get(MemorySegment seg) {
-        return (long)lldiv_t.quot$VH.get(seg);
+        return (long)constants$1.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -44,17 +39,16 @@ public class lldiv_t {
      * }
      */
     public static void quot$set(MemorySegment seg, long x) {
-        lldiv_t.quot$VH.set(seg, x);
+        constants$1.const$0.set(seg, x);
     }
     public static long quot$get(MemorySegment seg, long index) {
-        return (long)lldiv_t.quot$VH.get(seg.asSlice(index*sizeof()));
+        return (long)constants$1.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void quot$set(MemorySegment seg, long index, long x) {
-        lldiv_t.quot$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle rem$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("rem"));
     public static VarHandle rem$VH() {
-        return lldiv_t.rem$VH;
+        return constants$1.const$1;
     }
     /**
      * Getter for field:
@@ -63,7 +57,7 @@ public class lldiv_t {
      * }
      */
     public static long rem$get(MemorySegment seg) {
-        return (long)lldiv_t.rem$VH.get(seg);
+        return (long)constants$1.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -72,20 +66,20 @@ public class lldiv_t {
      * }
      */
     public static void rem$set(MemorySegment seg, long x) {
-        lldiv_t.rem$VH.set(seg, x);
+        constants$1.const$1.set(seg, x);
     }
     public static long rem$get(MemorySegment seg, long index) {
-        return (long)lldiv_t.rem$VH.get(seg.asSlice(index*sizeof()));
+        return (long)constants$1.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void rem$set(MemorySegment seg, long index, long x) {
-        lldiv_t.rem$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena arena) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, arena); }
 }
 
 

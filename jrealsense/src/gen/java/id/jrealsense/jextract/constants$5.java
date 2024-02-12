@@ -11,44 +11,22 @@ final class constants$5 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$5() {}
-    static final FunctionDescriptor lrand48$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle lrand48$MH = RuntimeHelper.downcallHandle(
-        "lrand48",
-        constants$5.lrand48$FUNC
-    );
-    static final FunctionDescriptor nrand48$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle nrand48$MH = RuntimeHelper.downcallHandle(
-        "nrand48",
-        constants$5.nrand48$FUNC
-    );
-    static final FunctionDescriptor mrand48$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle mrand48$MH = RuntimeHelper.downcallHandle(
-        "mrand48",
-        constants$5.mrand48$FUNC
-    );
-    static final FunctionDescriptor jrand48$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle jrand48$MH = RuntimeHelper.downcallHandle(
-        "jrand48",
-        constants$5.jrand48$FUNC
-    );
-    static final FunctionDescriptor srand48$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle srand48$MH = RuntimeHelper.downcallHandle(
-        "srand48",
-        constants$5.srand48$FUNC
-    );
-    static final FunctionDescriptor seed48$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle seed48$MH = RuntimeHelper.downcallHandle(
-        "seed48",
-        constants$5.seed48$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.sequenceLayout(2, JAVA_INT).withName("__val")
+    ).withName("");
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.sequenceLayout(16, JAVA_LONG).withName("__val")
+    ).withName("");
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_LONG.withName("tv_sec"),
+        JAVA_LONG.withName("tv_usec")
+    ).withName("timeval");
+    static final VarHandle const$3 = constants$5.const$2.varHandle(MemoryLayout.PathElement.groupElement("tv_sec"));
+    static final VarHandle const$4 = constants$5.const$2.varHandle(MemoryLayout.PathElement.groupElement("tv_usec"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        JAVA_LONG.withName("tv_sec"),
+        JAVA_LONG.withName("tv_nsec")
+    ).withName("timespec");
 }
 
 

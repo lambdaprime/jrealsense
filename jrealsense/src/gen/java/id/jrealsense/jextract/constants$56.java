@@ -11,49 +11,29 @@ final class constants$56 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$56() {}
-    static final FunctionDescriptor y1f$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "nearbyint",
+        constants$36.const$4
     );
-    static final MethodHandle y1f$MH = RuntimeHelper.downcallHandle(
-        "y1f",
-        constants$56.y1f$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "__nearbyint",
+        constants$36.const$4
     );
-    static final FunctionDescriptor __y1f$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "round",
+        constants$36.const$4
     );
-    static final MethodHandle __y1f$MH = RuntimeHelper.downcallHandle(
-        "__y1f",
-        constants$56.__y1f$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "__round",
+        constants$36.const$4
     );
-    static final FunctionDescriptor ynf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "trunc",
+        constants$36.const$4
     );
-    static final MethodHandle ynf$MH = RuntimeHelper.downcallHandle(
-        "ynf",
-        constants$56.ynf$FUNC
-    );
-    static final FunctionDescriptor __ynf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle __ynf$MH = RuntimeHelper.downcallHandle(
-        "__ynf",
-        constants$56.__ynf$FUNC
-    );
-    static final FunctionDescriptor erff$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle erff$MH = RuntimeHelper.downcallHandle(
-        "erff",
-        constants$56.erff$FUNC
-    );
-    static final FunctionDescriptor __erff$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle __erff$MH = RuntimeHelper.downcallHandle(
-        "__erff",
-        constants$56.__erff$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "__trunc",
+        constants$36.const$4
     );
 }
 

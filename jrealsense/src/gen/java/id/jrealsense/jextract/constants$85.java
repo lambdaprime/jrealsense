@@ -11,65 +11,30 @@ final class constants$85 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$85() {}
-    static final FunctionDescriptor rs2_get_device_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "fmaxf",
+        constants$63.const$2
     );
-    static final MethodHandle rs2_get_device_info$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_device_info",
-        constants$85.rs2_get_device_info$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "__fmaxf",
+        constants$63.const$2
     );
-    static final FunctionDescriptor rs2_supports_device_info$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "fminf",
+        constants$63.const$2
     );
-    static final MethodHandle rs2_supports_device_info$MH = RuntimeHelper.downcallHandle(
-        "rs2_supports_device_info",
-        constants$85.rs2_supports_device_info$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "__fminf",
+        constants$63.const$2
     );
-    static final FunctionDescriptor rs2_hardware_reset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT
     );
-    static final MethodHandle rs2_hardware_reset$MH = RuntimeHelper.downcallHandle(
-        "rs2_hardware_reset",
-        constants$85.rs2_hardware_reset$FUNC
-    );
-    static final FunctionDescriptor rs2_build_debug_protocol_command$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_build_debug_protocol_command$MH = RuntimeHelper.downcallHandle(
-        "rs2_build_debug_protocol_command",
-        constants$85.rs2_build_debug_protocol_command$FUNC
-    );
-    static final FunctionDescriptor rs2_send_and_receive_raw_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_send_and_receive_raw_data$MH = RuntimeHelper.downcallHandle(
-        "rs2_send_and_receive_raw_data",
-        constants$85.rs2_send_and_receive_raw_data$FUNC
-    );
-    static final FunctionDescriptor rs2_is_device_extendable_to$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_is_device_extendable_to$MH = RuntimeHelper.downcallHandle(
-        "rs2_is_device_extendable_to",
-        constants$85.rs2_is_device_extendable_to$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "fmaf",
+        constants$85.const$4
     );
 }
 

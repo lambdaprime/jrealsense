@@ -11,55 +11,34 @@ final class constants$113 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$113() {}
-    static final FunctionDescriptor rs2_get_log_message_filename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle rs2_get_log_message_filename$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_log_message_filename",
-        constants$113.rs2_get_log_message_filename$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "rs2_create_context",
+        constants$113.const$0
     );
-    static final FunctionDescriptor rs2_get_raw_log_message$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "rs2_delete_context",
+        constants$20.const$5
     );
-    static final MethodHandle rs2_get_raw_log_message$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_raw_log_message",
-        constants$113.rs2_get_raw_log_message$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "rs2_set_devices_changed_callback_cpp",
+        constants$95.const$3
     );
-    static final FunctionDescriptor rs2_get_full_log_message$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "rs2_set_devices_changed_callback",
+        constants$102.const$0
     );
-    static final MethodHandle rs2_get_full_log_message$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_full_log_message",
-        constants$113.rs2_get_full_log_message$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor rs2_log$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_log$MH = RuntimeHelper.downcallHandle(
-        "rs2_log",
-        constants$113.rs2_log$FUNC
-    );
-    static final FunctionDescriptor rs2_depth_frame_get_distance$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_depth_frame_get_distance$MH = RuntimeHelper.downcallHandle(
-        "rs2_depth_frame_get_distance",
-        constants$113.rs2_depth_frame_get_distance$FUNC
-    );
-    static final FunctionDescriptor rs2_get_time$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_time$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_time",
-        constants$113.rs2_get_time$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "rs2_context_add_device",
+        constants$113.const$5
     );
 }
 

@@ -11,48 +11,34 @@ final class constants$27 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$27() {}
-    static final FunctionDescriptor __hypot$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "exit",
+        constants$15.const$0
     );
-    static final MethodHandle __hypot$MH = RuntimeHelper.downcallHandle(
-        "__hypot",
-        constants$27.__hypot$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "quick_exit",
+        constants$15.const$0
     );
-    static final FunctionDescriptor cbrt$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "_Exit",
+        constants$15.const$0
     );
-    static final MethodHandle cbrt$MH = RuntimeHelper.downcallHandle(
-        "cbrt",
-        constants$27.cbrt$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "getenv",
+        constants$15.const$4
     );
-    static final FunctionDescriptor __cbrt$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "putenv",
+        constants$2.const$0
     );
-    static final MethodHandle __cbrt$MH = RuntimeHelper.downcallHandle(
-        "__cbrt",
-        constants$27.__cbrt$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final FunctionDescriptor ceil$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle ceil$MH = RuntimeHelper.downcallHandle(
-        "ceil",
-        constants$27.ceil$FUNC
-    );
-    static final FunctionDescriptor __ceil$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __ceil$MH = RuntimeHelper.downcallHandle(
-        "__ceil",
-        constants$27.__ceil$FUNC
-    );
-    static final FunctionDescriptor fabs$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle fabs$MH = RuntimeHelper.downcallHandle(
-        "fabs",
-        constants$27.fabs$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "setenv",
+        constants$27.const$5
     );
 }
 

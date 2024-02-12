@@ -11,53 +11,32 @@ final class constants$74 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$74() {}
-    static final FunctionDescriptor rs2_get_notification_timestamp$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__dremf",
+        constants$63.const$2
     );
-    static final MethodHandle rs2_get_notification_timestamp$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_notification_timestamp",
-        constants$74.rs2_get_notification_timestamp$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "significandf",
+        constants$62.const$1
     );
-    static final FunctionDescriptor rs2_get_notification_severity$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__significandf",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_get_notification_severity$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_notification_severity",
-        constants$74.rs2_get_notification_severity$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "copysignf",
+        constants$63.const$2
     );
-    static final FunctionDescriptor rs2_get_notification_category$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__copysignf",
+        constants$63.const$2
     );
-    static final MethodHandle rs2_get_notification_category$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_notification_category",
-        constants$74.rs2_get_notification_category$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_FLOAT,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor rs2_get_notification_serialized_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_notification_serialized_data$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_notification_serialized_data",
-        constants$74.rs2_get_notification_serialized_data$FUNC
-    );
-    static final FunctionDescriptor rs2_get_stream_profiles$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_stream_profiles$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_stream_profiles",
-        constants$74.rs2_get_stream_profiles$FUNC
-    );
-    static final FunctionDescriptor rs2_get_debug_stream_profiles$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_debug_stream_profiles$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_debug_stream_profiles",
-        constants$74.rs2_get_debug_stream_profiles$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "nanf",
+        constants$74.const$5
     );
 }
 

@@ -11,47 +11,22 @@ final class constants$25 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$25() {}
-    static final FunctionDescriptor __log1p$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "aligned_alloc",
+        constants$23.const$3
     );
-    static final MethodHandle __log1p$MH = RuntimeHelper.downcallHandle(
-        "__log1p",
-        constants$25.__log1p$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid();
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "abort",
+        constants$25.const$1
     );
-    static final FunctionDescriptor logb$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(atexit$__func.class, "apply", constants$25.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$25.const$1
     );
-    static final MethodHandle logb$MH = RuntimeHelper.downcallHandle(
-        "logb",
-        constants$25.logb$FUNC
-    );
-    static final FunctionDescriptor __logb$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __logb$MH = RuntimeHelper.downcallHandle(
-        "__logb",
-        constants$25.__logb$FUNC
-    );
-    static final FunctionDescriptor exp2$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle exp2$MH = RuntimeHelper.downcallHandle(
-        "exp2",
-        constants$25.exp2$FUNC
-    );
-    static final FunctionDescriptor __exp2$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __exp2$MH = RuntimeHelper.downcallHandle(
-        "__exp2",
-        constants$25.__exp2$FUNC
-    );
-    static final FunctionDescriptor log2$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle log2$MH = RuntimeHelper.downcallHandle(
-        "log2",
-        constants$25.log2$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atexit",
+        constants$2.const$0
     );
 }
 

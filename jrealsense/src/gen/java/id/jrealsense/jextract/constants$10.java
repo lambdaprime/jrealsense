@@ -11,48 +11,12 @@ final class constants$10 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$10() {}
-    static final FunctionDescriptor at_quick_exit$__func_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle at_quick_exit$__func_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$10.at_quick_exit$__func_DOWN$FUNC
-    );
-    static final FunctionDescriptor at_quick_exit$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle at_quick_exit$MH = RuntimeHelper.downcallHandle(
-        "at_quick_exit",
-        constants$10.at_quick_exit$FUNC
-    );
-    static final FunctionDescriptor on_exit$__func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor on_exit$__func_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle on_exit$__func_UP$MH = RuntimeHelper.upcallHandle(on_exit$__func.class, "apply", constants$10.on_exit$__func_UP$FUNC);
-    static final FunctionDescriptor on_exit$__func_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle on_exit$__func_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$10.on_exit$__func_DOWN$FUNC
-    );
-    static final FunctionDescriptor on_exit$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle on_exit$MH = RuntimeHelper.downcallHandle(
-        "on_exit",
-        constants$10.on_exit$FUNC
-    );
-    static final FunctionDescriptor exit$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle exit$MH = RuntimeHelper.downcallHandle(
-        "exit",
-        constants$10.exit$FUNC
-    );
+    static final VarHandle const$0 = constants$9.const$1.varHandle(MemoryLayout.PathElement.groupElement("__pad3"));
+    static final VarHandle const$1 = constants$9.const$1.varHandle(MemoryLayout.PathElement.groupElement("__pad4"));
+    static final VarHandle const$2 = constants$9.const$1.varHandle(MemoryLayout.PathElement.groupElement("__cur_writer"));
+    static final VarHandle const$3 = constants$9.const$1.varHandle(MemoryLayout.PathElement.groupElement("__shared"));
+    static final VarHandle const$4 = constants$9.const$1.varHandle(MemoryLayout.PathElement.groupElement("__rwelision"));
+    static final VarHandle const$5 = constants$9.const$1.varHandle(MemoryLayout.PathElement.groupElement("__pad2"));
 }
 
 

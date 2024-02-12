@@ -11,50 +11,29 @@ final class constants$53 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$53() {}
-    static final FunctionDescriptor finitef$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__tgamma",
+        constants$36.const$4
     );
-    static final MethodHandle finitef$MH = RuntimeHelper.downcallHandle(
-        "finitef",
-        constants$53.finitef$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gamma",
+        constants$36.const$4
     );
-    static final FunctionDescriptor dremf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__gamma",
+        constants$36.const$4
     );
-    static final MethodHandle dremf$MH = RuntimeHelper.downcallHandle(
-        "dremf",
-        constants$53.dremf$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "lgamma_r",
+        constants$41.const$3
     );
-    static final FunctionDescriptor __dremf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__lgamma_r",
+        constants$41.const$3
     );
-    static final MethodHandle __dremf$MH = RuntimeHelper.downcallHandle(
-        "__dremf",
-        constants$53.__dremf$FUNC
-    );
-    static final FunctionDescriptor significandf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle significandf$MH = RuntimeHelper.downcallHandle(
-        "significandf",
-        constants$53.significandf$FUNC
-    );
-    static final FunctionDescriptor __significandf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle __significandf$MH = RuntimeHelper.downcallHandle(
-        "__significandf",
-        constants$53.__significandf$FUNC
-    );
-    static final FunctionDescriptor copysignf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle copysignf$MH = RuntimeHelper.downcallHandle(
-        "copysignf",
-        constants$53.copysignf$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "rint",
+        constants$36.const$4
     );
 }
 

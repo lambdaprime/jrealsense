@@ -11,50 +11,33 @@ final class constants$23 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$23() {}
-    static final FunctionDescriptor __frexp$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "seed48_r",
+        constants$17.const$2
     );
-    static final MethodHandle __frexp$MH = RuntimeHelper.downcallHandle(
-        "__frexp",
-        constants$23.__frexp$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "lcong48_r",
+        constants$17.const$2
     );
-    static final FunctionDescriptor ldexp$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "malloc",
+        constants$4.const$3
     );
-    static final MethodHandle ldexp$MH = RuntimeHelper.downcallHandle(
-        "ldexp",
-        constants$23.ldexp$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_LONG
     );
-    static final FunctionDescriptor __ldexp$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "calloc",
+        constants$23.const$3
     );
-    static final MethodHandle __ldexp$MH = RuntimeHelper.downcallHandle(
-        "__ldexp",
-        constants$23.__ldexp$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG
     );
-    static final FunctionDescriptor log$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle log$MH = RuntimeHelper.downcallHandle(
-        "log",
-        constants$23.log$FUNC
-    );
-    static final FunctionDescriptor __log$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __log$MH = RuntimeHelper.downcallHandle(
-        "__log",
-        constants$23.__log$FUNC
-    );
-    static final FunctionDescriptor log10$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle log10$MH = RuntimeHelper.downcallHandle(
-        "log10",
-        constants$23.log10$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "realloc",
+        constants$23.const$5
     );
 }
 

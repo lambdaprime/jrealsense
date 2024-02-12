@@ -11,56 +11,39 @@ final class constants$112 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$112() {}
-    static final FunctionDescriptor rs2_log_to_file$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_FLOAT
     );
-    static final MethodHandle rs2_log_to_file$MH = RuntimeHelper.downcallHandle(
-        "rs2_log_to_file",
-        constants$112.rs2_log_to_file$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "rs2_deproject_pixel_to_point",
+        constants$112.const$0
     );
-    static final FunctionDescriptor rs2_log_to_callback_cpp$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "rs2_transform_point_to_point",
+        constants$95.const$3
     );
-    static final MethodHandle rs2_log_to_callback_cpp$MH = RuntimeHelper.downcallHandle(
-        "rs2_log_to_callback_cpp",
-        constants$112.rs2_log_to_callback_cpp$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "rs2_fov",
+        constants$94.const$4
     );
-    static final FunctionDescriptor rs2_log_to_callback$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle rs2_log_to_callback$MH = RuntimeHelper.downcallHandle(
-        "rs2_log_to_callback",
-        constants$112.rs2_log_to_callback$FUNC
-    );
-    static final FunctionDescriptor rs2_reset_logger$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_reset_logger$MH = RuntimeHelper.downcallHandle(
-        "rs2_reset_logger",
-        constants$112.rs2_reset_logger$FUNC
-    );
-    static final FunctionDescriptor rs2_enable_rolling_log_file$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_enable_rolling_log_file$MH = RuntimeHelper.downcallHandle(
-        "rs2_enable_rolling_log_file",
-        constants$112.rs2_enable_rolling_log_file$FUNC
-    );
-    static final FunctionDescriptor rs2_get_log_message_line_number$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_get_log_message_line_number$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_log_message_line_number",
-        constants$112.rs2_get_log_message_line_number$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "rs2_project_color_pixel_to_depth_pixel",
+        constants$112.const$4
     );
 }
 

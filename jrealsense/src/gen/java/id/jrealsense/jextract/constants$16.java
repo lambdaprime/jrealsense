@@ -11,56 +11,21 @@ final class constants$16 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$16() {}
-    static final FunctionDescriptor wctomb$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle wctomb$MH = RuntimeHelper.downcallHandle(
-        "wctomb",
-        constants$16.wctomb$FUNC
-    );
-    static final FunctionDescriptor mbstowcs$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle mbstowcs$MH = RuntimeHelper.downcallHandle(
-        "mbstowcs",
-        constants$16.mbstowcs$FUNC
-    );
-    static final FunctionDescriptor wcstombs$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle wcstombs$MH = RuntimeHelper.downcallHandle(
-        "wcstombs",
-        constants$16.wcstombs$FUNC
-    );
-    static final FunctionDescriptor rpmatch$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rpmatch$MH = RuntimeHelper.downcallHandle(
-        "rpmatch",
-        constants$16.rpmatch$FUNC
-    );
-    static final FunctionDescriptor getsubopt$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle getsubopt$MH = RuntimeHelper.downcallHandle(
-        "getsubopt",
-        constants$16.getsubopt$FUNC
-    );
-    static final FunctionDescriptor getloadavg$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle getloadavg$MH = RuntimeHelper.downcallHandle(
-        "getloadavg",
-        constants$16.getloadavg$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("fptr"),
+        RuntimeHelper.POINTER.withName("rptr"),
+        RuntimeHelper.POINTER.withName("state"),
+        JAVA_INT.withName("rand_type"),
+        JAVA_INT.withName("rand_deg"),
+        JAVA_INT.withName("rand_sep"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("end_ptr")
+    ).withName("random_data");
+    static final VarHandle const$1 = constants$16.const$0.varHandle(MemoryLayout.PathElement.groupElement("fptr"));
+    static final VarHandle const$2 = constants$16.const$0.varHandle(MemoryLayout.PathElement.groupElement("rptr"));
+    static final VarHandle const$3 = constants$16.const$0.varHandle(MemoryLayout.PathElement.groupElement("state"));
+    static final VarHandle const$4 = constants$16.const$0.varHandle(MemoryLayout.PathElement.groupElement("rand_type"));
+    static final VarHandle const$5 = constants$16.const$0.varHandle(MemoryLayout.PathElement.groupElement("rand_deg"));
 }
 
 

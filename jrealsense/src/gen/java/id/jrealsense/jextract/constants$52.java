@@ -11,49 +11,29 @@ final class constants$52 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$52() {}
-    static final FunctionDescriptor __fabsf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__erf",
+        constants$36.const$4
     );
-    static final MethodHandle __fabsf$MH = RuntimeHelper.downcallHandle(
-        "__fabsf",
-        constants$52.__fabsf$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "erfc",
+        constants$36.const$4
     );
-    static final FunctionDescriptor floorf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__erfc",
+        constants$36.const$4
     );
-    static final MethodHandle floorf$MH = RuntimeHelper.downcallHandle(
-        "floorf",
-        constants$52.floorf$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "lgamma",
+        constants$36.const$4
     );
-    static final FunctionDescriptor __floorf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__lgamma",
+        constants$36.const$4
     );
-    static final MethodHandle __floorf$MH = RuntimeHelper.downcallHandle(
-        "__floorf",
-        constants$52.__floorf$FUNC
-    );
-    static final FunctionDescriptor fmodf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle fmodf$MH = RuntimeHelper.downcallHandle(
-        "fmodf",
-        constants$52.fmodf$FUNC
-    );
-    static final FunctionDescriptor __fmodf$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle __fmodf$MH = RuntimeHelper.downcallHandle(
-        "__fmodf",
-        constants$52.__fmodf$FUNC
-    );
-    static final FunctionDescriptor isinff$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle isinff$MH = RuntimeHelper.downcallHandle(
-        "isinff",
-        constants$52.isinff$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "tgamma",
+        constants$36.const$4
     );
 }
 

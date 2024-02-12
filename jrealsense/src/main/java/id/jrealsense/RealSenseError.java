@@ -19,8 +19,8 @@ package id.jrealsense;
 
 import id.jrealsense.exceptions.JRealSenseException;
 import id.jrealsense.jextract.librealsense;
+import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentScope;
 import java.lang.foreign.ValueLayout;
 
 /**
@@ -28,8 +28,7 @@ import java.lang.foreign.ValueLayout;
  */
 public class RealSenseError {
 
-    private MemorySegment errorPtr =
-            MemorySegment.allocateNative(ValueLayout.ADDRESS.byteSize(), SegmentScope.auto());
+    private MemorySegment errorPtr = Arena.ofAuto().allocate(ValueLayout.ADDRESS.byteSize());
 
     public MemorySegment get_rs2_error() {
         return errorPtr;

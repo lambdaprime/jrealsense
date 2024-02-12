@@ -17,7 +17,6 @@
  */
 package id.jrealsense.types;
 
-import static id.jrealsense.jextract.rs2_intrinsics.allocate;
 import static id.jrealsense.jextract.rs2_intrinsics.fx$get;
 import static id.jrealsense.jextract.rs2_intrinsics.fy$get;
 import static id.jrealsense.jextract.rs2_intrinsics.height$get;
@@ -28,9 +27,9 @@ import static id.jrealsense.jextract.rs2_intrinsics.width$get;
 import id.xfunction.XJson;
 import id.xfunction.XJsonStringBuilder;
 import java.io.IOException;
+import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.foreign.SegmentScope;
+import java.lang.foreign.ValueLayout;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
@@ -39,8 +38,7 @@ import java.util.List;
 /** Video stream intrinsics. */
 public class Intrinsics {
 
-    private MemorySegment rs2_intrinsics =
-            allocate(SegmentAllocator.nativeAllocator(SegmentScope.auto()));
+    private MemorySegment rs2_intrinsics = Arena.ofAuto().allocate(ValueLayout.ADDRESS.byteSize());
 
     /**
      * Horizontal coordinate of the principal point of the image, as a pixel offset from the left

@@ -11,53 +11,28 @@ final class constants$83 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$83() {}
-    static final FunctionDescriptor rs2_context_unload_tracking_module$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__remquof",
+        constants$82.const$4
     );
-    static final MethodHandle rs2_context_unload_tracking_module$MH = RuntimeHelper.downcallHandle(
-        "rs2_context_unload_tracking_module",
-        constants$83.rs2_context_unload_tracking_module$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_LONG,
+        JAVA_FLOAT
     );
-    static final FunctionDescriptor rs2_query_devices$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "lrintf",
+        constants$83.const$1
     );
-    static final MethodHandle rs2_query_devices$MH = RuntimeHelper.downcallHandle(
-        "rs2_query_devices",
-        constants$83.rs2_query_devices$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "__lrintf",
+        constants$83.const$1
     );
-    static final FunctionDescriptor rs2_query_devices_ex$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "llrintf",
+        constants$83.const$1
     );
-    static final MethodHandle rs2_query_devices_ex$MH = RuntimeHelper.downcallHandle(
-        "rs2_query_devices_ex",
-        constants$83.rs2_query_devices_ex$FUNC
-    );
-    static final FunctionDescriptor rs2_create_device_hub$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_create_device_hub$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_device_hub",
-        constants$83.rs2_create_device_hub$FUNC
-    );
-    static final FunctionDescriptor rs2_delete_device_hub$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_delete_device_hub$MH = RuntimeHelper.downcallHandle(
-        "rs2_delete_device_hub",
-        constants$83.rs2_delete_device_hub$FUNC
-    );
-    static final FunctionDescriptor rs2_device_hub_wait_for_device$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_device_hub_wait_for_device$MH = RuntimeHelper.downcallHandle(
-        "rs2_device_hub_wait_for_device",
-        constants$83.rs2_device_hub_wait_for_device$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "__llrintf",
+        constants$83.const$1
     );
 }
 

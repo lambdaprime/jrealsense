@@ -11,62 +11,12 @@ final class constants$89 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$89() {}
-    static final FunctionDescriptor rs2_run_tare_calibration_cpp$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_run_tare_calibration_cpp$MH = RuntimeHelper.downcallHandle(
-        "rs2_run_tare_calibration_cpp",
-        constants$89.rs2_run_tare_calibration_cpp$FUNC
-    );
-    static final FunctionDescriptor rs2_process_calibration_frame$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_process_calibration_frame$MH = RuntimeHelper.downcallHandle(
-        "rs2_process_calibration_frame",
-        constants$89.rs2_process_calibration_frame$FUNC
-    );
-    static final FunctionDescriptor rs2_calibration_type_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle rs2_calibration_type_to_string$MH = RuntimeHelper.downcallHandle(
-        "rs2_calibration_type_to_string",
-        constants$89.rs2_calibration_type_to_string$FUNC
-    );
-    static final FunctionDescriptor rs2_calibration_status_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle rs2_calibration_status_to_string$MH = RuntimeHelper.downcallHandle(
-        "rs2_calibration_status_to_string",
-        constants$89.rs2_calibration_status_to_string$FUNC
-    );
-    static final FunctionDescriptor rs2_calibration_change_callback_ptr$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor rs2_calibration_change_callback_ptr_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_calibration_change_callback_ptr_UP$MH = RuntimeHelper.upcallHandle(rs2_calibration_change_callback_ptr.class, "apply", constants$89.rs2_calibration_change_callback_ptr_UP$FUNC);
-    static final FunctionDescriptor rs2_calibration_change_callback_ptr_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_calibration_change_callback_ptr_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$89.rs2_calibration_change_callback_ptr_DOWN$FUNC
-    );
+    static final VarHandle const$0 = constants$88.const$4.varHandle(MemoryLayout.PathElement.groupElement("version"));
+    static final VarHandle const$1 = constants$88.const$4.varHandle(MemoryLayout.PathElement.groupElement("model"));
+    static final VarHandle const$2 = constants$88.const$4.varHandle(MemoryLayout.PathElement.groupElement("h_scale"));
+    static final VarHandle const$3 = constants$88.const$4.varHandle(MemoryLayout.PathElement.groupElement("v_scale"));
+    static final VarHandle const$4 = constants$88.const$4.varHandle(MemoryLayout.PathElement.groupElement("h_offset"));
+    static final VarHandle const$5 = constants$88.const$4.varHandle(MemoryLayout.PathElement.groupElement("v_offset"));
 }
 
 

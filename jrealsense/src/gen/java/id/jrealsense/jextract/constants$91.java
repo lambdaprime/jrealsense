@@ -11,88 +11,24 @@ final class constants$91 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$91() {}
-    static final FunctionDescriptor rs2_serialize_json$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_serialize_json$MH = RuntimeHelper.downcallHandle(
-        "rs2_serialize_json",
-        constants$91.rs2_serialize_json$FUNC
-    );
-    static final FunctionDescriptor rs2_load_json$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_load_json$MH = RuntimeHelper.downcallHandle(
-        "rs2_load_json",
-        constants$91.rs2_load_json$FUNC
-    );
-    static final FunctionDescriptor rs2_run_focal_length_calibration_cpp$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_run_focal_length_calibration_cpp$MH = RuntimeHelper.downcallHandle(
-        "rs2_run_focal_length_calibration_cpp",
-        constants$91.rs2_run_focal_length_calibration_cpp$FUNC
-    );
-    static final FunctionDescriptor rs2_run_focal_length_calibration$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_run_focal_length_calibration$MH = RuntimeHelper.downcallHandle(
-        "rs2_run_focal_length_calibration",
-        constants$91.rs2_run_focal_length_calibration$FUNC
-    );
-    static final FunctionDescriptor rs2_run_uv_map_calibration_cpp$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_run_uv_map_calibration_cpp$MH = RuntimeHelper.downcallHandle(
-        "rs2_run_uv_map_calibration_cpp",
-        constants$91.rs2_run_uv_map_calibration_cpp$FUNC
-    );
-    static final FunctionDescriptor rs2_run_uv_map_calibration$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_run_uv_map_calibration$MH = RuntimeHelper.downcallHandle(
-        "rs2_run_uv_map_calibration",
-        constants$91.rs2_run_uv_map_calibration$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.sequenceLayout(3, MemoryLayout.sequenceLayout(4, JAVA_FLOAT)).withName("data"),
+        MemoryLayout.sequenceLayout(3, JAVA_FLOAT).withName("noise_variances"),
+        MemoryLayout.sequenceLayout(3, JAVA_FLOAT).withName("bias_variances")
+    ).withName("rs2_motion_device_intrinsic");
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.sequenceLayout(3, JAVA_FLOAT).withName("xyz")
+    ).withName("rs2_vertex");
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.sequenceLayout(2, JAVA_INT).withName("ij")
+    ).withName("rs2_pixel");
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_FLOAT.withName("x"),
+        JAVA_FLOAT.withName("y"),
+        JAVA_FLOAT.withName("z")
+    ).withName("rs2_vector");
+    static final VarHandle const$4 = constants$91.const$3.varHandle(MemoryLayout.PathElement.groupElement("x"));
+    static final VarHandle const$5 = constants$91.const$3.varHandle(MemoryLayout.PathElement.groupElement("y"));
 }
 
 

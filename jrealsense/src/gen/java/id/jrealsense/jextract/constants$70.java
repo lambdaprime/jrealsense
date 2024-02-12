@@ -11,51 +11,29 @@ final class constants$70 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$70() {}
-    static final FunctionDescriptor rs2_format_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__logbf",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_format_to_string$MH = RuntimeHelper.downcallHandle(
-        "rs2_format_to_string",
-        constants$70.rs2_format_to_string$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "exp2f",
+        constants$62.const$1
     );
-    static final FunctionDescriptor rs2_delete_sensor_list$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__exp2f",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_delete_sensor_list$MH = RuntimeHelper.downcallHandle(
-        "rs2_delete_sensor_list",
-        constants$70.rs2_delete_sensor_list$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "log2f",
+        constants$62.const$1
     );
-    static final FunctionDescriptor rs2_get_sensors_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__log2f",
+        constants$62.const$1
     );
-    static final MethodHandle rs2_get_sensors_count$MH = RuntimeHelper.downcallHandle(
-        "rs2_get_sensors_count",
-        constants$70.rs2_get_sensors_count$FUNC
-    );
-    static final FunctionDescriptor rs2_delete_sensor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_delete_sensor$MH = RuntimeHelper.downcallHandle(
-        "rs2_delete_sensor",
-        constants$70.rs2_delete_sensor$FUNC
-    );
-    static final FunctionDescriptor rs2_create_sensor$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_create_sensor$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_sensor",
-        constants$70.rs2_create_sensor$FUNC
-    );
-    static final FunctionDescriptor rs2_create_device_from_sensor$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_create_device_from_sensor$MH = RuntimeHelper.downcallHandle(
-        "rs2_create_device_from_sensor",
-        constants$70.rs2_create_device_from_sensor$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "powf",
+        constants$63.const$2
     );
 }
 

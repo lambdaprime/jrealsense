@@ -11,50 +11,25 @@ final class constants$29 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$29() {}
-    static final FunctionDescriptor finite$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "mkdtemp",
+        constants$15.const$4
     );
-    static final MethodHandle finite$MH = RuntimeHelper.downcallHandle(
-        "finite",
-        constants$29.finite$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "system",
+        constants$2.const$0
     );
-    static final FunctionDescriptor drem$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle drem$MH = RuntimeHelper.downcallHandle(
-        "drem",
-        constants$29.drem$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "realpath",
+        constants$29.const$2
     );
-    static final FunctionDescriptor __drem$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __drem$MH = RuntimeHelper.downcallHandle(
-        "__drem",
-        constants$29.__drem$FUNC
-    );
-    static final FunctionDescriptor significand$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle significand$MH = RuntimeHelper.downcallHandle(
-        "significand",
-        constants$29.significand$FUNC
-    );
-    static final FunctionDescriptor __significand$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __significand$MH = RuntimeHelper.downcallHandle(
-        "__significand",
-        constants$29.__significand$FUNC
-    );
-    static final FunctionDescriptor copysign$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle copysign$MH = RuntimeHelper.downcallHandle(
-        "copysign",
-        constants$29.copysign$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(__compar_fn_t.class, "apply", constants$17.const$2);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        constants$17.const$2
     );
 }
 

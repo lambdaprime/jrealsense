@@ -40,9 +40,12 @@ import java.nio.file.Paths;
 public class SaveFramesFromBagFileApp {
     public static final String USAGE =
             """
-            Save frames from bag files as RGBD images.
+            Save frames from bag files as aligned RGBD images. It includes camera intrinsics too (which was used to record the video)
 
             Website: https://github.com/lambdaprime/jrealsense
+
+            One option to record video and save it into bag files is realsense-viewer app.
+            realsense-viewer allows to play recorded bag files back too.
 
             Each RGBD image is a pair of files: FRAME_NUM-rgb.png, FRAME_NUM-depth.png (grayscale 16bit)
 
@@ -59,6 +62,9 @@ public class SaveFramesFromBagFileApp {
 
             - BAG_FILE_PATH -- path to input bag file
             - STEPS_COUNT -- specifies which frames to save. Saves each STEPS_COUNT frame.
+
+            Useful links:
+            - Capture your own dataset (http://www.open3d.org/docs/release/tutorial/reconstruction_system/capture_your_own_dataset.html#capture-your-own-dataset)
             """;
     private static final CommandLineInterface cli = new CommandLineInterface();
     private static final FrameUtils utils = new FrameUtils();

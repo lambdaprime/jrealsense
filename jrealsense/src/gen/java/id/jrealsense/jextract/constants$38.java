@@ -11,47 +11,29 @@ final class constants$38 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$38() {}
-    static final FunctionDescriptor lrint$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "__atan2",
+        constants$37.const$5
     );
-    static final MethodHandle lrint$MH = RuntimeHelper.downcallHandle(
-        "lrint",
-        constants$38.lrint$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cos",
+        constants$36.const$4
     );
-    static final FunctionDescriptor __lrint$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "__cos",
+        constants$36.const$4
     );
-    static final MethodHandle __lrint$MH = RuntimeHelper.downcallHandle(
-        "__lrint",
-        constants$38.__lrint$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "sin",
+        constants$36.const$4
     );
-    static final FunctionDescriptor llrint$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__sin",
+        constants$36.const$4
     );
-    static final MethodHandle llrint$MH = RuntimeHelper.downcallHandle(
-        "llrint",
-        constants$38.llrint$FUNC
-    );
-    static final FunctionDescriptor __llrint$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __llrint$MH = RuntimeHelper.downcallHandle(
-        "__llrint",
-        constants$38.__llrint$FUNC
-    );
-    static final FunctionDescriptor lround$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle lround$MH = RuntimeHelper.downcallHandle(
-        "lround",
-        constants$38.lround$FUNC
-    );
-    static final FunctionDescriptor __lround$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle __lround$MH = RuntimeHelper.downcallHandle(
-        "__lround",
-        constants$38.__lround$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "tan",
+        constants$36.const$4
     );
 }
 

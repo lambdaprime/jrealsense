@@ -11,59 +11,31 @@ final class constants$117 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$117() {}
-    static final FunctionDescriptor rs2_delete_pipeline$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle rs2_delete_pipeline$MH = RuntimeHelper.downcallHandle(
-        "rs2_delete_pipeline",
-        constants$117.rs2_delete_pipeline$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "rs2_send_and_receive_raw_data",
+        constants$117.const$0
     );
-    static final FunctionDescriptor rs2_pipeline_start$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "rs2_is_device_extendable_to",
+        constants$99.const$4
     );
-    static final MethodHandle rs2_pipeline_start$MH = RuntimeHelper.downcallHandle(
-        "rs2_pipeline_start",
-        constants$117.rs2_pipeline_start$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "rs2_query_sensors",
+        constants$29.const$2
     );
-    static final FunctionDescriptor rs2_pipeline_start_with_config$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "rs2_loopback_enable",
+        constants$95.const$3
     );
-    static final MethodHandle rs2_pipeline_start_with_config$MH = RuntimeHelper.downcallHandle(
-        "rs2_pipeline_start_with_config",
-        constants$117.rs2_pipeline_start_with_config$FUNC
-    );
-    static final FunctionDescriptor rs2_pipeline_start_with_callback$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_pipeline_start_with_callback$MH = RuntimeHelper.downcallHandle(
-        "rs2_pipeline_start_with_callback",
-        constants$117.rs2_pipeline_start_with_callback$FUNC
-    );
-    static final FunctionDescriptor rs2_pipeline_start_with_callback_cpp$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_pipeline_start_with_callback_cpp$MH = RuntimeHelper.downcallHandle(
-        "rs2_pipeline_start_with_callback_cpp",
-        constants$117.rs2_pipeline_start_with_callback_cpp$FUNC
-    );
-    static final FunctionDescriptor rs2_pipeline_start_with_config_and_callback$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rs2_pipeline_start_with_config_and_callback$MH = RuntimeHelper.downcallHandle(
-        "rs2_pipeline_start_with_config_and_callback",
-        constants$117.rs2_pipeline_start_with_config_and_callback$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "rs2_loopback_disable",
+        constants$94.const$4
     );
 }
 
