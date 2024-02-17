@@ -29,7 +29,6 @@ import id.xfunction.XJsonStringBuilder;
 import java.io.IOException;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
-import java.lang.foreign.ValueLayout;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
@@ -38,7 +37,8 @@ import java.util.List;
 /** Video stream intrinsics. */
 public class Intrinsics {
 
-    private MemorySegment rs2_intrinsics = Arena.ofAuto().allocate(ValueLayout.ADDRESS.byteSize());
+    private MemorySegment rs2_intrinsics =
+            Arena.ofAuto().allocate(id.jrealsense.jextract.rs2_intrinsics.sizeof());
 
     /**
      * Horizontal coordinate of the principal point of the image, as a pixel offset from the left

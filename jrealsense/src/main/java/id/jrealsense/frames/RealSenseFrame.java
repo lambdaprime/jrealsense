@@ -17,6 +17,7 @@
  */
 package id.jrealsense.frames;
 
+import id.jrealsense.FrameSet;
 import id.jrealsense.RealSenseError;
 import id.jrealsense.StreamProfile;
 import id.jrealsense.jextract.librealsense;
@@ -173,6 +174,12 @@ public class RealSenseFrame implements AutoCloseable {
         LOG.exiting("close");
     }
 
+    /**
+     * Frames inside same {@link FrameSet} can have different frame numbers. Example is {@link
+     * DepthFrame#getFrameNumber()} and {@link ColorFrame#getFrameNumber}
+     *
+     * @return
+     */
     public long getFrameNumber() {
         return frameNumber.get();
     }

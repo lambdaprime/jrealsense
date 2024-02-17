@@ -25,7 +25,7 @@ import id.jrealsense.StreamType;
 import id.jrealsense.jextract.librealsense;
 
 /**
- * Filter which aligns frames from different streams in frameset.
+ * Filter which aligns frames from different streams in {@link FrameSet}.
  *
  * <p>Most common use case is align depth frames to their corresponding color frames.
  *

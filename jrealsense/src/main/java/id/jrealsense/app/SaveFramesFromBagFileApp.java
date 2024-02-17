@@ -88,11 +88,13 @@ public class SaveFramesFromBagFileApp {
                     Files.createDirectories(outputDir);
                 });
         var hasSavedIntrinsics = new boolean[2];
+        var frameCounter = new long[1];
         bagUtils.replay(
                 bagFile,
                 fs -> {
                     try {
                         if (fs.size() == 0) return true;
+                        var filePrefix = "%8d".formatted(frameCounter[0]).replace(' ', '0');
                         fs = utils.alignToColorStream(fs);
                         fs.getColorFrame(rgbFormat)
                                 .ifPresent(
@@ -113,7 +115,7 @@ public class SaveFramesFromBagFileApp {
                                             utils.saveAsPng(
                                                     frame,
                                                     rgbFormat,
-                                                    outputDir.resolve(frameNum + "-rgb.png"));
+                                                    outputDir.resolve(filePrefix + "-rgb.png"));
                                         });
                         fs.getDepthFrame()
                                 .ifPresent(
@@ -135,8 +137,9 @@ public class SaveFramesFromBagFileApp {
                                             utils.saveAsPng(
                                                     depthFrame,
                                                     depthFormat,
-                                                    outputDir.resolve(frameNum + "-depth.png"));
+                                                    outputDir.resolve(filePrefix + "-depth.png"));
                                         });
+                        frameCounter[0]++;
                         return true;
                     } finally {
                         fs.close();
